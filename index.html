@@ -33,11 +33,13 @@
     var greet=function(){
         if(Math.floor(Math.random()*2)==1){
           document.getElementById("a").innerHTML="Hello.";
+          console.log("Hello.");
         }else{
           document.getElementById("a").innerHTML="How are you?";
+          console.log("How are you?");
         }
     }
     </script>
-    <button onclick="greet()">click dat</button>
+    <button onclick="greet()">Click me!</button>
   </body>
 </html>
