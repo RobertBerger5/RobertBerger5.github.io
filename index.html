@@ -30,12 +30,14 @@
       ??
     </p>
     <script>
-    var bool=Math.floor(Math.random()*2);
-      if(bool==1){
-        document.getElementById("a").innerHTML="Hello.";
-      }else{
-        document.getElementById("a").innerHTML="How are you?";
-      }
+    var greet=function(){
+        if(Math.floor(Math.random()*2)==1){
+          document.getElementById("a").innerHTML="Hello.";
+        }else{
+          document.getElementById("a").innerHTML="How are you?";
+        }
+    }
     </script>
+    <button onclick="greet()">click dat</button>
   </body>
 </html>
