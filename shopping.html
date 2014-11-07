@@ -15,7 +15,14 @@
       <li class="veg"><s>Cucumber</s></li>
       <li class="candy"><s>Chocolate</s></li>
       <li class="meat">Pork</li>
-      <li class="fruit">Banana</li>
+      <li class="fruit"><span class="done"></span>Banana</li>
     </ul>
+    <!--Really bad experimental javascript-->
+    <button onclick="cross()">Clickydoo</button>
+    <script>
+      var cross=function(){
+        document.getElementById(done).innerHTML="✓"
+      }
+    </script>
   </body>
 </html>
