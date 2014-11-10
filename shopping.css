@@ -16,3 +16,6 @@ li{
 #list{
   list-style-image:url('http://www.hoverbalcony.com/images/checkmark.png');
 }
+li:visited{
+  background-color:#ff0000;
+}
