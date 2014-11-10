@@ -27,6 +27,6 @@ a{
   font-size:30px;
 }
 tr{
-  border-width:1px;
-  margin-width:100px;
+  border:1px;
+  margin:10px;
 }
