@@ -16,6 +16,9 @@ li.blue{
 li:hover{
   color:#ff0000;
 }
+li:active{
+  color:#00ff00;
+}
 h1{
   color:#000000;
   font-size:50px;
