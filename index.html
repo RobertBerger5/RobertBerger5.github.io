@@ -24,17 +24,22 @@
     </table>
     </center>
     <!--random other-->
-    <p id="a">
-      ??
-    </p>
+    <p>I am <span id="a">feeling like you should click the button</span>.</p>
     <script>
     var greet=function(){
-        if(Math.floor(Math.random()*2)==1){
-          document.getElementById("a").innerHTML="Hello.";
-          console.log("Hello.");
+      var rand
+        if(rand<.25){
+          document.getElementById("a").innerHTML="bored";
+          console.log("1");
+        }else if(rand>.25 && rand<.5){
+          document.getElementById("a").innerHTML="really bored";
+          console.log("2");
+        } else if(rand>.5 && rand<.75){
+          document.getElementById("a").innerHTML="fairly bored";
+          console.log("3");
         }else{
-          document.getElementById("a").innerHTML="How are you?";
-          console.log("How are you?");
+          document.getElementById("a").innerHTML="feeling like you should click the button again";
+          console.log("4");
         }
     }
     </script>
