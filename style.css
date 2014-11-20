@@ -47,13 +47,13 @@ nav{
 }
 aside{
   width:30%;
-  height:50%;
+  height:200%;
   background-color:green;
   float:left;
 }
 section{
   width:70%;
-  height:50%;
+  height:200%;
   position:relative;
   left:30%;
   background-color:purple;
