@@ -50,7 +50,7 @@ header{
   left:0px;
 }
 nav{
-  width:101%;
+  width:100% + 8px;
   height:30px;
   background-color:blue;
   z-index:9;
