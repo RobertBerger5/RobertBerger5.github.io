@@ -1,7 +1,6 @@
 h2{
-  font-size:100px;
+  font-size:500px;
   position:fixed;
-  top:25%;
   -webkit-transform: rotate(180deg);
 }
 body{
