@@ -44,8 +44,8 @@ header{
   position:fixed;
   z-index:10;
   position:relative;
-  top:-7px;
-  left:-8px;
+  top:-10px;
+  left:-15px;
 }
 nav{
   width:100%;
