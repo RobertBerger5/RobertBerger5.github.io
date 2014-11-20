@@ -46,7 +46,7 @@ header{
   background-color:red;
   position:fixed;
   z-index:10;
-  top:1px;
+  top:0px;
   left:0px;
 }
 nav{
