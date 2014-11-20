@@ -37,3 +37,24 @@ tr{
 a.page{
   font-size:30px;
 }
+header{
+  width:100%;
+  background-color:red;
+}
+nav{
+  width:100%;
+  background-color:blue;
+}
+aside{
+  width:30%;
+  background-color:green;
+}
+section{
+  width:70%;
+  background-color:purple;
+  float:left;
+}
+footer{
+  width:100%;
+  background-color:yellow;
+}
