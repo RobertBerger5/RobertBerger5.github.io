@@ -54,6 +54,9 @@ nav{
   background-color:blue;
   top:20px;
   z-index:9;
+  position:relative;
+  left:0px;
+  top:20px;
 }
 aside{
   width:30%;
