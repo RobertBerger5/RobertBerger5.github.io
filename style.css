@@ -48,11 +48,11 @@ nav{
 aside{
   width:30%;
   background-color:green;
+  float:left;
 }
 section{
   width:70%;
   background-color:purple;
-  float:left;
 }
 footer{
   width:100%;
