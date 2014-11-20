@@ -57,4 +57,5 @@ section{
 footer{
   width:100%;
   background-color:yellow;
+  clear:both;
 }
