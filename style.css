@@ -1,7 +1,9 @@
 h2{
   font-size:500px;
   position:fixed;
+  top:75%;
   -webkit-transform: rotate(180deg);
+  z-index:9001;
 }
 body{
   background-color:#ffffff;
