@@ -45,7 +45,7 @@ header{
   z-index:10;
   position:relative;
   top:-11px;
-  left:-7px;
+  left:-8px;
 }
 nav{
   width:100%;
@@ -72,9 +72,8 @@ footer{
   background-color:yellow;
   clear:both;
 }
-/*
 .div{
   position:relative;
-  top:;
+  top:-11px;
+  left:8px;
 }
-*/
