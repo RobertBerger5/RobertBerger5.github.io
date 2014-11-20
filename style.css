@@ -46,8 +46,8 @@ header{
   background-color:red;
   position:fixed;
   z-index:10;
-  top:-7;
-  left:-3;
+  top:-5;
+  left:-1;
 }
 nav{
   width:100%;
