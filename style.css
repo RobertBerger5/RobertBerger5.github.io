@@ -40,6 +40,7 @@ a.page{
 header{
   width:100%;
   background-color:red;
+  position:fixed;
 }
 nav{
   width:100%;
