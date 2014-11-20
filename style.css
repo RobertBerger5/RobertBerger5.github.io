@@ -2,12 +2,10 @@ h2{
   font-size:100px;
   position:fixed;
   top:25%;
-  -webkit-transform: rotate(180deg);
   z-index:9001;
 }
 body{
   background-color:#ffffff;
-  -webkit-transform: rotate(180deg);
   }
 li{
   font-size:20px;
