@@ -50,7 +50,7 @@ header{
   left:0px;
 }
 nav{
-  width:110%;
+  width:103%;
   height:30px;
   background-color:blue;
   z-index:9;
@@ -75,6 +75,7 @@ footer{
   width:100%;
   background-color:yellow;
   clear:both;
+  z-index:8;
 }
 .div{
   
