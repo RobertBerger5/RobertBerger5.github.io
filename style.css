@@ -71,14 +71,14 @@ nav{
 }
 aside{
   width:30%;
-  height:200%;
+  height:1000px;
   background-color:green;
   float:left;
   top:112px;
 }
 section{
   width:70%;
-  height:192%;
+  height:1000px;
   position:absolute;
   left:30%;
   background-color:purple;
