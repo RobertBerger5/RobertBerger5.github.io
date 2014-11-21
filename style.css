@@ -37,6 +37,7 @@ h1{
   border:5px solid black;
   color:#000000;
   margin:0px;
+  margin-left:0px;
   padding:5px;
   float:left;
 }
@@ -78,7 +79,7 @@ aside{
 }
 section{
   width:70%;
-  height:1000px;
+  height:950px;
   position:absolute;
   left:30%;
   background-color:#dddddd;
