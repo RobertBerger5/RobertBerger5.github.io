@@ -51,7 +51,7 @@ a.page{
 
 header{
   width:100%;
-  height:10px;
+  height:30px;
   background-color:red;
   position:fixed;
   z-index:10;
@@ -60,19 +60,19 @@ header{
 }
 nav{
   width:100%;
-  height:10px;
+  height:30px;
   background-color:blue;
   z-index:9;
   position:relative;
   left:0px;
-  top:10px;
+  top:30px;
 }
 aside{
   width:30%;
   height:200%;
   background-color:green;
   float:left;
-  top:10%;
+  top:60px;
 }
 section{
   width:70%;
@@ -80,7 +80,7 @@ section{
   position:absolute;
   left:30%;
   background-color:purple;
-  top:10%;
+  top:60px;
 }
 footer{
   width:100%;
