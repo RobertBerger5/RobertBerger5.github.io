@@ -63,7 +63,7 @@ header{
 nav{
   width:100%;
   height:56px;
-  background-color:#ffdddd;
+  background-color:#ffffdd;
   z-index:9;
   position:relative;
   left:0px;
@@ -72,7 +72,7 @@ nav{
 aside{
   width:30%;
   height:1000px;
-  background-color:#ddffdd;
+  background-color:#ddffff;
   float:left;
   top:224px;
 }
@@ -87,7 +87,7 @@ section{
 footer{
   width:100%;
   height:56px;
-  background-color:#ddffff;
+  background-color:#ddddff;
   clear:both;
   z-index:41;
 }
