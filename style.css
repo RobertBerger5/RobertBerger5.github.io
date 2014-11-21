@@ -12,12 +12,6 @@ img.ad{
   height:175px;
   width:175px;
 }
-h2{
-  font-size:100px;
-  position:fixed;
-  top:25%;
-  z-index:9001;
-}
 body{
   background-color:#ffffff;
   }
