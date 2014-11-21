@@ -44,9 +44,9 @@ h1{
 .link{
   font-size:30px;
   border:5px solid black;
+  border-left:0px;
   color:#000000;
   margin:0px;
-  margin-left:0px;
   padding:5px;
   float:left;
 }
