@@ -1,7 +1,7 @@
 div.ad{
   background-color:#ffffff;
-  height:150px;
-  width:150px;
+  height:300px;
+  width:300px;
   text-align:center;
   margin:50px;
   margin-top:100px;
@@ -10,8 +10,8 @@ p.ad{
   color:#000000;
 }
 img.ad{
-  height:100px;
-  width:100px;
+  height:250px;
+  width:250px;
 }
 h2{
   font-size:100px;
