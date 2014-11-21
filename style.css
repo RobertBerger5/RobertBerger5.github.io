@@ -50,6 +50,9 @@ h1{
   padding:5px;
   float:left;
 }
+#linkleft{
+  border-left:5px;
+}
 tr{
   border:1px;
   margin:100px;
