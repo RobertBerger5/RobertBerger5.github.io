@@ -54,7 +54,7 @@ a.page{
 header{
   width:100%;
   height:56px;
-  background-color:red;
+  background-color:#aaaaff;
   position:fixed;
   z-index:10;
   top:0px;
@@ -63,7 +63,7 @@ header{
 nav{
   width:100%;
   height:56px;
-  background-color:blue;
+  background-color:ffaaaa;
   z-index:9;
   position:relative;
   left:0px;
@@ -72,7 +72,7 @@ nav{
 aside{
   width:30%;
   height:1000px;
-  background-color:green;
+  background-color:aaffaa;
   float:left;
   top:112px;
 }
@@ -81,13 +81,13 @@ section{
   height:1000px;
   position:absolute;
   left:30%;
-  background-color:purple;
+  background-color:cccccc;
   top:112px;
 }
 footer{
   width:100%;
   height:5%;
-  background-color:yellow;
+  background-color:aaffff;
   clear:both;
   z-index:41;
 }
