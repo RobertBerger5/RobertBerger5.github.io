@@ -56,7 +56,7 @@
   </head>
   <body>
     <nav>
-    <input type="checkbox" />
+    <input type="checkbox" onclick="cardDone();"/>
       <section class="question">
         <h1>What year was the Declaration of Independance signed?</h1>
       </section>
@@ -65,7 +65,7 @@
       </section>
     </nav>
     <nav>
-    <input type="checkbox" />
+    <input type="checkbox" onclick="cardDone();"/>
       <section class="question">
         <h1>How many fingers am I holding up?</h1>
       </section>
@@ -74,7 +74,7 @@
       </section>
     </nav>
     <nav>
-    <input type="checkbox" />
+    <input type="checkbox" onclick="cardDone();"/>
       <section class="question">
         <h1>What is more convinient than using <code>nav</code> and <code>section</code> tags?</h1>
       </section>
@@ -83,7 +83,7 @@
       </section>
     </nav>
     <nav>
-    <input type="checkbox" />
+    <input type="checkbox" onclick="cardDone();"/>
       <section class="question">
         <h1>Does Julia care about <code>nav</code> tags?</h1>
       </section>
@@ -92,7 +92,7 @@
       </section>
     </nav>
     <nav>
-    <input type="checkbox" />
+    <input type="checkbox" onclick="cardDone();"/>
       <section class="question">
         <h1>Does Julia care about <code>section</code> tags?</h1>
       </section>
@@ -101,7 +101,7 @@
       </section>
     </nav>
     <nav>
-    <input type="checkbox" />
+    <input type="checkbox" onclick="cardDone();"/>
       <section class="question">
         <h1>Does Julia care about <code>div</code> tags?</h1>
       </section>
@@ -109,12 +109,12 @@
         <h1>NEIN</h1>
       </section>
     </nav>
-      <button onclick="asdf();">Click Me!</button>
+      <button onclick="cardDone();">Click Me!</button>
        <p id="html">0</p>
       <script type="text/javascript">
          counter=0;
-         asdf = function() {
-             counter++;
+         cardDone = function() {
+             counter=counter+1;
              disp=document.querySelector('#html');
              disp.innerHTML=counter;
          }
