@@ -107,3 +107,6 @@ footer{
 .div{
   margin:0px;
 }
+p.num{
+  float:left;
+}
