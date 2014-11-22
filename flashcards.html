@@ -110,13 +110,16 @@
       </section>
     </nav>
       <button onclick="cardDone();">Click Me!</button>
-       <p id="html">0</p>
+       <p class="num">You have </p><p id="html" class="num">0</p><p class="num"> flashcards done.</p>
       <script type="text/javascript">
          counter=0;
+         disp=document.querySelector('#html');
          cardDone = function() {
              counter=counter+1;
-             disp=document.querySelector('#html');
              disp.innerHTML=counter;
+         }
+         if(counter>6){
+           disp.innerHTML="0 legitimate";
          }
       </script>
   </body>
