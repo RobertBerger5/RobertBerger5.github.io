@@ -109,8 +109,15 @@
         <h1>NEIN</h1>
       </section>
     </nav>
-    <div id="extra">
-      <p class="extra">Julia has no soul</p>
-    </div>
+      <button onclick="asdf();">Click Me!</button>
+       <p id="html">0</p>
+      <script type="text/javascript">
+         counter=0;
+         asdf = function() {
+             counter=counter+1;
+             disp=document.querySelector('#html');
+             disp.innerHTML=counter;
+         }
+      </script>
   </body>
 </html>
