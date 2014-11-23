@@ -61,7 +61,7 @@ tr{
 a.page{
   font-size:30px;
 }
-a.page: hover{
+a:hover{
   font-size:35px;
 }
 
