@@ -61,6 +61,9 @@ tr{
 a.page{
   font-size:30px;
 }
+a.page:hover{
+  font-size:35px;
+}
 
 /* THE DIVS BEGIN HERE. THE DIVS BEGIN HERE. THE DIVS BEGIN HERE. THE DIVS BEGIN HERE. THE DIVS BEGIN HERE. */
 
