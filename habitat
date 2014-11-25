@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Habitats</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+  <body>
+    <header class="div">
+      <p>Places where various different types of cats live</p>
+    </header>
+    <nav class="div">
+      <a href="/index" class="link" id="ll">Home</a>
+      <a href="/shopping" class="link">Shopping List</a>
+      <a href="/flashcards" class="link">Flash Cards</a>
+      <a href="/breeds" class="link">Breeds</a>
+      <a href="/habitat" class="link">Habitats</a>
+    </nav>
+    <aside class="div">
+    <br><br><br>
+      <center>
+        <div class="ad">
+          <img class="ad" src='http://eczemaexcellence.files.wordpress.com/2012/12/running-shoes-many-pairs-colorful.jpg?w=300&h=200' />
+          <p class="ad">Shoes. You put them on your feet.</p>
+        </div>
+        <div class="ad">
+          <img class="ad" src='http://i.huffpost.com/gen/964776/thumbs/o-CATS-KILL-BILLIONS-facebook.jpg' />
+          <p class="ad">Cats are pretty neat.</p>
+        </div>
+        <div class="ad">
+          <img class="ad" src='http://www.bludot.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/l/flask_modern_table_lamp_ash_1_2.jpg' />
+          <p class="ad">I love lamp.</p>
+        </div>
+      </center>
+    </aside>
+    <section class="div">
+      <center>
+        <img src="http://upload.wikimedia.org/wikipedia/commons/8/87/World_map_without_Antarctica.svg" />
+        <p>This general area</p>
+      </center>
+    </section>
+    <footer class="div">
+      <p>Copyright Robert Berger, 2014</p>
+    </footer>
+  </body>
+</html>
