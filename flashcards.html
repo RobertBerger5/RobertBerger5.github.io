@@ -74,7 +74,7 @@
       <section class="answer">
         <h1>1776</h1>
       </section>
-      <input type="checkbox" id="cb1" onclick="updateCounter('cb1')"><p>Done</p></input>
+      <input type="checkbox" clsaa="checkbox" id="cb1" onclick="updateCounter('cb1')"><p>Done</p></input>
     </nav>
 
     <nav>
@@ -136,10 +136,10 @@
           updateCounter=function(cbId){
             theCheckbox=document.querySelector("#"+cbID)
             if(theCheckbox.checked){
-            counter=counter+1;
-          }else{
-            counter=counter+1;
-          }
+              counter=counter+1;
+            }else{
+              counter=counter+1;
+            }
             countSpot=document.querySelector('#myCounter');
             countSpot.innerHTML="Correct: "+counter;
           }
