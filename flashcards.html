@@ -68,139 +68,83 @@
   <body>
 
     <nav>
-      <section class="question" onclick="cardOne();">
+      <section class="question"
         <h1 id="show">What year was the Declaration of Independence signed?</h1>
       </section>
       <section class="answer">
         <h1>1776</h1>
       </section>
-      <input type="checkbox">Done</input>
+      <input type="checkbox" id="cb1" onclick="updateCounter(/"cb1")"><p>Done</p></input>
     </nav>
 
     <nav>
-      <section class="question" onclick="cardTwo();">
+      <section class="question">
         <h1>How many fingers am I holding up?</h1>
       </section>
       <section class="answer">
         <h1>Most likely zero, but there is a chance that I am holding some up as you're reading this.</h1>
       </section>
-      <input type="checkbox">Done</input>
+      <input type="checkbox" id="cb2" onclick="updateCounter(/"cb2")"><p>Done</p></input>
     </nav>
 
     <nav>
-      <section class="question" onclick="cardThree();">
+      <section class="question">
         <h1>What is more convenient than using <code>nav</code> and <code>section</code> tags?</h1>
       </section>
       <section class="answer">
         <h1><code>div</code> tags, though I kind of see a point to the others now.</h1>
       </section>
-      <input type="checkbox">Done</input>
+      <input type="checkbox" id="cb3" onclick="updateCounter(/"cb3")"><p>Done</p></input>
     </nav>
 
     <nav>
-      <section class="question" onclick="cardFour();">
+      <section class="question">
         <h1>Does Julia care about <code>nav</code> tags?</h1>
       </section>
       <section class="answer">
         <h1>NEIN</h1>
       </section>
-      <input type="checkbox">Done</input>
+      <input type="checkbox" id="cb4" onclick="updateCounter(/"cb4")"><p>Done</p></input>
     </nav>
 
     <nav>
-      <section class="question" onclick="cardFive();">
+      <section class="question">
         <h1>Does Julia care about <code>section</code> tags?</h1>
       </section>
       <section class="answer">
         <h1>NEIN</h1>
       </section>
-      <input type="checkbox">Done</input>
+      <input type="checkbox" id="cb5" onclick="updateCounter(/"cb5")"><p>Done</p></input>
     </nav>
 
     <nav>
-      <section class="question" onclick="cardSix();">
+      <section class="question">
         <h1>Does Julia care about <code>div</code> tags?</h1>
       </section>
       <section class="answer">
         <h1>NEIN</h1>
       </section>
-      <input type="checkbox">Done</input>
+      <input type="checkbox" id="cb6" onclick="updateCounter(/"cb6/")"><p>Done</p></input>
     </nav>
     <br>
     <div id="counter">
        <p class="num">You have</p><p id="number" class="num">0</p><p class="num">flashcards done.</p>
     </div>
       <script type="text/javascript">
-        
-        /*
+      
           counter=0;
-         disp=document.querySelector('#html');
-         cardDone = function() {
-           counter=counter+1;
-           disp.innerHTML="."+counter+".";
-           if(counter>6){
-             disp.innerHTML=".0 legitimate.";
-           };
-         };
-         */
-         
-         /*
-         counter=0;
-         one=0;
-         two=0;
-         three=0;
-         four=0;
-         five=0;
-         six=0;
-         disp=document.querySelector('#number');
-
-         cardOne = function() {
-          one=one+1;
-          if(one%2==0){
-            one=0;
-          };
-         };
-
-         cardTwo = function() {
-          two=two+1;
-          if(two%2==0){
-            two=0;
-          };
-         };
-
-         cardThree = function() {
-          three=three+1;
-          if(three%2==0){
-            three=0;
-          };
-         };
-
-         cardFour = function() {
-          four=four+1;
-          if(four%2==0){
-            four=0;
-          };
-         };
-
-         cardFive = function() {
-          five=five+1;
-          if(five%2==0){
-            five=0;
-          };
-         };
-
-         cardSix = function() {
-          six=six+1;
-          if(six%2==0){
-            six=0;
-          };
-         };
-
-         setInterval(function(){
-            disp.innerHTML=one+two+three+four+five+six;
-         }
-         ,50);*/
-
+          updateCounter=function(cbId){
+            theCheckbox=document.querySelector("#"+cbID)
+            if(theCheckbox.checked){
+            counter=counter+1;
+          }else{
+            counter=counter+1;
+          }
+            countSpot=document.querySelector('#myCounter');
+            countSpot.innerHTML="Correct: "+counter;
+          }
+          
+          
       </script>
   </body>
 </html>
