@@ -17,12 +17,10 @@
     <script>
       count=0;
       addFood= function(){
-        count=count+1;
         console.log(count);
         name = document.querySelector('#name').value;
         list = document.querySelector("#list");
         foodClass = document.querySelector("#foodClass").value;
-        console.log(foodClass);
         newFood = document.createTextNode(name);
         bullet = document.createElement("li");
         bullet.className=foodClass;
@@ -30,6 +28,7 @@
         list.appendChild(bullet);
         document.querySelector('#name').value="";
       }
+      //
     </script>
   </body>
 </html>
