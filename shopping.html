@@ -14,8 +14,10 @@
       addFood= function(){
         name = document.querySelector('name').value;
         list = document.querySelector("#list");
-        newFood = document.createElement("tr");
-        list.appendChild(newFood);
+        newFood = document.createTextNode(name);
+        bullet = document.createElement("tr");
+        bullet.appendChild(newFood);
+        list.appendChild(bullet);
       }
     </script>
   </body>
