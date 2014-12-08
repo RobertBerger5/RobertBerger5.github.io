@@ -24,7 +24,9 @@
         console.log(foodClass);
         newFood = document.createTextNode(name);
         bullet = document.createElement("li");
-        bullet.addClass(foodClass);
+        
+        bullet.className=foodClass;
+        
         bullet.appendChild(newFood);
         list.appendChild(bullet);
         document.querySelector('#name').value="";
