@@ -13,20 +13,19 @@
       <option>candy</option>
       <option>fruit</option>
     </select>
-    
     <button onclick="addFood()">Add to list</button>
     <script>
-      
+      count=0;
       addFood= function(){
+        count=count+1;
+        console.log(count);
         name = document.querySelector('#name').value;
         list = document.querySelector("#list");
         foodClass = document.querySelector("#foodClass").value;
         console.log(foodClass);
         newFood = document.createTextNode(name);
         bullet = document.createElement("li");
-        
         bullet.className=foodClass;
-        
         bullet.appendChild(newFood);
         list.appendChild(bullet);
         document.querySelector('#name').value="";
