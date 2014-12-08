@@ -4,7 +4,6 @@
   </head>
   <body>
     <ul id="list">
-      
     </ul>
     <input id="name" type="text" />
     <button onclick="addFood">Add to list</button>
@@ -15,7 +14,7 @@
         console.log(name)
         list = document.querySelector("#list");
         newFood = document.createTextNode(name);
-        bullet = document.createElement("tr");
+        bullet = document.createElement("li");
         bullet.appendChild(newFood);
         list.appendChild(bullet);
       }
