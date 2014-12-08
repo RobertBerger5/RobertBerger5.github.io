@@ -23,8 +23,9 @@
         foodClass = document.querySelector("#foodClass").value;
         newFood = document.createTextNode(name);
         bullet = document.createElement("li");
-        bullet.addClass(foodClass);
+        
         bullet.appendChild(newFood);
+        bullet.addClass(foodClass);
         list.appendChild(bullet);
         document.querySelector('#name').value="";
       }
