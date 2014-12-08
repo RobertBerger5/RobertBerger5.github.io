@@ -13,3 +13,6 @@ li.fruit{
 li{
   font-size:50px;
 }
+li{
+  display=inline;
+}
