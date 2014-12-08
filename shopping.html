@@ -8,9 +8,15 @@
     </ul>
     <input id="name" type="" />
     <input id="type" type="" />
-    <button onclick="">Add to list</button>
+    <button onclick="addFood">Add to list</button>
     <script>
       
+      addFood= function(){
+        name = document.querySelector('name').value;
+        list = document.querySelector("#list");
+        newFood = document.createElement("tr");
+        list.appendChild(newFood);
+      }
     </script>
   </body>
 </html>
