@@ -21,12 +21,12 @@
         name = document.querySelector('#name').value;
         list = document.querySelector("#list");
         foodClass = document.querySelector("#foodClass").value;
+        console.log(foodClass);
         newFood = document.createTextNode(name);
         bullet = document.createElement("li");
-        
+        bullet.addClass(foodClass);
         bullet.appendChild(newFood);
         list.appendChild(bullet);
-        bullet.addClass(foodClass);
         document.querySelector('#name').value="";
       }
     </script>
