@@ -6,6 +6,14 @@
     <ul id="list">
     </ul>
     <input id="name" type="text" />
+    
+    <select id="class">
+      <option>meat</option>
+      <option>veg</option>
+      <option>candy</option>
+      <option>fruit</option>
+    </select>
+    
     <button onclick="addFood()">Add to list</button>
     <script>
       
@@ -14,6 +22,7 @@
         list = document.querySelector("#list");
         newFood = document.createTextNode(name);
         bullet = document.createElement("li");
+        bullet.addClass=class;
         bullet.appendChild(newFood);
         list.appendChild(bullet);
         document.querySelector('#name').value="";
