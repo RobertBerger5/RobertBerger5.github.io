@@ -13,9 +13,3 @@ li.fruit{
 li{
   font-size:50px;
 }
-#list{
-  list-style-image:url('http://www.hoverbalcony.com/images/checkmark.png');
-}
-li:active{
-  background-color:#ff0000;
-}
