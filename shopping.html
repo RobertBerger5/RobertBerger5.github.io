@@ -28,7 +28,20 @@
         list.appendChild(bullet);
         document.querySelector('#name').value="";
       }
-      //
+      
+      check=function(Lnum){
+        checkBox=document.querySelecor('#'+Lnum)
+        if(checkBox.checked){
+          checkBox.bgColor="#666666";
+        }else{
+          checkBox.bgColor="666666";
+        }
+      }
+      
     </script>
+    <ul>
+      <input type="checkbox" id="L1" onclick="check(L1)" />
+      <input type="checkbox" id="L2" onclick="check(L2)" />
+    </ul>
   </body>
 </html>
