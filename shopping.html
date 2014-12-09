@@ -29,8 +29,8 @@
         document.querySelector('#name').value="";
       }
       
-      check=function(Lnum){
-        checkBox=document.querySelector('#'+Lnum)
+      check=function(checkNum){
+        checkBox=document.querySelector('#'+checkNub)
         if(checkBox.checked){
           console.log(Lnum);
         }else{
@@ -41,10 +41,10 @@
     </script>
     <ul>
       <li>
-        <input type="checkbox" id="L1" onclick="check(L1)" />
+        <input type="checkbox" id="cb1" onclick="check(cb1)" />
       </li>
       <li>
-        <input type="checkbox" id="L2" onclick="check(L2)" />
+        <input type="checkbox" id="cb2" onclick="check(cb2)" />
       </li>
     </ul>
   </body>
