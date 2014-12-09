@@ -31,13 +31,13 @@
         type.value = "checkbox";
         cB.setAttributeNode(type);
         
-        id = document.createAttribute("id");       // Create a "class" attribute
-        id.value = "cb"+count;                           // Set the value of the class attribute
-        cB.setAttributeNode(id);
+        ident = document.createAttribute("id");       // Create a "class" attribute
+        ident.value = "cb"+count;                           // Set the value of the class attribute
+        cB.setAttributeNode(ident);
         
-        onClick = document.createAttribute("onclick");       // Create a "class" attribute
-        onClick.value = "czech(cb"+count+")";                           // Set the value of the class attribute
-        cB.setAttributeNode(onClick);
+        onClik = document.createAttribute("onclick");       // Create a "class" attribute
+        onClik.value = "czech(cb"+count+")";                           // Set the value of the class attribute
+        cB.setAttributeNode(onClik);
 
         //input type="checkbox" id="cb'count'" onclick="czech(cb'count')"
         
