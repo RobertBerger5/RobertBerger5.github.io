@@ -26,7 +26,19 @@
         bullet = document.createElement("li");
         
         cB = document.createElement('input');
-        cB.onclick="console.log('fuck the world')";
+        
+        type = document.createAttribute("type");       // Create a "class" attribute
+        type.value = "checkbox";                           // Set the value of the class attribute
+        cB.setAttributeNode(type);
+        
+        id = document.createAttribute("id");       // Create a "class" attribute
+        id.value = "cb"+count;                           // Set the value of the class attribute
+        cB.setAttributeNode(id);
+        
+        onClick = document.createAttribute("onclick");       // Create a "class" attribute
+        onClick.value = "czech(cb"+count+")";                           // Set the value of the class attribute
+        cB.setAttributeNode(onClick);
+
         //input type="checkbox" id="cb'count'" onclick="czech(cb'count')"
         
         bullet.className=foodClass;
