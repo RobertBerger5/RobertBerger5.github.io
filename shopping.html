@@ -26,6 +26,7 @@
         bullet = document.createElement("li");
         bullet.className=foodClass;
         bullet.appendChild(newFood);
+        list.innerHTML="asdf"
         list.appendChild(bullet);
         document.querySelector('#name').value="";
       }
@@ -42,10 +43,10 @@
     </script>
     <ul>
       <li>
-        <input type="checkbox" id="cb1" onclick="czech('cb1')" />
+        <input type="checkbox" id="cb1" onclick="czech(cb1)" />
       </li>
       <li>
-        <input type="checkbox" id="cb2" onclick="czech('cb2')" />
+        <input type="checkbox" id="cb2" onclick="czech(cb2)" />
       </li>
     </ul>
   </body>
