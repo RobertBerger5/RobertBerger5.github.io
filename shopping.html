@@ -32,12 +32,14 @@
         type.value = "checkbox";
         cB.setAttributeNode(type);
         
+        identVal="cb"+count;
         ident = document.createAttribute("id");       // Create a "class" attribute
-        ident.value = "cb"+count;                           // Set the value of the class attribute
+        ident.value = identVal.toString;                           // Set the value of the class attribute
         cB.setAttributeNode(ident);
         
+        clickVal="czech(cb"+count+")"
         onClik = document.createAttribute("onclick");       // Create a "class" attribute
-        onClik.value = "czech(cb"+count+")";                           // Set the value of the class attribute
+        onClik.value = clickVal.toString;                           // Set the value of the class attribute
         cB.setAttributeNode(onClik);
 
         //input type="checkbox" id="cb'count'" onclick="czech(cb'count')"
