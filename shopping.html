@@ -24,9 +24,14 @@
         foodClass = document.querySelector("#foodClass").value;
         newFood = document.createTextNode(name);
         bullet = document.createElement("li");
+        
+        //cB = document.createElement('input type="checkbox" id="cb'count'" onclick="czech(cb'count')"');
+        
         bullet.className=foodClass;
         bullet.appendChild(newFood);
+        
         list.innerHTML='<input type="checkbox" id="cb'count'" onclick="czech(cb'count')" />'
+        
         list.appendChild(bullet);
         document.querySelector('#name').value="";
       }
