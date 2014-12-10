@@ -21,8 +21,10 @@
       checkMe=function(){
         if(this.checked){
           this.parentNode.classList.add("done");
+          console.log("checked");
         }else{
           this.parentNode.classList.remove("done");
+          console.log("unchecked");
         }
       }
       
