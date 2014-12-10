@@ -16,13 +16,13 @@
       <button onclick="addFood()" class="new">Add to list</button>
     </div>
     <script>
-    console.log("0");
+    console.log("1");
       
       checkMe=function(){
         if(this.checked){
-          this.parentNode.classList.add("done");
+          this.parentNode.classList.add(done);
         }else{
-          this.parentNode.classList.remove("done");   //why would you put delete
+          this.parentNode.classList.remove(done);   //why would you put delete
         }
       }
       
@@ -37,7 +37,7 @@
         cB.type="checkbox";
         cB.onclick=checkMe();
         
-        bullet.classList.add("foodClass");
+        bullet.classList.add(foodClass);
         bullet.appendChild(newFood);
         list.appendChild(cB);
         list.appendChild(bullet);
