@@ -20,6 +20,15 @@
     console.log("1");
     
       count=0;
+      
+      checkMe=function(){
+        if(this.checked){
+          this.parentNode.classList.add(done);
+        }else{
+          this.parentNode.classList.delete(done);
+        }
+      }
+      
       addFood= function(){
         count=count+1;
         name = document.querySelector('#name').value;
@@ -29,15 +38,8 @@
         bullet = document.createElement("li");
         
         cB = document.createElement('input');
-        
-        type = document.createAttribute("type");
-        type.value = "checkbox";
-        cB.setAttributeNode(type);
-        cB.onClick=czech();
-
-//add class when checkbox checked called done   this.parentNode selects its parent
-
-        //input type="checkbox" id="cb'count'" onclick="czech(cb'count')"
+        cB.type="checkbox";
+        cB.onClick=checkMe();
         
         bullet.classList.add(foodClass);
         bullet.appendChild(newFood);
@@ -48,25 +50,6 @@
         document.querySelector('#name').value="";
       }
       
-      czech=function(){
-        if(this.checked){
-          this.parentNode.classList.add(done);
-        }else{
-          this.parentNode.classList.delete(done);
-        }
-      }
-      
     </script>
-    
-<!--
-    <ul>
-      <li>
-        <input type="checkbox" onclick="czech(cb1)" />
-      </li>
-      <li>
-        <input type="checkbox" id="cb2" onclick="czech(cb2)" />
-      </li>
-    </ul>
--->
   </body>
 </html>
