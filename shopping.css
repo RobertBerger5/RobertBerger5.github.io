@@ -20,4 +20,10 @@ div{
   position:absolute;
   bottom:0px;
   background-color:#aaaaaa;
+  width:100%;
+  height:50px;
+  
+}
+.new{
+  size:30px;
 }
