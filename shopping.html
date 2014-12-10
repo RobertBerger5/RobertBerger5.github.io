@@ -19,7 +19,6 @@
       count=0;
       addFood= function(){
         count=count+1;
-        console.log(count);
         name = document.querySelector('#name').value;
         list = document.querySelector("#list");
         foodClass = document.querySelector("#foodClass").value;
@@ -31,16 +30,9 @@
         type = document.createAttribute("type");
         type.value = "checkbox";
         cB.setAttributeNode(type);
-        
-        identVal="cb"+count;
-        ident = document.createAttribute("id");       // Create a "class" attribute
-        ident.value = identVal.toString;                           // Set the value of the class attribute
-        cB.setAttributeNode(ident);
-        
-        clickVal="czech(cb"+count+")"
-        onClik = document.createAttribute("onclick");       // Create a "class" attribute
-        onClik.value = clickVal.toString;                           // Set the value of the class attribute
-        cB.setAttributeNode(onClik);
+        cB.onclick=czech();
+
+//add class when checkbox checked called done   this.parentNode selects its parent
 
         //input type="checkbox" id="cb'count'" onclick="czech(cb'count')"
         
@@ -53,12 +45,12 @@
         document.querySelector('#name').value="";
       }
       
-      czech=function(checkNum){
-        theCheckBox=document.querySelector('#'+checkNum)
+      czech=function(){
+        theCheckBox=this;
         if(theCheckBox.checked){
-          console.log(checkNum);
+          this.parentNode.classList.add(done);
         }else{
-          console.log("uncheck "+checkNum);
+          this.parentNode.classList.delete(done);
         }
       }
       
