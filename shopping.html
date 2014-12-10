@@ -20,9 +20,9 @@
       
       checkMe=function(){
         if(this.checked){
-          this.parentNode.classList.add(done);
+          this.parentNode.classList.add("done");
         }else{
-          this.parentNode.classList.remove(done);   //why would you put delete
+          this.parentNode.classList.remove("done");
         }
       }
       
@@ -35,9 +35,9 @@
         
         cB = document.createElement('input');
         cB.type="checkbox";
-        cB.onclick=checkMe();
+        cB.onclick=checkMe;
         
-        bullet.classList.add(foodClass);
+        bullet.classList.add("foodClass");
         bullet.appendChild(newFood);
         list.appendChild(cB);
         list.appendChild(bullet);
