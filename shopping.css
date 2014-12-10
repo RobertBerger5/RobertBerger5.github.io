@@ -16,3 +16,8 @@ li{
 li{
   display=inline;
 }
+div{
+  position:absolute;
+  bottom:0px;
+  background-color:#aaaaaa;
+}
