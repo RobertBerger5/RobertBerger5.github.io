@@ -32,7 +32,7 @@
         name = document.querySelector('#name').value;
         list = document.querySelector("#list");
         foodClass = document.querySelector("#foodClass").value;
-        newFood = document.createTextNode(name);
+      //newFood = document.createTextNode(name);
         bullet = document.createElement("li");
         
         cB = document.createElement('input');
@@ -42,6 +42,7 @@
         bullet.classList.add("foodClass");
         bullet.appendChild(newFood);
         bullet.appendChild(cB);
+        newFood = document.createTextNode(name);
         list.appendChild(bullet);
         document.querySelector('#name').value="";
       }
