@@ -31,5 +31,5 @@ div{
   text-decoration:line-through;
 }
 p{
-  float:left;
+  display:inline;
 }
