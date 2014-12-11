@@ -30,3 +30,6 @@ div{
 .done{
   text-decoration:line-through;
 }
+p{
+  float:left;
+}
