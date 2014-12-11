@@ -16,7 +16,7 @@
       <button onclick="addFood()" class="new">Add to list</button>
     </div>
     <script>
-    console.log("1");
+    console.log("0");
       
       checkMe=function(){
         if(this.checked){
@@ -32,7 +32,7 @@
         name = document.querySelector('#name').value;
         list = document.querySelector("#list");
         foodClass = document.querySelector("#foodClass").value;
-      //newFood = document.createTextNode(name);
+        newFood = document.createTextNode(name);
         bullet = document.createElement("li");
     /**/par=document.createElement("p");
         
@@ -42,6 +42,7 @@
         
         bullet.classList.add("foodClass");
       //bullet.appendChild(newFood);
+        par.appendChild(newFood);
         bullet.appendChild(cB);
         bullet.appendChild(par);
         list.appendChild(bullet);
