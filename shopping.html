@@ -1,7 +1,6 @@
 <html>
   <head>
     <link rel="stylesheet" href="shopping.css" type="text/css">
-    <script src="http://reputablejournal.com/CS130/listsaver.js"></script>
   </head>
   <body>
     <ul id="list" type="none">
@@ -19,11 +18,7 @@
       <button onclick="localSave(list)">Save List</button>
       <button onclick="restoreList(list,checkMe)">Load List</button>
     </div>
-    <script type="text/javascript">
-      window.onLoad=function(){
-        restoreList("list", checkMe);
-      }
-</script>
+    
     <script>
     console.log("1");
       
@@ -56,6 +51,12 @@
         document.querySelector('#name').value="";
       }
       
+    </script>
+    <script src="http://reputablejournal.com/CS130/listsaver.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      window.onLoad=function(){
+        restoreList("list", checkMe);
+      }
     </script>
   </body>
 </html>
