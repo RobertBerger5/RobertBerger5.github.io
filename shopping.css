@@ -34,3 +34,7 @@ p{
 body{
   background-color:#ffffff;
 }
+input{
+  height:100px;
+  width:100px;
+}
