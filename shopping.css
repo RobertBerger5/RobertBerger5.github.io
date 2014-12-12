@@ -36,5 +36,5 @@ body{
 }
 input[type='checkbox']{
   position:relative;
-  top:0px;
+  top:-10px;
 }
