@@ -19,6 +19,11 @@
       <button onclick="localSave(list)">Save List</button>
       <button onclick="restoreList(list,checkMe)">Load List</button>
     </div>
+    <script type="text/javascript">
+      window.onload=function{
+        restoreList("list", checkMe);
+      }
+</script>
     <script>
     console.log("1");
       
@@ -54,8 +59,3 @@
     </script>
   </body>
 </html>
-<script type="text/javascript">
-  window.onload=function{
-    restoreList("list", checkMe);
-  }
-</script>
