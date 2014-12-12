@@ -34,7 +34,7 @@ p{
 body{
   background-color:#ffffff;
 }
-input{
+input[type='checkbox']{
   height:100px;
   width:100px;
 }
