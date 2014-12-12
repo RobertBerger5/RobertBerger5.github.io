@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="shopping.css" type="text/css">
+    <script src="http://reputablejournal.com/CS130/listsaver.js"></script>
   </head>
   <body>
     <ul id="list" type="none">
@@ -14,6 +15,9 @@
         <option>fruit</option>
       </select>
       <button onclick="addFood()" class="new">Add to list</button>
+      <br>
+      <button onclick="localSave(list)">Save List</button>
+      <button onclick="restoreList(list,checkMe)">Load List</button>
     </div>
     <script>
     console.log("1");
@@ -50,3 +54,8 @@
     </script>
   </body>
 </html>
+<script type="text/javascript">
+  window.onload=function{
+    restoreList("list", checkMe);
+  }
+</script>
