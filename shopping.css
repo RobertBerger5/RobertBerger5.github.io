@@ -35,6 +35,5 @@ body{
   background-color:#ffffff;
 }
 input[type='checkbox']{
-  height:100px;
-  width:100px;
+  margin-bottom:10px;
 }
