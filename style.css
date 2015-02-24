@@ -38,10 +38,8 @@ h1{
 a.link{
   font-size:25px;
   color:#000;
-  margin:0px;
+  margin:0px auto;
   padding:0px;
-  left:auto;
-  right:auto;
 }
 #ll{
   border-left:2px solid black;
