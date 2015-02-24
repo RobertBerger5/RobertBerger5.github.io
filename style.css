@@ -67,8 +67,10 @@ footer{
   height:56px;
   background-color:#ddf;
   clear:both;
-  z-index:410000;
+  z-index:41;
   bottom:0px;
+  top:auto;
+  margin-bottom:0px;
 }
 .content{
   top:100px;
