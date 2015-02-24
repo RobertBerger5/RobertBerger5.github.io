@@ -9,6 +9,7 @@ td{
 }
 tr{
   margin:0px;
+  padding:0px;
 }
 table{
   magrin:0px;
@@ -43,11 +44,6 @@ a.link{
 }
 #ll{
   border-left:5px solid black;
-}
-tr{
-  border:1px;
-  margin:100px;
-  padding:100px;
 }
 img{
   height:200px;
