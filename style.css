@@ -1,6 +1,12 @@
 body{
   background-color:#ffffff;
-  }
+}
+td{
+  margin:0px;
+}
+tr{
+  margin:0px;
+}
 li{
   font-size:20px;
 }
