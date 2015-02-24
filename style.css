@@ -68,7 +68,7 @@ footer{
   background-color:#ddf;
   clear:both;
   z-index:410000;
-  margin-bottom:0px;
+  bottom:0px;
 }
 .content{
   top:100px;
