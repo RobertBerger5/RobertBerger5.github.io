@@ -40,7 +40,8 @@ a.link{
   color:#000;
   margin:0px;
   padding:0px;
-  text-align:center;
+  left:auto;
+  right:auto;
 }
 #ll{
   border-left:2px solid black;
