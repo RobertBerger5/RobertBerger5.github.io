@@ -1,17 +1,3 @@
-div.ad{
-  background-color:#ffffff;
-  height:250px;
-  width:200px;
-  text-align:center;
-  margin-top:50px;
-}
-p.ad{
-  color:#000000;
-}
-img.ad{
-  height:175px;
-  width:175px;
-}
 body{
   background-color:#ffffff;
   }
@@ -21,12 +7,6 @@ li{
 p{
   color:#000000;
   padding:3px;
-}
-li.blue{
-  color:#0000ff;
-}
-#purple{
-  color:660066;
 }
 li:hover{
   color:#ff0000;
