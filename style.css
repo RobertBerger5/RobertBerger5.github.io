@@ -39,6 +39,9 @@ tr{
   margin:100px;
   padding:100px;
 }
+img{
+  height:200px;
+}
 
 /* THE DIVS BEGIN HERE. THE DIVS BEGIN HERE. THE DIVS BEGIN HERE. THE DIVS BEGIN HERE. THE DIVS BEGIN HERE. */
 
@@ -61,21 +64,6 @@ nav{
   left:0px;
   top:56px;
   margin:0px;
-}
-aside{
-  width:30%;
-  height:1000px;
-  background-color:#ddffff;
-  float:left;
-  top:224px;
-}
-section{
-  width:70%;
-  height:952px;
-  position:absolute;
-  left:30%;
-  background-color:#eedddd;
-  top:112px;
 }
 footer{
   width:100%;
