@@ -1,5 +1,5 @@
 body{
-  background-color:#fff;
+  background-color:#ff0;
 }
 td{
   margin:0px;
@@ -50,8 +50,10 @@ img{
 .par{
   font-size="15px";
 }
+.title{
+  text-align:center;
+}
 /*DIVS*/
-
 header{
   width:100%;
   height:50px;
