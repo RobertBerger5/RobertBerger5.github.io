@@ -43,6 +43,7 @@ a.link{
 }
 img{
   width:200px;
+  position:relative;
 }
 .par{
   font-size="25px";
