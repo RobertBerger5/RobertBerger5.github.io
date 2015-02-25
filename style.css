@@ -43,7 +43,6 @@ a.link{
 }
 img{
   width:200px;
-  position:static;
 }
 .par{
   font-size="25px";
@@ -82,14 +81,14 @@ footer{
   margin-left:225px;
   margin-right:225px;
 }
-.leftbox{
+#leftbox{
   margin-left:0px;
   left:0px;
   top:50px;
   /*position:fixed;*/
   width:200px;
 }
-.rightbox{
+#rightbox{
   margin-right:0px;
   right:0px;
   top:50px;
