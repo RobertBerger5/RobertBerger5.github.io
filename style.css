@@ -5,7 +5,7 @@ td{
   margin:0px;
   padding:0px;
   border:2px solid black;
-  width:350px;
+  width:325px;
   height:45px;
 }
 tr{
@@ -35,7 +35,7 @@ h1{
   font-size:50px;
 }
 a.link{
-  font-size:35px;
+  font-size:30px;
   color:#000;
   margin:0px auto;
   padding:5px;
