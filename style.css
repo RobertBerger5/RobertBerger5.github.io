@@ -42,7 +42,7 @@ a.link{
   text-decoration:none;
 }
 img{
-  height:200px;
+  width:200px;
 }
 .par{
   font-size="25px";
@@ -78,20 +78,20 @@ footer{
 .content{
   top:100px;
   margin-top:0px;
-  margin-left:125px;
-  margin-right:125px;
+  margin-left:225px;
+  margin-right:225px;
 }
 .leftbox{
   margin-left:0px;
   left:0px;
   top:50px;
   position:fixed;
-  width:100px;
+  width:200px;
 }
 .rightbox{
   margin-right:0px;
   right:0px;
   top:50px;
   position:fixed;
-  width:100px;
+  width:200px;
 }
