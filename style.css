@@ -78,4 +78,20 @@ footer{
 .content{
   top:100px;
   margin-top:0px;
+  margin-left:125px;
+  margin-right:125px;
+}
+.leftbox{
+  margin-left:0px;
+  left:0px;
+  top:50px;
+  position:fixed;
+  width:100px;
+}
+.rightbox{
+  margin-right:0px;
+  right:0px;
+  top:50px;
+  position:fixed;
+  width:100px;
 }
