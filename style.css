@@ -6,6 +6,7 @@ td{
   padding:0px;
   border:2px solid black;
   width:298px;
+  height:25px;
 }
 tr{
   margin:0px;
@@ -37,10 +38,7 @@ a.link{
   font-size:25px;
   color:#000;
   margin:0px auto;
-  padding:0px;
-}
-#ll{
-  border-left:2px solid black;
+  padding:2px;
 }
 img{
   height:200px;
