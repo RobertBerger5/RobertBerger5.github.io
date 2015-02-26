@@ -3,6 +3,9 @@ body{
   background-image: url("http://oi57.tinypic.com/2guz1h4.jpg");
   /*background-repeat:repeat;*/
 }
+#tree{
+  height:400px;
+}
 td{
   margin:0px;
   padding:0px;
