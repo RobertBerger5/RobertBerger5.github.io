@@ -89,6 +89,12 @@ footer{
   margin-left:225px;
   margin-right:225px;
 }
+Llist{
+  
+}
+Rlist{
+  float:left;
+}
 #leftbox{
   margin-left:0px;
   left:0px;
