@@ -92,6 +92,7 @@ footer{
 }
 .Llist{
   width:400px;
+  margin-right:0px;
 }
 .Rlist{
   float:right;
