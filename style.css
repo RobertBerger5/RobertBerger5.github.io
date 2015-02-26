@@ -55,7 +55,7 @@ img{
   margin-bottom:30px;
 }
 .par:before{
-  content:"8==D";
+  content:" ";
 }
 .title{
   text-align:center;
