@@ -45,6 +45,7 @@ a.link{
 }
 img{
   height:200px;
+  position:relative;
 }
 .par{
   /*font-size:25px;*/
