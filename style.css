@@ -44,7 +44,7 @@ a.link{
   text-decoration:none;
 }
 img{
-  width:200px;
+  height:200px;
 }
 .par{
   /*font-size:25px;*/
@@ -89,11 +89,11 @@ footer{
   margin-left:225px;
   margin-right:225px;
 }
-Llist{
-  
-}
-Rlist{
+.Llist{
   float:left;
+}
+.Rlist{
+  float:right;
 }
 #leftbox{
   margin-left:0px;
