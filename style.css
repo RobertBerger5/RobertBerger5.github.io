@@ -98,6 +98,9 @@ footer{
 }
 .rlist{
 }
+#lists{
+  margin-left:400px;
+}
 #leftbox{
   margin-left:0px;
   left:0px;
