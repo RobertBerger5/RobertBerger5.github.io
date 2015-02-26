@@ -23,12 +23,12 @@ li{
 p{
   color:#000;
 }
-li:hover{
+/*li:hover{
   color:#f00;
 }
 li:active{
   color:#0f0;
-}
+}*/
 h1{
   color:#000;
   font-size:50px;
