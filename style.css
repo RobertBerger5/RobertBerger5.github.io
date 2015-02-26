@@ -92,11 +92,11 @@ footer{
 }
 .llist{
   width:400px;
-  height:200px;
+  height:150px;
   margin-right:0px;
+  margin-top:50px;
 }
 .rlist{
-  /*float:right;*/
 }
 #leftbox{
   margin-left:0px;
