@@ -40,11 +40,12 @@ h1{
   font-size:50px;
 }
 a.link{
-  font-size:25px;
+  font-size:20px;
   color:#000;
   margin:0px auto;
   padding:5px;
   text-decoration:none;
+  text-align:center;
 }
 img{
   height:200px;
