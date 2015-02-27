@@ -73,14 +73,14 @@ img{
 header{
   width:100%;
   height:50px;
-  background-color:#dff;
+  background-color:#F4A460;
   position:fixed;
   z-index:10;
   top:0px;
   left:0px;
   text-align:center;
 }
-footer{
+/*footer{
   width:100%;
   height:56px;
   background-color:#ddf;
@@ -89,7 +89,7 @@ footer{
   bottom:0px;
   top:auto;
   margin-bottom:0px;
-}
+}*/
 .content{
   top:100px;
   margin-top:0px;
