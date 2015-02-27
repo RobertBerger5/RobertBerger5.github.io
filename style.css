@@ -23,12 +23,6 @@ li{
 p{
   color:#000;
 }
-/*li:hover{
-  color:#f00;
-}
-li:active{
-  color:#0f0;
-}*/
 h1{
   color:#000;
   font-size:50px;
@@ -38,7 +32,7 @@ h1{
   font-size:50px;
 }
 a.link{
-  font-size:19px;
+  font-size:20px;
   color:#444;
   margin:0px;
   padding:5px;
@@ -48,7 +42,6 @@ a.link{
 }
 a.link:hover{
   color:#000;
-  font-size:21px;
 }
 img{
   height:300px;
@@ -71,7 +64,6 @@ img{
   margin-right:auto;
 }
 .reallink{
-  
 }
 /*DIVS*/
 header{
@@ -111,17 +103,20 @@ header{
 #lists{
   margin-left:20%;
 }
-#leftbox{
+/*#leftbox{
   margin-left:0px;
   left:0px;
   top:50px;
-  position:fixed;/*or absolute*/
+  position:fixed;
   width:200px;
 }
+
+terrible ideas
+
 #rightbox{
   margin-right:0px;
   right:0px;
   top:50px;
-  position:fixed;/*or absolute*/
+  position:fixed;
   width:200px;
-}
+}*/
