@@ -69,6 +69,12 @@ img{
 }
 .reallink{
 }
+#leftpic{
+  float:left;
+}
+#rightpic{
+  float:right;
+}
 /*DIVS*/
 header{
   width:100%;
