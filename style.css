@@ -39,10 +39,13 @@ h1{
 }
 a.link{
   font-size:20px;
-  color:#000;
+  color:#111;
   margin:0px;
   padding:5px;
   text-decoration:none;
+}
+a.link:hover{
+  color:#000;
 }
 img{
   height:300px;
