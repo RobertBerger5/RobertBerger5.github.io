@@ -70,9 +70,11 @@ img{
 .reallink{
 }
 #leftpic{
+  display:block;
   float:left;
 }
 #rightpic{
+  display:block;
   float:right;
 }
 /*DIVS*/
