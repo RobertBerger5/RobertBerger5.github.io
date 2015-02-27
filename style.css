@@ -1,9 +1,9 @@
 body{
   background-image: url("http://oi57.tinypic.com/2guz1h4.jpg");
 }
-/*body:active{
+body:active{
   background-image:url("http://dreamatico.com/data_images/monkey/monkey-5.jpg");
-}*/
+}
 #tree{
   height:800px;
 }
