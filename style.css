@@ -38,7 +38,7 @@ h1{
   font-size:50px;
 }
 a.link{
-  font-size:20px;
+  font-size:19px;
   color:#444;
   margin:0px;
   padding:5px;
@@ -48,6 +48,7 @@ a.link{
 }
 a.link:hover{
   color:#000;
+  font-size:21px;
 }
 img{
   height:300px;
