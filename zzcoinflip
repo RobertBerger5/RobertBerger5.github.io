@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<title>Coin Flip</title>
+		<style>
+			.coinImg{
+				height:50px;
+				width:50px;
+				float:left;
+				margin:5px;
+			}
+			#coinBox{
+				width:100%;
+			}
+			#coinStats{
+				position:fixed;
+				bottom:0px;
+				left:0px;
+				opacity:.75;
+				background:#fff;
+				background-color:#aaf;
+			}
+			#coinResult1,#coinResult2{
+				margin:15px;
+			}
+			#batman{
+				height:98%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="coinBox"></div>
+		<div id="coinStats">
+			<input id="coinNumber" type="text" value="100"></input>
+			<button id="coinButton"onclick="inputShit()">Press and Reload Page</button>
+			<h1 id="coinResult1"></h1>
+			<h1 id="coinResult2"></h1>
+		</div>
+		<script>
+			//user input
+			number=100;
+			function inputShit(){
+				number=document.querySelector("#coinNumber").value;
+				if(number>=0 && number<=100000){
+					localStorage.setItem("numbah",number);
+				}else if(number=="batman"){
+					document.querySelector("body").innerHTML='<img id="batman" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" /><audio id="whale" autoplay src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>';
+				}else if(number<0 || number>1000000){
+					alert("Please enter a number from 0 to 1,000,000");
+				}else{
+					alert("Are you daft?");
+				}
+			}
+			function loadNumber(){
+        		number=localStorage.getItem("numbah");
+        		document.querySelector("#coinNumber").value=number;
+        		doEverything();
+    		};
+    		window.onload=loadNumber;
+
+			//coins
+		function doEverything(){
+			var heads=0;
+			var tails=0;
+			for(var i=0;i<number;i++){
+				var coin=Math.floor(Math.random()*2);
+				coinDiv=document.querySelector("#coinBox");
+				coinImg=document.createElement("img");
+				coinImg.classList.add("coinImg");
+				if(coin==1){
+					heads++;
+					coinImg.src="https://c2.staticflickr.com/4/3334/3600939738_b45618c8dc.jpg";
+				}else{
+					tails++;
+					coinImg.src="https://c2.staticflickr.com/4/3564/3600940260_27bcc33354.jpg";
+				}
+				coinDiv.appendChild(coinImg);
+			}
+
+			//stats
+			document.querySelector("#coinResult1").innerHTML="Heads: "+heads+" | Tails: "+tails;
+			if(heads/tails>1){
+				document.querySelector("#coinResult2").innerHTML=tails/heads;
+			}else if(heads/tails<1){
+				document.querySelector("#coinResult2").innerHTML=heads/tails;
+			}else{
+				document.querySelector("#coinResult2").innerHTML="Same";
+			}
+		}
+		</script>
+	</body>
+</html>
