@@ -31,7 +31,7 @@
 		<div id="coinBox"></div>
 		<div id="coinStats">
 			<input id="coinNumber" type="text" value="100"></input>
-			<button id="coinButton"onclick="inputShit()">Change dem Coins</button>
+			<button id="coinButton"onclick="inputShit()">Numbers 0-1000000</button>
 			<h1 id="coinResult1"></h1>
 			<h1 id="coinResult2"></h1>
 		</div>
@@ -40,7 +40,7 @@
 			number=100;
 			function inputShit(){
 				number=document.querySelector("#coinNumber").value;
-				if(number>=0 && number<=100000){
+				if(number>=0 && number<=1000000){
 					localStorage.setItem("numbah",number);
 					doEverything();
 				}else if(number=="batman"){
