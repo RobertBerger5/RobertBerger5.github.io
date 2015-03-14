@@ -31,7 +31,7 @@
 		<div id="coinBox"></div>
 		<div id="coinStats">
 			<input id="coinNumber" type="text" value="100"></input>
-			<button id="coinButton"onclick="inputShit()">Numbers 0-10000</button>
+			<button id="coinButton"onclick="inputShit()">Enter</button>
 			<h1 id="coinResult1"></h1>
 			<h1 id="coinResult2"></h1>
 		</div>
@@ -40,13 +40,13 @@
 			number=100;
 			function inputShit(){
 				number=document.querySelector("#coinNumber").value;
-				if(number>=0 && number<=10000){
+				if(number>=0 && number<=100000){
 					doEverything();
 					localStorage.setItem("numbah",number);
 				}else if(number=="batman"){
 					document.querySelector("body").innerHTML='<img id="batman" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" /><audio id="whale" autoplay src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>';
-				}else if(number<0 || number>10000){
-					alert("Please enter a number from 0 to 10000");
+				}else if(number<0 || number>1000000){
+					alert("Please enter a number from 0 to 1,000,000");
 				}else{
 					alert("Are you daft?");
 				}
@@ -62,9 +62,10 @@
 		function doEverything(){
 			var heads=0;
 			var tails=0;
+			coinDiv=document.querySelector("#coinBox");
+			coinDiv.innerHTML="";
 			for(var i=0;i<number;i++){
 				var coin=Math.floor(Math.random()*2);
-				coinDiv=document.querySelector("#coinBox");
 				coinImg=document.createElement("img");
 				coinImg.classList.add("coinImg");
 				if(coin==1){
@@ -74,7 +75,6 @@
 					tails++;
 					coinImg.src="https://c2.staticflickr.com/4/3564/3600940260_27bcc33354.jpg";
 				}
-				coinDiv.innerHTML="";
 				coinDiv.appendChild(coinImg);
 			}
 
@@ -88,9 +88,6 @@
 				document.querySelector("#coinResult2").innerHTML="Same";
 			}
 		}
-		
-		//localStorage.setItem("numbah",0);
-		
 		</script>
 	</body>
 </html>
