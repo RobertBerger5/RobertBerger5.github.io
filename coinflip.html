@@ -31,7 +31,7 @@
 		<div id="coinBox"></div>
 		<div id="coinStats">
 			<input id="coinNumber" type="text" value="100"></input>
-			<button id="coinButton"onclick="inputShit()">Numbers 0-1000000</button>
+			<button id="coinButton"onclick="inputShit()">Numbers 0-10000</button>
 			<h1 id="coinResult1"></h1>
 			<h1 id="coinResult2"></h1>
 		</div>
@@ -40,13 +40,13 @@
 /*			number=100;
 			function inputShit(){
 				number=document.querySelector("#coinNumber").value;
-				if(number>=0 && number<=100000){
+				if(number>=0 && number<=10000){
 					doEverything();
 					localStorage.setItem("numbah",number);
 				}else if(number=="batman"){
 					document.querySelector("body").innerHTML='<img id="batman" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" /><audio id="whale" autoplay src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>';
-				}else if(number<0 || number>100000){
-					alert("Please enter a number from 0 to 1,000,000");
+				}else if(number<0 || number>10000){
+					alert("Please enter a number from 0 to 10000");
 				}else{
 					alert("Are you daft?");
 				}
