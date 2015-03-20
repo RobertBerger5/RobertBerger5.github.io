@@ -101,6 +101,10 @@
         $('#content').fadeTo('slow', 0) //.delay(5000);
         window.location.href = "http://robertberger5.github.io/"+href;
       }
+      
+      $( document ).ready(function() {
+        $('#content:hidden:first').fadeIn('slow');
+      });
     </script>
   </body>
 </html>
