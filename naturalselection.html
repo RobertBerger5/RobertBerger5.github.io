@@ -101,10 +101,9 @@
       });
     </script>
     <script>
-        console.log("0");
-        function redirect(href){
-        //$('#content').fadeOut("slow").delay(5000);
-        $('#content').fadeOut('slow', function(){
+      console.log("0");
+      function redirect(href){
+        $('#content').fadeOut('fast', function(){
           window.location.href = "http://robertberger5.github.io/"+href;
         });
       }
