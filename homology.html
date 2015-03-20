@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <link href="http://oi58.tinypic.com/2d8m6uh.jpg" rel="icon" type="image/x-icon" />
   </head>
-  <body>
+  <body><div id="content">
     <header>
       <table>
         <tr>
@@ -62,5 +62,19 @@
       <img class="mid" src="http://www.godandscience.org/images/chimp_human_sediba_hands.jpg" />
     </div>
     <p id="bottom">DHS 6th Hour</p>
+    <script>
+      $( document ).ready(function() {
+        $('#content').fadeIn('slow');
+      });
+    </script>
+    <script>
+      console.log("0");
+      function redirect(href){
+        $('#content').fadeOut('fast', function(){
+          window.location.href = "http://robertberger5.github.io/"+href;
+        });
+      }
+    </script>
+    </div>
   </body>
 </html>
