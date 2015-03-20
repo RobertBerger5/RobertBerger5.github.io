@@ -5,12 +5,12 @@
     <link href="http://oi58.tinypic.com/2d8m6uh.jpg" rel="icon" type="image/x-icon" />
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
-  <body>
+  <body><div id="content">
     <header>
       <table>
         <tr>
           <td>
-            <a class="link" id="ll" href="/index">Home</a>
+            <a class="link" id="ll" href="/index" onclick="redirect(index)">Home</a>
           </td>
           <td bgcolor="#282">
             <a class="link" id="ll" href="/naturalselection">Natural Selection</a>
@@ -34,8 +34,8 @@
       </table>
       
       <script>
-        function link(href){
-          $('body').
+        function redirect(href){
+          $('#content').fadeOut("slow").window.location.href = "/"+href;
           //fade out body, make it link with   window.location.href = "http://stackoverflow.com";   then make window.onload fade it in 
         }
       </script>
@@ -100,12 +100,5 @@
       src="http://humanorigins.si.edu/sites/default/files/BrainSizeIncreaseClimateFluctuation_l.jpg" />
     </div>
     <p id="bottom">DHS 6th Hour</p>
-  </body>
+  </div></body>
 </html>
-
-
-
-
-
-
-
