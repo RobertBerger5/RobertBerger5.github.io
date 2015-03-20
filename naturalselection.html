@@ -35,7 +35,7 @@
       
       <script>
         function redirect(href){
-          $('body').fadeOut("slow").window.location.href = "/"+href;
+          $('#content').fadeOut("slow").window.location.replace = "/"+href;
           //fade out body, make it link with   window.location.href = "http://stackoverflow.com";   then make window.onload fade it in 
         }
       </script>
