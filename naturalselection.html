@@ -33,14 +33,7 @@
         </tr>
       </table>
       
-      <script>
-        console.log("0");
-        function redirect(href){
-          $('#content').fadeOut("slow").delay(5000);
-          //fade out body, make it link with   window.location.href = "http://stackoverflow.com";   then make window.onload fade it in 
-          window.location.href = "http://robertberger5.github.io/"+href;
-        }
-      </script>
+      
       
     </header>
     <br>
@@ -102,5 +95,14 @@
       src="http://humanorigins.si.edu/sites/default/files/BrainSizeIncreaseClimateFluctuation_l.jpg" />
     </div>
     <p id="bottom">DHS 6th Hour</p>
-  </div></body>
+    </div>
+    <script>
+        console.log("1");
+        function redirect(href){
+        $('#content').fadeOut("slow").delay(5000);
+        //fade out body, make it link with   window.location.href = "http://stackoverflow.com";   then make window.onload fade it in 
+        window.location.href = "http://robertberger5.github.io/"+href;
+      }
+    </script>
+  </body>
 </html>
