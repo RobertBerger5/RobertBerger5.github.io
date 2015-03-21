@@ -2,7 +2,7 @@ body{
   background-image: url("http://oi57.tinypic.com/2guz1h4.jpg");
   height:101%;
 }
-body:active{
+#content:active{
   cursor:url("http://i59.tinypic.com/s2z52a.png"),auto;
 }
 #bottom{
