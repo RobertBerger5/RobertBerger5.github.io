@@ -2,9 +2,9 @@ body{
   background-image: url("http://oi57.tinypic.com/2guz1h4.jpg");
   height:101%;
 }
-/*body:active{
-  background-image:url("http://kakaducomedy.com/wp-content/uploads/2015/02/the-tree-of-life-are-big-and-lush-tree-of-life-giving-oxygen-to-other-living-beings-the-roots-of-the-tree-of-life-animated-glow.jpg");
-}*/
+body:active{
+  cursor:url("http://i59.tinypic.com/s2z52a.png"),auto;
+}
 #bottom{
   text-align:center;
   bottom:10px;
