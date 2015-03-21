@@ -5,7 +5,7 @@ $( document ).ready(function() {
 });
 
 function redirect(href){
-  $('#content').fadeOut('fast', function(){
+  $('#content').fadeOut(500, function(){
     window.location.href = "http://robertberger5.github.io/"+href;
   });
 }
