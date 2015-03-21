@@ -1,7 +1,7 @@
 console.log("0");
 
 $( document ).ready(function() {
-  $('#content').fadeIn(5000);
+  $('#content').fadeIn(500);
 });
 
 function redirect(href){
