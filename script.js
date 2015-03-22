@@ -15,5 +15,5 @@ $('.link')
     $(this).animate({backgroundColor: "#f00"}, 'slow');
   })
   .mouseout(function() {
-    $(this).animate({backgroundColor:"#444"},'slow');
+    $(this).animate({backgroundColor:"#3a3"},'slow');
   });
