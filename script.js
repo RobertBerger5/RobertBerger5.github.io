@@ -9,7 +9,7 @@ function redirect(href){
 }
 
 
-$('td')
+$('p')
   .mouseover(function() {
     $(this).animate({backgroundColor: "#f00"}, 100);
   })
