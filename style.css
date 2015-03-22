@@ -43,6 +43,7 @@ h1{
 .link{
   font-size:20px;
   color:#444;
+  opacity:.8;
   background-color:#3a3;
   margin:0px;
   padding:10px;
@@ -52,6 +53,7 @@ h1{
 }
 .link:hover{
   color:#000;
+  opacity:1;
 }
 img{
   height:300px;
@@ -88,7 +90,7 @@ img{
 header{
   width:100%;
   height:50px;
-  background-color:#3a3;
+  background-color:#292;
   position:fixed;
   z-index:10;
   top:0px;
