@@ -9,3 +9,11 @@ function redirect(href){
     window.location.href = "http://robertberger5.github.io/"+href;
   });
 }
+
+$('.link')
+  .mouseover(function() {
+    $(this).animate({backgroundColor: "#fff"}, 'slow');
+  })
+  .mouseout(function() {
+    $(this).animate({backgroundColor:"#000"},'slow');
+  });
