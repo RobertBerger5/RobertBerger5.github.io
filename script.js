@@ -9,10 +9,17 @@ function redirect(href){
 }
 
 
-$('p')
+/*$('p')
   .mouseover(function() {
     $(this).animate({backgroundColor: "#f00"}, 100);
   })
   .mouseout(function() {
     $(this).animate({backgroundColor:"#3a3"},100);
+  });*/
+
+  $("p" ).hover(
+  function() {
+     $(this).animate({backgroundColor: "#fff"}, 'slow');
+  }, function() {
+    $(this).animate({backgroundColor:"#000"},'slow');
   });
