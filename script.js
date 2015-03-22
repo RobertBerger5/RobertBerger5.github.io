@@ -8,8 +8,15 @@ function redirect(href){
   });
 };
 
+$('p')
+.mouseover(function() {
+  $(this).css('background-color','#3a3').animate({backgroundColor: '#f00'},{duration:100});
+})
+.mouseout(function() {
+  $(this).css('background-color','#f00').animate({backgroundColor: '#3a3'},{duration:100});
+});
 
-$('body').click(function(){
+/*$('body').click(function(){
   $( "p" ).animate({
     width: "70%",
     opacity: 0.4,
@@ -17,4 +24,4 @@ $('body').click(function(){
     fontSize: "3em",
     borderWidth: "10px"
   }, 1500 );
-});
+});*/
