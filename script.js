@@ -1,3 +1,5 @@
+console.log("0");
+
 $( document ).ready(function() {
   $('#content').fadeIn(500);
 });
