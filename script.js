@@ -10,7 +10,7 @@ function redirect(href){
   });
 }
 
-$('.link')
+$('td')
   .mouseover(function() {
     $(this).animate({backgroundColor: "#f00"}, 'slow');
   })
