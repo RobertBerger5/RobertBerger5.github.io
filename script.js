@@ -12,8 +12,8 @@ function redirect(href){
 
 $('.link')
   .mouseover(function() {
-    $(this).animate({backgroundColor: "#fff"}, 'slow');
+    $(this).animate({backgroundColor: "#f00"}, 'slow');
   })
   .mouseout(function() {
-    $(this).animate({backgroundColor:"#000"},'slow');
+    $(this).animate({backgroundColor:"#444"},'slow');
   });
