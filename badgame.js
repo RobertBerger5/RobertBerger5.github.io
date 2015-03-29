@@ -54,7 +54,7 @@ var jiggle=1.5;
 // Fuck shit up
 var hurd=false;
 function hard(){
-	monster.speed=100;
+	monster.speed=200;
 	jiggle=5;
 	hero.speed=250;
 	bgImage.src = "http://thedailyblog.co.nz/wp-content/uploads/2015/02/hell-background.jpg";
