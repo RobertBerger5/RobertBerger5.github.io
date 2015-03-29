@@ -302,7 +302,7 @@ var update = function (modifier) {
 	}else{}
 
 
-	if(monstersCaught==10){
+	if(monstersCaught==100){
 		document.querySelector("body").innerHTML='<img id="batman" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" /><audio id="whale" autoplay src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>';
 	}
 };
