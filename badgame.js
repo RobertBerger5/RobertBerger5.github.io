@@ -21,7 +21,7 @@ var heroImage = new Image();
 heroImage.onload = function () {
 	heroReady = true;
 };
-heroImage.src = "http://i.imgur.com/oZPX0bb.png";
+heroImage.src = "http://i.imgur.com/ld2k1Ba.png";
 //http://www.lostdecadegames.com/demos/simple_canvas_game/images/hero.png
 
 
@@ -44,17 +44,35 @@ var monster = {
 	speed:25,
 };
 
+var monstersCaught = 0;
 
-// Walls
-var wallLeft={
-	x:0,
-	y:0,
-	height:canvas.width,
-	width:1
+var jiggle=1.5;
+
+
+
+
+// Fuck shit up
+var hurd=false;
+function hard(){
+	monster.speed=100;
+	jiggle=5;
+	hero.speed=250;
+	bgImage.src = "http://thedailyblog.co.nz/wp-content/uploads/2015/02/hell-background.jpg";
+	/*heroImage.src="https://cdn4.iconfinder.com/data/icons/dot/64/man_person_mens_room.png";*/
+	monsterImage.src="http://icons.iconarchive.com/icons/martin-berube/character/256/Devil-icon.png";
+	hurd=true;
 }
 
+function easy(){
+	monster.speed=25;
+	jiggle=1.5;
+	hero.speed=500;
+	bgImage.src = "http://www.crazymonkeydefense.com/wp-content/uploads/2014/03/black-hd-background-background-wallpapers-abstract-photo-cool-black-background.jpg";
+	/*heroImage.src="https://cdn4.iconfinder.com/data/icons/dot/64/man_person_mens_room.png";*/
+	monsterImage.src="http://icons.iconarchive.com/icons/martin-berube/character/256/Devil-icon.png";
+	hurd=false;
+}
 
-var monstersCaught = 0;
 
 
 
@@ -68,6 +86,34 @@ $(document).ready(function(){
 function changeVolume(volume){
 	$('audio').prop("volume", volume/10);
 }
+
+
+
+
+
+
+
+// New shit function
+/*function newShit(x,y){
+	ctx.fillRect(x, y, 10, 10);
+}
+
+
+var shits=[]
+for(i=0;i<1000;i++){
+	shits[i]= new newShit(Math.random()*canvas.height,Math.random()*canvas.width)
+}*/
+
+
+
+/*$( "body" ).on( "keydown", function( event ) {
+	if(event.which=="37"||event.which=="65"){
+		$("#scream").muted=false;
+	}else{
+		$("#scream").muted=true;
+	}
+});*/
+
 
 
 
@@ -122,7 +168,11 @@ var update = function (modifier) {
 		heroImage.src = "http://i.imgur.com/RPZ43WI.png";
 	}
 	if (32 in keysDown) { // Player pressing space
-		$("#scream").trigger('play');
+		$("#scream").muted=false;
+		/*console.log("not muted");*/
+	}else{
+		$("#scream").muted=true;
+		/*console.log("muted");*/
 	}
 
 	// Are they touching?
@@ -132,35 +182,58 @@ var update = function (modifier) {
 		&& hero.y <= (monster.y + 110)
 		&& monster.y <= (hero.y + 110)
 	) {
-		$("#monsterDeath").trigger('play');
-		++monstersCaught;
-		reset();
+		if(hurd==true){
+			$("#monsterDeath").trigger('play');
+			heroImage.src = "http://fc09.deviantart.net/fs71/f/2011/143/2/f/blood_splatter_transparency_by_sagacious-d3h1yw6.png";
+			monsterImage.src=""
+			hero.speed=0;
+		}else{
+			$("#monsterDeath").trigger('play');
+			++monstersCaught;
+			reset();
+		}
 	}
 
 
 	// Monster moves away
-	if(monster.y<hero.y){
-		monster.y-=monster.speed * modifier;
-	}else{
-		monster.y+=monster.speed * modifier;
+	if(hurd==false){
+		if(monster.y<hero.y){
+			monster.y-=monster.speed * modifier;
+		}else{
+			monster.y+=monster.speed * modifier;
+		}
+		if(monster.x<hero.x){
+			monster.x-=monster.speed * modifier;
+		}else{
+			monster.x+=monster.speed * modifier;
+		}
 	}
-	if(monster.x<hero.x){
-		monster.x-=monster.speed * modifier;
-	}else{
-		monster.x+=monster.speed * modifier;
+
+	if(hurd==true){
+		if(monster.y<hero.y){
+			monster.y+=monster.speed * modifier;
+		}else{
+			monster.y-=monster.speed * modifier;
+		}
+		if(monster.x<hero.x){
+			monster.x+=monster.speed * modifier;
+		}else{
+			monster.x-=monster.speed * modifier;
+		}
 	}
+
 	// Monster jiggle
 	yRand=Math.random();
 	xRand=Math.random();
 	if(yRand>.5){
-		monster.y-=monster.speed * modifier*1.5;
+		monster.y-=monster.speed * modifier*jiggle;
 	}else{
-		monster.y+=monster.speed * modifier*1.5;
+		monster.y+=monster.speed * modifier*jiggle;
 	}
 	if(xRand>.5){
-		monster.x-=monster.speed * modifier*1.5;
+		monster.x-=monster.speed * modifier*jiggle;
 	}else{
-		monster.x+=monster.speed * modifier*1.5;
+		monster.x+=monster.speed * modifier*jiggle;
 	}
 
 	// Walls
@@ -216,22 +289,22 @@ var update = function (modifier) {
 
 	if(hero.x>canvas.width){
 		hero.x-=hero.speed*modifier*10;
-	}
+	}else{}
 	if(hero.y>canvas.height){
 		hero.y-=hero.speed*modifier*10;
-	}
+	}else{}
 
 	if(monster.x>canvas.width){
 		monster.x-=monster.speed*modifier*100;
-	}
+	}else{}
 	if(monster.y>canvas.height){
 		monster.y-=monster.speed*modifier*100;
-	}
+	}else{}
 
-	if(monstersCaught==100){
+
+	if(monstersCaught==10){
 		document.querySelector("body").innerHTML='<img id="batman" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" /><audio id="whale" autoplay src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>';
 	}
-
 };
 
 // Timer
@@ -253,6 +326,20 @@ var render = function () {
 	if (monsterReady) {
 		ctx.drawImage(monsterImage, monster.x, monster.y);
 	}
+
+
+
+
+
+
+	// Add new shit
+	/*myShit= new newShit(Math.random()*canvas.width,Math.random()*canvas.height);*/
+
+
+
+
+
+
 
 	// Score
 	ctx.fillStyle = "#f00";
