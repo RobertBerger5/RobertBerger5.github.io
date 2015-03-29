@@ -62,7 +62,7 @@ var monstersCaught = 0;
 
 // Audio volume
 $(document).ready(function(){
-	$('audio').prop("volume", .3);
+	$('audio').prop("volume", .5);
 })
 
 function changeVolume(volume){
