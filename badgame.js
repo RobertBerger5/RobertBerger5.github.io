@@ -1,4 +1,56 @@
-("volume", .25);
+// Create the canvas
+var canvas = document.querySelector("canvas");
+var ctx = canvas.getContext("2d");
+canvas.width = $(window).width();
+canvas.height = $(window).height();
+//divthing.appendChild(canvas);
+
+// Background image
+var bgReady = false;
+var bgImage = new Image();
+bgImage.onload = function () {
+	bgReady = true;
+};
+bgImage.src = "http://www.crazymonkeydefense.com/wp-content/uploads/2014/03/black-hd-background-background-wallpapers-abstract-photo-cool-black-background.jpg";
+//http://www.lostdecadegames.com/demos/simple_canvas_game/images/background.png
+//http://www.crazymonkeydefense.com/wp-content/uploads/2014/03/black-hd-background-background-wallpapers-abstract-photo-cool-black-background.jpg
+
+// Hero image
+var heroReady = false;
+var heroImage = new Image();
+heroImage.onload = function () {
+	heroReady = true;
+};
+heroImage.src = "http://i.imgur.com/ld2k1Ba.png";
+//http://www.lostdecadegames.com/demos/simple_canvas_game/images/hero.png
+
+
+// Monster image
+var monsterReady = false;
+var monsterImage = new Image();
+monsterImage.onload = function () {
+	monsterReady = true;
+};
+//http://www.lostdecadegames.com/demos/simple_canvas_game/images/monster.png
+
+
+// Game objects
+var hero = {
+	speed: 500, // movement in pixels per second
+	x:canvas.width / 2,
+	y:canvas.height / 2
+};
+var monster = {
+	speed:25,
+};
+
+var monstersCaught = 0;
+
+var jiggle=1.5;
+
+// Audio volume
+$(document).ready(function(){
+	$('audio').prop("volume", .25);
 })
 
 function changeVolume(volume){
