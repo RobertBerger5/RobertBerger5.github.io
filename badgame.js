@@ -1,54 +1,9 @@
-// Create the canvas
-var canvas = document.createElement("canvas");
-var ctx = canvas.getContext("2d");
-canvas.width = $(window).width();
-canvas.height = $(window).height();
-document.body.appendChild(canvas);
+("volume", .25);
+})
 
-// Background image
-var bgReady = false;
-var bgImage = new Image();
-bgImage.onload = function () {
-	bgReady = true;
-};
-bgImage.src = "http://www.crazymonkeydefense.com/wp-content/uploads/2014/03/black-hd-background-background-wallpapers-abstract-photo-cool-black-background.jpg";
-//http://www.lostdecadegames.com/demos/simple_canvas_game/images/background.png
-//http://www.crazymonkeydefense.com/wp-content/uploads/2014/03/black-hd-background-background-wallpapers-abstract-photo-cool-black-background.jpg
-
-// Hero image
-var heroReady = false;
-var heroImage = new Image();
-heroImage.onload = function () {
-	heroReady = true;
-};
-heroImage.src = "http://i.imgur.com/ld2k1Ba.png";
-//http://www.lostdecadegames.com/demos/simple_canvas_game/images/hero.png
-
-
-// Monster image
-var monsterReady = false;
-var monsterImage = new Image();
-monsterImage.onload = function () {
-	monsterReady = true;
-};
-//http://www.lostdecadegames.com/demos/simple_canvas_game/images/monster.png
-
-
-// Game objects
-var hero = {
-	speed: 500, // movement in pixels per second
-	x:canvas.width / 2,
-	y:canvas.height / 2
-};
-var monster = {
-	speed:25,
-};
-
-var monstersCaught = 0;
-
-var jiggle=1.5;
-
-
+function changeVolume(volume){
+	$('audio').prop("volume", volume/10);
+}
 
 
 // Fuck shit up
@@ -78,14 +33,6 @@ function easy(){
 
 
 
-// Audio volume
-$(document).ready(function(){
-	$('audio').prop("volume", .5);
-})
-
-function changeVolume(volume){
-	$('audio').prop("volume", volume/10);
-}
 
 
 
@@ -302,8 +249,18 @@ var update = function (modifier) {
 	}else{}
 
 
+	// Have it make the canvas's opacity go to 0, then go back to 1 and continue
+	var normal= document.querySelector("#top").innerHTML;
+	//console.log(normal);
 	if(monstersCaught==100){
-		document.querySelector("body").innerHTML='<img id="batman" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" /><audio id="whale" autoplay src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>';
+		document.querySelector("#top").innerHTML='<img id="batman" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" /><audio id="whale" autoplay src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>';
+		changeVolume(10);
+		//console.log("changed");
+		/*setTimeout(function(){
+			document.querySelector("#top").innerHTML=normal;
+			console.log("changed back");
+			monstersCaught++;
+		}, 1000);*/
 	}
 };
 
@@ -342,14 +299,13 @@ var render = function () {
 
 
 	// Score
-	ctx.fillStyle = "#f00";
-	ctx.font = "15px Comic Sans MS";
+	ctx.fillStyle = "rgba(255, 0, 0, 0.25)";
+	ctx.font = "30px Arial";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
 	ctx.fillText("Beasties caught: " + monstersCaught, 5, 5);
-	ctx.fillText("Time: "+time+" seconds", 5, 20);
-	ctx.fillText("Score per minute: "+ Math.floor(monstersCaught/(time/60)), 5, 34);
-	ctx.fillText("FPS: Like fucking 1200", 5, 50);
+	ctx.fillText("Time: "+time+" seconds", 5, 30);
+	ctx.fillText("Score per minute: "+ Math.floor(monstersCaught/(time/60)), 5, 55);
 };
 
 // The main game loop
@@ -388,146 +344,3 @@ $( window ).resize(function() {
 	ctx.canvas.height = window.innerHeight;
 	render();
 });
-
-
-
-
-
-
-
-
-
-//EMERGENCY BACKUP
-
-
-/*// Create the canvas
-var canvas = document.createElement("canvas");
-var ctx = canvas.getContext("2d");
-canvas.width = 512;
-canvas.height = 480;
-document.body.appendChild(canvas);
-
-// Background image
-var bgReady = false;
-var bgImage = new Image();
-bgImage.onload = function () {
-	bgReady = true;
-};
-bgImage.src = "http://www.lostdecadegames.com/demos/simple_canvas_game/images/background.png";
-
-// Hero image
-var heroReady = false;
-var heroImage = new Image();
-heroImage.onload = function () {
-	heroReady = true;
-};
-heroImage.src = "http://www.lostdecadegames.com/demos/simple_canvas_game/images/hero.png";
-
-// Monster image
-var monsterReady = false;
-var monsterImage = new Image();
-monsterImage.onload = function () {
-	monsterReady = true;
-};
-monsterImage.src = "http://www.lostdecadegames.com/demos/simple_canvas_game/images/monster.png";
-
-// Game objects
-var hero = {
-	speed: 256 // movement in pixels per second
-};
-var monster = {};
-var monstersCaught = 0;
-
-// Handle keyboard controls
-var keysDown = {};
-
-addEventListener("keydown", function (e) {
-	keysDown[e.keyCode] = true;
-}, false);
-
-addEventListener("keyup", function (e) {
-	delete keysDown[e.keyCode];
-}, false);
-
-// Reset the game when the player catches a monster
-var reset = function () {
-	hero.x = canvas.width / 2;
-	hero.y = canvas.height / 2;
-
-	// Throw the monster somewhere on the screen randomly
-	monster.x = 32 + (Math.random() * (canvas.width - 64));
-	monster.y = 32 + (Math.random() * (canvas.height - 64));
-};
-
-// Update game objects
-var update = function (modifier) {
-	if (38 in keysDown) { // Player holding up
-		hero.y -= hero.speed * modifier;
-	}
-	if (40 in keysDown) { // Player holding down
-		hero.y += hero.speed * modifier;
-	}
-	if (37 in keysDown) { // Player holding left
-		hero.x -= hero.speed * modifier;
-	}
-	if (39 in keysDown) { // Player holding right
-		hero.x += hero.speed * modifier;
-	}
-
-	// Are they touching?
-	if (
-		hero.x <= (monster.x + 32)
-		&& monster.x <= (hero.x + 32)
-		&& hero.y <= (monster.y + 32)
-		&& monster.y <= (hero.y + 32)
-	) {
-		++monstersCaught;
-		reset();
-	}
-};
-
-// Draw everything
-var render = function () {
-	if (bgReady) {
-		ctx.drawImage(bgImage, 0, 0);
-	}
-
-	if (heroReady) {
-		ctx.drawImage(heroImage, hero.x, hero.y);
-	}
-
-	if (monsterReady) {
-		ctx.drawImage(monsterImage, monster.x, monster.y);
-	}
-
-	// Score
-	ctx.fillStyle = "rgb(250, 250, 250)";
-	ctx.font = "24px Helvetica";
-	ctx.textAlign = "left";
-	ctx.textBaseline = "top";
-	ctx.fillText("Goblins caught: " + monstersCaught, 32, 32);
-};
-
-// The main game loop
-var main = function () {
-	var now = Date.now();
-	var delta = now - then;
-
-	update(delta / 1000);
-	render();
-
-	then = now;
-
-	// Request to do this again ASAP
-	requestAnimationFrame(main);
-};
-
-// Cross-browser support for requestAnimationFrame
-var w = window;
-requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
-
-// Let's play this game!
-var then = Date.now();
-reset();
-main();
-*/
