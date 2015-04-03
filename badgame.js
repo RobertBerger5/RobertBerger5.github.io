@@ -345,7 +345,7 @@ var update = function (modifier) {
 	}
 
 	// FUCKING LOUD
-	if(monstersCaught==10+randNum){
+	if(monstersCaught==11+randNum){
 		$('#background').prop("volume", 1);
 		changeVolume(10);
 	}
