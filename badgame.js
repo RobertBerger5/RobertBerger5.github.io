@@ -76,14 +76,15 @@ function easy(){
 	hero.speed=500;
 	bgImage.src = "http://www.crazymonkeydefense.com/wp-content/uploads/2014/03/black-hd-background-background-wallpapers-abstract-photo-cool-black-background.jpg";
 	/*heroImage.src="https://cdn4.iconfinder.com/data/icons/dot/64/man_person_mens_room.png";*/
-	monsterImage.src="http://icons.iconarchive.com/icons/martin-berube/character/256/Devil-icon.png";
+	monsterImage.src="http://i.imgur.com/pflhY0z.png";
 	hurd=false;
 }
 
+// Random number for batman loud sound surprise
+randNum=Math.floor(Math.random()*10);
 
-
-
-
+// Pause button
+var paused=false;
 
 
 
@@ -104,19 +105,45 @@ for(i=0;i<1000;i++){
 }*/
 
 
+function holdup(){
+	paused=true;
+	hero.speed=0;
+	monster.speed=0;
+	document.getElementById("background").pause();
+}
 
-/*$( "body" ).on( "keydown", function( event ) {
-	if(event.which=="37"||event.which=="65"){
-		$("#scream").muted=false;
-	}else{
-		$("#scream").muted=true;
-	}
-});*/
+function keepgoin(){
+	paused=false;
+	hero.speed=500;
+	monster.speed=25;
+	document.getElementById("background").play();
+}
+
+
 
 
 
 
 // Handle keyboard controls
+
+// Pause
+$( "body" ).on( "keydown", function( event ) {
+	if(event.which=="13"&&paused==false){
+		holdup() //pause
+	}else if(event.which=="13"&&paused==true){
+		keepgoin() //resume
+	}else if(event.which=="32"){
+		document.getElementById("scream").play(); //scream
+	}else if(event.which=="27"&&hurd==false){
+		hard(); //hard
+	}else if(event.which=="27"&&hurd==true){
+		easy(); //easy
+	}else if(event.which<58 && event.which>47){
+		changeVolume(event.which-48);
+	}
+});
+
+// Main keys
 var keysDown = {};
 
 addEventListener("keydown", function (e) {
@@ -150,29 +177,29 @@ var reset = function () {
 
 // Update game objects
 var update = function (modifier) {
-	if (38 in keysDown || 87 in keysDown) { // Player holding up
+	if ((38 in keysDown || 87 in keysDown)&&paused==false) { // Player holding up
 		hero.y -= hero.speed * modifier;
 		heroImage.src = "http://i.imgur.com/ld2k1Ba.png";
 	}
-	if (40 in keysDown || 83 in keysDown) { // Player holding down
+	if ((40 in keysDown || 83 in keysDown)&&paused==false) { // Player holding down
 		hero.y += hero.speed * modifier;
 		heroImage.src = "http://i.imgur.com/azsvBrY.png";
 	}
-	if (37 in keysDown || 65 in keysDown) { // Player holding left
+	if ((37 in keysDown || 65 in keysDown)&&paused==false) { // Player holding left
 		hero.x -= hero.speed * modifier;
 		heroImage.src = "http://i.imgur.com/aS3kDkT.png";
 	}
-	if (39 in keysDown || 68 in keysDown) { // Player holding right
+	if ((39 in keysDown || 68 in keysDown)&&paused==false) { // Player holding right
 		hero.x += hero.speed * modifier;
 		heroImage.src = "http://i.imgur.com/RPZ43WI.png";
 	}
-	if (32 in keysDown) { // Player pressing space
-		$("#scream").muted=false;
-		/*console.log("not muted");*/
-	}else{
+	/*if (32 in keysDown) { // Player pressing space
+		document.getElementById("#scream").play();
+		//console.log("not muted");
+	}/*else{
 		$("#scream").muted=true;
-		/*console.log("muted");*/
-	}
+		//console.log("muted");
+	}*/
 
 	// Are they touching?
 	if (
@@ -304,9 +331,11 @@ var update = function (modifier) {
 	// Have it make the canvas's opacity go to 0, then go back to 1 and continue
 	var normal= document.querySelector("#top").innerHTML;
 	//console.log(normal);
-	if(monstersCaught==100){
+	if(monstersCaught==10){
+		$('#background').prop("volume", 0);
 		document.querySelector("#top").innerHTML='<img id="batman" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" /><audio id="whale" autoplay src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>';
-		changeVolume(10);
+		//changeVolume(10);
+
 		//console.log("changed");
 		/*setTimeout(function(){
 			document.querySelector("#top").innerHTML=normal;
@@ -314,12 +343,20 @@ var update = function (modifier) {
 			monstersCaught++;
 		}, 1000);*/
 	}
+
+	// FUCKING LOUD
+	if(monstersCaught==10+randNum){
+		$('#background').prop("volume", 1);
+		changeVolume(10);
+	}
 };
 
 // Timer
 var time=0;
 setInterval(function(){
-	time++
+	if(paused==false){
+		time++;
+	}
 },1000);
 
 // Draw everything
@@ -351,13 +388,22 @@ var render = function () {
 
 
 	// Score
-	ctx.fillStyle = "rgba(255, 0, 0, 0.25)";
+	ctx.fillStyle = "rgba(255, 255, 255, 0.75)";
 	ctx.font = "30px Arial";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
 	ctx.fillText("Beasties caught: " + monstersCaught, 5, 5);
 	ctx.fillText("Time: "+time+" seconds", 5, 30);
 	ctx.fillText("Score per minute: "+ Math.floor(monstersCaught/(time/60)), 5, 55);
+	// Controls
+	ctx.font = "15px Arial";
+	ctx.textAlign = "right";
+	ctx.fillText("Controls:", canvas.width-5, 5);
+	ctx.fillText("WASD/Arrows = Directions", canvas.width-5, 25);
+	ctx.fillText("Enter = Pause", canvas.width-5, 45);
+	ctx.fillText("Space = Scream", canvas.width-5, 65);
+	ctx.fillText("Number Keys = Volume", canvas.width-5, 85);
+	ctx.fillText("Escape = Change Difficulty", canvas.width-5, 105);
 };
 
 // The main game loop
