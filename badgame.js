@@ -86,7 +86,9 @@ randNum=Math.floor(Math.random()*10);
 // Pause button
 var paused=false;
 
-
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ console.log("ey");
+}
 
 
 
