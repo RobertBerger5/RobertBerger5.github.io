@@ -1,8 +1,25 @@
+// Mobile
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	var mobile=true;
+	console.log(mobile);
+}else{
+	var mobile=false;
+	console.log(mobile);
+}
+if(mobile==true){
+	inputZ = document.createElement("input");
+	document.querySelector('body').appendChild(inputZ);
+}
+
 // Create the canvas
 var canvas = document.querySelector("canvas");
 var ctx = canvas.getContext("2d");
 canvas.width = $(window).width();
-canvas.height = $(window).height();
+if(mobile==false){
+	canvas.height = $(window).height();
+}else{
+	canvas.height = $(window).height()/2;
+}
 //divthing.appendChild(canvas);
 
 // Background image
@@ -50,7 +67,7 @@ var jiggle=1.5;
 
 // Audio volume
 $(document).ready(function(){
-	$('audio').prop("volume", .25);
+	$('audio').prop("volume", .0);
 })
 
 function changeVolume(volume){
@@ -85,14 +102,6 @@ randNum=Math.floor(Math.random()*10);
 
 // Pause button
 var paused=false;
-
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
- console.log("ey");
-}
-
-
-
-
 
 
 // New shit function
@@ -195,13 +204,45 @@ var update = function (modifier) {
 		hero.x += hero.speed * modifier;
 		heroImage.src = "http://i.imgur.com/RPZ43WI.png";
 	}
-	/*if (32 in keysDown) { // Player pressing space
-		document.getElementById("#scream").play();
-		//console.log("not muted");
-	}/*else{
-		$("#scream").muted=true;
-		//console.log("muted");
+
+	// Mobile
+	/*function left(){
+		hero.x -= 1; //used to be -= hero.speed*modifier
+		heroImage.src = "http://i.imgur.com/aS3kDkT.png";
+	}
+	function right(){
+		hero.x += 1;
+		heroImage.src = "http://i.imgur.com/RPZ43WI.png";
+	}
+	function up(){
+		hero.y -= 1;
+		heroImage.src = "http://i.imgur.com/ld2k1Ba.png";
+	}
+	function down(){
+		hero.y += 1;
+		heroImage.src = "http://i.imgur.com/azsvBrY.png";
 	}*/
+
+	/*$(".touchBox").mouseover(function(){
+		console.log("touched something");
+	});*/
+	
+	/*$("#leftBox").mouseover(function(){
+		console.log("left");
+		left();
+	});
+	$("#rightBox").mouseover(function(){
+		console.log("right");
+		right();
+	});
+	$("#topBox").mouseover(function(){
+		console.log("top");
+		up();
+	});
+	$("#bottomBox").mouseover(function(){
+		console.log("bottom");
+		down();
+	});*/
 
 	// Are they touching?
 	if (
@@ -333,7 +374,7 @@ var update = function (modifier) {
 	// Have it make the canvas's opacity go to 0, then go back to 1 and continue
 	var normal= document.querySelector("#top").innerHTML;
 	//console.log(normal);
-	if(monstersCaught==100){
+	if(monstersCaught==10){
 		$('#background').prop("volume", 0);
 		document.querySelector("#top").innerHTML='<img id="batman" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" /><audio id="whale" autoplay src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>';
 		//changeVolume(10);
@@ -347,7 +388,7 @@ var update = function (modifier) {
 	}
 
 	// FUCKING LOUD
-	if(monstersCaught==101+randNum){
+	if(monstersCaught==10+randNum){
 		$('#background').prop("volume", 1);
 		changeVolume(10);
 	}
