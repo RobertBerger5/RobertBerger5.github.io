@@ -67,7 +67,7 @@ var jiggle=1.5;
 
 // Audio volume
 $(document).ready(function(){
-	$('audio').prop("volume", .0);
+	$('audio').prop("volume", .5);
 })
 
 function changeVolume(volume){
