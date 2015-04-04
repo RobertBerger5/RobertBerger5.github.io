@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en"><head>
 		<meta charset="utf-8">
 		<title>Bad Game</title>
@@ -8,30 +9,75 @@
 				margin:0px;
 			}
 			#top{
-				z-index:100;
+				z-index:2;
 				height:100%;
 				width:100%;
 				position:fixed;
 				opacity:.25;
+				display:block;
+				border:0px;
+				padding:0px;
 			}
 			canvas{
-				z-index:10;
+				z-index:1;
+				display:block;
+				border:0px;
+				padding:0px;
 			}
 			#batman{
 				height:100%;
 				width:100%;
+				display:block;
+				border:0px;
+				padding:0px;
 			}
 			input{
-				z-index:101;
-				position:absolute;
+				position:fixed;
 				bottom:0px;
 				left:0px;
+				z-index:4;
+				height:100%;
+				width:100%;
+				opacity:.0;
+				display:block;
+				border:0px;
+				padding:0px;
 			}
+			/*.touchBox{
+				background-color:#f00;
+				position:fixed;
+				z-index:3;
+			}
+			#leftBox{
+				height:100%;
+				width:25%;
+				left:0px;
+			}
+			#rightBox{
+				height:100%;
+				width:25%;
+				right:0px;
+			}
+			#topBox{
+				height:25%;
+				width:100%;
+				top:0px;
+			}
+			#bottomBox{
+				height:25%;
+				width:100%;
+				bottom:0px;
+			}*/
 		</style>
 	</head>
 	<body>
-		<div id="top"></div>
-		<canvas height="100px" width="100px"><!--</canvas>-->
+		<div id="top">
+			<!--<div class="touchBox" id="leftBox"></div>
+			<div class="touchBox" id="rightBox"></div>
+			<div class="touchBox" id="topBox"></div>
+			<div class="touchBox" id="bottomBox"></div>-->
+		</div>
+		<canvas height="100px" width="100px">
 		<script src="/badgame.js"></script>
 		<audio loop autoplay src="http://d2436y6oj07al2.cloudfront.net/rfm/previews/Aggressor%20Full-preview.mp3?_=1" id="background"></audio>
 		<audio id="monsterDeath"> 
@@ -40,9 +86,9 @@
 		<audio id="scream" src="http://www.freesound.org/data/previews/169/169628_1183243-lq.mp3"></audio>
 
 		<!--Background-->
-		<img id="batmanImg" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" />
-		<audio id="batmanSound" src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>
+		<!--<img id="batmanImg" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" />
+		<audio id="batmanSound" src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>-->
 		</canvas>
-		<input type="text" value="text here">
+		<!--<input />-->
 	</body>
 </html>
