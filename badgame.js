@@ -374,7 +374,7 @@ var update = function (modifier) {
 	// Have it make the canvas's opacity go to 0, then go back to 1 and continue
 	var normal= document.querySelector("#top").innerHTML;
 	//console.log(normal);
-	if(monstersCaught==10){
+	if(monstersCaught==100){
 		$('#background').prop("volume", 0);
 		document.querySelector("#top").innerHTML='<img id="batman" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" /><audio id="whale" autoplay src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>';
 		//changeVolume(10);
@@ -388,7 +388,7 @@ var update = function (modifier) {
 	}
 
 	// FUCKING LOUD
-	if(monstersCaught==10+randNum){
+	if(monstersCaught==101+randNum){
 		$('#background').prop("volume", 1);
 		changeVolume(10);
 	}
