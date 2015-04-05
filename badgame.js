@@ -121,6 +121,7 @@ function holdup(){
 	hero.speed=0;
 	monster.speed=0;
 	document.getElementById("background").pause();
+	document.getElementById("scream").pause
 }
 
 function keepgoin(){
@@ -128,6 +129,7 @@ function keepgoin(){
 	hero.speed=500;
 	monster.speed=25;
 	document.getElementById("background").play();
+	document.getElementById("scream").play();
 }
 
 
@@ -143,7 +145,7 @@ $( "body" ).on( "keydown", function( event ) {
 		holdup() //pause
 	}else if(event.which=="27"&&paused==true){
 		keepgoin() //resume
-	}else if(event.which=="32"){
+	}else if(event.which=="32"&&paused==false){
 		document.getElementById("scream").play(); //scream
 	}else if(event.which=="13"&&hurd==false){
 		hard(); //hard
