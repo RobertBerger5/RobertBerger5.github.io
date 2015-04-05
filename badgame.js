@@ -121,7 +121,7 @@ function holdup(){
 	hero.speed=0;
 	monster.speed=0;
 	document.getElementById("background").pause();
-	document.getElementById("scream").pause
+	document.getElementById("scream").pause();
 }
 
 function keepgoin(){
