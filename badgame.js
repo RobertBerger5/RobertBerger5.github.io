@@ -139,15 +139,15 @@ function keepgoin(){
 
 // Pause
 $( "body" ).on( "keydown", function( event ) {
-	if(event.which=="13"&&paused==false){
+	if(event.which=="27"&&paused==false){
 		holdup() //pause
-	}else if(event.which=="13"&&paused==true){
+	}else if(event.which=="27"&&paused==true){
 		keepgoin() //resume
 	}else if(event.which=="32"){
 		document.getElementById("scream").play(); //scream
-	}else if(event.which=="27"&&hurd==false){
+	}else if(event.which=="13"&&hurd==false){
 		hard(); //hard
-	}else if(event.which=="27"&&hurd==true){
+	}else if(event.which=="13"&&hurd==true){
 		easy(); //easy
 	}else if(event.which<58 && event.which>47){
 		changeVolume(event.which-48);
@@ -443,10 +443,10 @@ var render = function () {
 	ctx.textAlign = "right";
 	ctx.fillText("Controls:", canvas.width-5, 5);
 	ctx.fillText("WASD/Arrows = Directions", canvas.width-5, 25);
-	ctx.fillText("Enter = Pause", canvas.width-5, 45);
+	ctx.fillText("Escape = Pause", canvas.width-5, 45);
 	ctx.fillText("Space = Scream", canvas.width-5, 65);
 	ctx.fillText("Number Keys = Volume", canvas.width-5, 85);
-	ctx.fillText("Escape = Change Difficulty", canvas.width-5, 105);
+	ctx.fillText("Enter = Change Difficulty", canvas.width-5, 105);
 };
 
 // The main game loop
