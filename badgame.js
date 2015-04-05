@@ -147,9 +147,9 @@ $( "body" ).on( "keydown", function( event ) {
 		keepgoin() //resume
 	}else if(event.which=="32"&&paused==false){
 		document.getElementById("scream").play(); //scream
-	}else if(event.which=="13"&&hurd==false){
+	}else if(event.which=="13"&&hurd==false&&paused==false){
 		hard(); //hard
-	}else if(event.which=="13"&&hurd==true){
+	}else if(event.which=="13"&&hurd==true&&paused==false){
 		easy(); //easy
 	}else if(event.which<58 && event.which>47){
 		changeVolume(event.which-48);
