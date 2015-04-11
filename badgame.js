@@ -1,7 +1,7 @@
 // Mobile
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	var mobile=true;
-	console.log(mobile);
+	//console.log(mobile);
 }else{
 	var mobile=false;
 	//console.log(mobile);
@@ -33,15 +33,13 @@ var dot=function(x,y){
 }
 
 // dot x and y test
-for(var i=0;i<1;i++){
+/*for(var i=0;i<1;i++){
 	//console.log("pushin");
 	dots.push(dot(
 		Math.random()*canvas.width,
 		Math.random()*canvas.height
-		/*canvas.width/2,
-		canvas.height/2*/
 		));
-}
+}*/
 
 
 // Background image
@@ -89,7 +87,7 @@ var jiggle=1.5;
 
 // Audio volume
 $(document).ready(function(){
-	$('audio').prop("volume", .5);
+	$('audio').prop("volume", .3);
 })
 
 function changeVolume(volume){
@@ -124,8 +122,6 @@ function easy(){
 
 
 
-
-
 // Lose function
 // Record
 var monsterRecord=localStorage.getItem("monsterRecordStore");
@@ -139,17 +135,38 @@ if(monsterRecord==null){
 lost=false;
 function lose(){
 	lost=true;
+
+	//case for failMessage
+	var failMessage="SOMETHING HAS GONE WRONG";
+	if(monstersCaught==0){
+		failMessage="Did you even try?";
+	}else if(monstersCaught<5){
+		failMessage="You're a failure";
+	}else if(monstersCaught<10){
+		failMessage="Ok you're pretty bad";
+	}else if(monstersCaught<25){
+		failMessage="Not the worst you've ever done";
+	}else if(monstersCaught<35){
+		failMessage="Wow you're getting good at this";
+	}else if(monstersCaught<50){
+		failMessage="Holy shit how did you do that?";
+	}else if(monstersCaught<60){
+		failMessage="Batman Approves";
+	}else{
+		failMessage="You must be some sort of God";
+	}
+
 	if(monstersCaught>monsterRecord){
 		localStorage.setItem("monsterRecordStore", monstersCaught);
-		console.log("This time: "+monstersCaught);
-		console.log("Record: "+monsterRecord);
+		failMessage="NEW RECORD!";
 	}
-	document.querySelector('body').innerHTML='<p id="youSuck">You\'re A Failure<br>You Caught '+monstersCaught+' Monsters<br>Record: '+monsterRecord+' Monsters<br><button onclick="resetRecord()">Reset Record</button></p>';
+
+	document.querySelector('body').innerHTML='<p class="youSuck">'+failMessage+'</p><p class="youSuck">You Caught '+monstersCaught+' Monsters</p><p class="youSuck">Record: '+monsterRecord+' Monsters</p><p class="youSuck">Hit Space to Restart</p><p class="youSuck"><button onclick="resetRecord()">Reset Record</button></p>';
 }
 
 function resetRecord(){
 	localStorage.setItem("monsterRecordStore", 0);
-	console.log("Record: "+monsterRecord);
+	//console.log("Record: "+monsterRecord);
 	lose();
 }//works
 
@@ -185,6 +202,7 @@ function holdup(){
 	hero.speed=0;
 	monster.speed=0;
 	document.getElementById("background").pause();
+	document.getElementById("scream").pause();
 }
 
 function keepgoin(){
@@ -192,6 +210,7 @@ function keepgoin(){
 	hero.speed=500;
 	monster.speed=25;
 	document.getElementById("background").play();
+	document.getElementById("scream").play();
 }
 
 
@@ -203,11 +222,13 @@ $( "body" ).on( "keydown", function( event ) {
 		holdup() //pause
 	}else if(event.which=="13"&&paused==true){
 		keepgoin() //resume
-	}else if(event.which=="32"){
+	}else if(event.which=="32"&&paused==false&&lost==false){
 		document.getElementById("scream").play(); //scream
-	}else if(event.which=="27"&&hurd==false){
+	}else if(event.which=="32"&&paused==false&&lost==true){
+		location.reload();
+	}else if(event.which=="27"&&hurd==false&&paused==false){
 		hard(); //hard
-	}else if(event.which=="27"&&hurd==true){
+	}else if(event.which=="27"&&hurd==true&&paused==false){
 		easy(); //easy
 	}else if(event.which<58 && event.which>47){
 		changeVolume(event.which-48);
@@ -320,6 +341,10 @@ var update = function (modifier) {
 			$("#monsterDeath").trigger('play');
 			++monstersCaught;
 			reset();
+			/*dots.push(dot(
+				Math.random()*canvas.width,
+				Math.random()*canvas.height
+			));*/
 		}
 	}
 
@@ -456,7 +481,7 @@ var update = function (modifier) {
 	// Have it make the canvas's opacity go to 0, then go back to 1 and continue
 	//var normal= document.querySelector("#top").innerHTML;
 	//console.log(normal);
-	if(monstersCaught==25){
+	if(monstersCaught==50){
 		$('#background').prop("volume", 0);
 		document.querySelector("#top").innerHTML='<img id="batman" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" /><audio id="whale" autoplay src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>';
 		//changeVolume(10);
@@ -470,10 +495,11 @@ var update = function (modifier) {
 	}
 
 	// FUCKING LOUD
-	if(monstersCaught==25+randNum){
+	if(monstersCaught==50+randNum){
 		$('#background').prop("volume", 1);
 		changeVolume(10);
 	}
+//console.log(time);     //FRAMERATE THOUGH!!!!!!!!
 };
 
 // Timer
@@ -487,10 +513,20 @@ setInterval(function(){
 
 		// Dot Maker
 		if(Math.random()<.5){
-			dots.push(dot(
-			Math.random()*canvas.width,
-			Math.random()*canvas.height
-			));
+			var xCo=Math.random()*canvas.width
+			var yCo=Math.random()*canvas.height
+			if(
+				(hero.x-100) <= (xCo + 0)
+				&& (xCo-100) <= (hero.x + 128)
+				&& (hero.y-100) <= (yCo + 0)
+				&& (yCo-100) <= (hero.y + 128)
+			){
+			}else{
+				dots.push(dot(
+				xCo,
+				yCo
+				));
+			}
 		}
 	}
 },1000);
@@ -511,7 +547,7 @@ var render = function () {
 
 
 	// Draw dots
-	ctx.fillStyle="#f00";
+	ctx.fillStyle="#0f0";
 	for(var a in dots){
 		ctx.fillRect(dots[a].x, dots[a].y, 10, 10);
 	};
