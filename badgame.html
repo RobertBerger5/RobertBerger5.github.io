@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
 		<title>Bad Game</title>
 		<link href="http://vignette2.wikia.nocookie.net/wowwiki/images/3/3d/UI-Skull-16x16.png/revision/latest?cb=20071229215904" rel="icon" type="image/x-icon" />
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -39,7 +39,7 @@
 				z-index:4;
 				height:100%;
 				width:100%;
-				opacity:.0;
+				opacity:.25;
 				display:block;
 				border:0px;
 				padding:0px;
@@ -69,6 +69,11 @@
 				width:100%;
 				bottom:0px;
 			}*/
+			#youSuck{
+				text-align:center;
+				font-size:100px;
+				color:#f00;
+			}
 		</style>
 	</head>
 	<body>
@@ -79,7 +84,7 @@
 			<div class="touchBox" id="bottomBox"></div>-->
 		</div>
 		<canvas height="100px" width="100px">
-		<script src="/badgame.js"></script>
+		<script src="file:///Users/robertberger/Library/Sites/badgame.js"></script>
 		<audio loop autoplay src="http://d2436y6oj07al2.cloudfront.net/rfm/previews/Aggressor%20Full-preview.mp3?_=1" id="background"></audio>
 		<audio id="monsterDeath"> 
 			<source src="http://www.freesound.org/data/previews/87/87535_1380975-lq.mp3" type="audio/mpeg">
