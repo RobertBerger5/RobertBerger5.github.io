@@ -144,7 +144,7 @@ function lose(){
 		console.log("This time: "+monstersCaught);
 		console.log("Record: "+monsterRecord);
 	}
-	document.querySelector('body').innerHTML='<p id="youSuck">You\'re A Failure<br>You Caught '+monstersCaught+' Monsters<br>Record: '+monsterRecord+'<br><button onclick="resetRecord()">Reset Record</button></p>';
+	document.querySelector('body').innerHTML='<p id="youSuck">You\'re A Failure<br>You Caught '+monstersCaught+' Monsters<br>Record: '+monsterRecord+' Monsters<br><button onclick="resetRecord()">Reset Record</button></p>';
 }
 
 function resetRecord(){
@@ -488,8 +488,8 @@ setInterval(function(){
 		// Dot Maker
 		if(Math.random()<.5){
 			dots.push(dot(
-			Math.random()*canvas.height,
-			Math.random()*canvas.width
+			Math.random()*canvas.width,
+			Math.random()*canvas.height
 			));
 		}
 	}
