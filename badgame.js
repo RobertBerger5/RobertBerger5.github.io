@@ -4,7 +4,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 	console.log(mobile);
 }else{
 	var mobile=false;
-	console.log(mobile);
+	//console.log(mobile);
 }
 if(mobile==true){
 	inputZ = document.createElement("input");
@@ -21,15 +21,6 @@ if(mobile==false){
 	canvas.height = $(window).height()/2;
 }
 //divthing.appendChild(canvas);
-
-
-
-
-
-
-
-
-
 
 
 // .push() magic
@@ -51,16 +42,6 @@ for(var i=0;i<1;i++){
 		canvas.height/2*/
 		));
 }
-
-
-
-
-
-
-
-
-
-
 
 
 // Background image
@@ -139,10 +120,43 @@ function easy(){
 }
 
 
+
+
+
+
+
+
 // Lose function
+// Record
+var monsterRecord=localStorage.getItem("monsterRecordStore");
+if(monsterRecord==null){
+	monsterRecord="0";
+}else{
+	monsterRecord= localStorage.getItem("monsterRecordStore");
+}//works
+
+
+lost=false;
 function lose(){
-	document.querySelector('body').innerHTML='<p id="youSuck">u suk dik</p>';
+	lost=true;
+	if(monstersCaught>monsterRecord){
+		localStorage.setItem("monsterRecordStore", monstersCaught);
+		console.log("This time: "+monstersCaught);
+		console.log("Record: "+monsterRecord);
+	}
+	document.querySelector('body').innerHTML='<p id="youSuck">You\'re A Failure<br>You Caught '+monstersCaught+' Monsters<br>Record: '+monsterRecord+'<br><button onclick="resetRecord()">Reset Record</button></p>';
 }
+
+function resetRecord(){
+	localStorage.setItem("monsterRecordStore", 0);
+	console.log("Record: "+monsterRecord);
+	lose();
+}//works
+
+
+
+
+
 
 
 
@@ -179,10 +193,6 @@ function keepgoin(){
 	monster.speed=25;
 	document.getElementById("background").play();
 }
-
-
-
-
 
 
 // Handle keyboard controls
@@ -421,15 +431,6 @@ var update = function (modifier) {
 	}else{}
 
 
-
-
-
-
-
-
-
-
-
 	// collision with dot
 	for(var a in dots){
 		//console.log(dots[a].x);
@@ -438,8 +439,9 @@ var update = function (modifier) {
 			&& dots[a].x <= (hero.x + 128)
 			&& hero.y <= (dots[a].y + 0)
 			&& dots[a].y <= (hero.y + 128)
+			&&lost==false
 		){
-			console.log("touched dot");
+			//console.log("touched dot");
 			lose();
 		}
 	}
@@ -451,13 +453,10 @@ var update = function (modifier) {
 	}*/
 
 
-
-
-
 	// Have it make the canvas's opacity go to 0, then go back to 1 and continue
-	var normal= document.querySelector("#top").innerHTML;
+	//var normal= document.querySelector("#top").innerHTML;
 	//console.log(normal);
-	if(monstersCaught==10){
+	if(monstersCaught==50){
 		$('#background').prop("volume", 0);
 		document.querySelector("#top").innerHTML='<img id="batman" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" /><audio id="whale" autoplay src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>';
 		//changeVolume(10);
@@ -471,7 +470,7 @@ var update = function (modifier) {
 	}
 
 	// FUCKING LOUD
-	if(monstersCaught==10+randNum){
+	if(monstersCaught==50+randNum){
 		$('#background').prop("volume", 1);
 		changeVolume(10);
 	}
@@ -493,12 +492,6 @@ setInterval(function(){
 			Math.random()*canvas.width
 			));
 		}
-
-
-
-
-
-
 	}
 },1000);
 
@@ -517,40 +510,11 @@ var render = function () {
 	}
 
 
-
-
-
-
-
-
-
-
-
-
 	// Draw dots
 	ctx.fillStyle="#f00";
 	for(var a in dots){
 		ctx.fillRect(dots[a].x, dots[a].y, 10, 10);
 	};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	// Score
