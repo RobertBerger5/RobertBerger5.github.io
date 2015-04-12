@@ -23,23 +23,7 @@ if(mobile==false){
 //divthing.appendChild(canvas);
 
 
-// .push() magic
-var dots=[];
-var dot=function(x,y){
-	return{
-		x:x,
-		y:y,
-	}
-}
 
-// dot x and y test
-/*for(var i=0;i<1;i++){
-	//console.log("pushin");
-	dots.push(dot(
-		Math.random()*canvas.width,
-		Math.random()*canvas.height
-		));
-}*/
 
 
 // Background image
@@ -173,7 +157,44 @@ function resetRecord(){
 
 
 
+// .push() magic
+var dots=[];
+var dot=function(x,y){
+	return{
+		x:x,
+		y:y,
+	}
+}
 
+// dot x and y test
+for(var i=0;i<10;i++){
+	console.log("pushin dot");
+	/*dots.push(dot(
+		Math.random()*canvas.width,
+		Math.random()*canvas.height
+		));*/
+
+
+
+
+		var xCo=Math.random()*canvas.width
+		var yCo=Math.random()*canvas.height
+		if(
+			(hero.x-50) <= (xCo + 0)
+			&& (xCo-50) <= (hero.x + 128)
+			&& (hero.y-50) <= (yCo + 0)
+			&& (yCo-50) <= (hero.y + 128)
+		){
+			console.log("didn't push");
+		}else{
+			dots.push(dot(
+			xCo,
+			yCo
+			));
+		}
+
+
+}
 
 
 
@@ -499,7 +520,7 @@ var update = function (modifier) {
 		$('#background').prop("volume", 1);
 		changeVolume(10);
 	}
-console.log(time);     //FRAMERATE THOUGH!!!!!!!!
+//console.log(time);     //FRAMERATE THOUGH!!!!!!!!
 };
 
 // Timer
