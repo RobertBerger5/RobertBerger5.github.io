@@ -143,14 +143,14 @@ function lose(){
 	}else if(monstersCaught<5){
 		failMessage="You're a failure";
 	}else if(monstersCaught<10){
-		failMessage="Ok you're pretty bad";
-	}else if(monstersCaught<25){
+		failMessage="You Suck Ass";
+	}else if(monstersCaught<15){
 		failMessage="Not the worst you've ever done";
-	}else if(monstersCaught<35){
+	}else if(monstersCaught<25){
 		failMessage="Wow you're getting good at this";
-	}else if(monstersCaught<50){
+	}else if(monstersCaught<30){
 		failMessage="Holy shit how did you do that?";
-	}else if(monstersCaught<60){
+	}else if(monstersCaught<40){
 		failMessage="Batman Approves";
 	}else{
 		failMessage="You must be some sort of God";
@@ -481,7 +481,7 @@ var update = function (modifier) {
 	// Have it make the canvas's opacity go to 0, then go back to 1 and continue
 	//var normal= document.querySelector("#top").innerHTML;
 	//console.log(normal);
-	if(monstersCaught==50){
+	if(monstersCaught==30){
 		$('#background').prop("volume", 0);
 		document.querySelector("#top").innerHTML='<img id="batman" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" /><audio id="whale" autoplay src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>';
 		//changeVolume(10);
@@ -495,11 +495,11 @@ var update = function (modifier) {
 	}
 
 	// FUCKING LOUD
-	if(monstersCaught==50+randNum){
+	if(monstersCaught==30+randNum){
 		$('#background').prop("volume", 1);
 		changeVolume(10);
 	}
-//console.log(time);     //FRAMERATE THOUGH!!!!!!!!
+console.log(time);     //FRAMERATE THOUGH!!!!!!!!
 };
 
 // Timer
@@ -547,7 +547,13 @@ var render = function () {
 
 
 	// Draw dots
-	ctx.fillStyle="#0f0";
+	var dotColor;
+	if(time%2==0){
+		dotColor="#f00";
+	}else{
+		dotColor="#0f0";
+	}
+	ctx.fillStyle=dotColor;
 	for(var a in dots){
 		ctx.fillRect(dots[a].x, dots[a].y, 10, 10);
 	};
