@@ -6,7 +6,7 @@
 		<title>Mah Shitty Games</title>
 		<link href="http://vignette2.wikia.nocookie.net/wowwiki/images/3/3d/UI-Skull-16x16.png/revision/latest?cb=20071229215904" rel="icon" type="image/x-icon" />
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-		<link rel="stylesheet" href="file:///Users/robertberger/Library/Sites/games.css" type="text/css">
+		<link rel="stylesheet" href="/games.css" type="text/css">
 	</head>
 	<body>
 		<div id="choicesDiv">
@@ -18,7 +18,7 @@
 		<script>
 			playingGame=false;
 			function playGame(daURL){
-				scriptURL="file:///Users/robertberger/Library/Sites/"+daURL+".js";
+				scriptURL="/"+daURL+".js";
 				choicesDiv=document.getElementById("choicesDiv");
 				choicesDiv.parentNode.removeChild(choicesDiv);
 				gameScript=document.createElement("script");
