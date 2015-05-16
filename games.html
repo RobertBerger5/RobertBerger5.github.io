@@ -6,25 +6,26 @@
 		<title>Mah Shitty Games</title>
 		<link href="http://vignette2.wikia.nocookie.net/wowwiki/images/3/3d/UI-Skull-16x16.png/revision/latest?cb=20071229215904" rel="icon" type="image/x-icon" />
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-		<link rel="stylesheet" href="/games.css" type="text/css">
+		<link rel="stylesheet" href="file:///Users/robertberger/Library/Sites/games.css" type="text/css">
 	</head>
 	<body>
 		<div id="choicesDiv">
 			<p class="gameChoice" onclick="playGame('badgame')">Monster Catcher</p>
 			<p class="gameChoice" onclick="playGame('catgame')">Rain Cat</p>
+			<p class="explanation">Use mouse or numbers on keyboard to select a game. Spacebar will take you to the most recent game you've played.</p>
 		</div>
 		<canvas height="0px" width="0px"></canvas>
 		<script>
 			playingGame=false;
 			function playGame(daURL){
-				scriptURL="/"+daURL+".js";
+				scriptURL="file:///Users/robertberger/Library/Sites/"+daURL+".js";
 				choicesDiv=document.getElementById("choicesDiv");
 				choicesDiv.parentNode.removeChild(choicesDiv);
 				gameScript=document.createElement("script");
 				gameScript.src=scriptURL;
 				document.body.appendChild(gameScript);
 				localStorage.setItem("recentGame", daURL);
-				playingGame=true
+				playingGame=true;
 			}
 			$( "body" ).on( "keydown", function( event ) {
 				if(event.which=="49"&&playingGame==false){
