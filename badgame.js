@@ -8,7 +8,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }
 if(mobile==true){
 	inputZ = document.createElement("input");
-	document.querySelector('body').appendChild(inputZ);
+	document.body.appendChild(inputZ);
 }
 
 // Create the canvas
@@ -23,7 +23,22 @@ if(mobile==false){
 //divthing.appendChild(canvas);
 
 
+soundBackground = document.createElement("audio");
+soundBackground.src="http://d2436y6oj07al2.cloudfront.net/rfm/previews/Aggressor%20Full-preview.mp3?_=1";
+soundBackground.autoplay=true;
+soundBackground.loop=true;
+soundBackground.id="background";
+document.body.appendChild(soundBackground);
 
+soundMonsterDeath = document.createElement("audio");
+soundMonsterDeath.src="http://www.freesound.org/data/previews/87/87535_1380975-lq.mp3";
+soundMonsterDeath.id="monsterDeath";
+document.body.appendChild(soundMonsterDeath);
+
+soundScream = document.createElement("audio");
+soundScream.src="http://www.freesound.org/data/previews/169/169628_1183243-lq.mp3";
+soundScream.id="scream";
+document.body.appendChild(soundScream);
 
 
 // Background image
@@ -42,7 +57,8 @@ var heroImage = new Image();
 heroImage.onload = function () {
 	heroReady = true;
 };
-heroImage.src = "http://i.imgur.com/ld2k1Ba.png";
+heroImage.src = "http://i.imgur.com/o59Ry1v.png";
+//http://i.imgur.com/ld2k1Ba.png
 //http://www.lostdecadegames.com/demos/simple_canvas_game/images/hero.png
 
 
@@ -102,10 +118,6 @@ function easy(){
 }
 
 
-
-
-
-
 // Lose function
 // Record
 var monsterRecord=localStorage.getItem("monsterRecordStore");
@@ -145,7 +157,7 @@ function lose(){
 		failMessage="NEW RECORD!";
 	}
 
-	document.querySelector('body').innerHTML='<p class="youSuck">'+failMessage+'</p><p class="youSuck">You Caught '+monstersCaught+' Monsters</p><p class="youSuck">Record: '+monsterRecord+' Monsters</p><p class="youSuck">Hit Space to Restart</p><p class="youSuck"><button onclick="resetRecord()">Reset Record</button></p>';
+	document.body.innerHTML='<p class="youSuck">'+failMessage+'</p><p class="youSuck">You Caught '+monstersCaught+' Monsters</p><p class="youSuck">Record: '+monsterRecord+' Monsters</p><p class="youSuck">Hit Space to Restart</p><p class="youSuck"><button onclick="resetRecord()">Reset Record</button></p>';
 }
 
 function resetRecord(){
@@ -155,7 +167,7 @@ function resetRecord(){
 }//works
 
 
-
+//TODO make some rare dots worth points
 
 // .push() magic
 var dots=[];
@@ -168,7 +180,7 @@ var dot=function(x,y){
 
 // dot x and y test
 for(var i=0;i<10;i++){
-	console.log("pushin dot");
+	//console.log("pushin dot");
 	/*dots.push(dot(
 		Math.random()*canvas.width,
 		Math.random()*canvas.height
@@ -185,7 +197,7 @@ for(var i=0;i<10;i++){
 			&& (hero.y-50) <= (yCo + 0)
 			&& (yCo-50) <= (hero.y + 128)
 		){
-			console.log("didn't push");
+			//console.log("didn't push");
 		}else{
 			dots.push(dot(
 			xCo,
@@ -237,7 +249,7 @@ function keepgoin(){
 
 // Handle keyboard controls
 
-// Pause
+// Single Key Events
 $( "body" ).on( "keydown", function( event ) {
 	if(event.which=="13"&&paused==false){
 		holdup() //pause
@@ -245,6 +257,7 @@ $( "body" ).on( "keydown", function( event ) {
 		keepgoin() //resume
 	}else if(event.which=="32"&&paused==false&&lost==false){
 		document.getElementById("scream").play(); //scream
+		//TODO button mash for scream
 	}else if(event.which=="32"&&paused==false&&lost==true){
 		location.reload();
 	}else if(event.which=="27"&&hurd==false&&paused==false){
@@ -256,7 +269,7 @@ $( "body" ).on( "keydown", function( event ) {
 	}
 });
 
-// Main keys
+// Main Keys
 var keysDown = {};
 
 addEventListener("keydown", function (e) {
@@ -292,20 +305,31 @@ var reset = function () {
 var update = function (modifier) {
 	if ((38 in keysDown || 87 in keysDown)&&paused==false) { // Player holding up
 		hero.y -= hero.speed * modifier;
-		heroImage.src = "http://i.imgur.com/ld2k1Ba.png";
+		heroImage.src = "http://i.imgur.com/o59Ry1v.png";
+		//http://i.imgur.com/ld2k1Ba.png
 	}
 	if ((40 in keysDown || 83 in keysDown)&&paused==false) { // Player holding down
 		hero.y += hero.speed * modifier;
-		heroImage.src = "http://i.imgur.com/azsvBrY.png";
+		heroImage.src = "http://i.imgur.com/oN15gNq.png";
+		//http://i.imgur.com/azsvBrY.png
 	}
 	if ((37 in keysDown || 65 in keysDown)&&paused==false) { // Player holding left
 		hero.x -= hero.speed * modifier;
-		heroImage.src = "http://i.imgur.com/aS3kDkT.png";
+		heroImage.src = "http://i.imgur.com/a1rCpiv.png";
+		//http://i.imgur.com/aS3kDkT.png
 	}
 	if ((39 in keysDown || 68 in keysDown)&&paused==false) { // Player holding right
 		hero.x += hero.speed * modifier;
-		heroImage.src = "http://i.imgur.com/RPZ43WI.png";
+		heroImage.src = "http://i.imgur.com/QLBkgVi.png";
+		//http://i.imgur.com/RPZ43WI.png
 	}
+
+	// Button mash for scream
+	/*if(keysDown.length>3){
+		document.getElementById("scream").play();
+	}else{
+		console.log(keysDown.length);
+	}*/
 
 	// Mobile
 	/*function left(){
@@ -492,6 +516,7 @@ var update = function (modifier) {
 		}
 	}
 
+
 /*for(var a in dots){
 		console.clear();
 		console.log(dots[a].x+", "+dots[a].y);
@@ -502,7 +527,7 @@ var update = function (modifier) {
 	// Have it make the canvas's opacity go to 0, then go back to 1 and continue
 	//var normal= document.querySelector("#top").innerHTML;
 	//console.log(normal);
-	if(monstersCaught==30){
+	/*if(monstersCaught==30){
 		$('#background').prop("volume", 0);
 		document.querySelector("#top").innerHTML='<img id="batman" src="http://new1.fjcdn.com/comments/4926493+_2cc448c00af78212dedc0ba31ea4def5.jpg" /><audio id="whale" autoplay src="http://soundbible.com/mp3/Quick%20Fart-SoundBible.com-655578646.mp3"></audio>';
 		//changeVolume(10);
@@ -512,14 +537,14 @@ var update = function (modifier) {
 			document.querySelector("#top").innerHTML=normal;
 			console.log("changed back");
 			monstersCaught++;
-		}, 1000);*/
+		}, 1000);*
 	}
 
 	// FUCKING LOUD
 	if(monstersCaught==30+randNum){
 		$('#background').prop("volume", 1);
 		changeVolume(10);
-	}
+	}*/
 //console.log(time);     //FRAMERATE THOUGH!!!!!!!!
 };
 
