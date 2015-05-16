@@ -1,0 +1,40 @@
+body{
+	margin:0px;
+	background-color:#000;
+}
+canvas{
+	z-index:1;
+	display:block;
+	border:0px;
+	padding:0px;
+}
+input{
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	z-index:4;
+	height:100%;
+	width:100%;
+	opacity:.25;
+	display:block;
+	border:0px;
+	padding:0px;
+}
+.youSuck{
+	text-align:center;
+	font-size:50px;
+	font-family:"Arial Black";
+	color:#f00;
+	margin:25px;
+}
+button{
+	font-size:50px;
+}
+.gameChoice{
+	text-align:center;
+	font-size:75px;
+	color:#fff;
+	border:1px solid red;
+	margin:0;
+	padding:10px;
+}
