@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		<title>Bad Game</title>
+		<link href="http://vignette2.wikia.nocookie.net/wowwiki/images/3/3d/UI-Skull-16x16.png/revision/latest?cb=20071229215904" rel="icon" type="image/x-icon" />
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<link rel="stylesheet" href="/games.css" type="text/css">
+	</head>
+	<body>
+		<div id="choicesDiv">
+			<p class="gameChoice" onclick="playGame('badgame')">Bad Game</p>
+			<p class="gameChoice" onclick="playGame('catgame')">Cat Game</p>
+		</div>
+		<canvas height="0px" width="0px"></canvas>
+		<script>
+			playingGame=false;
+			function playGame(daURL){
+				scriptURL="/"+daURL+".js";
+				choicesDiv=document.getElementById("choicesDiv");
+				choicesDiv.parentNode.removeChild(choicesDiv);
+				gameScript=document.createElement("script");
+				gameScript.src=scriptURL;
+				document.body.appendChild(gameScript);
+				localStorage.setItem("recentGame", daURL);
+				playingGame=true
+			}
+			$( "body" ).on( "keydown", function( event ) {
+				if(event.which=="49"&&playingGame==false){
+					playGame('badgame');
+				}else if(event.which=="50"&&playingGame==false){
+					playGame('catgame');
+				}else if(event.which=="32"&&playingGame==false){
+					playGame(recentGame);
+				}
+			});
+			recentGame=localStorage.getItem("recentGame");
+		</script>
+	</body>
+</html>
