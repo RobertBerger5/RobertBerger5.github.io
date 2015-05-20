@@ -21,6 +21,14 @@ heroImage.onload = function () {
 };
 heroImage.src = "images/hero.png";
 
+// Hero0 image
+var hero0Ready = false;
+var hero0Image = new Image();
+hero0Image.onload = function () {
+	hero0Ready = true;
+};
+hero0Image.src = "images/hero.png";
+
 // Monster image
 var monsterReady = false;
 var monsterImage = new Image();
@@ -32,6 +40,13 @@ monsterImage.src = "images/monster.png";
 // Game objects
 var hero = {
 	speed: 256 // movement in pixels per second
+	x:canvas.width/4
+	y:canvas.height/2
+};
+var hero0 = {
+	speed: 256 // movement in pixels per second
+	x:canvas.width/4*3
+	y:canvas.height/2
 };
 var monster = {};
 var monstersCaught = 0;
@@ -49,8 +64,6 @@ addEventListener("keyup", function (e) {
 
 // Reset the game when the player catches a monster
 var reset = function () {
-	hero.x = canvas.width / 2;
-	hero.y = canvas.height / 2;
 
 	// Throw the monster somewhere on the screen randomly
 	monster.x = 32 + (Math.random() * (canvas.width - 64));
@@ -93,6 +106,10 @@ var render = function () {
 	if (heroReady) {
 		ctx.drawImage(heroImage, hero.x, hero.y);
 	}
+	
+	if (hero0Ready) {
+		ctx.drawImage(hero0Image, hero0.x, hero0.y);
+	}
 
 	if (monsterReady) {
 		ctx.drawImage(monsterImage, monster.x, monster.y);
@@ -118,6 +135,5 @@ var main = function () {
 };
 
 // Let's play this game!
-reset();
 var then = Date.now();
 setInterval(main, 1); // Execute as fast as possible
