@@ -52,6 +52,13 @@ var monster = {};
 var monstersCaught = 0;
 
 // Handle keyboard controls
+// Single key events
+$( "body" ).on( "keydown", function( event ) {
+	if(event.which=="32"&&paused==false){
+		location.reload() //pause
+	}
+
+// Ongoing key events
 var keysDown = {};
 
 addEventListener("keydown", function (e) {
