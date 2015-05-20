@@ -11,7 +11,7 @@ var bgImage = new Image();
 bgImage.onload = function () {
 	bgReady = true;
 };
-bgImage.src = "images/background.png";
+bgImage.src = "http://temp.indicom-electric.com/wp-content/uploads/2013/05/background.jpg";
 
 // Hero image
 var heroReady = false;
@@ -19,7 +19,7 @@ var heroImage = new Image();
 heroImage.onload = function () {
 	heroReady = true;
 };
-heroImage.src = "images/hero.png";
+heroImage.src = "http://exmoorpet.com/wp-content/uploads/2012/08/cat.png";
 
 // Hero0 image
 var hero0Ready = false;
@@ -27,7 +27,7 @@ var hero0Image = new Image();
 hero0Image.onload = function () {
 	hero0Ready = true;
 };
-hero0Image.src = "images/hero.png";
+hero0Image.src = "http://exmoorpet.com/wp-content/uploads/2012/08/cat.png";
 
 // Monster image
 var monsterReady = false;
@@ -35,7 +35,7 @@ var monsterImage = new Image();
 monsterImage.onload = function () {
 	monsterReady = true;
 };
-monsterImage.src = "images/monster.png";
+monsterImage.src = "http://vignette1.wikia.nocookie.net/kairosoft/images/8/8f/Drazilla_(Beastie_Bay).png/revision/latest?cb=20140215160639";
 
 // Game objects
 var hero = {
