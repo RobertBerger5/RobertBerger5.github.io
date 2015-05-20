@@ -1,4 +1,3 @@
-console.log("0");
 // Create the canvas
 var canvas = document.querySelector("canvas");
 var ctx = canvas.getContext("2d");
