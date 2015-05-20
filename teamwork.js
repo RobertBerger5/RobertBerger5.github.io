@@ -1,8 +1,8 @@
 // Create the canvas
-var canvas = document.createElement("canvas");
+var canvas = document.querySelector("canvas");
 var ctx = canvas.getContext("2d");
-canvas.width = 512;
-canvas.height = 480;
+canvas.width = $(window).width();
+canvas.height = $(window).height();
 document.body.appendChild(canvas);
 
 // Background image
@@ -39,13 +39,13 @@ monsterImage.src = "http://vignette1.wikia.nocookie.net/kairosoft/images/8/8f/Dr
 
 // Game objects
 var hero = {
-	speed: 256 // movement in pixels per second
-	x:canvas.width/4
+	speed: 500, // movement in pixels per second
+	x:canvas.width/4,
 	y:canvas.height/2
 };
 var hero0 = {
-	speed: 256 // movement in pixels per second
-	x:canvas.width/4*3
+	speed: 500, // movement in pixels per second
+	x:canvas.width/4*3,
 	y:canvas.height/2
 };
 var monster = {};
