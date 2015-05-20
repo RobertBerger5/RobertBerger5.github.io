@@ -56,7 +56,7 @@ var monstersCaught = 0;
 $( "body" ).on( "keydown", function( event ) {
 	if(event.which=="32"&&paused==false){
 		location.reload() //pause
-	}
+	})
 }
 
 // Ongoing key events
