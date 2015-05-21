@@ -3,7 +3,6 @@ var canvas = document.querySelector("canvas");
 var ctx = canvas.getContext("2d");
 canvas.width = $(window).width();
 canvas.height = $(window).height();
-document.body.appendChild(canvas);
 
 // Background image
 var bgReady = false;
@@ -19,7 +18,7 @@ var heroImage = new Image();
 heroImage.onload = function () {
 	heroReady = true;
 };
-heroImage.src = "http://exmoorpet.com/wp-content/uploads/2012/08/cat.png";
+heroImage.src = "http://i.imgur.com/1gH2sZ9.png?1";
 
 // Hero0 image
 var hero0Ready = false;
@@ -27,7 +26,7 @@ var hero0Image = new Image();
 hero0Image.onload = function () {
 	hero0Ready = true;
 };
-hero0Image.src = "http://exmoorpet.com/wp-content/uploads/2012/08/cat.png";
+hero0Image.src = "http://i.imgur.com/Rr5kPpb.png?1";
 
 // Monster image
 var monsterReady = false;
@@ -56,8 +55,8 @@ var monstersCaught = 0;
 $( "body" ).on( "keydown", function( event ) {
 	if(event.which=="32"&&paused==false){
 		location.reload() //pause
-	})
-}
+	}
+})
 
 // Ongoing key events
 var keysDown = {};
@@ -125,6 +124,8 @@ var render = function () {
 		ctx.drawImage(bgImage, 0, 0);
 	}
 
+	ctx.fillRect(0,0,canvas.width,canvas.height)
+
 	if (heroReady) {
 		ctx.drawImage(heroImage, hero.x, hero.y);
 	}
@@ -159,3 +160,12 @@ var main = function () {
 // Let's play this game!
 var then = Date.now();
 setInterval(main, 1); // Execute as fast as possible
+
+/* TODO: MAKE THE ACTUAL FUCKING GAME
+
+IDEAS:
+jedi squirrel battle
+maze game where they can't touch each other?
+duel with sword on one side of square and shield on other- corners, two corners attack, two corners defend
+pong or 1v1 tennis
+*/
