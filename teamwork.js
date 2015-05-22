@@ -36,16 +36,35 @@ monsterImage.onload = function () {
 };
 monsterImage.src = "http://vignette1.wikia.nocookie.net/kairosoft/images/8/8f/Drazilla_(Beastie_Bay).png/revision/latest?cb=20140215160639";
 
+// Variables
+playerSpeed=500;
+lost=false;
+paused=false;
+
+// Functions
+function lose(){
+	lost=true;
+}
+
+function pauseGame(){
+	paused=true
+	playerSpeed=0;
+}
+function resumeGame(){
+	paused=false;
+	playerSpeed=500;
+}
+
 // Game objects
 var hero = {
-	speed: 500, // movement in pixels per second
-	x:canvas.width/4,
-	y:canvas.height/2
+	speed: playerSpeed,
+	x:canvas.width/4-128,
+	y:canvas.height/2-128
 };
 var hero0 = {
-	speed: 500, // movement in pixels per second
-	x:canvas.width/4*3,
-	y:canvas.height/2
+	speed: playerSpeed,
+	x:canvas.width/4*3-128,
+	y:canvas.height/2-128
 };
 var monster = {};
 var monstersCaught = 0;
@@ -53,8 +72,14 @@ var monstersCaught = 0;
 // Handle keyboard controls
 // Single key events
 $( "body" ).on( "keydown", function( event ) {
-	if(event.which=="32"&&paused==false){
-		location.reload() //pause
+	if(event.which=="32"&&paused==false&&lost==true){
+		location.reload();
+	}else if(event.which=="32"&&paused==false&&lost==false){
+		pauseGame("32");
+		console.log("paused");
+	}else if(event.which=="32"&&paused==true&&lost==false){
+		resumeGame();
+		console.log("resumed");
 	}
 })
 
@@ -143,7 +168,7 @@ var render = function () {
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
-	ctx.fillText("Goblins caught: " + monstersCaught, 32, 32);
+	//ctx.fillText("Goblins caught: " + monstersCaught, 32, 32);
 };
 
 // The main game loop
