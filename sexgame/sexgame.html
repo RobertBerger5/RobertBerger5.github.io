@@ -46,21 +46,20 @@
 			}
 		</style>
 	</head>
-	<body onclick="creamed=true">
+	<body>
 
 		<script id="posSrc"></script>
 		<script>
 			function changePos(pos){
 				document.getElementById("posSrc").src="/sexgame/"+pos+".js";
+				console.log("Changed position to "+pos);
 			};
 		</script>
 		<table>
 			<tbody>
 				<tr>
 					<td onclick="changePos('doggy')">Doggy</td>
-					<td>Missionary</td>
-					<td>Cowgirl</td>
-					<td>Blow Job</td>
+					<td onclick="changePos('cowgirl')">Reverse Cowgirl</td>
 				</tr>
 			</tbody>
 		</table>
