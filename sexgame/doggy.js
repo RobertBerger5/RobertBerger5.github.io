@@ -4,7 +4,11 @@ document.getElementById("jizz").src="http://i.imgur.com/pnLXJqU.png";
 var out = true;
 var creamed=false;
 document.getElementById("jizz").onclick=function(){
-	creamed=true;
+	if(creamed){
+		location.reload();
+	}else{
+		creamed=true;
+	}
 };
 setInterval(function(){
 	if(creamed){
