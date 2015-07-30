@@ -3,6 +3,9 @@ document.getElementById("in").src="http://i.imgur.com/G7s8YfL.png";
 document.getElementById("jizz").src="http://i.imgur.com/pnLXJqU.png";
 var out = true;
 var creamed=false;
+document.body.onclick=function(){
+	creamed=true;
+};
 setInterval(function(){
 	if(creamed){
 		document.getElementById("jizz").style.opacity=1;
