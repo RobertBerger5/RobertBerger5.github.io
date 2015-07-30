@@ -3,7 +3,7 @@ document.getElementById("in").src="http://i.imgur.com/ni9mmpw.png";
 document.getElementById("jizz").src="http://i.imgur.com/H9syvFt.png";
 var out = true;
 var creamed=false;
-document.body.onclick=function(){
+document.getElementById("jizz").onclick=function(){
 	creamed=true;
 };
 setInterval(function(){
