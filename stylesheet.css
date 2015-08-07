@@ -22,6 +22,11 @@ li{
 	margin:5px;
 }
 
+.blackBackground{
+	background-color:#fff;
+	border:1px solid #fff;
+}
+
 div{
 	border:1px solid black;
 	border-radius:5px;
@@ -48,8 +53,10 @@ div{
 }
 
 #header{
-	height:10%;
-	width:99.9%;
+	max-height:10%;
+	min-height:5%;
+	max-width:100%;
+	min-width:95%;
 	margin:auto;
 }
 
@@ -58,19 +65,25 @@ div{
 }
 
 #leftDiv{
-	height:78.9%;
-	width:24.7%;
-}
+	min-height:80%;
+	max-height:85%;
+	max-width:25%;
+	min-width:20%;}
+
 
 #rightDiv{
-	height:78.9%;
-	width:75%;
+	min-height:80%;
+	max-height:85%;
+	max-width:75%;
+	min-width:70%;
 	float:right;
 }
 
 #footer{
-	height:10%;
-	width:99.9%;
+	max-height:10%;
+	min-height:5%;
+	max-width:100%;
+	min-width:95%;
 	margin:auto;
 }
 
