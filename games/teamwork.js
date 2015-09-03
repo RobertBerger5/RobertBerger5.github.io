@@ -18,7 +18,7 @@ var playerImage = new Image();
 playerImage.onload = function () {
 	playerReady = true;
 };
-playerImage.src = "http://i.imgur.com/1gH2sZ9.png?1";
+playerImage.src = "http://www.jimmiedave.com/wp-content/uploads/2012/03/Black-Test-1.png";
 
 // player0 image
 var player0Ready = false;
@@ -26,7 +26,7 @@ var player0Image = new Image();
 player0Image.onload = function () {
 	player0Ready = true;
 };
-player0Image.src = "http://i.imgur.com/Rr5kPpb.png?1";
+player0Image.src = "http://www.jimmiedave.com/wp-content/uploads/2012/03/Black-Test-1.png";
 
 // Monster image
 var monsterReady = false;
@@ -40,12 +40,17 @@ monsterImage.src = "http://vignette1.wikia.nocookie.net/kairosoft/images/8/8f/Dr
 playerSpeed=500;
 lost=false;
 paused=false;
-playerDim=256;
+playerDim=96;
 timerInterval=1000;
 
 // Functions
-function lose(){
+function lose(winner){
+	pauseGame();
 	lost=true;
+	console.log(winner+" wins!");
+	ctx.fillStyle = "rgba(0,0,0,.25)";
+	ctx.font = "200px Helvetica";
+	ctx.fillText(winner+" wins!",0,0);
 }
 
 function pauseGame(){
@@ -97,7 +102,7 @@ var dot_R=function(x,y){
 setInterval(function(){
 	if(paused==false){
 		// Dot Maker
-		var xCo=Math.random()*canvas.width/2
+		var xCo=Math.random()*canvas.width/2-5
 		var yCo=Math.random()*canvas.height
 		dotL.push(dot_L(
 		xCo,
@@ -113,7 +118,7 @@ setInterval(function(){
 // Handle keyboard controls
 // Single key events
 $( "body" ).on( "keydown", function( event ) {
-	if(event.which=="32"&&paused==false&&lost==true){
+	if(event.which=="32"&&lost==true){
 		location.reload();
 	}else if(event.which=="32"&&paused==false&&lost==false){
 		pauseGame();
@@ -146,6 +151,7 @@ var reset = function () {
 
 // Update game objects
 var update = function (modifier) {
+	if(lost==false&&paused==false){
 	if (87 in keysDown) { // Player holding up
 		player.y -= player.speed * modifier;
 	}
@@ -208,12 +214,39 @@ var update = function (modifier) {
 	}else if(player0.y>canvas.height-(player0.height)){
 		player0.y-=player0.speed*modifier;
 	}else{}
-};
 
+	// collision with dot
+	for(var a in dotL){
+		//console.log(dots[a].x);
+		if (
+			player.x <= (dotL[a].x + 0)
+			&& dotL[a].x <= (player.x + player.width)
+			&& player.y <= (dotL[a].y + 0)
+			&& dotL[a].y <= (player.y + player.height)
+			&&lost==false
+		){
+			lose("Player 2");
+		}
+	}
 
+	for(var a in dotR){
+		//console.log(dots[a].x);
+		if (
+			player0.x <= (dotR[a].x + 0)
+			&& dotR[a].x <= (player0.x + player0.width)
+			&& player0.y <= (dotR[a].y + 0)
+			&& dotR[a].y <= (player0.y + player0.height)
+			&&lost==false
+		){
+			lose("Player 1");
+		};
+	};
+	};
+}; //end of update()
 
 // Draw everything
 var render = function () {
+	if(lost==false){
 	if (bgReady) {
 		ctx.drawImage(bgImage, 0, 0);
 	}
@@ -234,10 +267,10 @@ var render = function () {
 	}
 
 	ctx.fillStyle = "#000";
-	ctx.fillRect((canvas.width/2)-5,0,10,canvas.height)
+	ctx.fillRect((canvas.width/2)-1,0,2,canvas.height)
 
 	// Score
-	ctx.fillStyle = "#fff";
+	ctx.fillStyle = "#000";
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
@@ -248,11 +281,19 @@ var render = function () {
 	for(var a in dotL){
 		ctx.fillRect(dotL[a].x, dotL[a].y, 10, 10);
 	};
-	ctx.fillStyle="#0ff";
+	ctx.fillStyle="#0f0";
 	for(var a in dotR){
 		ctx.fillRect(dotR[a].x, dotR[a].y, 10, 10);
 	};
-};
+
+	if(paused){
+		ctx.fillStyle = "rgba(0,0,0,.25)";
+		ctx.font = "200px Helvetica";
+		ctx.fillText("Paused",0,0);
+	}
+
+	};
+}; //end of render()
 
 // The main game loop
 var main = function () {
@@ -277,4 +318,6 @@ Plan:
 	The half that does it better wins
 	woo hoo
 
+	Other idea: slow moving black squares bigger than the player that dots don't spawn inside, making it a good idea for players to stay inside them,
+	just see who survives longer without touching a dot thing
 */
