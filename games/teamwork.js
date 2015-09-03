@@ -12,21 +12,21 @@ bgImage.onload = function () {
 };
 bgImage.src = "http://temp.indicom-electric.com/wp-content/uploads/2013/05/background.jpg";
 
-// Hero image
-var heroReady = false;
-var heroImage = new Image();
-heroImage.onload = function () {
-	heroReady = true;
+// player image
+var playerReady = false;
+var playerImage = new Image();
+playerImage.onload = function () {
+	playerReady = true;
 };
-heroImage.src = "http://i.imgur.com/1gH2sZ9.png?1";
+playerImage.src = "http://i.imgur.com/1gH2sZ9.png?1";
 
-// Hero0 image
-var hero0Ready = false;
-var hero0Image = new Image();
-hero0Image.onload = function () {
-	hero0Ready = true;
+// player0 image
+var player0Ready = false;
+var player0Image = new Image();
+player0Image.onload = function () {
+	player0Ready = true;
 };
-hero0Image.src = "http://i.imgur.com/Rr5kPpb.png?1";
+player0Image.src = "http://i.imgur.com/Rr5kPpb.png?1";
 
 // Monster image
 var monsterReady = false;
@@ -40,6 +40,8 @@ monsterImage.src = "http://vignette1.wikia.nocookie.net/kairosoft/images/8/8f/Dr
 playerSpeed=500;
 lost=false;
 paused=false;
+playerDim=256;
+timerInterval=1000;
 
 // Functions
 function lose(){
@@ -56,18 +58,57 @@ function resumeGame(){
 }
 
 // Game objects
-var hero = {
+var player = {
 	speed: playerSpeed,
-	x:canvas.width/4-128,
-	y:canvas.height/2-128
+	x:canvas.width/4-playerDim/2,
+	y:canvas.height/2-playerDim/2,
+	height:playerDim,
+	width:playerDim
 };
-var hero0 = {
+var player0 = {
 	speed: playerSpeed,
-	x:canvas.width/4*3-128,
-	y:canvas.height/2-128
+	x:canvas.width/4*3-playerDim/2,
+	y:canvas.height/2-playerDim/2,
+	height:playerDim,
+	width:playerDim
 };
 var monster = {};
 var monstersCaught = 0;
+
+// Other
+// .push() magic THIS IS ALL I'VE DONE ON THE DOTS SO FAR
+var dotL=[];
+var dot_L=function(x,y){
+	return{
+		x:x,
+		y:y,
+	}
+}
+
+var dotR=[];
+var dot_R=function(x,y){
+	return{
+		x:x,
+		y:y,
+	}
+}
+
+// Timer
+setInterval(function(){
+	if(paused==false){
+		// Dot Maker
+		var xCo=Math.random()*canvas.width/2
+		var yCo=Math.random()*canvas.height
+		dotL.push(dot_L(
+		xCo,
+		yCo
+		));
+		dotR.push(dot_R(
+		xCo+canvas.width/2,
+		yCo
+		));
+	}
+},timerInterval);
 
 // Handle keyboard controls
 // Single key events
@@ -75,7 +116,8 @@ $( "body" ).on( "keydown", function( event ) {
 	if(event.which=="32"&&paused==false&&lost==true){
 		location.reload();
 	}else if(event.which=="32"&&paused==false&&lost==false){
-		pauseGame("32");
+		pauseGame();
+		//location.reload();
 		console.log("paused");
 	}else if(event.which=="32"&&paused==true&&lost==false){
 		resumeGame();
@@ -105,43 +147,70 @@ var reset = function () {
 // Update game objects
 var update = function (modifier) {
 	if (87 in keysDown) { // Player holding up
-		hero.y -= hero.speed * modifier;
+		player.y -= player.speed * modifier;
 	}
 	if (83 in keysDown) { // Player holding down
-		hero.y += hero.speed * modifier;
+		player.y += player.speed * modifier;
 	}
 	if (65 in keysDown) { // Player holding left
-		hero.x -= hero.speed * modifier;
+		player.x -= player.speed * modifier;
 	}
 	if (68 in keysDown) { // Player holding right
-		hero.x += hero.speed * modifier;
+		player.x += player.speed * modifier;
 	}
 	
-	// Hero0
+	// player0
 	if (73 in keysDown) { // Player holding up
-		hero0.y -= hero0.speed * modifier;
+		player0.y -= player0.speed * modifier;
 	}
 	if (75 in keysDown) { // Player holding down
-		hero0.y += hero0.speed * modifier;
+		player0.y += player0.speed * modifier;
 	}
 	if (74 in keysDown) { // Player holding left
-		hero0.x -= hero0.speed * modifier;
+		player0.x -= player0.speed * modifier;
 	}
 	if (76 in keysDown) { // Player holding right
-		hero0.x += hero0.speed * modifier;
+		player0.x += player0.speed * modifier;
 	}
 
 	// Are they touching?
 	if (
-		hero.x <= (monster.x + 32)
-		&& monster.x <= (hero.x + 32)
-		&& hero.y <= (monster.y + 32)
-		&& monster.y <= (hero.y + 32)
+		player.x <= (monster.x + 32)
+		&& monster.x <= (player.x + 32)
+		&& player.y <= (monster.y + 32)
+		&& monster.y <= (player.y + 32)
 	) {
 		++monstersCaught;
 		reset();
 	}
+
+	// Walls
+	if (player.x < 0) {
+		player.x+=player.speed*modifier;
+	}else if(player.x>canvas.width/2-(player.width)){
+		player.x-=player.speed*modifier;
+	}else{}
+
+	if (player.y < 0) {
+		player.y+=player.speed*modifier;
+	}else if(player.y>canvas.height-(player.height)){
+		player.y-=player.speed*modifier;
+	}else{}
+
+	if (player0.x < canvas.width/2) {
+		player0.x+=player0.speed*modifier;
+	}else if(player0.x>canvas.width-(player0.width)){
+		player0.x-=player0.speed*modifier;
+	}else{}
+
+	if (player0.y < 0) {
+		player0.y+=player0.speed*modifier;
+	}else if(player0.y>canvas.height-(player0.height)){
+		player0.y-=player0.speed*modifier;
+	}else{}
 };
+
+
 
 // Draw everything
 var render = function () {
@@ -149,26 +218,40 @@ var render = function () {
 		ctx.drawImage(bgImage, 0, 0);
 	}
 
+	ctx.fillStyle="#fff";
 	ctx.fillRect(0,0,canvas.width,canvas.height)
 
-	if (heroReady) {
-		ctx.drawImage(heroImage, hero.x, hero.y);
+	if (playerReady) {
+		ctx.drawImage(playerImage, player.x, player.y);
 	}
 	
-	if (hero0Ready) {
-		ctx.drawImage(hero0Image, hero0.x, hero0.y);
+	if (player0Ready) {
+		ctx.drawImage(player0Image, player0.x, player0.y);
 	}
 
 	if (monsterReady) {
 		ctx.drawImage(monsterImage, monster.x, monster.y);
 	}
 
+	ctx.fillStyle = "#000";
+	ctx.fillRect((canvas.width/2)-5,0,10,canvas.height)
+
 	// Score
-	ctx.fillStyle = "rgb(250, 250, 250)";
+	ctx.fillStyle = "#fff";
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
 	//ctx.fillText("Goblins caught: " + monstersCaught, 32, 32);
+
+	// Draw dots
+	ctx.fillStyle="#0f0";
+	for(var a in dotL){
+		ctx.fillRect(dotL[a].x, dotL[a].y, 10, 10);
+	};
+	ctx.fillStyle="#0ff";
+	for(var a in dotR){
+		ctx.fillRect(dotR[a].x, dotR[a].y, 10, 10);
+	};
 };
 
 // The main game loop
@@ -188,9 +271,10 @@ setInterval(main, 1); // Execute as fast as possible
 
 /* TODO: MAKE THE ACTUAL FUCKING GAME
 
-IDEAS:
-jedi squirrel battle
-maze game where they can't touch each other?
-duel with sword on one side of square and shield on other- corners, two corners attack, two corners defend
-pong or 1v1 tennis
+Plan:
+	Screen split into left and right halves
+	Each half does something
+	The half that does it better wins
+	woo hoo
+
 */
