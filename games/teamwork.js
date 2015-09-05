@@ -28,26 +28,28 @@ player0Image.onload = function () {
 };
 player0Image.src = "http://www.jimmiedave.com/wp-content/uploads/2012/03/Black-Test-1.png";
 
-// Monster image
-var monsterReady = false;
-var monsterImage = new Image();
-monsterImage.onload = function () {
-	monsterReady = true;
-};
-monsterImage.src = "http://vignette1.wikia.nocookie.net/kairosoft/images/8/8f/Drazilla_(Beastie_Bay).png/revision/latest?cb=20140215160639";
-
-// Variables
-playerSpeed=500;
+// Preset Variables
+safeDown=Math.floor(Math.random()*2);
 lost=false;
 paused=false;
-playerDim=96;
+// Customizable Variables
+playerSpeed=500;
+playerDim=50;
 timerInterval=1000;
+safeHeight=200;
+safeSpeed=100;
+dotLColor="#00a";
+dotRColor="#a00";
+playerColor="#00a";
+player0Color="#a00";
+backgroundLColor="#aaf";
+backgroundRColor="#faa";
+safeColor="#afa"
 
 // Functions
 function lose(winner){
 	pauseGame();
 	lost=true;
-	console.log(winner+" wins!");
 	ctx.fillStyle = "rgba(0,0,0,.25)";
 	ctx.font = "200px Helvetica";
 	ctx.fillText(winner+" wins!",0,0);
@@ -55,11 +57,9 @@ function lose(winner){
 
 function pauseGame(){
 	paused=true
-	playerSpeed=0;
 }
 function resumeGame(){
 	paused=false;
-	playerSpeed=500;
 }
 
 // Game objects
@@ -77,8 +77,12 @@ var player0 = {
 	height:playerDim,
 	width:playerDim
 };
-var monster = {};
-var monstersCaught = 0;
+
+var safe={
+	y:(canvas.height/2)-(safeHeight/2),
+	height:safeHeight,
+	speed:safeSpeed
+};
 
 // Other
 // .push() magic THIS IS ALL I'VE DONE ON THE DOTS SO FAR
@@ -102,16 +106,20 @@ var dot_R=function(x,y){
 setInterval(function(){
 	if(paused==false){
 		// Dot Maker
-		var xCo=Math.random()*canvas.width/2-5
-		var yCo=Math.random()*canvas.height
-		dotL.push(dot_L(
-		xCo,
-		yCo
-		));
-		dotR.push(dot_R(
-		xCo+canvas.width/2,
-		yCo
-		));
+		xL=Math.random()*canvas.width/2;
+		yL=Math.random()*canvas.height;
+		xR=Math.random()*canvas.width/2+canvas.width/2;
+		yR=Math.random()*canvas.height;
+
+		if(yL>=safe.y&&yL<=(safe.y+safeHeight)){
+		}else{
+			dotL.push(dot_L(xL,yL));
+		}
+
+		if(yR>=safe.y&&yR<=(safe.y+safeHeight)){
+		}else{
+			dotR.push(dot_R(xR,yR));
+		}
 	}
 },timerInterval);
 
@@ -141,16 +149,23 @@ addEventListener("keyup", function (e) {
 	delete keysDown[e.keyCode];
 }, false);
 
-// Reset the game when the player catches a monster
-var reset = function () {
-
-	// Throw the monster somewhere on the screen randomly
-	monster.x = 32 + (Math.random() * (canvas.width - 64));
-	monster.y = 32 + (Math.random() * (canvas.height - 64));
-};
-
 // Update game objects
 var update = function (modifier) {
+
+	// Safe zone movement
+	if(safeDown==1){
+		safe.y+=safe.speed*modifier;
+	}else{
+		safe.y-=safe.speed*modifier;
+	}
+
+	if(safe.y+safeHeight>=canvas.height){
+		safeDown=0;
+	}
+	if(safe.y<=0){
+		safeDown=1;
+	}
+
 	if(lost==false&&paused==false){
 	if (87 in keysDown) { // Player holding up
 		player.y -= player.speed * modifier;
@@ -177,17 +192,6 @@ var update = function (modifier) {
 	}
 	if (76 in keysDown) { // Player holding right
 		player0.x += player0.speed * modifier;
-	}
-
-	// Are they touching?
-	if (
-		player.x <= (monster.x + 32)
-		&& monster.x <= (player.x + 32)
-		&& player.y <= (monster.y + 32)
-		&& monster.y <= (player.y + 32)
-	) {
-		++monstersCaught;
-		reset();
 	}
 
 	// Walls
@@ -217,12 +221,11 @@ var update = function (modifier) {
 
 	// collision with dot
 	for(var a in dotL){
-		//console.log(dots[a].x);
 		if (
-			player.x <= (dotL[a].x + 0)
-			&& dotL[a].x <= (player.x + player.width)
-			&& player.y <= (dotL[a].y + 0)
-			&& dotL[a].y <= (player.y + player.height)
+			player.x <= (dotL[a].x + 9)
+			&& dotL[a].x <= (player.x + player.width-1)
+			&& player.y <= (dotL[a].y + 9)
+			&& dotL[a].y <= (player.y + player.height-1)
 			&&lost==false
 		){
 			lose("Player 2");
@@ -230,42 +233,61 @@ var update = function (modifier) {
 	}
 
 	for(var a in dotR){
-		//console.log(dots[a].x);
 		if (
-			player0.x <= (dotR[a].x + 0)
-			&& dotR[a].x <= (player0.x + player0.width)
-			&& player0.y <= (dotR[a].y + 0)
-			&& dotR[a].y <= (player0.y + player0.height)
+			player0.x <= (dotR[a].x + 9)
+			&& dotR[a].x <= (player0.x + player0.width-1)
+			&& player0.y <= (dotR[a].y + 9)
+			&& dotR[a].y <= (player0.y + player0.height-1)
 			&&lost==false
 		){
 			lose("Player 1");
 		};
 	};
+
+	// Collision with Safe
+	if(player.y>=safe.y&&(player.y+playerDim)<=(safe.y+safe.height)){
+	}else{
+		lose("Player 2");
+	};
+	if(player0.y>=safe.y&&(player0.y+playerDim)<=(safe.y+safe.height)){
+	}else{
+		lose("Player 1");
+	};
+
 	};
 }; //end of update()
 
 // Draw everything
 var render = function () {
 	if(lost==false){
-	if (bgReady) {
+	/*if (bgReady) {
 		ctx.drawImage(bgImage, 0, 0);
-	}
+	}*/
 
-	ctx.fillStyle="#fff";
-	ctx.fillRect(0,0,canvas.width,canvas.height)
+	ctx.fillStyle=backgroundLColor;
+	ctx.fillRect(0,0,canvas.width/2,canvas.height);
 
-	if (playerReady) {
+	ctx.fillStyle=backgroundRColor;
+	ctx.fillRect(canvas.width/2,0,canvas.width/2,canvas.height);
+
+	// Safe Zone
+	ctx.fillStyle=safeColor;
+	ctx.fillRect(0, safe.y, canvas.width, safeHeight);
+
+	/*if (playerReady) {
 		ctx.drawImage(playerImage, player.x, player.y);
-	}
+	}*/
+	ctx.fillStyle=playerColor;
+	ctx.fillRect(player.x,player.y,playerDim,playerDim);
+
 	
-	if (player0Ready) {
+	/*if (player0Ready) {
 		ctx.drawImage(player0Image, player0.x, player0.y);
-	}
+	}*/
+	ctx.fillStyle=player0Color;
+	ctx.fillRect(player0.x,player0.y,playerDim,playerDim);
 
-	if (monsterReady) {
-		ctx.drawImage(monsterImage, monster.x, monster.y);
-	}
-
+	//middle line
 	ctx.fillStyle = "#000";
 	ctx.fillRect((canvas.width/2)-1,0,2,canvas.height)
 
@@ -277,11 +299,11 @@ var render = function () {
 	//ctx.fillText("Goblins caught: " + monstersCaught, 32, 32);
 
 	// Draw dots
-	ctx.fillStyle="#0f0";
+	ctx.fillStyle=dotLColor;
 	for(var a in dotL){
 		ctx.fillRect(dotL[a].x, dotL[a].y, 10, 10);
 	};
-	ctx.fillStyle="#0f0";
+	ctx.fillStyle=dotRColor;
 	for(var a in dotR){
 		ctx.fillRect(dotR[a].x, dotR[a].y, 10, 10);
 	};
@@ -310,14 +332,7 @@ var main = function () {
 var then = Date.now();
 setInterval(main, 1); // Execute as fast as possible
 
-/* TODO: MAKE THE ACTUAL FUCKING GAME
-
-Plan:
-	Screen split into left and right halves
-	Each half does something
-	The half that does it better wins
-	woo hoo
-
-	Other idea: slow moving black squares bigger than the player that dots don't spawn inside, making it a good idea for players to stay inside them,
-	just see who survives longer without touching a dot thing
+/* TODO:
+	Options that localSave like similar dot patters, colors for dots, players, and background, or something else
+	Timer for overall survival time
 */
