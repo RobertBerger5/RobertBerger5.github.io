@@ -8,7 +8,7 @@ canvas{
 	border:0px;
 	padding:0px;
 }
-input{
+/*input{
 	position:fixed;
 	bottom:0px;
 	left:0px;
@@ -19,6 +19,17 @@ input{
 	display:block;
 	border:0px;
 	padding:0px;
+}*/
+#options{
+	position:fixed;
+	height:100%;
+	width:100%;
+	z-index:2;
+	opacity:.0;
+	background-color:#fff;
+}
+p{
+	margin:10px;
 }
 .youSuck{
 	text-align:center;
