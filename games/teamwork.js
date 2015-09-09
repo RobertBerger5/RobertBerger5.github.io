@@ -115,7 +115,7 @@ function lose(winner){
 function pauseGame(){
 	paused=true
 	console.log("Paused");
-	document.getElementById("options").style.opacity=".75";
+	document.getElementById("options").style.opacity=".5";
 };
 function resumeGame(){
 	paused=false;
