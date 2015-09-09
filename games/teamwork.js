@@ -32,35 +32,96 @@ player0Image.src = "http://www.jimmiedave.com/wp-content/uploads/2012/03/Black-T
 safeDown=Math.floor(Math.random()*2);
 lost=false;
 paused=false;
+timer=0;
+
 // Customizable Variables
-playerSpeed=500;
-playerDim=50;
-timerInterval=1000;
-safeHeight=200;
-safeSpeed=100;
-dotLColor="#00a";
-dotRColor="#a00";
-playerColor="#00a";
-player0Color="#a00";
-backgroundLColor="#aaf";
-backgroundRColor="#faa";
-safeColor="#afa"
+/*playerSpeed=document.getElementById("playerSpeed").value;
+playerDim=document.getElementById("playerDim").value;
+timerInterval=document.getElementById("timerInterval").value;
+safeHeight=document.getElementById("safeHeight").value;
+safeSpeed=document.getElementById("safeSpeed").value;
+/*dotLColor=document.getElementById("dotLColor").value;
+dotRColor=document.getElementById("dotRColor").value;
+playerColor=document.getElementById("playerColor").value;
+player0Color=document.getElementById("player0Color").value;
+backgroundLColor=document.getElementById("backgroundLColor").value;
+backgroundRColor=document.getElementById("backgroundRColor").value;
+safeColor=document.getElementById("safeColor").value;*/
+
+//changeSetting(setting,value), like changeSetting(playerSpeed,400)
+
+if(localStorage.getItem("playerSpeed")==null){
+	playerSpeed=500;
+	playerDim=50;
+	timerInterval=1000;
+	safeHeight=200;
+	safeSpeed=100;
+	dotLColor="#00f";
+	dotRColor="#f00";
+	playerColor="#00a";
+	player0Color="#a00";
+	backgroundLColor="#aaf";
+	backgroundRColor="#faa";
+	safeColor="#afa";
+
+	localStorage.setItem("playerSpeed",playerSpeed);
+	localStorage.setItem("playerDim",playerDim);
+	localStorage.setItem("timerInterval",timerInterval);
+	localStorage.setItem("safeHeight",safeHeight);
+	localStorage.setItem("safeSpeed",safeSpeed);
+	localStorage.setItem("dotLColor",dotLColor);
+	localStorage.setItem("dotRColor",dotRColor);
+	localStorage.setItem("playerColor",playerColor);
+	localStorage.setItem("player0Color",player0Color);
+	localStorage.setItem("backgroundLColor",backgroundLColor);
+	localStorage.setItem("backgroundRColor",backgroundRColor);
+	localStorage.setItem("safeColor",safeColor);
+
+}else{
+
+	playerSpeed=Number(localStorage.getItem("playerSpeed"));
+	playerDim=Number(localStorage.getItem("playerDim"));
+	timerInterval=Number(localStorage.getItem("timerInterval"));
+	safeHeight=Number(localStorage.getItem("safeHeight"));
+	safeSpeed=Number(localStorage.getItem("safeSpeed"));
+	dotLColor=localStorage.getItem("dotLColor");
+	dotRColor=localStorage.getItem("dotRColor");
+	playerColor=localStorage.getItem("playerColor");
+	player0Color=localStorage.getItem("player0Color");
+	backgroundLColor=localStorage.getItem("backgroundLColor");
+	backgroundRColor=localStorage.getItem("backgroundRColor");
+	safeColor=localStorage.getItem("safeColor");
+
+}
 
 // Functions
+
+// Change Options Function
+function changeSetting(settingS,setting,settingN){
+	setting=settingS.value;
+	localStorage.setItem(settingN,setting);
+	console.log(settingN+" changed to "+setting);
+};
+
 function lose(winner){
-	pauseGame();
+	//pauseGame();
 	lost=true;
 	ctx.fillStyle = "rgba(0,0,0,.25)";
-	ctx.font = "200px Helvetica";
-	ctx.fillText(winner+" wins!",0,0);
-}
+	ctx.font = "150px Helvetica";
+	ctx.fillText(winner+" has won!",0,canvas.height/2);
+	console.log(winner+" has won!");
+};
 
 function pauseGame(){
 	paused=true
-}
+	console.log("Paused");
+	document.getElementById("options").style.opacity=".75";
+};
 function resumeGame(){
 	paused=false;
-}
+	console.log("Resumed");
+	document.getElementById("options").style.opacity="0";
+};
 
 // Game objects
 var player = {
@@ -102,7 +163,7 @@ var dot_R=function(x,y){
 	}
 }
 
-// Timer
+// Dot Spawn Timer
 setInterval(function(){
 	if(paused==false){
 		// Dot Maker
@@ -123,6 +184,13 @@ setInterval(function(){
 	}
 },timerInterval);
 
+// Timer
+setInterval(function(){
+	if(paused==0&&lost==0){
+		timer++;
+	}
+},10);
+
 // Handle keyboard controls
 // Single key events
 $( "body" ).on( "keydown", function( event ) {
@@ -131,10 +199,8 @@ $( "body" ).on( "keydown", function( event ) {
 	}else if(event.which=="32"&&paused==false&&lost==false){
 		pauseGame();
 		//location.reload();
-		console.log("paused");
 	}else if(event.which=="32"&&paused==true&&lost==false){
 		resumeGame();
-		console.log("resumed");
 	}
 })
 
@@ -152,6 +218,8 @@ addEventListener("keyup", function (e) {
 // Update game objects
 var update = function (modifier) {
 
+	if(lost==false&&paused==false){
+
 	// Safe zone movement
 	if(safeDown==1){
 		safe.y+=safe.speed*modifier;
@@ -166,7 +234,7 @@ var update = function (modifier) {
 		safeDown=1;
 	}
 
-	if(lost==false&&paused==false){
+	// Key movements
 	if (87 in keysDown) { // Player holding up
 		player.y -= player.speed * modifier;
 	}
@@ -287,17 +355,6 @@ var render = function () {
 	ctx.fillStyle=player0Color;
 	ctx.fillRect(player0.x,player0.y,playerDim,playerDim);
 
-	//middle line
-	ctx.fillStyle = "#000";
-	ctx.fillRect((canvas.width/2)-1,0,2,canvas.height)
-
-	// Score
-	ctx.fillStyle = "#000";
-	ctx.font = "24px Helvetica";
-	ctx.textAlign = "left";
-	ctx.textBaseline = "top";
-	//ctx.fillText("Goblins caught: " + monstersCaught, 32, 32);
-
 	// Draw dots
 	ctx.fillStyle=dotLColor;
 	for(var a in dotL){
@@ -308,11 +365,13 @@ var render = function () {
 		ctx.fillRect(dotR[a].x, dotR[a].y, 10, 10);
 	};
 
-	if(paused){
-		ctx.fillStyle = "rgba(0,0,0,.25)";
-		ctx.font = "200px Helvetica";
-		ctx.fillText("Paused",0,0);
-	}
+	//middle line
+	ctx.fillStyle = "#000";
+	ctx.fillRect((canvas.width/2)-1,0,2,canvas.height)
+
+	// Timer
+	ctx.font = "50px Helvetica";
+	ctx.fillText((timer/100), canvas.width/2-40, 50);
 
 	};
 }; //end of render()
@@ -330,9 +389,4 @@ var main = function () {
 
 // Let's play this game!
 var then = Date.now();
-setInterval(main, 1); // Execute as fast as possible
-
-/* TODO:
-	Options that localSave like similar dot patters, colors for dots, players, and background, or something else
-	Timer for overall survival time
-*/
+setInterval(main, 1); //Execute as fast as possible
