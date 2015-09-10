@@ -35,21 +35,6 @@ paused=false;
 timer=0;
 
 // Customizable Variables
-/*playerSpeed=document.getElementById("playerSpeed").value;
-playerDim=document.getElementById("playerDim").value;
-timerInterval=document.getElementById("timerInterval").value;
-safeHeight=document.getElementById("safeHeight").value;
-safeSpeed=document.getElementById("safeSpeed").value;
-/*dotLColor=document.getElementById("dotLColor").value;
-dotRColor=document.getElementById("dotRColor").value;
-playerColor=document.getElementById("playerColor").value;
-player0Color=document.getElementById("player0Color").value;
-backgroundLColor=document.getElementById("backgroundLColor").value;
-backgroundRColor=document.getElementById("backgroundRColor").value;
-safeColor=document.getElementById("safeColor").value;*/
-
-//changeSetting(setting,value), like changeSetting(playerSpeed,400)
-
 if(localStorage.getItem("playerSpeed")==null){
 	playerSpeed=500;
 	playerDim=50;
@@ -76,9 +61,7 @@ if(localStorage.getItem("playerSpeed")==null){
 	localStorage.setItem("backgroundLColor",backgroundLColor);
 	localStorage.setItem("backgroundRColor",backgroundRColor);
 	localStorage.setItem("safeColor",safeColor);
-
 }else{
-
 	playerSpeed=Number(localStorage.getItem("playerSpeed"));
 	playerDim=Number(localStorage.getItem("playerDim"));
 	timerInterval=Number(localStorage.getItem("timerInterval"));
@@ -92,6 +75,23 @@ if(localStorage.getItem("playerSpeed")==null){
 	backgroundRColor=localStorage.getItem("backgroundRColor");
 	safeColor=localStorage.getItem("safeColor");
 
+	document.getElementById('playerSpeedS').value=playerSpeed;
+	document.getElementById('playerDimS').value=playerDim;
+	document.getElementById('timerIntervalS').value=timerInterval;
+	document.getElementById('safeHeightS').value=safeHeight;
+	document.getElementById('safeSpeedS').value=safeSpeed;
+	document.getElementById('dotLColorS').value=dotLColor;
+	document.getElementById('dotRColorS').value=dotRColor;
+	document.getElementById('playerColorS').value=playerColor;
+	document.getElementById('player0ColorS').value=player0Color;
+	document.getElementById('backgroundLColorS').value=backgroundLColor;
+	document.getElementById('backgroundRColorS').value=backgroundRColor;
+	document.getElementById('safeSpeedS').value=safeSpeed;
+
+	/*var divOp=["playerSpeedS","playerDimS","timerIntervalS","safeHeightS","safeSpeedS","dotLColorS","dotRColorS","playerColorS","player0ColorS","backgroundLColorS","backgroundRColorS","safeColorS"]
+	for(var i=0;i<divOp.length;i++){
+		document
+	}*/
 }
 
 // Functions
@@ -201,6 +201,10 @@ $( "body" ).on( "keydown", function( event ) {
 		//location.reload();
 	}else if(event.which=="32"&&paused==true&&lost==false){
 		resumeGame();
+	}else if(event.which=="27"&&paused==true&&lost==false){
+		localStorage.clear();
+		localStorage.setItem("recentGame","teamwork");
+		console.log("Settings Cleared");
 	}
 })
 
@@ -390,3 +394,9 @@ var main = function () {
 // Let's play this game!
 var then = Date.now();
 setInterval(main, 1); //Execute as fast as possible
+
+/* TODO:
+	Options that localSave like similar dot patters, colors for dots, players, and background, or something else
+		on pause make that div come up, on unpause change the values and localSave them
+	Timer for overall survival time
+*/
