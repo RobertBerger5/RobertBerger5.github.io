@@ -394,5 +394,3 @@ var main = function () {
 // Let's play this game!
 var then = Date.now();
 setInterval(main, 1); //Execute as fast as possible
-
-console.log("yay");
