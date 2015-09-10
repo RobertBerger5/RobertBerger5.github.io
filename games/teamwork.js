@@ -395,8 +395,4 @@ var main = function () {
 var then = Date.now();
 setInterval(main, 1); //Execute as fast as possible
 
-/* TODO:
-	Options that localSave like similar dot patters, colors for dots, players, and background, or something else
-		on pause make that div come up, on unpause change the values and localSave them
-	Timer for overall survival time
-*/
+console.log("yay");
