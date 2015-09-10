@@ -38,7 +38,7 @@ timer=0;
 if(localStorage.getItem("playerSpeed")==null){
 	playerSpeed=500;
 	playerDim=50;
-	timerInterval=1000;
+	timerInterval=100;
 	safeHeight=200;
 	safeSpeed=100;
 	dotLColor="#00f";
