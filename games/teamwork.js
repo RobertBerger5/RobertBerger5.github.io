@@ -86,7 +86,7 @@ if(localStorage.getItem("playerSpeed")==null){
 	document.getElementById('player0ColorS').value=player0Color;
 	document.getElementById('backgroundLColorS').value=backgroundLColor;
 	document.getElementById('backgroundRColorS').value=backgroundRColor;
-	document.getElementById('safeSpeedS').value=safeSpeed;
+	document.getElementById('safeColorS').value=safeColor;
 
 	/*var divOp=["playerSpeedS","playerDimS","timerIntervalS","safeHeightS","safeSpeedS","dotLColorS","dotRColorS","playerColorS","player0ColorS","backgroundLColorS","backgroundRColorS","safeColorS"]
 	for(var i=0;i<divOp.length;i++){
