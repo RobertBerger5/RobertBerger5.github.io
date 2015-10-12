@@ -1,3 +1,3 @@
 RobertBerger5.github.io
 ==================
-Human Evolution Project for 10th grade Biology
+Website for screwing around, I might do something serious on it one day, who knows.
