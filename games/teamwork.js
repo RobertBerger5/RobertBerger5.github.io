@@ -4,6 +4,8 @@ var ctx = canvas.getContext("2d");
 canvas.width = $(window).width();
 canvas.height = $(window).height();
 
+console.log("ballz");
+
 // Background image
 var bgReady = false;
 var bgImage = new Image();
@@ -102,7 +104,7 @@ function changeSetting(settingS,setting,settingN){
 	localStorage.setItem(settingN,setting);
 	console.log(settingN+" changed to "+setting);
 };
-
+console.log(timer);
 function lose(winner){
 	//pauseGame();
 	lost=true;
