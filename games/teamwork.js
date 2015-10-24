@@ -110,6 +110,11 @@ function lose(winner){
 	ctx.font = "150px Helvetica";
 	ctx.fillText(winner+" has won!",0,canvas.height/2);
 	console.log(winner+" has won!");
+	if(timer<10){
+		console.log(timer);
+		document.getElementById("options").style.opacity="1";
+	}
+	//TODO: if the time is under 1 miliseconds, make the options screen come up to change settings of insta-death
 };
 
 function pauseGame(){
@@ -394,3 +399,7 @@ var main = function () {
 // Let's play this game!
 var then = Date.now();
 setInterval(main, 1); //Execute as fast as possible
+
+/* TODO:
+	let them fire dots at each other, idk about this though
+*/
