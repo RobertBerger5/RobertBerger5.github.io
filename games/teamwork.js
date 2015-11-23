@@ -78,7 +78,6 @@ if(localStorage.getItem("playerSpeed")==null){
 	safeColor=localStorage.getItem("safeColor");
 
 	setTimeout(function(){
-		console.log("ass");
 		document.getElementById('playerSpeedS').value=playerSpeed;
 		document.getElementById('playerDimS').value=playerDim;
 		document.getElementById('timerIntervalS').value=timerInterval;
@@ -91,7 +90,7 @@ if(localStorage.getItem("playerSpeed")==null){
 		document.getElementById('backgroundLColorS').value=backgroundLColor;
 		document.getElementById('backgroundRColorS').value=backgroundRColor;
 		document.getElementById('safeColorS').value=safeColor;
-	},1);
+	},10);
 
 	/*var divOp=["playerSpeedS","playerDimS","timerIntervalS","safeHeightS","safeSpeedS","dotLColorS","dotRColorS","playerColorS","player0ColorS","backgroundLColorS","backgroundRColorS","safeColorS"]
 	for(var i=0;i<divOp.length;i++){
