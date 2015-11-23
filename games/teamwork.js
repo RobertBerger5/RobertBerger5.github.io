@@ -4,7 +4,7 @@ var ctx = canvas.getContext("2d");
 canvas.width = $(window).width();
 canvas.height = $(window).height();
 
-console.log("ballz");
+$("#options").load("http://robertberger5.github.io/games/teamworkOptions.txt"); //load text from the options into that div
 
 // Background image
 var bgReady = false;
@@ -77,18 +77,21 @@ if(localStorage.getItem("playerSpeed")==null){
 	backgroundRColor=localStorage.getItem("backgroundRColor");
 	safeColor=localStorage.getItem("safeColor");
 
-	document.getElementById('playerSpeedS').value=playerSpeed;
-	document.getElementById('playerDimS').value=playerDim;
-	document.getElementById('timerIntervalS').value=timerInterval;
-	document.getElementById('safeHeightS').value=safeHeight;
-	document.getElementById('safeSpeedS').value=safeSpeed;
-	document.getElementById('dotLColorS').value=dotLColor;
-	document.getElementById('dotRColorS').value=dotRColor;
-	document.getElementById('playerColorS').value=playerColor;
-	document.getElementById('player0ColorS').value=player0Color;
-	document.getElementById('backgroundLColorS').value=backgroundLColor;
-	document.getElementById('backgroundRColorS').value=backgroundRColor;
-	document.getElementById('safeColorS').value=safeColor;
+	setTimeout(function(){
+		console.log("ass");
+		document.getElementById('playerSpeedS').value=playerSpeed;
+		document.getElementById('playerDimS').value=playerDim;
+		document.getElementById('timerIntervalS').value=timerInterval;
+		document.getElementById('safeHeightS').value=safeHeight;
+		document.getElementById('safeSpeedS').value=safeSpeed;
+		document.getElementById('dotLColorS').value=dotLColor;
+		document.getElementById('dotRColorS').value=dotRColor;
+		document.getElementById('playerColorS').value=playerColor;
+		document.getElementById('player0ColorS').value=player0Color;
+		document.getElementById('backgroundLColorS').value=backgroundLColor;
+		document.getElementById('backgroundRColorS').value=backgroundRColor;
+		document.getElementById('safeColorS').value=safeColor;
+	},1);
 
 	/*var divOp=["playerSpeedS","playerDimS","timerIntervalS","safeHeightS","safeSpeedS","dotLColorS","dotRColorS","playerColorS","player0ColorS","backgroundLColorS","backgroundRColorS","safeColorS"]
 	for(var i=0;i<divOp.length;i++){
@@ -104,17 +107,21 @@ function changeSetting(settingS,setting,settingN){
 	localStorage.setItem(settingN,setting);
 	console.log(settingN+" changed to "+setting);
 };
-console.log(timer);
+
 function lose(winner){
-	//pauseGame();
-	lost=true;
-	ctx.fillStyle = "rgba(0,0,0,.25)";
-	ctx.font = "150px Helvetica";
-	ctx.fillText(winner+" has won!",0,canvas.height/2);
-	console.log(winner+" has won!");
-	if(timer<10){
-		console.log(timer);
-		document.getElementById("options").style.opacity="1";
+	if(timer>10){
+		//pauseGame();
+		lost=true;
+		ctx.fillStyle = "rgba(0,0,0,.25)";
+		ctx.font = "150px Helvetica";
+		ctx.fillText(winner+" has won!",0,canvas.height/2);
+		console.log(winner+" has won!");
+		if(timer<10){
+			console.log(timer);
+			document.getElementById("options").style.opacity="1";
+		}
+	}else{
+		console.log("not time yet");
 	}
 	//TODO: if the time is under 1 miliseconds, make the options screen come up to change settings of insta-death
 };
@@ -122,12 +129,12 @@ function lose(winner){
 function pauseGame(){
 	paused=true
 	console.log("Paused");
-	document.getElementById("options").style.opacity=".5";
+	document.getElementById("options").style.zIndex="5";
 };
 function resumeGame(){
 	paused=false;
 	console.log("Resumed");
-	document.getElementById("options").style.opacity="0";
+	document.getElementById("options").style.zIndex="-1";
 };
 
 // Game objects
