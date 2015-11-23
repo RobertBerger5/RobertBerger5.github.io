@@ -118,10 +118,8 @@ function lose(winner){
 		if(timer<10){
 			console.log(timer);
 			document.getElementById("options").style.opacity="1";
-		}
-	}else{
-		console.log("not time yet");
-	}
+		};
+	};
 	//TODO: if the time is under 1 miliseconds, make the options screen come up to change settings of insta-death
 };
 
