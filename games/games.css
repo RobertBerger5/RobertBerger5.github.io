@@ -24,8 +24,8 @@ canvas{
 	position:fixed;
 	height:100%;
 	width:100%;
-	z-index:2;
-	opacity:.0;
+	z-index:-1;
+	opacity:.5;
 	background-color:#fff;
 }
 p{
