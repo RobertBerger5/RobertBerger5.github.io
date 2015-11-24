@@ -78,6 +78,7 @@ if(localStorage.getItem("playerSpeed")==null){
 	safeColor=localStorage.getItem("safeColor");
 
 	setTimeout(function(){
+		console.log("ass");
 		document.getElementById('playerSpeedS').value=playerSpeed;
 		document.getElementById('playerDimS').value=playerDim;
 		document.getElementById('timerIntervalS').value=timerInterval;
@@ -90,7 +91,7 @@ if(localStorage.getItem("playerSpeed")==null){
 		document.getElementById('backgroundLColorS').value=backgroundLColor;
 		document.getElementById('backgroundRColorS').value=backgroundRColor;
 		document.getElementById('safeColorS').value=safeColor;
-	},10);
+	},1);
 
 	/*var divOp=["playerSpeedS","playerDimS","timerIntervalS","safeHeightS","safeSpeedS","dotLColorS","dotRColorS","playerColorS","player0ColorS","backgroundLColorS","backgroundRColorS","safeColorS"]
 	for(var i=0;i<divOp.length;i++){
@@ -118,8 +119,10 @@ function lose(winner){
 		if(timer<10){
 			console.log(timer);
 			document.getElementById("options").style.opacity="1";
-		};
-	};
+		}
+	}else{
+		console.log("not time yet");
+	}
 	//TODO: if the time is under 1 miliseconds, make the options screen come up to change settings of insta-death
 };
 
