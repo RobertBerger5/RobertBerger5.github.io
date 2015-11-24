@@ -1,4 +1,5 @@
 window.onload=function(){
+	//e
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
     c.height = $(window).height();
