@@ -6,8 +6,8 @@ window.onload=function(){
 
     //custom variables
     var grav=10;//how much gravity is pulling on it
-    var bounce=.9;//how much higher it comes up after hitting the ground
-    var friction=.9;//how much touching the ground slows it
+    var bounce=0.9;//how much higher it comes up after hitting the ground
+    var friction=0.9;//how much touching the ground slows it
     var spawnRate=000;//how fast projectiles come in
     var projDim=50;//size of player
     var updateSpeed=5;//lag vs fps
@@ -165,7 +165,7 @@ var render = function () {
 };//end render
 
 setInterval(function(){
-	update(.0025);
+	update(0.0025);
 	render();
 	
 },5);
