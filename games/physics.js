@@ -99,8 +99,8 @@ var update=function(modifier){
 		if(projs[a].caught==true&&projs[a].mouseOver==true){
 			projs[a].x=mouseX;
 			projs[a].y=mouseY;
-			projs[a].speedX=(mouseX-lastMouseX)*(.1/modifier);//50
-			projs[a].speedY=(mouseY-lastMouseY)*(.1/modifier);//50
+			projs[a].speedX=(mouseX-lastMouseX)*(0.1/modifier);//50
+			projs[a].speedY=(mouseY-lastMouseY)*(0.1/modifier);//50
 			console.log(a);
 		};
 		if(
@@ -127,7 +127,7 @@ var update=function(modifier){
 					projs[a].y<projs[b].y+projDim&&
 					projs[a].y>projs[b].y-projDim
 				){
-					if(projs[a].speedX+projs[b].speedX<.1){
+					if(projs[a].speedX+projs[b].speedX<0.1){
 						projs[a].speedY=(Math.random()-Math.random())*500 //wiggle to freedom
 						//projs[a].x=projs[a].x+projDim/2; //teleport somewhere
 						//projs[a].x=projs[b].x-projDim/2; // ^ needs work ^
