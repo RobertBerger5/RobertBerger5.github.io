@@ -1,5 +1,5 @@
-window.onload=function(){
-	//e
+//window.onload=function(){
+    console.log("7:38");
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
     c.height = $(window).height();
@@ -7,12 +7,13 @@ window.onload=function(){
 
     //custom variables
     var grav=10;//how much gravity is pulling on it
-    var bounce=0.9;//how much higher it comes up after hitting the ground
-    var friction=0.9;//how much touching the ground slows it
-    var spawnRate=000;//how fast projectiles come in
+    var bounce=.9;//how much higher it comes up after hitting the ground
+    var friction=.9;//how much touching the ground slows it
+    var spawnRate=000;//how fast projectiles spawn
     var projDim=50;//size of player
-    var updateSpeed=5;//lag vs fps
-    var maxProjs=2;//number of projectiles
+    var updateSpeed=5;//fps/update speed vs smoothness/functionality
+    var maxProjs=10;//number of projectiles
+    //var ProjMass=100;//¿mass of projectile?
     //preset variables
     var mouseX;
     var mouseY;
@@ -100,8 +101,8 @@ var update=function(modifier){
 		if(projs[a].caught==true&&projs[a].mouseOver==true){
 			projs[a].x=mouseX;
 			projs[a].y=mouseY;
-			projs[a].speedX=(mouseX-lastMouseX)*(0.1/modifier);//50
-			projs[a].speedY=(mouseY-lastMouseY)*(0.1/modifier);//50
+			projs[a].speedX=(mouseX-lastMouseX)*(.1/modifier);//50
+			projs[a].speedY=(mouseY-lastMouseY)*(.1/modifier);//50
 			console.log(a);
 		};
 		if(
@@ -120,6 +121,7 @@ var update=function(modifier){
 			projs[a].mouseOver=false;
 		};
 
+		//projectile vs projectile collide
 		for(var b in projs){
 			if(a!=b){
 				if(
@@ -128,13 +130,13 @@ var update=function(modifier){
 					projs[a].y<projs[b].y+projDim&&
 					projs[a].y>projs[b].y-projDim
 				){
-					if(projs[a].speedX+projs[b].speedX<0.1){
+					if(projs[a].speedX+projs[b].speedX<.1){
 						projs[a].speedY=(Math.random()-Math.random())*500 //wiggle to freedom
 						//projs[a].x=projs[a].x+projDim/2; //teleport somewhere
 						//projs[a].x=projs[b].x-projDim/2; // ^ needs work ^
 					}else{
-						projs[a].speedX=-(projs[a].speedX+projs[b].speedX)/2;
-						projs[a].speedY=-(projs[a].speedY+projs[b].speedY)/2;
+						projs[a].speedX=-projs[a].speedX*bounce;
+						projs[a].speedY=-projs[a].speedY*bounce;//(projs[a].speedY+projs[b].speedY)/2
 					};
 				};
 			};
@@ -166,10 +168,10 @@ var render = function () {
 };//end render
 
 setInterval(function(){
-	update(0.0025);
+	update(updateSpeed/2000);
 	render();
 	
-},5);
+},updateSpeed);
 // The main game loop
 /*var main = function () {
 	var now = Date.now();
@@ -191,4 +193,4 @@ requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame
 // Let's play this game!
 var then = Date.now();
 main();*/
-}
+//}
