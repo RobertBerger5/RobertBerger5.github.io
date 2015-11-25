@@ -1,5 +1,5 @@
 //window.onload=function(){
-    console.log("7:38");
+    console.log("7:43");
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
     c.height = $(window).height();
@@ -7,8 +7,8 @@
 
     //custom variables
     var grav=10;//how much gravity is pulling on it
-    var bounce=.9;//how much higher it comes up after hitting the ground
-    var friction=.9;//how much touching the ground slows it
+    var bounce=0.9;//how much higher it comes up after hitting the ground
+    var friction=0.9;//how much touching the ground slows it
     var spawnRate=000;//how fast projectiles spawn
     var projDim=50;//size of player
     var updateSpeed=5;//fps/update speed vs smoothness/functionality
@@ -101,8 +101,8 @@ var update=function(modifier){
 		if(projs[a].caught==true&&projs[a].mouseOver==true){
 			projs[a].x=mouseX;
 			projs[a].y=mouseY;
-			projs[a].speedX=(mouseX-lastMouseX)*(.1/modifier);//50
-			projs[a].speedY=(mouseY-lastMouseY)*(.1/modifier);//50
+			projs[a].speedX=(mouseX-lastMouseX)*(0.1/modifier);//50
+			projs[a].speedY=(mouseY-lastMouseY)*(0.1/modifier);//50
 			console.log(a);
 		};
 		if(
@@ -130,7 +130,7 @@ var update=function(modifier){
 					projs[a].y<projs[b].y+projDim&&
 					projs[a].y>projs[b].y-projDim
 				){
-					if(projs[a].speedX+projs[b].speedX<.1){
+					if(projs[a].speedX+projs[b].speedX<0.1){
 						projs[a].speedY=(Math.random()-Math.random())*500 //wiggle to freedom
 						//projs[a].x=projs[a].x+projDim/2; //teleport somewhere
 						//projs[a].x=projs[b].x-projDim/2; // ^ needs work ^
