@@ -6,7 +6,7 @@
 		<title>Shitty, but made with love</title>
 		<link href="http://www.oldschoolapps.com/images/M_images/weblink.png" rel="icon" type="image/x-icon" />
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-		<link rel="stylesheet" href="http://robertberger5.github.io/games/games.css" type="text/css">
+		<link rel="stylesheet" href="/games/games.css" type="text/css">
 	</head>
 	<body>
 		<div id="choicesDiv">
@@ -21,95 +21,7 @@
 			
 		</script>
 
-		<div id="options">
-			<!--<table>
-				<tr>
-					<td>
-						<p>Dot Spawning Rate:</p>
-					</td>
-					<td>
-						<input type="text" id="timerIntervalS" value="100" onchange="changeSetting(timerIntervalS,timerInterval,'timerInterval')" />
-					</td>
-					<td>
-						<p>Safe Zone Height:</p>
-					</td>
-					<td>
-						<input type="text" id="safeHeightS" value="200" onchange="changeSetting(safeHeightS,safeHeight,'safeHeight')" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>Safe Zone Speed:</p>
-					</td>
-					<td>
-						<input type="text" id="safeSpeedS" value="100" onchange="changeSetting(safeSpeedS,safeSpeed,'safeSpeed')" />
-					</td>
-					<td>
-						<p>Player Speed:</p>
-					</td>
-					<td>
-						<input type="text" id="playerSpeedS" value="500" onchange="changeSetting(playerSpeedS,playerSpeed,'playerSpeed')" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>Player Dimensions:</p>
-					</td>
-					<td>
-						<input type="text" id="playerDimS" value="50" onchange="changeSetting(playerDimS,playerDim,'playerDim')" />
-					</td>
-					<td>
-						<p>Safe Zone Color:</p>
-					</td>
-					<td>
-						<input type="text" id="safeColorS" value="#afa" onchange="changeSetting(safeColorS,safeColor,'safeColor')" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>Player 1 Color:</p>
-					</td>
-					<td>
-						<input type="text" id="playerColorS" value="#00a" onchange="changeSetting(playerColorS,playerColor,'playerColor')" />
-					</td>
-					<td>
-						<p>Player 2 Color:</p>
-					</td>
-					<td>
-						<input type="text" id="player0ColorS" value="#a00" onchange="changeSetting(player0ColorS,player0Color,'player0Color')" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>Left Dot Color:</p>
-					</td>
-					<td>
-						<input type="text" id="dotLColorS" value="#00a" onchange="changeSetting(dotLColorS,dotLColor,'dotLColor')" />
-					</td>
-					<td>
-						<p>Right Dot Color:</p>
-					</td>
-					<td>
-						<input type="text" id="dotRColorS" value="#a00" onchange="changeSetting(dotRColorS,dotRColor,'dotRColor')" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>Left Background Color:</p>
-					</td>
-					<td>
-						<input type="text" id="backgroundLColorS" value="#aaf" onchange="changeSetting(backgroundLColorS,backgroundLColor,'backgroundLColor')" />
-					</td>
-					<td>
-						<p>Right Background Color:</p>
-					</td>
-					<td>
-						<input type="text" id="backgroundRColorS" value="#faa" onchange="changeSetting(backgroundRColorS,backgroundRColor,'backgroundRColor')" />
-					</td>
-				</tr>
-
-			</table>-->
-		</div>
+		<div id="options"></div>
 
 		<canvas height="0px" width="0px" id="canvas"></canvas>
 		<script>
@@ -138,7 +50,7 @@
 			recentGame=localStorage.getItem("recentGame");
 
 			// DEVELOPER VERSION ONLY
-			//playGame('teamwork');
+			//playGame('physics');
 		</script>
 	</body>
 </html>
