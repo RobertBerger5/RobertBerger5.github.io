@@ -62,6 +62,7 @@ var mouseNumber=0;
 var lost=false;
 var paused=false;
 var dropSpeed=75;
+var startTime = new Date().getTime();
 
 // Functions
 function makeMouse(){
@@ -73,8 +74,11 @@ function makeMouse(){
 }
 
 function lose(){
+	loseTime=new Date().getTime();
 	lost=true;
-	document.body.innerHTML="<p class='youSuck'>Your time was: "+time/100+" seconds</p>";
+	//document.body.innerHTML="<p class='youSuck'>Your time was: "+time/100+" seconds</p>";
+	document.body.innerHTML="<p class='youSuck'>Your time was: "+(loseTime-startTime)/1000+" seconds</p>";
+	//console.log(loseTime-startTime);
 }
 
 function pauseGame(){
@@ -222,7 +226,8 @@ var render = function () {
 	ctx.font = "25px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
-	ctx.fillText("Time: "+time/100+" seconds", 5, 5);
+	//ctx.fillText("Time: "+time/100+" seconds", 5, 5);
+	ctx.fillText("Time: "+(Date.now()-startTime)/1000+" seconds", 5, 5);
 };
 
 // The main game loop
