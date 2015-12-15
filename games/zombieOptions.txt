@@ -83,6 +83,6 @@
 			<input type="text" id="backgroundRColorS" value="#faa" onchange="changeSetting(backgroundRColorS,backgroundRColor,'backgroundRColor')" />
 		</td>
 	</tr>
-</table>-->
+</table>
 <p>I might do something with this some time, like options or somethin fancy like dat</p>
-<p margin="auto">PAUSED</p>
+<p margin="auto">PAUSED</p>-->
