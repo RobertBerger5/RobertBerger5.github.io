@@ -4,13 +4,13 @@
 			<p>Spawn Rate:</p>
 		</td>
 		<td>
-			<input type="text" id="spawnRateS" value="100" onchange="changeSetting(spawnRateS,spawnRate,'spawnRate')" />
+			<input type="text" id="spawnRateS" onchange="changeSetting(spawnRateS,spawnRate,'spawnRate')" />
 		</td>
 		<td>
 			<p>Zombie/Player Size:</p>
 		</td>
 		<td>
-			<input type="text" id="zombDimS" value="200" onchange="changeSetting(zombDimS,zombDim,'zombDim')" />
+			<input type="text" id="zombDimS" onchange="changeSetting(zombDimS,zombDim,'zombDim')" />
 		</td>
 	</tr>
 	<tr>
@@ -18,13 +18,13 @@
 			<p>FPS:</p>
 		</td>
 		<td>
-			<input type="text" id="FPSS" value="100" onchange="changeSetting(FPSS,FPS,'FPS')" />
+			<input type="text" id="FPSS" onchange="changeSetting(FPSS,FPS,'FPS')" />
 		</td>
 		<td>
 			<p>Player Speed:</p>
 		</td>
 		<td>
-			<input type="text" id="playerSpeedS" value="500" onchange="changeSetting(playerSpeedS,playerSpeed,'playerSpeed')" />
+			<input type="text" id="playerSpeedS" onchange="changeSetting(playerSpeedS,playerSpeed,'playerSpeed')" />
 		</td>
 	</tr>
 	<tr>
@@ -32,13 +32,13 @@
 			<p>Max Zombies:</p>
 		</td>
 		<td>
-			<input type="text" id="maxZombsS" value="50" onchange="changeSetting(maxZombsS,maxZombs,'maxZombs')" />
+			<input type="text" id="maxZombsS" onchange="changeSetting(maxZombsS,maxZombs,'maxZombs')" />
 		</td>
 		<td>
 			<p>Zombie/Player Speed:</p>
 		</td>
 		<td>
-			<input type="text" id="speedRatioS" value="#afa" onchange="changeSetting(speedRatioS,speedRatio,'speedRatio')" />
+			<input type="text" id="speedRatioS" onchange="changeSetting(speedRatioS,speedRatio,'speedRatio')" />
 		</td>
 	</tr>
 	<tr>
@@ -46,13 +46,13 @@
 			<p>Health Loss Per Shot:</p>
 		</td>
 		<td>
-			<input type="text" id="healthLoseS" value="#00a" onchange="changeSetting(healthLoseS,healthLose,'healthLose')" />
+			<input type="text" id="healthLoseS" onchange="changeSetting(healthLoseS,healthLose,'healthLose')" />
 		</td>
 		<td>
 			<p>Player Image:</p>
 		</td>
 		<td>
-			<input type="text" id="playerImageS" value="#a00" onchange="changeSetting(playerImageS,playerImage,'playerImage')" />
+			<input type="text" id="playerImageS" onchange="changeSetting(playerImageS,playerImage,'playerImage')" />
 		</td>
 	</tr>
 	<tr>
@@ -60,13 +60,13 @@
 			<p>Zombie Image:</p>
 		</td>
 		<td>
-			<input type="text" id="zombImageS" value="#00a" onchange="changeSetting(zombImageS,zombImage,'zombImage')" />
+			<input type="text" id="zombImageS" onchange="changeSetting(zombImageS,zombImage,'zombImage')" />
 		</td>
 		<td>
 			<p>Background Image:</p>
 		</td>
 		<td>
-			<input type="text" id="bgImageS" value="#a00" onchange="changeSetting(bgImageS,bgImage,'bgImage')" />
+			<input type="text" id="bgImageS" onchange="changeSetting(bgImageS,bgImage,'bgImage')" />
 		</td>
 	</tr>
 	<!--<tr>
@@ -74,13 +74,13 @@
 			<p>Left Background Color:</p>
 		</td>
 		<td>
-			<input type="text" id="backgroundLColorS" value="#aaf" onchange="changeSetting(backgroundLColorS,backgroundLColor,'backgroundLColor')" />
+			<input type="text" id="backgroundLColorS" onchange="changeSetting(backgroundLColorS,backgroundLColor,'backgroundLColor')" />
 		</td>
 		<td>
 			<p>Right Background Color:</p>
 		</td>
 		<td>
-			<input type="text" id="backgroundRColorS" value="#faa" onchange="changeSetting(backgroundRColorS,backgroundRColor,'backgroundRColor')" />
+			<input type="text" id="backgroundRColorS" onchange="changeSetting(backgroundRColorS,backgroundRColor,'backgroundRColor')" />
 		</td>
 	</tr>-->
 </table>
