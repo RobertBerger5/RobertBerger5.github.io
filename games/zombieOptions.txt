@@ -1,24 +1,24 @@
-<!--<table>
+<table>
 	<tr>
 		<td>
-			<p>Dot Spawning Rate:</p>
+			<p>Spawn Rate:</p>
 		</td>
 		<td>
-			<input type="text" id="timerIntervalS" value="100" onchange="changeSetting(timerIntervalS,timerInterval,'timerInterval')" />
+			<input type="text" id="spawnRateS" value="100" onchange="changeSetting(spawnRateS,spawnRate,'spawnRate')" />
 		</td>
 		<td>
-			<p>Safe Zone Height:</p>
+			<p>Zombie/Player Size:</p>
 		</td>
 		<td>
-			<input type="text" id="safeHeightS" value="200" onchange="changeSetting(safeHeightS,safeHeight,'safeHeight')" />
+			<input type="text" id="zombDimS" value="200" onchange="changeSetting(zombDimS,zombDim,'zombDim')" />
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<p>Safe Zone Speed:</p>
+			<p>FPS:</p>
 		</td>
 		<td>
-			<input type="text" id="safeSpeedS" value="100" onchange="changeSetting(safeSpeedS,safeSpeed,'safeSpeed')" />
+			<input type="text" id="FPSS" value="100" onchange="changeSetting(FPSS,FPS,'FPS')" />
 		</td>
 		<td>
 			<p>Player Speed:</p>
@@ -29,47 +29,47 @@
 	</tr>
 	<tr>
 		<td>
-			<p>Player Dimensions:</p>
+			<p>Max Zombies:</p>
 		</td>
 		<td>
-			<input type="text" id="playerDimS" value="50" onchange="changeSetting(playerDimS,playerDim,'playerDim')" />
+			<input type="text" id="maxZombsS" value="50" onchange="changeSetting(maxZombsS,maxZombs,'maxZombs')" />
 		</td>
 		<td>
-			<p>Safe Zone Color:</p>
+			<p>Zombie/Player Speed:</p>
 		</td>
 		<td>
-			<input type="text" id="safeColorS" value="#afa" onchange="changeSetting(safeColorS,safeColor,'safeColor')" />
+			<input type="text" id="speedRatioS" value="#afa" onchange="changeSetting(speedRatioS,speedRatio,'speedRatio')" />
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<p>Player 1 Color:</p>
+			<p>Health Loss Per Shot:</p>
 		</td>
 		<td>
-			<input type="text" id="playerColorS" value="#00a" onchange="changeSetting(playerColorS,playerColor,'playerColor')" />
+			<input type="text" id="healthLoseS" value="#00a" onchange="changeSetting(healthLoseS,healthLose,'healthLose')" />
 		</td>
 		<td>
-			<p>Player 2 Color:</p>
+			<p>Player Image:</p>
 		</td>
 		<td>
-			<input type="text" id="player0ColorS" value="#a00" onchange="changeSetting(player0ColorS,player0Color,'player0Color')" />
+			<input type="text" id="playerImageS" value="#a00" onchange="changeSetting(playerImageS,playerImage,'playerImage')" />
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<p>Left Dot Color:</p>
+			<p>Zombie Image:</p>
 		</td>
 		<td>
-			<input type="text" id="dotLColorS" value="#00a" onchange="changeSetting(dotLColorS,dotLColor,'dotLColor')" />
+			<input type="text" id="zombImageS" value="#00a" onchange="changeSetting(zombImageS,zombImage,'zombImage')" />
 		</td>
 		<td>
-			<p>Right Dot Color:</p>
+			<p>Background Image:</p>
 		</td>
 		<td>
-			<input type="text" id="dotRColorS" value="#a00" onchange="changeSetting(dotRColorS,dotRColor,'dotRColor')" />
+			<input type="text" id="bgImageS" value="#a00" onchange="changeSetting(bgImageS,bgImage,'bgImage')" />
 		</td>
 	</tr>
-	<tr>
+	<!--<tr>
 		<td>
 			<p>Left Background Color:</p>
 		</td>
@@ -82,7 +82,5 @@
 		<td>
 			<input type="text" id="backgroundRColorS" value="#faa" onchange="changeSetting(backgroundRColorS,backgroundRColor,'backgroundRColor')" />
 		</td>
-	</tr>
+	</tr>-->
 </table>
-<p>I might do something with this some time, like options or somethin fancy like dat</p>
-<p margin="auto">PAUSED</p>-->
