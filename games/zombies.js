@@ -19,7 +19,10 @@
     var zombImage="http://365psd.com/images/premium/thumbs/221/cartoon-zombie-face-1103027.jpg";
     var bgImage="http://texturelib.com/Textures/concrete/floor/concrete_floor_0058_01_preview.jpg";*/
 
-    if(localStorage.getItem("spawnRate")==null){
+//useful for making the below parts shorter?
+var ops=[spawnRate,"spawnRate",zombDim,"zombDim",FPS,"FPS",playerSpeed,"playerSpeed",maxZombs,"maxZombs",speedRatio,"speedRatio",healthLose,"healthLose",playerImage,"playerImage",zombImage,"zombImage",bgImage,"bgImage"];
+
+if(localStorage.getItem("spawnRate")==null){
 	var spawnRate=500;//how fast zombies spawn
     var zombDim=50;//size of player and zombies
     var FPS=60;//fps target, plugged into updateSpeed
@@ -65,6 +68,18 @@
 		document.getElementById('zombImageS').value=zombImage;
 		document.getElementById('bgImageS').value=bgImage;
 	},10);
+};
+
+//if any of the pics are
+	//http://www.hsnei.org/photos/Puppy-Mill-Awareness--Adoption-Day/IMG_0284.jpg
+	//make it say "Daniel you prick"
+if(
+	bgImage=="http://www.hsnei.org/photos/Puppy-Mill-Awareness--Adoption-Day/IMG_0284.jpg"||
+	bgImage=="http://www.decorahnews.com/uploads/images/wl-640xhl-480xq-95~Image02_15263290.jpg"||
+	zombImage=="http://www.decorahnews.com/uploads/images/wl-640xhl-480xq-95~Image02_15263290.jpg"
+	){
+	//console.log("Daniel");
+	bgImage="http://i.imgur.com/MMiBgQn.jpg?1";//image saying "Daniel you prick"
 }
 
 // Change Options
@@ -291,6 +306,7 @@ var update=function(modifier){
 	for(var a in zombs){
 		if(zombs[a].health<=0){
 			zombs.splice(a,1);
+			spawnRate=spawnRate-5;//TODO: see if this is a reasonable way to increase difficulty as you play longer and longer
 		}
 		zombs[a].distance=Math.sqrt(Math.pow(player0.x-zombs[a].x,2)+Math.pow(player0.y-zombs[a].y,2));
 		//zombies move to player
