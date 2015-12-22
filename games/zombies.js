@@ -70,17 +70,26 @@ if(localStorage.getItem("spawnRate")==null){
 	},10);
 };
 
-//if any of the pics are
-	//http://www.hsnei.org/photos/Puppy-Mill-Awareness--Adoption-Day/IMG_0284.jpg
-	//make it say "Daniel you prick"
+
+
+
+
+
+//RIGHT HERE, DANIEL
 if(
-	bgImage=="http://www.hsnei.org/photos/Puppy-Mill-Awareness--Adoption-Day/IMG_0284.jpg"||
-	bgImage=="http://www.decorahnews.com/uploads/images/wl-640xhl-480xq-95~Image02_15263290.jpg"||
-	zombImage=="http://www.decorahnews.com/uploads/images/wl-640xhl-480xq-95~Image02_15263290.jpg"
+	bgImage=="http://www.hsnei.org/photos/Puppy-Mill-Awareness--Adoption-Day/IMG_0284.jpg"||//sara
+	bgImage=="http://www.decorahnews.com/uploads/images/wl-640xhl-480xq-95~Image02_15263290.jpg"||//me
+	zombImage=="http://www.decorahnews.com/uploads/images/wl-640xhl-480xq-95~Image02_15263290.jpg"//me
 	){
 	//console.log("Daniel");
-	bgImage="http://i.imgur.com/MMiBgQn.jpg?1";//image saying "Daniel you prick"
+	bgImage="http://i.imgur.com/MMiBgQn.jpg?1";//image saying "Daniel you prick";
+	zombImage="http://i.imgur.com/MMiBgQn.jpg?1";
 }
+
+
+
+
+
 
 // Change Options
 function changeSetting(settingS,setting,settingN){
