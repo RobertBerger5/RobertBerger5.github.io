@@ -82,8 +82,9 @@ if(
 	zombImage=="http://www.decorahnews.com/uploads/images/wl-640xhl-480xq-95~Image02_15263290.jpg"//me
 	){
 	//console.log("Daniel");
-	bgImage="http://i.imgur.com/MMiBgQn.jpg?1";//image saying "Daniel you prick";
-	zombImage="http://i.imgur.com/MMiBgQn.jpg?1";
+	bgImage="http://i.imgur.com/krKb18b.png";
+	zombImage="http://i.imgur.com/krKb18b.png";
+	playerImage="http://i.imgur.com/krKb18b.png";
 }
 
 
