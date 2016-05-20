@@ -2,8 +2,11 @@
 <html>
 	<head>
 		<title>[void] Official</title>
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="http://robertberger5.github.io/robertberger5.github.io/void/style.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+		<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+
+		<script src="robertberger5.github.io/void/script.js"></script>
 	</head>
 	<body>
 
@@ -12,40 +15,40 @@
 				<img id="headerImg" src="https://i1.sndcdn.com/avatars-000221800786-b4fkvk-t500x500.jpg" />
 			</a>
 			<span id="THISFUCKINGSHIT">
-				<div class="headerThings"><a href="members/index.html">Members</a>
+				<div class="headerThings"><a onclick="loadFile(members/index.html)">Members</a>
 					<br>
 					<div class="dropdown">
-						<a href="members/leo.html">Leo (Guitar and Bass)</a>
+						<a onclick="loadFile(members/leo.html)">Leo (Guitar and Bass)</a>
 						<br>
-						<a href="members/robert.html">Robert (Lead Guitar)</a>
+						<a onclick="loadFile(members/robert.html)">Robert (Lead Guitar)</a>
 						<br>
-						<a href="members/trevor.html">Trevor (Drums)</a>
+						<a onclick="loadFile(members/trevor.html)">Trevor (Drums)</a>
 						<br>
-						<a href="members/past.html">Past Members</a>
+						<a onclick="loadFile(members/past.html)">Past Members</a>
 						<br>
 					</div>
 				</div>
-				<div class="headerThings"><a href="updates/index.html">Updates</a>
+				<div class="headerThings"><a onclick="loadFile(updates/index.html)">Updates</a>
 					<br>
 					<div class="dropdown">
-						<a href="updates/songs.html">New Songs</a>
+						<a onclick="loadFile(updates/songs.html)">New Songs</a>
 						<br>
-						<a href="updates/albums.html">New Albums</a>
+						<a onclick="loadFile(updates/albums.html)">New Albums</a>
 						<br>
-						<a href="updates/other">Other</a>
+						<a onclick="loadFile(updates/other.html)">Other</a>
 						<br>
 					</div>
 				</div>
-				<div class="headerThings"><a href="songs/index.html">Songs</a>
+				<div class="headerThings"><a onclick="loadFile('songs/index.html')">Songs</a>
 					<br>
 					<div class="dropdown">
-						<a href="songs/index.html">All Songs</a>
+						<a onclick="loadFile(songs/index.html">All Songs</a>
 						<br>
-						<a href="songs/albumNameHere">Album 1</a>
+						<a onclick="loadFile(songs/album1.html">Album 1</a>
 						<br>
 					</div>
 				</div>
-				<div class="headerThings"><a href="index.html">Home</a>
+				<div class="headerThings"><a onclick="loadFile('template.html')">Home</a>
 				</div>
 			</span>
 		</header>
@@ -56,72 +59,6 @@
 			</div>
 
 			<div id="main">
-				<p class="title">[void]</p>
-				<div id="slides">
-					<button id="leftButton" onclick="">
-						<img src="http://www.clker.com/cliparts/Z/n/k/Z/y/j/left-arrow-gray-hi.png" />
-					</button>
-					<button id="rightButton" onclick="">
-						<img src="http://www.clker.com/cliparts/V/1/Z/A/h/U/left-arrow-right-hi.png" />
-					</button>
-					<div id="longSlide"> <!--TODO: jQuery animation to slide it over when buttons are clicked-->
-						<img class="slideImg" src="http://i.ebayimg.com/00/s/ODAwWDYwMA==/z/bsYAAOSwFnFV-X1B/$_35.JPG" />
-						<img class="slideImg" src="http://www.americanmusical.com/ItemImages/SerialNumbers/168009%2F168009-Generic-1-HiRes.jpg" />
-						<img class="slideImg" src="http://c1.zzounds.com/media/fit,2018by3200/quality,85/8_Full_Left_Front_NA-f3ed1b196cd7a7bb32f3a78ca5ec8643.jpg" />
-						<img class="slideImg" src="http://images.gibson.com/Products/Electric-Guitars/2016/USA/SG-Special/SG70SCCH1_MAIN_HERO_01.jpg" />
-						<img class="slideImg" src="http://www.ginoguitars.com/bmz_cache/1/1e9ae0a3830a0bbec37ce46fefdc8055.image.1140x760.jpg" />
-						<img class="slideImg" src="http://thumbnail.image.rakuten.co.jp/@0_mall/g-shop/cabinet/shibuya/01492401/02246482/imgrc0070830444.jpg" />
-						<img class="slideImg" src="http://thumbnail.image.rakuten.co.jp/@0_mall/guitarplanet/cabinet/gibson2/sg_sp_16_sc_all.jpg" />
-						<img class="slideImg" src="https://reverb-res.cloudinary.com/image/upload/s--6vjYWnC7--/a_exif,c_limit,f_auto,fl_progressive,h_620,q_75,w_620/v1451677772/ywtmhgsadabbtjtpmtmf.jpg" />
-						<img class="slideImg" src="http://media.musiciansfriend.com/is/image/MMGS7/2016-SG-Special-T-Electric-Guitar-Satin-Cherry/J26284000003000-00-500x500.jpg" />
-						<img class="slideImg" src="http://www.ginoguitars.com/bmz_cache/d/d1a88c2a8e387393be1f8b269df2abc9.image.1140x760.jpg" />
-					</div>
-					<script>
-
-
-
-
-
-
-//TODO: MUSIC PLAYER FOR OUR ACTUAL FUCKING SONGS (PROBABLY IN THE HEADER), PAGES FOR THE LINKS IN THE HEADER, FIND SOME CONTENT TO PUT ON THE ACTUAL PAGE
-
-
-
-
-
-
-						var slideIndex=1;
-						var maxSlides= Math.round( $("#longSlide").width() / $("#slides").width() );
-						$("#leftButton").click(function(){
-							if(slideIndex>1){ //if they're looking at a pic of index greater than 1 (first pic)
-								$("#longSlide").animate({left:'+='+ $("#slides").width() +'px'});
-								--slideIndex;
-							}else{
-								$("#longSlide").animate({left:'+=10px'}).animate({left:'-=10px'});//lil bouncy animation
-							}
-						});
-
-						$("#rightButton").click(function(){
-							if(slideIndex<maxSlides){ //looking at pic of index less than (what should be) the total number of pics
-								$("#longSlide").animate({left:'-='+ $("#slides").width() +'px'});
-								++slideIndex;
-							}else{
-								$("#longSlide").animate({left:'-=10px'}).animate({left:'+=10px'});//lil bouncy animation
-							}
-						});
-					</script>
-				</div>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempor pulvinar purus a suscipit. Vestibulum sed auctor lacus. Mauris posuere sodales ex quis tristique. Praesent accumsan magna vitae diam elementum vulputate. Nullam auctor rhoncus lorem ut interdum. Etiam rutrum mauris id arcu euismod cursus. Mauris tempor sapien ante, ut sodales nunc pretium vel. Fusce porta at metus quis pellentesque. Proin auctor diam id libero luctus porta. Etiam suscipit nibh non augue accumsan sodales ac vitae massa. Mauris in molestie nisl. Etiam quis lectus bibendum, suscipit tortor non, bibendum magna. Integer pellentesque semper lorem.
-
-Cras tincidunt eget ex vitae viverra. Praesent eu libero sed lectus consectetur fermentum. Nulla facilisi. Cras faucibus metus neque, vel posuere massa dignissim non. Duis ut mi et libero blandit tincidunt vel sed enim. Donec molestie arcu magna, ut congue ex convallis sed. Donec nec consequat enim. Vestibulum scelerisque mauris libero. Aenean eleifend tempor viverra. Donec bibendum dictum magna quis tempus. Integer nec maximus magna. Nullam enim dui, molestie pharetra mollis at, gravida eu quam.
-
-Proin cursus, tortor eget hendrerit posuere, mi nisi lobortis leo, id tincidunt orci orci nec dui. Vivamus urna velit, euismod ac lacus ut, commodo mattis massa. Fusce vel vulputate orci, a tempor massa. Sed mollis vehicula ante tempus ullamcorper. Integer vel sem urna. Curabitur mollis euismod sagittis. Mauris vulputate nisl quis sem faucibus, vitae fermentum mauris vestibulum. Etiam ut erat sed velit convallis suscipit. Integer iaculis eleifend nunc placerat ultrices. Nulla sapien lacus, maximus maximus semper vel, commodo quis massa. Fusce egestas at elit ut interdum.
-
-Sed varius orci lectus, eu pharetra nisi pharetra ac. Nullam mollis nibh ex. Nulla placerat urna eros, nec pulvinar erat tincidunt in. Vestibulum sollicitudin est non orci vulputate, id condimentum ex vulputate. Mauris ac tortor felis. Cras sodales vel nisl vitae scelerisque. Phasellus venenatis, velit quis volutpat dictum, urna purus vehicula leo, quis posuere ex lectus in tortor. Nam quis neque sed diam pellentesque molestie sit amet convallis ex. Pellentesque mollis pulvinar tortor, vitae bibendum nisi tristique vitae. Sed eu ullamcorper nibh, et dictum purus. Etiam elementum sapien eros, quis laoreet nunc tincidunt in. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet turpis eu augue efficitur auctor.
-
-Mauris fermentum condimentum blandit. Integer id consectetur arcu, ut posuere est. Etiam non lacinia nunc. Aliquam orci tellus, dapibus ac tortor molestie, viverra euismod nulla. Nam maximus luctus imperdiet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ut massa hendrerit turpis porttitor dapibus a sed nunc. Pellentesque eget mi congue, malesuada ipsum ut, congue ligula. Sed imperdiet quam pharetra dolor mollis facilisis. Sed interdum nulla et nisl vehicula, vel vestibulum odio dictum. Vestibulum consectetur turpis quis semper egestas. Phasellus felis ex, fringilla ac justo sed, euismod pharetra risus.
-				</p>
 			</div>
 
 			<div id="rightDiv">
