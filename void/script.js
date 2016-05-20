@@ -8,7 +8,7 @@ function loadFile(href){
 
 SC.initialize({
 	client_id: '8a7a1ab91d6a4182bfd718ee80812e00',
-	redirect_uri: 'robertberger5.github.io/index.html'
+	redirect_uri: 'robertberger5.github.io/void/redirect_uri.html'
 });
 
 SC.connect().then(function() {
