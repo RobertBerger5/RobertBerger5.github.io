@@ -22,17 +22,17 @@ $(document).ready(function(){
 	});
 	console.log("initialized");
 
-	/*SC.connect().then(function() {
+	SC.connect().then(function() {
 		return SC.get('/me');
 	}).then(function(me) {
 		alert('Hello, ' + me.username);
-	});*/
+	});
 
-	SC.connect(function(){
+	/*SC.connect(function(){
 		console.log("e");
         SC.get('/me', function(me){
             alert(me.username);
-        });
+        });*/
     });
 
 	SC.get('/tracks', { genres: 'Metal' }, function(tracks) {
