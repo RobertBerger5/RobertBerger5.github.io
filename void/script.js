@@ -29,9 +29,11 @@ $(document).ready(function() {
 		SC.stream(tracks[0],function(sound){
         		$("#main").click(function(e){
             			sound.start();
+            			console.log("started");
         		});
         		$("#header").click(function(e){
         			    sound.stop();
+        			    console.log("stopped");
         		});
     		});
 	});
