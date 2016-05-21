@@ -153,8 +153,9 @@ header #THISFUCKINGSHIT{
 }
 header .headerThings{
 	background-color:#0f0;
-	position:static;
-	float:right;
+	position:relative;
+	display:inline-block;
+	
 	color:#000;
 	padding-right:0%;
 	padding-left:0%;
