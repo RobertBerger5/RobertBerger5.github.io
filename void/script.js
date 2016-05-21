@@ -7,7 +7,7 @@ function loadFile(href){
 };
 
   SC.initialize({
-      client_id: "8a7a1ab91d6a4182bfd718ee80812e00",
+      client_id: "8ee7b3067929d0440f7065ad8874cad8",
       redirect_uri: "http://robertberger5.github.io/void/callback.html",
   });
 
