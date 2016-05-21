@@ -160,7 +160,6 @@ header #linksDiv{
 }
 header .headerThings{
 	position:static;
-	float:left;
 	left:0px;
 	display:inline-block;
 	float:left;
