@@ -6,6 +6,11 @@ function loadFile(href){
 	;
 };
 
+function millisecondToTime(millisecondz){
+	var time=millisecondz;
+	return time;
+}
+
 
 
 //SOUNDCLOUD SHIT
@@ -50,8 +55,8 @@ $(document).ready(function() {
         			document.getElementById("heard").style.width=percentPlayed + "%";
         			document.getElementById("unheard").style.width=(100-percentPlayed) + "%";
         			//TODO: make these read like normal times, not in milliseconds
-        			document.getElementById("timePlayed").innerHTML=sound.position;
-        			document.getElementById("timeLeft").innerHTML=sound.duration-sound.position;
+        			document.getElementById("timePlayed").innerHTML=millisecondToTime(sound.position);
+        			document.getElementById("timeLeft").innerHTML=millisecondToTime(sound.duration-sound.position);
         		},100);
         		//TODO: give the player the ability to change sound.position easily
         		
