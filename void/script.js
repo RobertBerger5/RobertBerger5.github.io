@@ -28,6 +28,8 @@ $(document).ready(function() {
 
 		//for pros like me
 		SC.stream(tracks[0].stream_url,function(sound){
+			
+			
 			sound.autoplay=true;
         		$("#leftDiv").click(function(e){
             			sound.start();
@@ -37,6 +39,11 @@ $(document).ready(function() {
         			    sound.pause();
         			    console.log("paused");
         		});
+        		setInterval(function(){
+        			console.log(sound.currentTime);
+        		},100);
+        		
+        		
     		});
 	});
 });
