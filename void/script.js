@@ -34,10 +34,10 @@ $(document).ready(function() {
         		$("#soundButton").click(function(e){
         			if(sound.paused){
         				sound.resume();
-        				$("#buttonSound").src="http://image005.flaticon.com/1/png/512/0/375.png";
+        				document.getElementById("buttonSound").src="http://image005.flaticon.com/1/png/512/0/375.png";
         			}else if(!sound.paused){
         				sound.pause();
-        				$("#buttonSound").src="https://cdn1.iconfinder.com/data/icons/material-audio-video/20/pause-circle-outline-128.png";
+        				document.getElementById("buttonSound").src="https://cdn1.iconfinder.com/data/icons/material-audio-video/20/pause-circle-outline-128.png";
         			}else{
         				console.log("wat");
         			}
