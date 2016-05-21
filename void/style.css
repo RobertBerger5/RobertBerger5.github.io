@@ -145,6 +145,8 @@ header #player #songSelector{
 	position:relative;
 	display:inline-block;
 	background-color:#0ff;
+	height:100%;
+	width:10%;
 }
 header #THISFUCKINGSHIT{
 }
