@@ -61,7 +61,8 @@
 
 
 SC.initialize({
-  client_id: '8a7a1ab91d6a4182bfd718ee80812e00'
+  client_id: '8a7a1ab91d6a4182bfd718ee80812e00',
+  redirect_uri: 'http://robertberger5.github.io/void/redirect_uri.html'
 });
 
 $(document).ready(function() {
