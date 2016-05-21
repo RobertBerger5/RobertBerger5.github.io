@@ -6,6 +6,9 @@ function loadFile(href){
 	;
 };
 
+
+
+
 SC.initialize({
 	client_id: "8ee7b3067929d0440f7065ad8874cad8",
 	redirect_uri: "http://robertberger5.github.io/void/callback.html",
@@ -20,6 +23,40 @@ $(document).ready(function() {
 		for(var a in tracks){
 			console.log(a+": "+tracks[a].title)
 		}
-		SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
+		//SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
+		
+		SC.stream('tracks[0].permalink_url,function(sound){
+        		$("#main").click(function(e){
+            			sound.start();
+        		});
+        		$("#header").click(function(e){
+        			    sound.stop();
+        		});
+    		});
 	});
 });
+
+
+
+
+
+
+/*SC.initialize({
+  client_id: '8ee7b3067929d0440f7065ad8874cad8'
+});
+
+$(document).ready(function() {
+    SC.stream('/tracks/293',function(sound){
+        $("#start").click(function(e){
+            sound.start();
+        });
+        $("#stop").click(function(e){
+            sound.stop();
+        });
+    });
+});*/
+
+
+
+
+
