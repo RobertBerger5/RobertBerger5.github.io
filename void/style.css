@@ -126,7 +126,6 @@ header #player #songSpot{
 }
 header #player #songSpot div{
 	height:100%;
-	width:50%;
 	position:relative;
 	display:inline-block;
 	padding:0px;
@@ -135,9 +134,11 @@ header #player #songSpot div{
 	float:left;
 }
 header #player #songSpot #heard{
+	width:0%;
 	background-color:#0f0;
 }
 header #player #songSpot #unheard{
+	width:100%;
 	background-color:#f00;
 }
 header #THISFUCKINGSHIT{
