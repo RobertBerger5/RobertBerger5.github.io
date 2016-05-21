@@ -52,6 +52,7 @@ $("#main").click(function(){
 			console.log(track.title + ' - ' + track.genre);
 		});*/
 	});
+	console.log("clicked");
 });
 	/*SC.get('/tracks', { genres: 'Metal' }, function(tracks) {
 		console.log("yay?");
