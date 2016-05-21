@@ -8,7 +8,7 @@ function loadFile(href){
 
 SC.initialize({
 	client_id: "8ee7b3067929d0440f7065ad8874cad8",
-	edirect_uri: "http://robertberger5.github.io/void/callback.html",
+	redirect_uri: "http://robertberger5.github.io/void/callback.html",
 });
 
 var userId = 205809940; //OUR FUCKING USER ID YAY
