@@ -1,8 +1,8 @@
 function loadFile(href){
 	$("#main")
-		.fadeOut(1000)
+		//.fadeOut(1000)
 		.load("http://robertberger5.github.io/void/"+href)
-		.fadeIn(1000)
+		//.fadeIn(1000)
 	;
 };
 
