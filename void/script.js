@@ -40,7 +40,7 @@ $(document).ready(function() {
         			    console.log("paused");
         		});
         		setInterval(function(){
-        			console.log(sound.currentTime);
+        			console.log(sound.position);
         		},100);
         		
         		
