@@ -97,7 +97,7 @@ header #headerImg{
 }
 header #player{
 	background-color:#0f0;
-	width:10%;
+	max-width:25%;
 	height:100%;
 	position:relative;
 	left:5%;
