@@ -43,9 +43,9 @@ $(document).ready(function() {
         		var percentPlayed=0;
         		console.log(sound.duration);
         		setInterval(function(){ //return the value in milliseconds of how far into the song we are
-        			console.log(sound.position);
-        			console.log(sound.duration);
-        			console.log(percentPlayed);
+        			console.log("Position: "+sound.position);
+        			console.log("Duration: "+sound.duration);
+        			console.log("Percent: "+percentPlayed);
         			percentPlayed=sound.position/sound.duration;
         			document.getElementById("heard").style.width=percentPlayed + "%";
         			document.getElementById("unheard").style.width=(100-percentPlayed) + "%";
