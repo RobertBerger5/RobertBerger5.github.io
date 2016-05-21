@@ -40,6 +40,19 @@ $(document).ready(function() {
         			    sound.pause();
         			    console.log("paused");
         		});
+        		
+        		$("#buttonSound").click(function(e){
+        			if(sound.paused){
+        				sound.resume();
+        				//change pic in button
+        			}else if(!sound.paused){
+        				sound.pause();
+        				//change pic in button
+        			}else{
+        				console.log("wat");
+        			}
+        		});
+        		
         		var percentPlayed=0;
         		//console.log(sound.duration);
         		setInterval(function(){ //every so often it changes the widths of how much we've heard and not heard
