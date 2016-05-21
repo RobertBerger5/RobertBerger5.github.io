@@ -27,11 +27,11 @@ $(document).ready(function() {
 		
 		console.log(tracks);
 		SC.stream(tracks[0],function(sound){
-        		$("#main").click(function(e){
+        		$("#leftDiv").click(function(e){
             			sound.start();
             			console.log("started");
         		});
-        		$("#header").click(function(e){
+        		$("#rightDiv").click(function(e){
         			    sound.stop();
         			    console.log("stopped");
         		});
