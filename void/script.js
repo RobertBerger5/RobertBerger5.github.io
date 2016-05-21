@@ -21,18 +21,18 @@ $(document).ready(function(){
 		redirect_uri: 'http://robertberger5.github.io/void/callback.html'
 	});
 
-	/*SC.connect().then(function() {
+	SC.connect().then(function() {
 		return SC.get('/me');
 	}).then(function(me) {
 		alert('Hello, ' + me.username);
-	});*/
+	});
 
-	SC.connect(function(){
+	/*SC.connect(function(){
 		console.log("e");
         SC.get('/me', function(me){
             alert(me.username);
         });
-    });
+    });*/
 
 
 	/*SC.get('/users/3207/track_count').then(function(users){
