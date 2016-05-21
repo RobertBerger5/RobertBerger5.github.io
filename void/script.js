@@ -66,6 +66,7 @@ SC.initialize({
 
 $(document).ready(function() {
   SC.get('/tracks', { genres: 'Metal' }, function(tracks) {
+  	console.log("hi");
     $(tracks).each(function(index, track) {
       $('#results').append($('<li></li>').html(track.title + ' - ' + track.genre));
     });
