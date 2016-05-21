@@ -21,28 +21,11 @@ $(document).ready(function(){
 		redirect_uri: 'http://robertberger5.github.io/void/callback.html'
 	});
 
-
-SC.get('/users/293/tracks', function(tracks) {
-  alert(tracks[0].title);
-});
-
-
-	/*SC.get('/user/293/tracks').then(function(tracks){
-		alert('Latest track: ' + tracks[0].title);
-	});*/
-
-SC.get('/resolve', {
-  url: 'https://soundcloud.com/paulosman'
-}, function(user) {
-	console.log("fuck");
-  console.log(user.id);
-});
-
-	/*SC.connect().then(function() {
+	SC.connect().then(function() {
 		return SC.get('/me');
 	}).then(function(me) {
 		alert('Hello, ' + me.username);
-	});*/
+	});
 
 	/*SC.connect(function(){
 		console.log("e");
@@ -51,13 +34,24 @@ SC.get('/resolve', {
         });
     });*/
 
-	/*SC.get('/tracks', { genres: 'Metal' }, function(tracks) {
+
+	/*SC.get('/users/3207/track_count').then(function(users){
+		alert('Latest track: ' + users[0].title);
+	});*/
+
+SC.get('/resolve', { url:'https://soundcloud.com/paulosman' }, function(user) {
+	console.log("fuck");
+	console.log(user.id);
+});
+
+
+	SC.get('/tracks', { genres: 'Metal' }, function(tracks) {
 		console.log("yay?");
 		$(tracks).each(function(index, track) {
 			$('#main').append($('<li></li>').html(track.title + ' - ' + track.genre));
 			console.log(track.title + ' - ' + track.genre);
 		});
-	});*/
+	});
 
 
 });
