@@ -51,13 +51,13 @@ a{
 	text-decoration:none;
 }
 a:link{
-	color:#aaa;
+	color:#faa;
 }
 a:visited{
-	color:#aaa;
+	color:#d88;
 }
 a:hover{
-	color:#000;
+	color:#fdd;
 }
 button{
 	outline:none;
