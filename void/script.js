@@ -30,10 +30,10 @@ $(document).ready(function(){
 
 	/*SC.connect(function(){
 		console.log("e");
-        SC.get('/me', function(me){
-            alert(me.username);
-        });*/
-    });
+        	SC.get('/me', function(me){
+        	    alert(me.username);
+        	});
+    	});*/
 
 	SC.get('/tracks', { genres: 'Metal' }, function(tracks) {
 		console.log("yay?");
