@@ -103,6 +103,10 @@ header #player{
 	left:5%;
 	display:inline-block;
 }
+header #player iframe{
+	height:100%;
+	width:100%;
+}
 header #THISFUCKINGSHIT{
 
 }
