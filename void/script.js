@@ -23,10 +23,10 @@ $(document).ready(function() {
 		for(var a in tracks){
 			console.log(a+": "+tracks[a].title)
 		}
+		//for noobs
 		//SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
-		
-		console.log(tracks);
-		console.log(tracks[0]);
+
+		//for pros like me
 		SC.stream(tracks[0].stream_url,function(sound){
         		$("#leftDiv").click(function(e){
             			sound.start();
@@ -39,28 +39,3 @@ $(document).ready(function() {
     		});
 	});
 });
-
-
-
-
-
-
-/*SC.initialize({
-  client_id: '8ee7b3067929d0440f7065ad8874cad8'
-});
-
-$(document).ready(function() {
-    SC.stream('/tracks/293',function(sound){
-        $("#start").click(function(e){
-            sound.start();
-        });
-        $("#stop").click(function(e){
-            sound.stop();
-        });
-    });
-});*/
-
-
-
-
-
