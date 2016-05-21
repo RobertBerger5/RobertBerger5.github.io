@@ -21,7 +21,7 @@ $(document).ready(function() {
 		user_id: userId
 	}, function (tracks) { //tracks is an array
 		for(var a in tracks){
-			console.log(a+": "+tracks[a].title)
+			//console.log(a+": "+tracks[a].title)
 		}
 		//for noobs, iframe imbedding
 		//SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
@@ -33,15 +33,15 @@ $(document).ready(function() {
 			
 			
         		$("#leftDiv").click(function(e){ //start/resume the sound when the button is clicked
-            			sound.start();
-            			console.log("started");
+            			sound.resume();
+            			console.log("resumed/started?");
         		});
         		$("#rightDiv").click(function(e){ //pause the sound when the button is clicked
         			    sound.pause();
         			    console.log("paused");
         		});
         		var percentPlayed=0;
-        		console.log(sound.duration);
+        		//console.log(sound.duration);
         		setInterval(function(){ //every so often it changes the widths of how much we've heard and not heard
         			percentPlayed=100*(sound.position/sound.duration);
         			document.getElementById("heard").style.width=percentPlayed + "%";
