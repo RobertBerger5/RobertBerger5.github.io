@@ -30,24 +30,14 @@ $(document).ready(function() {
 		SC.stream(tracks[1].stream_url,{
 			autoPlay:true //SoundManager 2 options
 		},function(sound){ //sound is the center of attention now, it's the actual song
-			
-			
-        		$("#leftDiv").click(function(e){ //start/resume the sound when the button is clicked
-            			sound.resume();
-            			console.log("resumed/started?");
-        		});
-        		$("#rightDiv").click(function(e){ //pause the sound when the button is clicked
-        			    sound.pause();
-        			    console.log("paused");
-        		});
         		
-        		$("#buttonSound").click(function(e){
+        		$("#soundButton").click(function(e){
         			if(sound.paused){
         				sound.resume();
-        				//change pic in button
+        				$("#buttonSound").src="http://image005.flaticon.com/1/png/512/0/375.png";
         			}else if(!sound.paused){
         				sound.pause();
-        				//change pic in button
+        				$("#buttonSound").src="https://cdn1.iconfinder.com/data/icons/material-audio-video/20/pause-circle-outline-128.png";
         			}else{
         				console.log("wat");
         			}
