@@ -14,7 +14,7 @@ loadFile('home.html');
 
   var userId = 205809940; //OUR FUCKING USER ID YAY
 
-  SC.get("/tracks", {
+  /*SC.get("/tracks", {
       user_id: userId,
       limit: 100
   }, function (tracks) {
@@ -29,4 +29,10 @@ loadFile('home.html');
           $("<p/>").html(tmp).appendTo("#main");
       }
 
-  });
+  });*/
+  
+$(document).ready(function() {
+    SC.get('/tracks/293',function(track){
+        SC.oEmbed(track.permalink_url,document.getElementById('main'))
+    });
+});
