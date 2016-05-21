@@ -11,7 +11,7 @@ function loadFile(href){
       redirect_uri: "http://robertberger5.github.io/void/callback.html",
   });
 
-  var userId = 205809940; // user_id of Prutsonic //205809940
+  var userId = 205809940; //OUR FUCKING USER ID YAY
 
   SC.get("/tracks", {
       user_id: userId,
