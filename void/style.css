@@ -141,8 +141,12 @@ header #player #songSpot #unheard{
 	width:100%;
 	background-color:#f00;
 }
+header #player #songSelector{
+	position:relative;
+	display:inline-block;
+	background-color:#0ff;
+}
 header #THISFUCKINGSHIT{
-
 }
 header .headerThings{
 	position:static;
