@@ -47,8 +47,8 @@ $(document).ready(function() {
         			console.log("Duration: "+sound.duration);
         			console.log("Percent: "+percentPlayed);
         			percentPlayed=sound.position/sound.duration;
-        			document.getElementById("heard").style.width=percentPlayed + "%";
-        			document.getElementById("unheard").style.width=(100-percentPlayed) + "%";
+        			document.getElementById("heard").style.width=100*percentPlayed + "%";
+        			document.getElementById("unheard").style.width=100*(100-percentPlayed) + "%";
         		},100);
         		//TODO: fancy bar that says how long it's been playing, how much is left, and (most importantly) gives the user the ability to change the position (how far into the song they are) somehow
         		
