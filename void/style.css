@@ -151,7 +151,7 @@ header #player #songSelector{
 }
 header #linksDiv{
 	position:relative;
-	float:inline-block;
+	display:inline-block;
 	background-color:#0f0;
 	width:30%;
 	height:100%;
