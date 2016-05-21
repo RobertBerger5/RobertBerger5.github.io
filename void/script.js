@@ -28,13 +28,14 @@ $(document).ready(function() {
 
 		//for pros like me
 		SC.stream(tracks[0].stream_url,function(sound){
+			sound.autoplay=true;
         		$("#leftDiv").click(function(e){
             			sound.start();
             			console.log("started");
         		});
         		$("#rightDiv").click(function(e){
-        			    sound.stop();
-        			    console.log("stopped");
+        			    sound.pause();
+        			    console.log("paused");
         		});
     		});
 	});
