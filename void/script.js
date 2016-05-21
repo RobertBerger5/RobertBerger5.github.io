@@ -27,10 +27,12 @@ $(document).ready(function() {
 		//SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
 
 		//for pros like me
-		SC.stream(tracks[0].stream_url,function(sound){
+		SC.stream(tracks[0].stream_url,{
+			autoPlay:true
+		},function(sound){
 			
 			
-			sound.autoPlay=true;
+			//sound.autoPlay=true;
         		$("#leftDiv").click(function(e){
             			sound.start();
             			console.log("started");
