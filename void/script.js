@@ -51,7 +51,7 @@ $(document).ready(function() {
         		var percentPlayed=0;
         		//console.log(sound.duration);
         		setInterval(function(){ //every so often it changes the widths of how much we've heard and not heard
-        			percentPlayed=100*(sound.position/sound.duration);
+        			percentPlayed=100*(sound.position/sound.durationEstimate);
         			document.getElementById("heard").style.width=percentPlayed + "%";
         			document.getElementById("unheard").style.width=(100-percentPlayed) + "%";
         			document.getElementById("timePlayed").innerHTML=millisecondToTime(sound.position);
