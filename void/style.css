@@ -155,7 +155,7 @@ header .headerThings{
 	background-color:#0f0;
 	position:relative;
 	display:inline-block;
-	
+	float:left;
 	color:#000;
 	padding-right:0%;
 	padding-left:0%;
