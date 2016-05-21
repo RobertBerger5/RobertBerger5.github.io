@@ -26,6 +26,7 @@ $(document).ready(function() {
 		//SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
 		
 		console.log(tracks);
+		console.log(tracks[0]);
 		SC.stream(tracks[0],function(sound){
         		$("#leftDiv").click(function(e){
             			sound.start();
