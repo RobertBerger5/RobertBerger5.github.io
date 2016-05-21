@@ -5,7 +5,7 @@ function loadFile(href){
 		//.fadeIn(1000)
 	;
 };
-loadFile(home.html);
+loadFile('home.html');
 
   SC.initialize({
       client_id: "8ee7b3067929d0440f7065ad8874cad8",
