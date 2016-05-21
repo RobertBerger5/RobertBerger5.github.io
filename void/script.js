@@ -30,7 +30,7 @@ $(document).ready(function() {
 		SC.stream(tracks[0].stream_url,function(sound){
 			
 			
-			sound.autoplay=true;
+			sound.autoPlay=true;
         		$("#leftDiv").click(function(e){
             			sound.start();
             			console.log("started");
