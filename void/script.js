@@ -27,7 +27,7 @@ $(document).ready(function() {
 		//SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
 
 		//for pros like me, streaming
-		SC.stream(tracks[0].stream_url,{
+		SC.stream(tracks[2].stream_url,{
 			autoPlay:true //SoundManager 2 options
 		},function(sound){ //sound is the center of attention now, it's the actual song
 			
