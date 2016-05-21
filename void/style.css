@@ -149,9 +149,16 @@ header #player #songSelector{
 	height:100%;
 	width:10%;
 }
-header .headerThings{
-	background-color:#0f0;
+header #linksDiv{
 	position:relative;
+	float:inline-block;
+	background-color:#0f0;
+	width:30%;
+	height:100%;
+}
+header .headerThings{
+	position:static;
+	left:0px;
 	display:inline-block;
 	float:left;
 	color:#000;
