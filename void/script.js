@@ -23,7 +23,8 @@
       redirect_uri: "http://robertberger5.github.io/void/callback.html",
   });
 
-  var userId = 39090345; // user_id of Prutsonic
+  //var userId = 39090345; // user_id of Prutsonic
+  var userId=203124528; //user_id of [void] Official
 
   SC.get("/tracks", {
       user_id: userId,
