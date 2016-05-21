@@ -27,7 +27,7 @@ $(document).ready(function() {
 		
 		console.log(tracks);
 		console.log(tracks[0]);
-		SC.stream(tracks[0],function(sound){
+		SC.stream('/tracks/'+ tracks[0].id ,function(sound){
         		$("#leftDiv").click(function(e){
             			sound.start();
             			console.log("started");
