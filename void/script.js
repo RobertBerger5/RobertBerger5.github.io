@@ -25,7 +25,7 @@ $(document).ready(function() {
 		}
 		//SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
 		
-		SC.stream('tracks[0].permalink_url,function(sound){
+		SC.stream(tracks[0].permalink_url,function(sound){
         		$("#main").click(function(e){
             			sound.start();
         		});
