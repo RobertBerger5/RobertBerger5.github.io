@@ -6,7 +6,7 @@ function loadFile(href){
 	;
 };
 
-function millisecondToTime(millisecondz){
+function millisecondToTime(millisecondz){ //TODO:this
 	var time=millisecondz;
 	return time;
 }
@@ -54,11 +54,11 @@ $(document).ready(function() {
         			percentPlayed=100*(sound.position/sound.duration);
         			document.getElementById("heard").style.width=percentPlayed + "%";
         			document.getElementById("unheard").style.width=(100-percentPlayed) + "%";
-        			//TODO: make these read like normal times, not in milliseconds
         			document.getElementById("timePlayed").innerHTML=millisecondToTime(sound.position);
         			document.getElementById("timeLeft").innerHTML=millisecondToTime(sound.duration-sound.position);
         		},100);
         		//TODO: give the player the ability to change sound.position easily
+        		//TODO: Song Selector button drops down something as wide as the screen is, list of songs to choose from
         		
         		
     		});
