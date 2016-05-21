@@ -1,12 +1,23 @@
-SC.initialize({
-  client_id: '8a7a1ab91d6a4182bfd718ee80812e00'
-});
-
-$(document).ready(function() {
-  SC.get('/tracks', { genres: 'shit' }, function(tracks) {
-      console.log("shit");
-    $(tracks).each(function(index, track) {
-      $('#main').append($('<p></p>').html(track.title + ' - ' + track.genre));
-    });
+  SC.initialize({
+      client_id: "8a7a1ab91d6a4182bfd718ee80812e00",
+      redirect_uri: "http://robertberger5.github.io/void/callback.html",
   });
-});
+
+  var userId = 39090345; // user_id of Prutsonic //205809940
+
+  SC.get("/tracks", {
+      user_id: userId,
+      limit: 100
+  }, function (tracks) {
+
+      var tmp = '';
+
+      for (var i = 0; i < tracks.length; i++) {
+            console.log(tracks[i].title);
+
+          tmp = '<a href="' + tracks[i].permalink_url + '">' + tracks[i].title + ' - ' + tracks[i].duration + '</a>';
+
+          $("<p/>").html(tmp).appendTo("#main");
+      }
+
+  });
