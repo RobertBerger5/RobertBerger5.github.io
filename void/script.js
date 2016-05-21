@@ -12,14 +12,16 @@ loadFile('home.html');
       redirect_uri: "http://robertberger5.github.io/void/callback.html",
   });
 
-  var userId = 205809940; //OUR FUCKING USER ID YAY
-
-  /*SC.get("/tracks", {
+var userId = 205809940; //OUR FUCKING USER ID YAY
+  
+$(document).ready(function() {
+  SC.get("/tracks", {
       user_id: userId,
       limit: 100
   }, function (tracks) {
 
-      var tmp = '';
+	SC.oEmbed(tracks[0].permalink_url,document.getElementById('player'))
+      /*var tmp = '';
 
       for (var i = 0; i < tracks.length; i++) {
             console.log(tracks[i].title);
@@ -27,12 +29,12 @@ loadFile('home.html');
           tmp = '<a href="' + tracks[i].permalink_url + '">' + tracks[i].title + ' - ' + tracks[i].duration + '</a>';
 
           $("<p/>").html(tmp).appendTo("#main");
-      }
+      }*/
 
-  });*/
+  });
   
-$(document).ready(function() {
-    SC.get('/tracks/293',function(track){
+  
+    /*SC.get('/tracks/293',function(track){
         SC.oEmbed(track.permalink_url,document.getElementById('player'))
-    });
+    });*/
 });
