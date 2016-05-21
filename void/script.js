@@ -45,8 +45,11 @@ $(document).ready(function(){
 });*/
 
 $("#main").click(function(){
+	SC.get('/me');
+	console.log(SC.get('/me'));
 	SC.get('/tracks', { genres: 'Metal' }, function(tracks) {
 		console.log("yay?");
+		
 		/*$(tracks).each(function(index, track) {
 			$('#main').append($('<li></li>').html(track.title + ' - ' + track.genre));
 			console.log(track.title + ' - ' + track.genre);
