@@ -39,19 +39,27 @@ $(document).ready(function(){
 		alert('Latest track: ' + users[0].title);
 	});*/
 
-SC.get('/resolve', { url:'https://soundcloud.com/paulosman' }, function(user) {
+/*SC.get('/resolve', { url:'https://soundcloud.com/paulosman' }, function(user) {
 	console.log("fuck");
 	console.log(user.id);
-});
+});*/
 
-
+$("#main").click(function(){
 	SC.get('/tracks', { genres: 'Metal' }, function(tracks) {
+		console.log("yay?");
+		/*$(tracks).each(function(index, track) {
+			$('#main').append($('<li></li>').html(track.title + ' - ' + track.genre));
+			console.log(track.title + ' - ' + track.genre);
+		});*/
+	});
+});
+	/*SC.get('/tracks', { genres: 'Metal' }, function(tracks) {
 		console.log("yay?");
 		$(tracks).each(function(index, track) {
 			$('#main').append($('<li></li>').html(track.title + ' - ' + track.genre));
 			console.log(track.title + ' - ' + track.genre);
 		});
-	});
+	});*/
 
 
 });
