@@ -14,7 +14,27 @@
 			<a id="homeLink" href="index.html">
 				<img id="headerImg" src="https://i1.sndcdn.com/avatars-000221800786-b4fkvk-t500x500.jpg" />
 			</a>
-			<div id="player"></div>
+			<div id="player">
+				<button id="soundButton">
+					<img src="http://www.clipartbest.com/cliparts/bTy/EkL/bTyEkLGrc.png" />
+				</button>
+				<div id="songSpot">
+					<div id="heard"></div>
+					<div id="unheard"></div>
+				</div>
+
+<script>
+var progress=0;
+document.getElementById("heard").style.width=progress+"%";
+document.getElementById("unheard").style.width=(100-progress) + "%";
+setInterval(function(){
+	++progress;
+	document.getElementById("heard").style.width=progress+"%";
+	document.getElementById("unheard").style.width=(100-progress) + "%";
+},10);
+</script>
+
+			</div>
 			<span id="THISFUCKINGSHIT">
 				<div class="headerThings"><a onclick="loadFile('members/index.html')">Members</a>
 					<br>
