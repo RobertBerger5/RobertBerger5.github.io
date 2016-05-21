@@ -1,10 +1,10 @@
-function loadFile(href){
+/*function loadFile(href){
 	$("#main")
 		.fadeOut(1000)
 		.load("http://robertberger5.github.io/void/"+href)
 		.fadeIn(1000)
 	;
-};
+};*/
 
 /*SC.initialize({
 	client_id: '8a7a1ab91d6a4182bfd718ee80812e00',
@@ -12,7 +12,7 @@ function loadFile(href){
 });*/
 
 
-$(document).ready(function(){
+/*$(document).ready(function(){
 	//loadFile("template.html");
 	$("#main").load("http://robertberger5.github.io/void/template.html");
 
@@ -25,7 +25,7 @@ $(document).ready(function(){
 		return SC.get('/me');
 	}).then(function(me) {
 		alert('Hello, ' + me.username);
-	});
+	});*/
 
 	/*SC.connect(function(){
 		console.log("e");
@@ -44,26 +44,30 @@ $(document).ready(function(){
 	console.log(user.id);
 });*/
 
-$("#main").click(function(){
-	SC.get('/me');
-	console.log(SC.get('/me'));
+/*$("#main").click(function(){
+	console.log("clicky");
 	SC.get('/tracks', { genres: 'Metal' }, function(tracks) {
-		console.log("yay?");
-		
-		/*$(tracks).each(function(index, track) {
-			$('#main').append($('<li></li>').html(track.title + ' - ' + track.genre));
-			console.log(track.title + ' - ' + track.genre);
-		});*/
-	});
-	console.log("clicked");
-});
-	/*SC.get('/tracks', { genres: 'Metal' }, function(tracks) {
+		alert(tracks[0]);
 		console.log("yay?");
 		$(tracks).each(function(index, track) {
 			$('#main').append($('<li></li>').html(track.title + ' - ' + track.genre));
 			console.log(track.title + ' - ' + track.genre);
 		});
-	});*/
+	});
+});*/
+
+//});
 
 
+
+SC.initialize({
+  client_id: '8a7a1ab91d6a4182bfd718ee80812e00'
+});
+
+$(document).ready(function() {
+  SC.get('/tracks', { genres: 'Metal' }, function(tracks) {
+    $(tracks).each(function(index, track) {
+      $('#results').append($('<li></li>').html(track.title + ' - ' + track.genre));
+    });
+  });
 });
