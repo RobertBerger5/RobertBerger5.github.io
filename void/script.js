@@ -18,24 +18,11 @@ SC.initialize({
 });
 
 var userId = 205809940; //OUR FUCKING USER ID YAY
-  
-$(document).ready(function() {
-    loadFile('home.html');
-    
-    //SOUNDCLOUD SHIT
-    SC.get("/tracks", { //get all tracks from us
-        user_id: userId
-    }, function (tracks) { //tracks is an array
-        for(var a in tracks){
-            //console.log(a+": "+tracks[a].title)
-        }
-        //for noobs, iframe imbedding
-        //SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
 
-        //for pros like me, streaming
-        SC.stream(tracks[1].stream_url,{
-            autoPlay:true //SoundManager 2 options
-        },function(sound){ //sound is the center of attention now, it's the actual song     TODO: make this function another function so when I call soundManager.stopAll(); (?), I can easily play a different sound without hassle
+
+
+
+function playSong(sound){ //sound is the center of attention now, it's the actual song     TODO: make this function another function so when I call soundManager.stopAll(); (?), I can easily play a different sound without hassle
                 
                 $("#soundButton").click(function(e){
                     if(sound.paused){
@@ -71,6 +58,27 @@ $(document).ready(function() {
                 //TODO: Song Selector button drops down something as wide as the screen is, list of songs to choose from
                 
                 
-            });
+        });
+        
+        
+        
+  
+$(document).ready(function() {
+    loadFile('home.html');
+    
+    //SOUNDCLOUD SHIT
+    SC.get("/tracks", { //get all tracks from us
+        user_id: userId
+    }, function (tracks) { //tracks is an array
+        for(var a in tracks){
+            //console.log(a+": "+tracks[a].title)
+        }
+        //for noobs, iframe imbedding
+        //SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
+
+        //for pros like me, streaming
+        SC.stream(tracks[1].stream_url,{
+            autoPlay:true //SoundManager 2 options
+        },playSong(sound));
     });
 });
