@@ -66,7 +66,7 @@ $(document).ready(function() {
   					var relativeX = (e.pageX - offset.left);
   					//var relativeY = (e.pageY - offset.top);
 
-  					alert("X: " + relativeX + "  Total Width: "+document.getElementById("songSpot").style.width);
+  					alert("X: " + relativeX + "  Total Width: " + $("#songSpot").width() );
 
 				});
 			});
