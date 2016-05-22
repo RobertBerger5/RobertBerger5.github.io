@@ -64,9 +64,9 @@ $(document).ready(function() {
 
 					var offset = $(this).offset();
   					var relativeX = (e.pageX - offset.left);
-  					var relativeY = (e.pageY - offset.top);
+  					//var relativeY = (e.pageY - offset.top);
 
-  					alert("X: " + relativeX + "  Y: " + relativeY);
+  					alert("X: " + relativeX + "  Total Width: "+document.getElementById("songSpot").style.width);
 
 				});
 			});
