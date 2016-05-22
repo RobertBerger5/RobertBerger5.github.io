@@ -58,7 +58,7 @@ $(document).ready(function() {
         			document.getElementById("timePlayed").innerHTML=millisecondToTime(sound.position);
         			document.getElementById("timeLeft").innerHTML=millisecondToTime(sound.durationEstimate);
         		},100);
-        		//TODO: give the player the ability to change sound.position easily
+        		//TODO: give the player the ability to change sound.position easily, get percentage of the width of songSpot where the user clicked, then use sound.setPosition() for it, maybe highlight where the player's mouse is on songSpot, or not cuz whatdoiknow right?
         		//TODO: Song Selector button drops down something as wide as the screen is, list of songs to choose from
         		
         		
