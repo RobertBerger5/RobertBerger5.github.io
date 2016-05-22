@@ -39,19 +39,20 @@ $(document).ready(function() {
         		
         		$("#soundButton").click(function(e){
         			if(sound.paused){
-        				sound.resume();
-        				document.getElementById("buttonSound").src="http://image005.flaticon.com/1/png/512/0/375.png";
-        			}else if(!sound.paused){
-        				sound.pause();
+        				sound.resume(); //play/resume
         				document.getElementById("buttonSound").src="https://cdn1.iconfinder.com/data/icons/material-audio-video/20/pause-circle-outline-128.png";
+        			}else if(!sound.paused){
+        				sound.pause(); //pause
+        				document.getElementById("buttonSound").src="http://image005.flaticon.com/1/png/512/0/375.png";
+        				
         			}else{
-        				console.log("wat");
+        				console.log("wat"); //shouldn't happen ever
         			}
         		});
         		
         		var percentPlayed=0;
         		//console.log(sound.duration);
-        		setInterval(function(){ //every so often it changes the widths of how much we've heard and not heard
+        		setInterval(function(){ //every so often it changes the widths of how much we've heard and not heard and says the times
         			percentPlayed=100*(sound.position/sound.durationEstimate);
         			document.getElementById("heard").style.width=percentPlayed + "%";
         			document.getElementById("unheard").style.width=(100-percentPlayed) + "%";
@@ -59,17 +60,14 @@ $(document).ready(function() {
         			document.getElementById("timeLeft").innerHTML=millisecondToTime(sound.durationEstimate);
         		},100);
         		
-			$("#songSpot").click(function(e) {
-				var offset = $(this).offset();
-  				var relativeX = (e.pageX - offset.left);
-  				//alert("X: " + relativeX + "  Total Width: " + $("#songSpot").width() );
-  				//console.log("Percent through song clicked: "+ relativeX/ $("#songSpot").width() );
-  				var percentOfSong=relativeX/ $("#songSpot").width();
-  				sound.setPosition( percentOfSong * sound.durationEstimate );
+			$("#songSpot").click(function(e) {	//change the position of the song based on where the user clicks on songSpot
+				var offset = $(this).offset();//not 100% on how this works
+  				var relativeX = (e.pageX - offset.left);//same with this tbh
+  				var percentOfSong=relativeX/ $("#songSpot").width();//percentage of song that the user clicked
+  				sound.setPosition( percentOfSong * sound.durationEstimate );//change the position of the song
   				
 			});
-			
-        		//TODO: give the player the ability to change sound.position easily, get percentage of the width of songSpot where the user clicked, then use sound.setPosition() for it, maybe highlight where the player's mouse is on songSpot, or not cuz whatdoiknow right?
+
         		//TODO: Song Selector button drops down something as wide as the screen is, list of songs to choose from
         		
         		
