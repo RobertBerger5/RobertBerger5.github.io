@@ -59,6 +59,9 @@ function playSong(sound){ //sound is the center of attention now, it's the actua
 function newSong(song){
     soundManager.stopAll();
     console.log(song);
+    
+    
+    
 }
 
 
@@ -70,7 +73,9 @@ $(document).ready(function() {
         user_id: userId
     }, function (tracks) { //tracks is an array
         for(var a in tracks){
-            $("#selector").append( '<div class="song" onclick="newSong(\''+ tracks[a].title +'\')" width="' + (100/tracks.length) + '%"><p>'+tracks[a].title+'</p></div>' );
+            urlName=(tracks[a].title).replace(/\s+/g, '-').toLowerCase() //resolve for the url? or do that in the other function? either way, this needs dashes wherever there are spaces
+            //str = str.replace(/\s+/g, '-').toLowerCase();
+            $("#selector").append( '<div class="song" onclick="newSong(\''+ urlName +'\')" width="' + (100/tracks.length) + '%"><p>'+tracks[a].title+'</p></div>' );
         }
         //for noobs, iframe imbedding
         //SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
@@ -78,7 +83,7 @@ $(document).ready(function() {
         //for pros like me, streaming
         SC.stream(tracks[1].stream_url,{
             autoPlay:true //SoundManager 2 options
-        },function(sound){ //sound is the center of attention now, it's the actual song     TODO: make this function another function so when I call soundManager.stopAll(); (?), I can easily play a different sound without hassle
+        },function(sound){ //sound object is the center of attention now, it's the actual song
             playSong(sound);
         });
     });
