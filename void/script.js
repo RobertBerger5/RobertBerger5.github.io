@@ -35,7 +35,7 @@ $(document).ready(function() {
         //for pros like me, streaming
         SC.stream(tracks[1].stream_url,{
             autoPlay:true //SoundManager 2 options
-        },function(sound){ //sound is the center of attention now, it's the actual song
+        },function(sound){ //sound is the center of attention now, it's the actual song     TODO: make this function another function so when I call soundManager.stopAll(); (?), I can easily play a different sound without hassle
                 
                 $("#soundButton").click(function(e){
                     if(sound.paused){
