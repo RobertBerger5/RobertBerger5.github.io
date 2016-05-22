@@ -22,6 +22,7 @@ var userId = 205809940; //OUR FUCKING USER ID YAY
 
 
 
+
 function playSong(sound){ //sound is the center of attention now, it's the actual song     TODO: make this function another function so when I call soundManager.stopAll(); (?), I can easily play a different sound without hassle
                 
                 $("#soundButton").click(function(e){
@@ -58,11 +59,11 @@ function playSong(sound){ //sound is the center of attention now, it's the actua
                 //TODO: Song Selector button drops down something as wide as the screen is, list of songs to choose from
                 
                 
-        };
-        
-        
-        
-  
+            }
+
+
+
+
 $(document).ready(function() {
     loadFile('home.html');
     
@@ -79,6 +80,13 @@ $(document).ready(function() {
         //for pros like me, streaming
         SC.stream(tracks[1].stream_url,{
             autoPlay:true //SoundManager 2 options
-        },playSong(sound));
+        },function(sound){ //sound is the center of attention now, it's the actual song     TODO: make this function another function so when I call soundManager.stopAll(); (?), I can easily play a different sound without hassle
+                
+                playSong(sound);
+
+                //TODO: Song Selector button drops down something as wide as the screen is, list of songs to choose from
+                
+                
+        });
     });
 });
