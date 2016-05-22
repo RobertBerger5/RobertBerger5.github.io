@@ -72,6 +72,7 @@ $(document).ready(function() {
         user_id: userId
     }, function (tracks) { //tracks is an array
         $(".song").css("width", (100/tracks.length)+"%");
+        console.log(tracks.length);
         for(var a in tracks){
             $("#selector").append( '<div class="song" onclick="'+ "function here maybe?" +'"><p>'+tracks[a].title+'</p></div>' );
         }
