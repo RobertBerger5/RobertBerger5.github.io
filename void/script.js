@@ -70,7 +70,7 @@ $(document).ready(function() {
         user_id: userId
     }, function (tracks) { //tracks is an array
         for(var a in tracks){
-            $("#selector").append( '<div class="song" onclick="newSong(' + '"songGoesHere"' + ')" width="' + (100/tracks.length) + '%"><p>'+tracks[a].title+'</p></div>' );
+            $("#selector").append( '<div class="song" onclick="newSong(\"song shit here\")" width="' + (100/tracks.length) + '%"><p>'+tracks[a].title+'</p></div>' );
         }
         //for noobs, iframe imbedding
         //SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
