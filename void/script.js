@@ -58,7 +58,7 @@ function playSong(sound){ //sound is the center of attention now, it's the actua
                 //TODO: Song Selector button drops down something as wide as the screen is, list of songs to choose from
                 
                 
-        });
+        };
         
         
         
