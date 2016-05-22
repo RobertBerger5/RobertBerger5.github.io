@@ -152,7 +152,6 @@ header #player #playerRight{
 header #player #playerRight div{
 	height:50%;
 	width:100%;
-	background-color:#fff;
 	font-size:10pt;
 	text-align:center;
 }
@@ -160,9 +159,48 @@ header #player #playerRight div p{
 	vertical-align: center;
 	margin:0px;
 	padding:0px;
+	height:100%;
 }
 header #player #playerRight #songSelector{
 	background-color:#666;
+	position:relative;
+}
+header #player #playerRight #songSelector #selector{
+	background-color:#a00;
+	position:relative;
+	height:200%;
+	width:2100%;
+	left:-950%;
+	border:1px solid black;
+	border-radius:0px 0px 30px 30px;
+	visibility:hidden;
+}
+header #player #playerRight #songSelector:hover #selector{
+	visibility:visible;
+	z-index:5;
+	-webkit-animation: dropIn .5s;
+	-webkit-animation-fill-mode: forwards;
+	animation: dropIn .5s;
+	animation-fill-mode: forwards;
+}
+header #player #playerRight #songSelector #selector .song{
+	display:inline-block;
+	height:100%;
+	width:25%;			/*to be changed with jquery*/
+	position:relative;
+	float:left;
+	border-radius:0px 0px 30px 30px;
+}
+header #player #playerRight #songSelector #selector .song:hover{
+	-webkit-animation: highlight .5s;
+	-webkit-animation-fill-mode: forwards;
+	animation: highlight .5s;
+	animation-fill-mode: forwards;
+}
+header #player #playerRight #songSelector #selector .song p{
+	position:relative;
+	top:25%;
+	font-size:20pt;
 }
 header #linksDiv{
 	position:relative;
