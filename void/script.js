@@ -25,43 +25,41 @@ var userId = 205809940; //OUR FUCKING USER ID YAY
 
 function playSong(sound){ //sound is the center of attention now, it's the actual song     TODO: make this function another function so when I call soundManager.stopAll(); (?), I can easily play a different sound without hassle
                 
-                $("#soundButton").click(function(e){
-                    if(sound.paused){
-                        sound.resume(); //play/resume
-                        document.getElementById("buttonSound").src="https://cdn1.iconfinder.com/data/icons/material-audio-video/20/pause-circle-outline-128.png";
-                    }else if(!sound.paused){
-                        sound.pause(); //pause
-                        document.getElementById("buttonSound").src="http://image005.flaticon.com/1/png/512/0/375.png";
-                        
-                    }else{
-                        console.log("wat"); //shouldn't happen ever
-                    }
-                });
-                
-                var percentPlayed=0;
-                //console.log(sound.duration);
-                setInterval(function(){ //every so often it changes the widths of how much we've heard and not heard and says the times
-                    percentPlayed=100*(sound.position/sound.durationEstimate);
-                    document.getElementById("heard").style.width=percentPlayed + "%";
-                    document.getElementById("unheard").style.width=(100-percentPlayed) + "%";
-                    document.getElementById("timePlayed").innerHTML=millisecondToTime(sound.position);
-                    document.getElementById("timeLeft").innerHTML=millisecondToTime(sound.durationEstimate);
-                },100);
-                
-            $("#songSpot").click(function(e) {  //change the position of the song based on where the user clicks on songSpot
-                var offset = $(this).offset();//not 100% on how this works
-                var relativeX = (e.pageX - offset.left);//same with this tbh
-                var percentOfSong=relativeX/ $("#songSpot").width();//percentage of song that the user clicked
-                sound.setPosition( percentOfSong * sound.durationEstimate );//change the position of the song
-                
-            });
+    $("#soundButton").click(function(e){
+        if(sound.paused){
+            sound.resume(); //play/resume
+            document.getElementById("buttonSound").src="https://cdn1.iconfinder.com/data/icons/material-audio-video/20/pause-circle-outline-128.png";
+        }else if(!sound.paused){
+            sound.pause(); //pause
+            document.getElementById("buttonSound").src="http://image005.flaticon.com/1/png/512/0/375.png";
+            
+        }else{
+            console.log("wat"); //shouldn't happen ever
+        }
+    });
+ 
+    var percentPlayed=0;
+    //console.log(sound.duration);
+    setInterval(function(){ //every so often it changes the widths of how much we've heard and not heard and says the times
+        percentPlayed=100*(sound.position/sound.durationEstimate);
+        document.getElementById("heard").style.width=percentPlayed + "%";
+        document.getElementById("unheard").style.width=(100-percentPlayed) + "%";
+        document.getElementById("timePlayed").innerHTML=millisecondToTime(sound.position);
+        document.getElementById("timeLeft").innerHTML=millisecondToTime(sound.durationEstimate);
+    },100);
+    
+    $("#songSpot").click(function(e) {  //change the position of the song based on where the user clicks on songSpot
+        var offset = $(this).offset();//not 100% on how this works
+        var relativeX = (e.pageX - offset.left);//same with this tbh
+        var percentOfSong=relativeX/ $("#songSpot").width();//percentage of song that the user clicked
+        sound.setPosition( percentOfSong * sound.durationEstimate );//change the position of the song
+    });
+}
 
-                //TODO: Song Selector button drops down something as wide as the screen is, list of songs to choose from
-                
-                
-            }
-
-
+function newSong(song){
+    soundManager.stopAll();
+    console.log(song);
+}
 
 
 $(document).ready(function() {
@@ -72,7 +70,7 @@ $(document).ready(function() {
         user_id: userId
     }, function (tracks) { //tracks is an array
         for(var a in tracks){
-            $("#selector").append( '<div class="song" onclick="'+ 'console.log(Math.random())' + '" width="' + (100/tracks.length) + '%"><p>'+tracks[a].title+'</p></div>' );
+            $("#selector").append( '<div class="song" onclick="newSong(' + '"songGoesHere"' + ')" width="' + (100/tracks.length) + '%"><p>'+tracks[a].title+'</p></div>' );
         }
         //for noobs, iframe imbedding
         //SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
@@ -81,12 +79,7 @@ $(document).ready(function() {
         SC.stream(tracks[1].stream_url,{
             autoPlay:true //SoundManager 2 options
         },function(sound){ //sound is the center of attention now, it's the actual song     TODO: make this function another function so when I call soundManager.stopAll(); (?), I can easily play a different sound without hassle
-                
-                playSong(sound);
-
-                //TODO: Song Selector button drops down something as wide as the screen is, list of songs to choose from
-                
-                
+            playSong(sound);
         });
     });
 });
