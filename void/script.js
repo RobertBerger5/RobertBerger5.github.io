@@ -71,6 +71,7 @@ $(document).ready(function() {
     SC.get("/tracks", { //get all tracks from us
         user_id: userId
     }, function (tracks) { //tracks is an array
+        $(".song").css("width", (100/tracks.length)+"%");
         for(var a in tracks){
             $("#selector").append( '<div class="song" onclick="'+ "function here maybe?" +'"><p>'+tracks[a].title+'</p></div>' );
         }
