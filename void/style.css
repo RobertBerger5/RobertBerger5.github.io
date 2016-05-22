@@ -186,7 +186,6 @@ header #player #playerRight #songSelector:hover #selector{
 header #player #playerRight #songSelector #selector .song{
 	display:inline-block;
 	height:100%;
-	width:25%;			/*to be changed with jquery*/
 	position:relative;
 	float:left;
 	border-radius:0px 0px 30px 30px;
