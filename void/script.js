@@ -74,7 +74,7 @@ $(document).ready(function() {
         $(".song").css("width", (100/tracks.length)+"%");
         console.log(tracks.length);
         for(var a in tracks){
-            $("#selector").append( '<div class="song" onclick="'+ "function here maybe?" +'"><p>'+tracks[a].title+'</p></div>' );
+            $("#selector").append( '<div class="song" onclick="'+ "function here maybe?" +'" width="'+ (100/tracks.length) +'%"><p>'+tracks[a].title+'</p></div>' );
         }
         //for noobs, iframe imbedding
         //SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
