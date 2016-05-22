@@ -6,17 +6,12 @@ function loadFile(href){
 	;
 };
 
-loadFile('home.html');
-
 function millisecondToTime(millis){
 	var minutes = Math.floor(millis / 60000);
 	var seconds = ((millis % 60000) / 1000).toFixed(0);
 	return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }
 
-
-
-//SOUNDCLOUD SHIT
 SC.initialize({
 	client_id: "8ee7b3067929d0440f7065ad8874cad8", //needs this to do anything
 	redirect_uri: "http://robertberger5.github.io/void/callback.html", //need this if users log in for anythins
@@ -25,6 +20,8 @@ SC.initialize({
 var userId = 205809940; //OUR FUCKING USER ID YAY
   
 $(document).ready(function() {
+	loadFile('home.html');
+	
 	SC.get("/tracks", { //get all tracks from us
 		user_id: userId
 	}, function (tracks) { //tracks is an array
