@@ -63,8 +63,10 @@ $(document).ready(function() {
 				var offset = $(this).offset();
   				var relativeX = (e.pageX - offset.left);
   				//alert("X: " + relativeX + "  Total Width: " + $("#songSpot").width() );
-  				console.log("Percent through song clicked: "+ relativeX/ $("#songSpot").width() );
-  				console.log(relativeX +"    "+ $("#songSpot").width() );
+  				//console.log("Percent through song clicked: "+ relativeX/ $("#songSpot").width() );
+  				var percentOfSong=relativeX/ $("#songSpot").width();
+  				sound.setPosition( percentOfSong * sound.durationEstimate );
+  				
 			});
 			
         		//TODO: give the player the ability to change sound.position easily, get percentage of the width of songSpot where the user clicked, then use sound.setPosition() for it, maybe highlight where the player's mouse is on songSpot, or not cuz whatdoiknow right?
