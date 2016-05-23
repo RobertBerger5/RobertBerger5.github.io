@@ -172,7 +172,7 @@ header #player #playerRight #songSelector #selector{
 	left:-950%;
 	border:1px solid black;
 	border-radius:0px 0px 30px 30px;
-	/*visibility:hidden;*/
+	visibility:hidden;
 }
 header #player #playerRight #songSelector:hover #selector{
 	visibility:visible;
