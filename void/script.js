@@ -63,8 +63,13 @@ function newSong(song){
     var trackUrl = 'https://soundcloud.com/user-54323444/'+song;
     $.get(
         'http://api.soundcloud.com/resolve.json?url=' + trackUrl + '&client_id=8ee7b3067929d0440f7065ad8874cad8', 
-        function (result) {
-            console.log(result);
+        function (track) {
+            console.log(track);
+            SC.stream(track.stream_url,{
+                autoPlay:true //SoundManager 2 options
+            },function(sound){ //sound object is the center of attention now, it's the actual song
+                playSong(sound);
+            });
         }
     );
     
@@ -87,7 +92,8 @@ $(document).ready(function() {
         //SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
 
         //for pros like me, streaming
-        SC.stream(tracks[1].stream_url,{
+        randy=Math.floor(Math.random()*tracks.length));
+        SC.stream(tracks[randy].stream_url,{
             autoPlay:true //SoundManager 2 options
         },function(sound){ //sound object is the center of attention now, it's the actual song
             playSong(sound);
