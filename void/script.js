@@ -18,13 +18,14 @@ SC.initialize({
 });
 
 var userId = 205809940; //OUR FUCKING USER ID YAY
-
+var currentSong;
 
 
 
 
 function playSong(sound){ //sound is the center of attention now, it's the actual song     TODO: make this function another function so when I call soundManager.stopAll(); (?), I can easily play a different sound without hassle
-                
+    currentSong=sound;
+    
     $("#soundButton").click(function(e){
         if(sound.paused){
             sound.resume(); //play/resume
@@ -41,7 +42,7 @@ function playSong(sound){ //sound is the center of attention now, it's the actua
     var percentPlayed=0;
     //console.log(sound.duration);
     setInterval(function(){ //every so often it changes the widths of how much we've heard and not heard and says the times
-        if(1==1){
+        if(sound==currentSong){
             console.log(sound);
             percentPlayed=100*(sound.position/sound.durationEstimate);
             document.getElementById("heard").style.width=percentPlayed + "%";
@@ -71,6 +72,7 @@ function newSong(song){
             SC.stream(track.stream_url,{
                 autoPlay:true //SoundManager 2 options
             },function(sound){ //sound object is the center of attention now, it's the actual song
+                
                 playSong(sound);
             });
         }
