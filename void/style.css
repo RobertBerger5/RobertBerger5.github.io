@@ -160,6 +160,9 @@ header #player #playerRight div p{
 	padding:0px;
 	height:100%;
 }
+header #player #playerRight #timeKeeper{
+	background-color:#fff;
+}
 header #player #playerRight #songSelector{
 	background-color:#666;
 	position:relative;
