@@ -42,8 +42,7 @@ function playSong(sound){ //sound is the center of attention now, it's the actua
     var percentPlayed=0;
     //console.log(sound.duration);
     setInterval(function(){ //every so often it changes the widths of how much we've heard and not heard and says the times
-        if(sound==currentSong){
-            console.log(sound);
+        if(sound==currentSong){ //otherwise the soundSpot div fucks up and starts flashing a ton cuz multiple songs at once
             percentPlayed=100*(sound.position/sound.durationEstimate);
             document.getElementById("heard").style.width=percentPlayed + "%";
             document.getElementById("unheard").style.width=(100-percentPlayed) + "%";
@@ -62,13 +61,11 @@ function playSong(sound){ //sound is the center of attention now, it's the actua
 
 function newSong(song){
     soundManager.stopAll();
-    console.log(song);
     
     var trackUrl = 'https://soundcloud.com/user-54323444/'+song;
     $.get(
         'http://api.soundcloud.com/resolve.json?url=' + trackUrl + '&client_id=8ee7b3067929d0440f7065ad8874cad8', 
         function (track) {
-            console.log(track);
             SC.stream(track.stream_url,{
                 autoPlay:true //SoundManager 2 options
             },function(sound){ //sound object is the center of attention now, it's the actual song
