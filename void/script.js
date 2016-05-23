@@ -41,12 +41,15 @@ function playSong(sound){ //sound is the center of attention now, it's the actua
     var percentPlayed=0;
     //console.log(sound.duration);
     setInterval(function(){ //every so often it changes the widths of how much we've heard and not heard and says the times
-        percentPlayed=100*(sound.position/sound.durationEstimate);
-        document.getElementById("heard").style.width=percentPlayed + "%";
-        document.getElementById("unheard").style.width=(100-percentPlayed) + "%";
-        document.getElementById("timePlayed").innerHTML=millisecondToTime(sound.position);
-        document.getElementById("timeLeft").innerHTML=millisecondToTime(sound.durationEstimate);
-    },100);
+        if(1==1){
+            console.log(sound);
+            percentPlayed=100*(sound.position/sound.durationEstimate);
+            document.getElementById("heard").style.width=percentPlayed + "%";
+            document.getElementById("unheard").style.width=(100-percentPlayed) + "%";
+            document.getElementById("timePlayed").innerHTML=millisecondToTime(sound.position);
+            document.getElementById("timeLeft").innerHTML=millisecondToTime(sound.durationEstimate);
+            }
+        },1000);
     
     $("#songSpot").click(function(e) {  //change the position of the song based on where the user clicks on songSpot
         var offset = $(this).offset();//not 100% on how this works
