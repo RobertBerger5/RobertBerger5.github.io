@@ -60,6 +60,13 @@ function newSong(song){
     soundManager.stopAll();
     console.log(song);
     
+    var trackUrl = 'https://soundcloud.com/user-54323444/'+song;
+    $.get(
+        'http://api.soundcloud.com/resolve.json?url=' + trackUrl + '&client_id=8ee7b3067929d0440f7065ad8874cad8', 
+        function (result) {
+            console.log(result);
+        }
+    );
     
     
 }
