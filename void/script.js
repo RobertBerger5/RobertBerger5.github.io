@@ -23,7 +23,7 @@ var currentSong;
 
 
 
-function playSong(sound){ //sound is the center of attention now, it's the actual song     TODO: make this function another function so when I call soundManager.stopAll(); (?), I can easily play a different sound without hassle
+function playSong(sound){ //sound is the center of attention now, it's the actual song
     currentSong=sound;
     
     $("#soundButton").click(function(e){
