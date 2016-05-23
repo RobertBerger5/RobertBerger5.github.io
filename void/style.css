@@ -173,7 +173,7 @@ header #player #playerRight #songSelector #selector{
 	left:-950%;
 	border:1px solid black;
 	border-radius:0px 0px 30px 30px;
-	visibility:hidden;
+	/*visibility:hidden;*/
 }
 header #player #playerRight #songSelector:hover #selector{
 	visibility:visible;
@@ -186,6 +186,7 @@ header #player #playerRight #songSelector:hover #selector{
 header #player #playerRight #songSelector #selector .song{
 	display:inline-block;
 	height:100%;
+	width:25%;			/*to be changed with jquery*/
 	position:relative;
 	float:left;
 	border-radius:0px 0px 30px 30px;
