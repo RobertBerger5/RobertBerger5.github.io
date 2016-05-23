@@ -92,7 +92,7 @@ $(document).ready(function() {
         //SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
 
         //for pros like me, streaming
-        randy=Math.floor(Math.random()*tracks.length));
+        randy=Math.floor(Math.random()*tracks.length);
         SC.stream(tracks[randy].stream_url,{
             autoPlay:true //SoundManager 2 options
         },function(sound){ //sound object is the center of attention now, it's the actual song
