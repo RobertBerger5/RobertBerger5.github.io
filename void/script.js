@@ -73,8 +73,7 @@ $(document).ready(function() {
         user_id: userId
     }, function (tracks) { //tracks is an array
         for(var a in tracks){
-            urlName=(tracks[a].title).replace(/\s+/g, '-').toLowerCase() //resolve for the url? or do that in the other function? either way, this needs dashes wherever there are spaces
-            //str = str.replace(/\s+/g, '-').toLowerCase();
+            urlName=(tracks[a].title).replace(/\s+/g, '-').toLowerCase() // "Bulls on Parade" becomes "bulls-on-parade"
             $("#selector").append( '<div class="song" onclick="newSong(\''+ urlName +'\')" width="' + (100/tracks.length) + '%"><p>'+tracks[a].title+'</p></div>' );
         }
         //for noobs, iframe imbedding
