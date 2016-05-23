@@ -88,7 +88,7 @@ $(document).ready(function() {
     }, function (tracks) { //tracks is an array
         for(var a in tracks){
             urlName=(tracks[a].title).replace(/\s+/g, '-').toLowerCase() // "Bulls on Parade" becomes "bulls-on-parade"
-            $("#selector").append( '<div class="song" onclick="newSong(\''+ urlName +'\')" width="' + (100/tracks.length) + '%"><p>'+tracks[a].title+'</p></div>' );
+            $("#selector").append( '<div class="song" onclick="newSong(\''+ urlName +'\')" style="width:' + (100/tracks.length) + '%"><p>'+tracks[a].title+'</p></div>' );
         }
         //for noobs, iframe imbedding
         //SC.oEmbed(tracks[0].permalink_url,document.getElementById('player')) //change the index of the array for different songs
