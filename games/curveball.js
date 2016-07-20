@@ -1,5 +1,5 @@
 var canvas=document.querySelector("canvas");
-      canvas.width = $(window).width()/2;//500
+      canvas.width = $(window).width();//500
       canvas.height= $(window).height();//500
       var ctx = canvas.getContext("2d");
 
