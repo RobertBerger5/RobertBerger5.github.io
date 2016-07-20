@@ -4,7 +4,7 @@ var canvas=document.querySelector("canvas");
       var ctx = canvas.getContext("2d");
 
       var scaleShit=1.5; //highest I can go without it going negative for whatever reason is 1.65 at 400, didn't work tho
-      var threeD=0;
+      var threeD=1;
 
       var paused=false;
       function togglePause(){
