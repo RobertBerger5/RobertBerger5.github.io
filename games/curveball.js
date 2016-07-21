@@ -7,6 +7,7 @@ var canvas=document.querySelector("canvas");
       var scaleShit=pow*25;//scale it so they aren't scrunched
       var threeD=0;//1 or 0
       var meters=0;//1 or 0
+      var gball=0;//1 or 0
 
       var paused=false;
       function togglePause(){
@@ -235,7 +236,9 @@ var canvas=document.querySelector("canvas");
         ctx.beginPath();
         ctx.arc(ball.x,ball.y,ball.radius,0,2*Math.PI);
         ctx.closePath();
-        ctx.fill();
+        if(gball){
+            ctx.fill();
+        }
         //ghost enemy
         ctx.fillStyle="rgba(255,0,0,.5";
         //ctx.fillRect(enemy.x-enemy.width/2,enemy.y-enemy.height/2,enemy.width,enemy.height);
