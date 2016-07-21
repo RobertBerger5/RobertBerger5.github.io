@@ -33,8 +33,8 @@ var canvas=document.querySelector("canvas");
       }
 
       var ball={
-        x:field.width,
-        y:field.height,
+        x:field.width/2,
+        y:field.height/2,
         z:0,
         xV:0,
         yV:0,
