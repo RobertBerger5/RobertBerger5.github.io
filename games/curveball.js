@@ -10,7 +10,7 @@ var canvas=document.querySelector("canvas");
 
       var paused=false;
       function togglePause(){
-        console.log("yeet");
+        //console.log("pause toggled");
         if(paused){
           paused=false;
         }else{
@@ -133,7 +133,6 @@ var canvas=document.querySelector("canvas");
           ball.zA=ball.zA*-1;
           if(hitBall(player)){
             bounced=true;
-            console.log("yay");
           }else{
             point("enemy");
           }
@@ -162,7 +161,7 @@ var canvas=document.querySelector("canvas");
         ball.y+=ball.yV;
         ball.z+=ball.zV;
         if(bounceBall()){
-          console.log("bounced");
+          //console.log("bounced");
         }
       }
 
