@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drums</title>
+    <style>
+      body{
+        margin:0px;
+      }
+      table,th,td{
+        border:1px solid black;
+        border-collapse:collapse;
+      }
+      td{
+        padding:10px;
+      }
+      #beatbox{
+        display:block;
+        border:1px solid black;
+        /*background-color:#0000ff;*/
+        width:fill;
+        font-size:500px;
+        text-align:center;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+
+    <audio id="bass" src="https://www.freesound.org/data/previews/34/34838_209299-lq.mp3" type="audio/mpeg"></audio>
+    <audio id="snare" src="https://www.freesound.org/data/previews/35/35610_113878-lq.mp3"></audio>
+    <audio id="hihat" src="https://www.freesound.org/data/previews/75/75044_1151436-lq.mp3"></audio>
+
+    <p>BPM: <input type="text" id="bpm" value="120"></p>
+    <table>
+      <tr>
+        <td>sound type</td>
+        <th>1
+        </th>
+        <th>and
+        </th>
+        <th>2
+        </th>
+        <th>and
+        </th>
+        <th>3
+        </th>
+        <th>and
+        </th>
+        <th>4
+        </th>
+        <th>and
+        </th>
+      </tr>
+      <tr>
+        <td>bass</td>
+        <td><input type="checkbox" id="bass0" checked>
+        </td>
+        <td><input type="checkbox" id="bass1">
+        </td>
+        <td><input type="checkbox" id="bass2" checked>
+        </td>
+        <td><input type="checkbox" id="bass3">
+        </td>
+        <td><input type="checkbox" id="bass4">
+        </td>
+        <td><input type="checkbox" id="bass5">
+        </td>
+        <td><input type="checkbox" id="bass6" checked>
+        </td>
+        <td><input type="checkbox" id="bass7">
+        </td>
+      </tr>
+      <tr>
+        <td>snare</td>
+        <td><input type="checkbox" id="snare0">
+        </td>
+        <td><input type="checkbox" id="snare1">
+        </td>
+        <td><input type="checkbox" id="snare2">
+        </td>
+        <td><input type="checkbox" id="snare3">
+        </td>
+        <td><input type="checkbox" id="snare4" checked>
+        </td>
+        <td><input type="checkbox" id="snare5">
+        </td>
+        <td><input type="checkbox" id="snare6">
+        </td>
+        <td><input type="checkbox" id="snare7">
+        </td>
+      </tr>
+      <tr>
+        <td>hihat</td>
+        <td><input type="checkbox" id="hihat0">
+        </td>
+        <td><input type="checkbox" id="hihat1">
+        </td>
+        <td><input type="checkbox" id="hihat2">
+        </td>
+        <td><input type="checkbox" id="hihat3">
+        </td>
+        <td><input type="checkbox" id="hihat4">
+        </td>
+        <td><input type="checkbox" id="hihat5">
+        </td>
+        <td><input type="checkbox" id="hihat6">
+        </td>
+        <td><input type="checkbox" id="hihat7">
+        </td>
+      </tr>
+    </table>
+    <div id="beatbox">beat</div>
+
+    <script>
+      var bass = document.getElementById("bass");
+      var snare=document.getElementById("snare");
+      var hihat=document.getElementById("hihat");
+
+      var bpm=document.getElementById("bpm").value;
+      var beatbox=document.getElementById("beatbox");
+      var speed=(60000/bpm)/4 // /4 for subdivisions
+      document.getElementById("bpm").onchange=function(){
+        bpm=document.getElementById("bpm").value;
+        speed=(60000/bpm)/4;
+        console.log(bpm);
+      }
+      var beat=0; //1 and 2 and 3 and 4 and ... out of 8
+
+      function note(){
+
+        if((beat+2)%2==0){ //1 2 3 4
+          beatbox.innerHTML=(beat+2)/2;
+        }
+
+        /*if((beat+2)%2==0){ //if it's on beat
+          beatbox.style.backgroundColor="#fff";
+        }else{ //offbeats are red
+          beatbox.style.backgroundColor="#fdd";
+        }*/
+        if(beat==0){
+          beatbox.style.backgroundColor="#dfd";
+        }else{
+          beatbox.style.backgroundColor="#fff";
+        }
+        
+
+        if( document.getElementById("bass"+beat).checked ){
+          if(bass.paused){
+            bass.play();
+          }else{
+            bass.currentTime=0
+          }
+        }
+        if( document.getElementById("snare"+beat).checked ){
+          if(snare.paused){
+            snare.play();
+          }else{
+            snare.currentTime=0
+          }
+        }
+        if( document.getElementById("hihat"+beat).checked ){
+          if(hihat.paused){
+            hihat.play();
+          }else{
+            hihat.currentTime=0
+          }
+        }
+
+
+        beat++;
+        if(beat>7){
+          beat=0;
+        }
+      }
+      function metronome(){
+        note();
+        setTimeout(function(){
+          metronome();
+        },speed);
+      }
+      metronome();
+    </script>
+  </body>
+</html>
