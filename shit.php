@@ -1,0 +1,9 @@
+<head>
+  <title>boobs</title>
+</head>
+<body>
+  <p>yo</p>
+  <php>
+    echo('<p>bewbz</p>');
+  </php>
+</body>
