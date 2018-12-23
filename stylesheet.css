@@ -1,93 +1,36 @@
+:root{
+    /*
+      colors ripped off of Departika from #8 on
+      https://www.canva.com/learn/website-color-schemes/
+    */
+    --sky:#CAEBF2;
+    --carbon:#A9A9A9;
+    --watermelon:#FF3B3F;
+    --neutral:#EFEFEF;
+}
 body{
-	/*background-color:#66f;*/
-	background-color:#000;
-	margin:0px;
-	background-image:url("http://www.wired.com/wp-content/uploads/blogs/insights/wp-content/uploads/2012/11/clouds_660.jpg");
-	background-size:100% 100%;
+    background-color:var(--neutral);
+    margin:0px;
 }
 
 p{
-	margin:10px;
+    margin:10px;
+    color:var(--carbon);
 }
 
 h1{
-	display:block;
-	text-align:vertical;
+    display:block;
+    text-align:vertical;
+    font-size:18pt;
 }
 
-#aboutMeList{
-	list-style:none;
-}
-
-li{
-	margin:5px;
-}
-
-.blackBackground{
-	background-color:#fff;
-	border:1px solid #fff;
+h2{
+    font-size:20pt;
 }
 
 div{
-	border:1px solid black;
-	border-radius:5px;
-	overflow:auto;
-	opacity:.9;
-}
-
-.content{
-	background-color:#fff;
-}
-
-#content{
-	background-color:#000;
-	height:98%;
-	width:98%;
-	margin:auto;
-	margin-top:2px;
-}
-
-#topBorder{
-	height:.5%;
-	width:1px;
-	border:0px;
-}
-
-#header{
-	max-height:10%;
-	min-height:5%;
-	max-width:100%;
-	min-width:95%;
-	margin:auto;
-}
-
-#header p{
-	font-size:200%;
-}
-
-#leftDiv{
-	min-height:80%;
-	max-height:85%;
-	max-width:25%;
-	min-width:20%;}
-
-
-#rightDiv{
-	min-height:80%;
-	max-height:85%;
-	max-width:75%;
-	min-width:70%;
-	float:right;
-}
-
-#footer{
-	max-height:10%;
-	min-height:5%;
-	max-width:100%;
-	min-width:95%;
-	margin:auto;
-}
-
-#footer p{
-	font-size:100%;
+    border-radius:2px;
+    background-color:var(--sky);
+    overflow:auto;
+    opacity:.9;
 }
