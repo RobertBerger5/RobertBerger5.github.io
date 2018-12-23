@@ -13,24 +13,21 @@ body{
     margin:0px;
 }
 
-p{
-    margin:10px;
-    color:var(--carbon);
-}
-
-h1{
+.bubble{
+    margin:1%;
+    border-radius:5%;
+    background-color:var(--neutral);
     display:block;
-    text-align:vertical;
-    font-size:18pt;
+    float:left;
+    border:1px solid black;
+    width:45%;
+    height:200px;
+    overflow:hidden;
+    padding:1%
 }
 
-h2{
-    font-size:20pt;
-}
-
-div{
-    border-radius:2px;
+.bubble:hover{
     background-color:var(--sky);
-    overflow:auto;
-    opacity:.9;
+    overflow-y:scroll;
+    scroll-behavior:smooth;
 }
