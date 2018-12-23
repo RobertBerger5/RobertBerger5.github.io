@@ -1,3 +1,3 @@
 RobertBerger5.github.io
 ==================
-This site is pretty much just for screwing around. I'd just kinda ignore everything here if I were you, but feel free to browse around nonetheless.
+Recently started taking my personal GitHub seriously, feel free to browse around (it's mostly just from highschool me messing around with HTML/CSS/JavaScript). The main website portion of this site is still very much in progress, but thanks for giving my profile/projects a look!
