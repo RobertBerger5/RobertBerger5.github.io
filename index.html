@@ -1,81 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Rob Berger</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        $("#header").load("robertberger5.github.io/header.html");
-      });
-    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      .navbar{
+      margin-bottom:0;
+      border-radius:0;
+      }
+    </style>
   </head>
   <body>
-    <div id="header"></div>
-    <h1>Rob Berger</h1>
-    <h2>Welcome to my site</h2>
-    <!--vision for these is basically just have em be in little bubbles
-	user can click on to expand
-	changes color when highlighted because that's how responsiveness works
-      -->
-    <div class="bubble">
-      <h3>Bio</h3>
-      <p>I'm a computer science student at St. Olaf College in Northfield, Minnesota.</p>
-      <p>Clearly, HTML/CSS/JavaScript aren't exactly my forte, but don't let that distract you!</p>
-      <p>Enjoy the website, there was an attempt.</p>
-    </div>
-    <div class="bubble">
-      <h3>Experience</h3>
-      <ul>
-	<li>
-	  <h4>TA for Hardware Design</h4>
-	  <p>September - December 2018</p>
-	  <p>I was a Teacher's Assistant for Hardware Design. Yay.</p>
-	</li>
-	<li>
-	  <h4>Cluster Manager</h4>
-	  <p>May 2018 - present</p>
-	  <p>Assist in giving people access to St. Olaf's computer clusters</p>
-	  <p>neato</p>
-	</li>
-	<li>
-	  <h4>Engineering Team</h4>
-	  <p>September 2018 - present</p>
-	  <p>really shoulda specified that these are WORK things</p>
-	  <p>this clearly belongs in a different category</p>
-	</li>
-      </ul>
-    </div>
-    <div class="bubble">
-      <h3>Skills</h3>
-      <h4>Programming</h4>
-      <ul>
-	<li>C++</li><!--TODO: get some sort of star system-->
-	<li>Java</li>
-	<li>Python</li>
-	<li>Bash Scripting</li>
-      </ul>
-      <h4>Languages</h4>
-      <ul>
-	<li>English (fluent)</li>
-	<li>German (intermediate)</li>
-	<li>Spanish (basics)</li>
-      </ul>
-      <h4>Other Relevant Skills</h4>
-      <ul>
-	<li>Familiar with Mac and Linux (specifically Ubuntu)</li>
-	<li>Simple Android Apps</li>
-	<li>Familiar with Unix Terminals</li>
-	<li>Strongly prefers emacs over vim</li>
-      </ul>
-    </div>
-    <div class="bubble">
-      <h3>External Links</h3>
-      <ul>
-	<li href="https://www.linkedin.com/in/rob-berger-a36770173/">LinkedIn</li>
-	<li href="https://github.com/RobertBerger5">Personal GitHub</li>
-	<li href="https://stogit.cs.stolaf.edu/berger6/contributed">School GitLab</li>
-      </ul>
+    <!--navbar currently basically ripped off from https://www.w3schools.com/booTsTrap/tryit.asp?filename=trybs_temp_portfolio&stacked=h -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+	  </button>
+	  <a class="navbar-brand" href="#about">Rob Berger</a>
+	</div>
+	<div class="collapse navbar-collapse" id="myNavbar">
+	  <ul class="nav navbar-nav">
+	    <li>
+	      <a href="#education">Education</a>
+	    </li>
+	    <li>
+	      <a href="#skills">Skills</a>
+	    </li>
+	    <li>
+	      <a href="#projects">Projects</a>
+	    </li>
+	    <li>
+	      <a href="#workexperience">Work Experience</a>
+	    </li>
+	    <li>
+	      <a href="#extracurriculars">Extracurriculars</a>
+	    </li>
+	    <li>
+	      <a href="#personal">Personal</a>
+	    </li>
+	  </ul>
+	</div>
+    </nav>
+
+    <div id="about" class="jumbotron">
+      <div class="container text-center">
+	<h1>Rob Berger</h1>
+	<p>Welcome to me trying to learn about Bootstrap.js</p>
       </div>
+    </div>
+
+    <div style="height: 500px;" id="education" class="container">
+      <p>i learn stuff sometimes</p>
+    </div>
+
+    <div style="height: 500px;" id="skills" class="container">
+      <p>skilled</p>
+    </div>
+
+    <div style="height: 500px;" id="projects" class="container">
+      <p>i do projects sometimes (not really though)</p>
+    </div>
+
+    <div style="height: 500px;" id="workexperience" class="container">
+      <p>i have had jobs and done them kinda</p>
+    </div>
+
+    <div style="height: 500px;" id="extracurriculars" class="container">
+      <p>literally just engineering haha</p>
+    </div>
+
+    <div style="height: 500px;" id="personal" class="container">
+      <p>guitar, lift, run, hang out with friends</p>
+    </div>
+    
   </body>
-<html>
+</html>
+
+<!--
+ok here's what I need:
+  jumbotron or something at the top just saying my name and basic info (mention that internship search is still on?)
+  thingie to select which rig to jump to
+  idk how to display the education, we'll get there
+  skills: just columns I guess, have little gliphicons or whatever
+  projects: if I had more, it'd be cool to have a carosel with basic info about em, too bad I have like nothing
+  work experience: idk man
+  extracurriculars: idk there's really just one serious one
+  personal: working out, guitar, hanging out with friends (lotta pool haha)
+  
+  kinda want an easteregg if they scroll up past everything too much
+  -->
