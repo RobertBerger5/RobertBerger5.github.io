@@ -1,0 +1,12 @@
+.navbar{
+    margin-bottom:0;
+    border-radius:0;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:90;/*should probably be the highest*/
+}
+#about{
+    /*TODO: move this down by however tall the navber is*/
+}

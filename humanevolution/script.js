@@ -6,7 +6,7 @@ $( document ).ready(function() {
 
 function redirect(href){
   $('#content').fadeOut(500, function(){
-    window.location.href = "http://robertberger5.github.io/"+href;
+    window.location.href = "http://robertberger5.github.io/humanevolution/"+href;
   });
 };
 

@@ -6,16 +6,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style>
-      .navbar{
-      margin-bottom:0;
-      border-radius:0;
-      }
-    </style>
+    <link rel="stylesheet" href="stylesheet.css">
   </head>
   <body>
     <!--navbar currently basically ripped off from https://www.w3schools.com/booTsTrap/tryit.asp?filename=trybs_temp_portfolio&stacked=h -->
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse" position="absolute">
       <div class="container-fluid">
 	<div class="navbar-header">
 	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -57,7 +52,20 @@
     </div>
 
     <div style="height: 500px;" id="education" class="container">
-      <p>i learn stuff sometimes</p>
+      <h1>Education</h1>
+      <div class="row">
+	<div class="col-sm-8">
+	</div>
+	<div class="col-sm-4">
+	  <div class="thumbnail" data-toggle="tooltip" data-placement="left" title="I have absolutely no idea about legal things, but I want to make it abundantly clear that this is NOT my picture and full rights to St. Olaf and its imagery go to St. Olaf College.">
+	    <!--TODO: with all this nifty stuff, I'd probably always want 100% width-->
+	    <img src="stolaf.jpg" alt="St. Olaf College" style="width:100%">
+	    <div class="caption">
+	      <p>St. Olaf College</p>
+	    </div>
+	  </div>
+	</div>
+      </div>
     </div>
 
     <div style="height: 500px;" id="skills" class="container">
@@ -80,14 +88,16 @@
       <p>guitar, lift, run, hang out with friends</p>
     </div>
     
+    
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+      });
+    </script>
   </body>
 </html>
 
-<!--
-ok here's what I need:
-  jumbotron or something at the top just saying my name and basic info (mention that internship search is still on?)
-  thingie to select which rig to jump to
-  idk how to display the education, we'll get there
+<!--  idk how to display the education, we'll get there
   skills: just columns I guess, have little gliphicons or whatever
   projects: if I had more, it'd be cool to have a carosel with basic info about em, too bad I have like nothing
   work experience: idk man
