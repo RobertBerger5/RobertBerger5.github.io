@@ -10,3 +10,9 @@
 #about{
     /*TODO: move this down by however tall the navber is*/
 }
+hr{
+    margin-left:0px;
+    text-align:left;
+    width:50%;
+    /*i feel a constant urge to use gradients...kinda wanna use one here...*/
+}
