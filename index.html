@@ -9,11 +9,18 @@
     <link rel="stylesheet" href="stylesheet.css">
   </head>
   <body>
+    <!--I should test if this lil easter egg messes up the experience on any device/browser...-->
+    <div id="topegg">
+      <p>Finding this statement was a waste of your time.</p>
+      <p>Ok I lied, but after this there really is nothing.</p>
+      <p>Dude there's nothing up here, go check out the rest of the page.</p>
+    </div>
+    
     <!--navbar currently basically ripped off from https://www.w3schools.com/booTsTrap/tryit.asp?filename=trybs_temp_portfolio&stacked=h -->
     <nav class="navbar navbar-inverse" position="absolute">
       <div class="container-fluid">
 	<div class="navbar-header">
-	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"><!--little thing for small screens to have a dropdown menu-->
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
@@ -49,19 +56,23 @@
 	<h1>Rob Berger</h1>
 	<p>Welcome to me trying to learn about Bootstrap.js</p>
       </div>
+      <!--TODO: have a little rounded pic of me with fixed (or absolute?) positioning, placed like 10% of the way down the parent element and 80% the parent's height, automatic width based on that then-->
+      <!--<img class="img-circle" id="profilePic" src="images/professionalRob.jpg">-->
     </div>
-
+    
     <div id="education" class="container">
       <h1>Education</h1>
       <div class="row">
-	<div class="col-sm-8"><!--TODO: email AJ-->
+	<div class="col-md-8 col-sm-6 col-lg-10"><!--TODO: email AJ-->
 	  <p>I'm a sophomore at St. Olaf College in Northfield, Minnesota. I'm pursuing a Bachelor of Science degree in Computer Science and a concentration (like a minor) in German Studies. Since St. Olaf is a liberal arts school, I'm getting a wide base of knowledge and dipping my toes into many other fields of study as well.</p>
 	  <p><i>Current GPA: 3.51, Anticipated Graduation: May 2021</i></p>
 	</div>
-	<div class="col-sm-4">
+	<div class="col-md-4 col-sm-6 col-lg-2">
 	  <div class="thumbnail" data-toggle="tooltip" data-placement="left" title="I have absolutely no idea about legal things, but I want to make it abundantly clear that this is NOT my picture and full rights to St. Olaf and its imagery go to St. Olaf College.">
 	    <!--TODO: with all this nifty stuff, I'd probably always want 100% width-->
-	    <img src="stolaf.jpg" alt="St. Olaf College" style="width:100%">
+	    <a href="images/stolaf.jpg">
+	      <img src="images/stolaf.jpg" alt="St. Olaf College">
+	    </a>
 	    <div class="caption">
 	      <p>St. Olaf College</p>
 	    </div>
@@ -74,7 +85,7 @@
 	  <p><span class="glyphicon glyphicon-cloud"></span> Parallel and Distributed Computing</p>
 	</div>
 	<div class="col-xs-4">
-	  <p><span class="glyphicon glyphicon-plus-sign"></span> Intro to Mathematical Reasoning</p>
+	  <p><span class="glyphicon glyphicon-plus-sign"></span> Intro to Mathematical Reasoning</p><!--TODO: I BROKE THIS PART-->
 	</div>
 	<div class="col-xs-4">
 	  <p data-toggle="tooltip" title="Currently in progress..."><span class="glyphicon glyphicon-sort-by-attributes"></span> Algorithms and Data Structures</p>
@@ -91,7 +102,7 @@
 	  <p><span class="glyphicon glyphicon-hdd"></span> Hardware Design</p>
 	</div>
       </div>
-      </div>
+    </div>
     </div>
 
     <hr />
@@ -229,11 +240,11 @@
 	</div>
 	<div class="col-xs-4 skillCol">
 	  <!--<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Spanish" data-content="good">Spanish</button><br>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>-->
+	      <span class="glyphicon glyphicon-star"></span>
+	      <span class="glyphicon glyphicon-star"></span>
+	      <span class="glyphicon glyphicon-star-empty"></span>
+	      <span class="glyphicon glyphicon-star-empty"></span>
+	      <span class="glyphicon glyphicon-star-empty"></span>-->
 	</div>
 	<div class="col-xs-4 skillCol">
 	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Emacs" data-content="My editor of choice. Unless I'm working on something very complicated, I prefer emacs in a terminal window over having to open up an IDE.">Emacs</button><br>
@@ -256,11 +267,11 @@
 	</div>
 	<div class="col-xs-4 skillCol">
 	  <!--<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Spanish" data-content="good">Spanish</button><br>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>-->
+	      <span class="glyphicon glyphicon-star"></span>
+	      <span class="glyphicon glyphicon-star"></span>
+	      <span class="glyphicon glyphicon-star-empty"></span>
+	      <span class="glyphicon glyphicon-star-empty"></span>
+	      <span class="glyphicon glyphicon-star-empty"></span>-->
 	</div>
 	<div class="col-xs-4 skillCol">
 	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Web Design" data-content="I took a class on HTML/CSS/JavaScript at Luther College during my sophomore year of highschool, and I knew a fair amount already when I went into it. However, it didn't cover jQuery or Bootstrap, which have been making the process of making this website quite efficient.">Web Design</button><br>
@@ -280,14 +291,34 @@
     
     <div id="projects" class="container">
       <h1>Projects</h1>
-      <p>i do projects sometimes (not really though)</p>
+      <p>Okay the internet is out and idk how to make a carosel, but I think that would work well for this. Anyway, I thought I'd brainstorm what projects to put here at least</p>
+      <ul>
+	<li>
+	  <h2>Photo.it</h2>
+	  <p>use description from resume</p>
+	  <p>include picture of GUI and maybe some edited pics</p>
+	  <p>anything else?</p>
+	</li>
+	<li>
+	  <h2>Robot Rescuers</h2>
+	  <p>describe idea</p>
+	  <p>include screenshot (or video would be better, gif?) of robots doin their thing
+	  <p>describe parallelism, patterns</p>
+	  <p>mention race condition -> deadlock -> potential livelock? would have to admit that I didn't put the effort in to fix it (although fixing it one day would be pretty fuckin sick</p>
+	  <p>anything else?</p>
+	</li>
+	<li>
+	  <p>idk what other 'project' kinda things I've really done</p>
+	  <p>nerdNotes? was never really finished but like I could work some more on it now...</p>
+	</li>
+      </ul>
     </div>
 
     <hr />
 
     <div id="workexperience" class="container">
       <h1>Work Experience</h1>
-      <p>i have had jobs and done them kinda</p>
+      <p>how do I format this? Just a normal list with bootstrap styling or use actual fancy bootstrap stuff to help?</p>
     </div>
 
     <hr />
@@ -295,32 +326,100 @@
     <div id="extracurriculars" class="container">
       <h1>Extracurriculars</h1>
       <p>literally just engineering haha</p>
+      <p>and metal club! could possibly include a picture from the bakesale but that might scare people away...</p>
+      <p>I show up at like ACM meetings but there's not a ton of noteworthy things there...(no offence anway)</p>
+      <p>I mean there's occasional german activities? like german house events and such...</p>
     </div>
 
     <hr />
 
     <div id="personal" class="container">
       <h1>Personal</h1>
+      <p>ok I'm kinda lookin forward to this one, imma have just like a bunch of thumbnails and captions</p>
       <p>guitar, lift, run, hang out with friends</p>
+      <p>Have thumbnails for:</p>
+      <ul>
+	<li>Friends (both St. Olaf (probably get a pool pic in here) and from highschool)</li>
+	<li>Guitar</li>
+	<li>running/lifting/active lifestyle? probably different ones for all but idk what pictures I have of em</li>
+	<li>Family</li>
+	<li>Pets</li>
+	<li>Metal???</li>
+	<li>idk what else i do, my life is uneventful</li>
+      </ul>
+      <div class="row">
+	<div class="col-sm-4"> <!--otherwise there's no automatic bootstrap margins and it looks weird. Also, I'm not sure if I should do sm or xs or something else entirely...-->
+	  <div class="thumbnail">
+	    <a href="images/professionalRob.jpg">
+	      <img class="img-circle" src="images/professionalRob.jpg" alt="Professionally shot photograph">
+	    </a>
+	    <div class="caption">
+	      <p>1</p>
+	    </div>
+	  </div>
+	  <div class="thumbnail">
+	    <a href="images/professionalRob.jpg">
+	      <img class="img-circle" src="images/professionalRob.jpg" alt="Professionally shot photograph">
+	    </a>
+	    <div class="caption">
+	      <p>2</p>
+	    </div>
+	  </div>
+	</div>
+	<div class="col-sm-4">
+	  <div class="thumbnail">
+	    <a href="images/stolaf.jpg">
+	      <img class="img-circle" src="images/stolaf.jpg" alt="Professionally shot photograph">
+	    </a>
+	    <div class="caption">
+	      <p>3</p>
+	    </div>
+	  </div>
+	  <div class="thumbnail">
+	    <a href="images/stolaf.jpg">
+	      <img class="img-circle" src="images/stolaf.jpg" alt="Professionally shot photograph">
+	    </a>
+	    <div class="caption">
+	      <p>4</p>
+	    </div>
+	  </div>
+	</div>
+	<div class="col-sm-4">
+	  <div class="thumbnail">
+	    <a href="images/stolaf.jpg">
+	      <img class="img-circle" src="images/stolaf.jpg" alt="Professionally shot photograph">
+	    </a>
+	    <div class="caption">
+	      <p>5</p>
+	    </div>
+	  </div>
+	  <div class="thumbnail">
+	    <a href="images/professionalRob.jpg">
+	      <img class="img-circle" src="images/professionalRob.jpg" alt="Professionally shot photograph">
+	    </a>
+	    <div class="caption">
+	      <p>6</p>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+    
+    <hr />
+    
+    <div id="bottom" class="container-fluid">
+      <p>TODO: make a nice lil footer I guess...</p>
+      <p>Thanks for lookin at my site tho</p>
+      <p>I should have links to like my facebook, possibly twitter, instagram, etc here...also def linkedin link. Also change the background color because I just made it a fluid container</p>
+      <p>Ok yeah other than that idk what to put here...
     </div>
     
     
     <script type="text/javascript">
       $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-        $('[data-toggle="popover"]').popover();
+      $('[data-toggle="tooltip"]').tooltip();
+      $('[data-toggle="popover"]').popover();
       });
     </script>
   </body>
 </html>
-
-<!--  idk how to display the education, we'll get there
-  projects: if I had more, it'd be cool to have a carosel with basic info about em, too bad I have like nothing
-  work experience: idk man
-  extracurriculars: idk there's really just one serious one
-  personal: working out, guitar, hanging out with friends (lotta pool haha)
-  
-  kinda want an easteregg if they scroll up past everything too much
-  
-  I should add more images to this, images would liven it up real nice.
-  -->
