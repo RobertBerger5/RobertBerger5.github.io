@@ -32,8 +32,23 @@ hr{
     
 }
 
+#projects{
+    height:1500px;
+}
 
+#myCarousel{
+    height:50%;
+}
 
+#myCarousel .carousel-inner{
+    height:100%;
+}
+
+.project{
+    /*kinda want this to be taller but oh well*/
+    height:100%;
+    overflow-y:scroll;
+}
 
 
 
