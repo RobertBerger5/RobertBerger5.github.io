@@ -9,14 +9,7 @@
     <link rel="stylesheet" href="stylesheet.css">
   </head>
   <body>
-    <!--I should test if this lil easter egg messes up the experience on any device/browser...-->
-    <!--<div id="topegg">
-      <p>Finding this statement was a waste of your time.</p>
-      <p />
-      <p>Ok I lied, but after this there really is nothing.</p>
-      <p>Dude there's nothing up here, go check out the rest of the page.</p>
-    </div>-->
-    
+    <!--TODO: the navbar covers the title of the thing I skip to...oops...-->
     <!--navbar currently basically ripped off from https://www.w3schools.com/booTsTrap/tryit.asp?filename=trybs_temp_portfolio&stacked=h -->
     <nav class="navbar navbar-inverse" position="absolute">
       <div class="container-fluid">
@@ -58,7 +51,7 @@
 	<p>Welcome to me trying to learn about Bootstrap.js</p>
       </div>
       <!--TODO: have a little rounded pic of me with fixed (or absolute?) positioning, placed like 10% of the way down the parent element and 80% the parent's height, automatic width based on that then-->
-      <!--<img class="img-circle" id="profilePic" src="images/professionalRob.jpg">-->
+      <!--<img class="img-circle" id="profilePic" src="images/professionalRob.jpg" />-->
     </div>
     
     <div id="education" class="container">
@@ -72,7 +65,7 @@
 	  <div class="thumbnail" data-toggle="tooltip" data-placement="left" title="I have absolutely no idea about legal things, but I want to make it abundantly clear that this is NOT my picture and full rights to St. Olaf and its imagery go to St. Olaf College.">
 	    <!--TODO: with all this nifty stuff, I'd probably always want 100% width-->
 	    <a href="images/stolaf.jpg">
-	      <img src="images/stolaf.jpg" alt="St. Olaf College">
+	      <img src="images/stolaf.jpg" alt="St. Olaf College" />
 	    </a>
 	    <div class="caption">
 	      <p>St. Olaf College</p>
@@ -86,7 +79,7 @@
 	  <p><span class="glyphicon glyphicon-cloud"></span> Parallel and Distributed Computing</p>
 	</div>
 	<div class="col-xs-4">
-	  <p><span class="glyphicon glyphicon-plus-sign"></span> Intro to Mathematical Reasoning</p><!--TODO: I BROKE THIS PART-->
+	  <p><span class="glyphicon glyphicon-plus-sign"></span> Intro to Mathematical Reasoning</p><!--TODO: I BROKE THIS PART (later note: what broke??? I'm scared...)-->
 	</div>
 	<div class="col-xs-4">
 	  <p data-toggle="tooltip" title="Currently in progress..."><span class="glyphicon glyphicon-sort-by-attributes"></span> Algorithms and Data Structures</p>
@@ -108,7 +101,7 @@
 
     <hr />
 
-    <div id="skills" class="container"><!--TODO: I wanna make this fluid so it has max possible width...don't want it to look misaligned with everything else tho...-->
+    <div id="skills" class="container">
       <h1>Skills</h1>
       <p><i>Click any for additional information (click again to remove)</i></p>
       <div class="row">
@@ -283,7 +276,7 @@
 	    <span class="glyphicon glyphicon-star-empty"></span>
 	    <span class="glyphicon glyphicon-star-empty"></span>
 	  </span>
-	  <!--TODO; Have them be able to rate how good I am, then display a message saying "thank you for your input, it won't be recorded." mom suggested bars instead of stars. Oh, also I should probably put Git on here, probably like 2ish stars-->
+	  <!--TODO; Have them be able to rate how good I am, then display a message saying "thank you for your input, it won't be recorded." Or would that be too sarcastic? Anyway, mom suggested bars instead of stars. Oh, also I should probably put Git on here, probably like 2ish stars-->
 	</div>
       </div>
     </div>
@@ -322,17 +315,64 @@
 	<div class="carousel-inner">
 	  <!--TODO: MAKE SURE THESE ALL HAVE THE SAME HEIGHT!-->
 	  <div class="project item active">
-	    <div class="container">
+	    <div class="container-fluid">
+	      <h2>Photo.it</h2>
+	      <div class="row">
+		<div class="col-lg-10 col-md-6 col-sm-6">
+		  <p>Photo.it was a group project written in C++ for my Software Design class in my freshman year (May 2018). It is similar to Microsoft Paint or Photoshop</p>
+		</div>
+		<div class="col-lg-2 col-md-4 col-sm-6">
+		  <a href="pic.format">
+		    <img src="images/pic.format" alt="Screenshot of the Photo.it user interface" />
+		    </a>
+		</div>
+	      </div>
+	      <div class="row">
+		<div class="col-sm-3">
+		  <a href="pic.format">
+		    <img src="images/pic.format" alt="Unedited photo that will be the background" />
+		  </a>
+		</div>
+		<div class="col-sm-3">
+		  <a href="pic.format">
+		    <img src="images/pic.format" alt="Unedited photo that will have sections cropped into the foreground" />
+		  </a>
+		</div>
+		<div class="col-sm-3">
+		  <a href="pic.format">
+		    <img src="images/pic.format" alt="Photo edited by Photo.it (first)" />
+		  </a>
+		</div>
+		<div class="col-sm-3">
+		  <a href="pic.format">
+		    <img src="images/pic.format" alt="Photo edited by Photo.it (second)" />
+		  </a>
+		</div>
+	      </div>
+	      <div class="row">
+		<div class="col-sm-6"><!--TODO: same col widths on different screen sizes as above? Probably...-->
+		  <p>TODO: screen-record myself editing the pictures?</p>
+		</div>
+		<div class="col-sm-6">
+		  
+		  <p>My main contributions include:</p>
+		  <ul>
+		    <li>Implemented libpng C library to read and write .png files</li>
+		    <li>Wrote all image manipulation functions for graphic design</li>
+		    <li>Developed the capability to have multiple image layers</li>
+		    <li>Added color selector bars at the top right</li>
+		  </ul>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="project item">
+	    <div class="container-fluid">
 	      
 	    </div>
 	  </div>
 	  <div class="project item">
-	    <div class="container">
-	      
-	    </div>
-	  </div>
-	  <div class="project item">
-	    <div class="container">
+	    <div class="container-fluid">
 	      
 	    </div>
 	  </div>
@@ -388,8 +428,8 @@
 
 	<div class="col-sm-4">
 	  <div class="thumbnail">
-	    <a href="picture.format">
-	      <img src="images/pic.format" alt="DESCRIPTION HERE">
+	    <a href="pic.format">
+	      <img src="images/pic.format" alt="DESCRIPTION HERE" />
 	    </a>
 	    <div class="caption">
 	      <p>talk about the picture here</p>

@@ -50,7 +50,9 @@ hr{
     overflow-y:scroll;
 }
 
-
+.project .container{
+    padding:0px;
+}
 
 #topegg{
     position:fixed;
