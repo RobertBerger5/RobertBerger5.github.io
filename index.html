@@ -29,7 +29,7 @@
 	    <li>
 	      <a href="#skills">Skills</a>
 	    </li>
-	    <!--TODO: if I get projects back, make this visible...
+	    <!--TODO: if I get the projects section back, make this visible...
 	    <li>
 	      <a href="#projects">Projects</a>
 	    </li>-->
@@ -45,11 +45,13 @@
 	  </ul>
 	</div>
     </nav>
-
+    
+    <hr /><!--will the navbar cover this 100% of the time? because if not, this would look horrible-->
+    
     <div id="about" class="jumbotron">
       <div class="container text-center">
 	<h1>Rob Berger</h1>
-	<p>Welcome to me trying to learn about Bootstrap.js</p>
+	<p>Aspiring Software Engineer</p>
       </div>
       <!--TODO: have a little rounded pic of me with fixed (or absolute?) positioning, placed like 10% of the way down the parent element and 80% the parent's height, automatic width based on that then-->
       <!--<img class="img-circle" id="profilePic" src="images/professionalRob.jpg" />-->
@@ -88,7 +90,7 @@
       </div>
       <div class="row">
 	<div class="col-xs-4">
-	  <p><span class="glyphicon glyphicon-picture"  data-toggle="tooltip" title="See 'Projects' section below for reasoning behind picture icon"></span> Software Design</p>
+	  <p><span class="glyphicon glyphicon-picture"  data-toggle="tooltip" title="Final project was similar to MS Paint, hence this icon"></span> Software Design</p>
 	</div>
 	<div class="col-xs-4">
 	  <p><span class="glyphicon glyphicon-resize-horizontal"></span> Linear Algebra</p>
@@ -215,7 +217,7 @@
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
 	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Unix Terminals" data-content="I use the terminal all the time for my cluster manager job, as the most convenient ways to access the computers is through SSH. I use a terminal on my Macbook everyday, both on the Mac OS side as well as the Ubuntu side.">Unix Terminals</button><br>
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Unix Terminals" data-content="I use the terminal all the time for my cluster manager job, as the most convenient ways to access the clusters is through SSH. I use a terminal on my Macbook everyday, both on the Mac OS side as well as the Ubuntu side.">Unix Terminals</button><br>
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
@@ -399,66 +401,113 @@
     <hr />-->
 
     <div id="workexperience" class="container">
-      <h1>Work Experience</h1>
-      <p>how do I format this? Just a normal list with bootstrap styling or use actual fancy bootstrap stuff to help?</p>
+      <h1>Relevant Work Experience</h1>
+      
+      <h3>Cluster Manager</h3>
+      <p>St. Olaf College</p>
+      <p>Trained March-April 2018, worked since September 2018</p>
+      <ul>
+	<li>One of the students that work closely with St. Olaf's many computer clusters.</li>
+	<li>Regularly have to work with unfamiliar software and pick it up quickly</li>
+	<li>Collaborate with students to grant access to Docker containers</li>
+      </ul>
+      
+      <h3>TA for Hardware Design</h3>
+      <p>St. Olaf College</p>
+      <p>September-December 2018</p>
+      <ul>
+	<li>Attended in-class labs and assisted students with any obstacles they encountered during them</li>
+	<li>Facilitated evening help sessions to correct deeper misunderstandings</li>
+	<li>Provided feedback on labs and fielded questions regarding their grade</li>
+      </ul>
+      
     </div>
-
     <hr />
-
+    
     <div id="extracurriculars" class="container">
       <h1>Extracurriculars</h1>
-      <p>literally just engineering haha</p>
-      <p>and metal club! could possibly include a picture from the bakesale but that might scare people away...</p>
-      <p>I show up at like ACM meetings but there's not a ton of noteworthy things there...(no offence anway)</p>
-      <p>I mean there's occasional german activities? like german house events and such...</p>
+      <h3>Engineering Club</h3>
+      <h3>Metal Club</h3>
+      <h3>ACM</h3>
+      <h3>German Department Activities</h3>
     </div>
 
     <hr />
 
     <div id="personal" class="container">
       <h1>Personal</h1>
-      <p>ok I'm kinda lookin forward to this one, imma have just like a bunch of thumbnails and captions</p>
-      <p>guitar, lift, run, hang out with friends</p>
-      <p>Have thumbnails for:</p>
-      <ul>
-	<li>St. Olaf friends playing pool</li>
-	<li>Highschool friends</li>
-	<li>worn shoes and dumbbells?</li>
-	<li>Family pic not from this summer</li>
-	<li>Pic from Christmas Card</li>
-	<li>Better pic with pets</li>
-	<li>Childhood pic?</li>
-      </ul>
       <div class="row">
-	<div class="col-sm-4"> <!--otherwise there's no automatic bootstrap margins and it looks weird. Also, I'm not sure if I should do sm or xs or something else entirely...-->
-	  
-	</div>
-
 	<div class="col-sm-4">
 	  <div class="thumbnail">
-	    <a href="pic.format">
-	      <img src="images/pic.format" alt="DESCRIPTION HERE" />
+	    <a href="images/familyRestaurant.JPG">
+	      <img src="images/familyRestaurant.JPG" alt="Picture of my family" />
 	    </a>
 	    <div class="caption">
-	      <p>talk about the picture here</p>
+	      <p>My family and I at a restaurant this summer.</p>
 	    </div>
 	  </div>
-	  
+	  <div class="thumbnail">
+	    <a href="images/exercise.jpg">
+	      <img src="images/exercise.jpg" alt="Picture of my running shoes and some dumbbells" /><!--TODO: crop this probably-->
+	    </a>
+	    <div class="caption">
+	      <p>I don't really have pictures from the gym or my runs, but I run and lift quite a lot.</p>
+	    </div>
+	  </div>
 	</div>
-
+	
 	<div class="col-sm-4">
-	  
+	  <div class="thumbnail">
+	    <a href="images/guitar.PNG">
+	      <img src="images/guitar.PNG" alt="Picture of me playing guitar" />
+	    </a>
+	    <div class="caption">
+	      <p>I've been playing guitar since about eighth grade. </p>
+	    </div>
+	  </div>
+	  <div class="thumbnail">
+	    <a href="images/highschool.format">
+	      <img src="images/highschool.format" alt="Picture of my highschool friedns and I __(when)__" />
+	    </a>
+	    <div class="caption">
+	      <p>My highschool friends and I (doing something?)</p>
+	    </div>
+	  </div>
+	  <div class="thumbnail">
+	    <a href="images/childhood.format">
+	      <img src="images/childhood.format" alt="Picture of me when I was young" />
+	    </a>
+	    <div class="caption">
+	      <p>small boy</p>
+	    </div>
+	  </div>
+	</div>
+	
+	<div class="col-sm-4">
+	  <div class="thumbnail">
+	    <a href="images/friends.JPG">
+	      <img src="images/friends.JPG" alt="Picture of me and my friends" />
+	    </a>
+	    <div class="caption">
+	      <p>My friends at St. Olaf's President's Ball last year.</p>
+	    </div>
+	  </div>
+	  <div class="thumbnail">
+	    <a href="images/cats.jpeg">
+	      <img src="images/cats.jpeg" alt="Picture of my mom and I holding our cats" />
+	    </a>
+	    <div class="caption">
+	      <p>My mom and I trying to get our cats, Tommy and Cleo, to pose for a Christmas card picture (it didn't go well, this was taken immediately after Tommy took a swipe at Cleo)</p>
+	    </div>
+	  </div>
 	</div>
       </div>
     </div>
+
+    <br />
     
-    <hr />
-    
-    <div id="bottom" class="container-fluid">
-      <p>TODO: make a nice lil footer I guess...</p>
-      <p>Thanks for lookin at my site tho</p>
-      <p>I should have links to like my facebook, possibly twitter, instagram, etc here...also def linkedin link. Also change the background color because I just made it a fluid container</p>
-      <p>Ok yeah other than that idk what to put here...
+    <div id="footer" class="container-fluid text-center">
+      <p>Not really sure what to put down here, just kinda felt like I should have a footer. Thanks for checking out my site, though! Have a nice life.</p>
     </div>
     
     <script src="script.js"></script>
