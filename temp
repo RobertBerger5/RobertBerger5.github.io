@@ -1,0 +1,139 @@
+    <!--Photo.it is absolute trash and I can't manage to get anything to really work on it. That was gonna be the main "project" here, so I'm just not gonna have the other two...
+	<div id="projects" class="container">
+	  <h1>Projects</h1>
+	  <p>Okay the internet is out and idk how to make a carosel, but I think that would work well for this. Anyway, I thought I'd brainstorm what projects to put here at least</p>
+	  <ul>
+	    <li>
+	      <h2>Photo.it</h2>
+	      <p>use description from resume</p>
+	      <p>include picture of GUI and maybe some edited pics</p>
+	      <p>anything else?</p>
+	    </li>
+	    <li>
+	      <h2>Robot Rescuers</h2>
+	      <p>describe idea</p>
+	      <p>include screenshot (or video would be better, gif?) of robots doin their thing
+	      <p>describe parallelism, patterns</p>
+	      <p>mention race condition -> deadlock -> potential livelock? would have to admit that I never got around to fully fixing it (although fixing it one day would be kinda cool)</p>
+	      <p>anything else?</p>
+	    </li>
+	    <li>
+	      <p>idk what other 'project' kinda things I've really done</p>
+	      <p>nerdNotes? was never really finished but like I could work some more on it now...</p>
+	    </li>
+	  </ul>
+	  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	    <ol class="carousel-indicators">
+	      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	      <li data-target="#myCarousel" data-slide-to="1"></li>
+	      <li data-target="#myCarousel" data-slide-to="2"></li>
+	    </ol>
+	    <div class="carousel-inner">
+	      <!--TODO: MAKE SURE THESE ALL HAVE THE SAME HEIGHT!--
+		  <div class="project item active">
+		    <div class="container-fluid">
+		      <h2>Photo.it</h2>
+		      <div class="row">
+			<div class="col-lg-10 col-md-6 col-sm-6">
+			  <p>Photo.it was a group project written in C++ for my Software Design class in my freshman year (May 2018). It is similar to Microsoft Paint or Photoshop</p>
+			</div>
+			<div class="col-lg-2 col-md-4 col-sm-6">
+			  <a href="pic.format">
+			    <img src="images/pic.format" alt="Screenshot of the Photo.it user interface" />
+			  </a>
+			</div>
+		      </div>
+		      <div class="row">
+			<div class="col-sm-3">
+			  <a href="pic.format">
+			    <img src="images/pic.format" alt="Unedited photo that will be the background" />
+			  </a>
+			</div>
+			<div class="col-sm-3">
+			  <a href="pic.format">
+			    <img src="images/pic.format" alt="Unedited photo that will have sections cropped into the foreground" />
+			  </a>
+			</div>
+			<div class="col-sm-3">
+			  <a href="pic.format">
+			    <img src="images/pic.format" alt="Photo edited by Photo.it (first)" />
+			  </a>
+			</div>
+			<div class="col-sm-3">
+			  <a href="pic.format">
+			    <img src="images/pic.format" alt="Photo edited by Photo.it (second)" />
+			  </a>
+			</div>
+		      </div>
+		      <div class="row">
+			<div class="col-sm-6"><!--TODO: same col widths on different screen sizes as above? Probably...--
+						  <p>TODO: screen-record myself editing the pictures?</p>
+			</div>
+			<div class="col-sm-6">
+			  
+			  <p>My main contributions include:</p>
+			  <ul>
+			    <li>Implemented libpng C library to read and write .png files</li>
+			    <li>Wrote all image manipulation functions for graphic design</li>
+			    <li>Developed the capability to have multiple image layers</li>
+			    <li>Added color selector bars at the top right</li>
+			  </ul>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="project item">
+		    <div class="container-fluid">
+		      <h2>Robot Rescuers</h2>
+		      <p>describe idea</p>
+		      <p>include screenshot (or video would be better, gif?) of robots doin their thing
+		      <p>describe parallelism, patterns</p>
+		      <p>mention race condition -> deadlock -> potential livelock? would have to admit that I never got around to fully fixing it (although fixing it one day would be kinda cool)</p>
+		      <p>anything else?</p>  
+		    </div>
+		  </div>
+		  <div class="project item">
+		    <div class="container-fluid">
+		      <h2>NerdNotes</h2>
+		      <p>not even done yet but ay I need things in here...</p>
+		    </div>
+		  </div>
+	    </div>
+	    <a class="left  carousel-control" href="#myCarousel" data-slide="prev">
+	      <span class="glyphicon glyphicon-chevron-left"></span>
+	      <span class="sr-only">Previous</span>
+	    </a>
+	    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+	      <span class="glyphicon glyphicon-chevron-right"></span>
+	      <span class="sr-only">Next</span>
+	    </a>
+	  </div>
+	</div>
+
+	<hr />-->
+
+
+
+
+
+
+
+
+#myCarousel{
+    height:50%;
+}
+#myCarousel .carousel-inner{
+    height:100%;
+}
+.project{
+    height:100%;
+    overflow-y:scroll;
+}
+.project .container{
+    padding:0px;
+}
+
+
+#projects{
+    height:1500px;
+}

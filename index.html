@@ -19,7 +19,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
 	  </button>
-	  <a class="navbar-brand" href="#about">Rob Berger</a>
+	  <a class="navbar-brand" href="#title">Rob Berger</a>
 	</div>
 	<div class="collapse navbar-collapse" id="myNavbar">
 	  <ul class="nav navbar-nav">
@@ -46,9 +46,9 @@
 	</div>
     </nav>
     
-    <hr /><!--will the navbar cover this 100% of the time? because if not, this would look horrible-->
-    
-    <div id="about" class="jumbotron">
+    <div id="title" class="jumbotron">
+      <br /><br />
+      <!--<canvas id="titleAnimation"></canvas>-->
       <div class="container text-center">
 	<h1>Rob Berger</h1>
 	<p>Aspiring Software Engineer</p>
@@ -56,17 +56,17 @@
       <!--TODO: have a little rounded pic of me with fixed (or absolute?) positioning, placed like 10% of the way down the parent element and 80% the parent's height, automatic width based on that then-->
       <!--<img class="img-circle" id="profilePic" src="images/professionalRob.jpg" />-->
     </div>
+    <br />
     
-    <div id="education" class="container">
+    <div id="education" class="container rounded">
       <h1>Education</h1>
       <div class="row">
-	<div class="col-md-8 col-sm-6 col-lg-10"><!--TODO: email AJ-->
-	  <p>I'm a sophomore at St. Olaf College in Northfield, Minnesota. I'm pursuing a Bachelor of Science degree in Computer Science and a concentration (like a minor) in German Studies. Since St. Olaf is a liberal arts school, I'm getting a wide base of knowledge and dipping my toes into many other fields of study as well.</p>
-	  <p><i>Current GPA: 3.51, Anticipated Graduation: May 2021</i></p>
+	<div class="col-md-8 col-sm-6 col-lg-10">
+	  <p>I'm a sophomore at St. Olaf College in Northfield, Minnesota. I'm pursuing a Bachelor of Science degree in Computer Science and a concentration (basically a minor) in German Studies. Since St. Olaf is a liberal arts school, I'm getting a wide base of knowledge and dipping my toes into many other fields of study as well.</p>
+	  <p><i>Current GPA: 3.58, Anticipated Graduation: May 2021</i></p>
 	</div>
 	<div class="col-md-4 col-sm-6 col-lg-2">
-	  <div class="thumbnail" data-toggle="tooltip" data-placement="left" title="I have absolutely no idea about legal things, but I want to make it abundantly clear that this is NOT my picture and full rights to St. Olaf and its imagery go to St. Olaf College.">
-	    <!--TODO: with all this nifty stuff, I'd probably always want 100% width-->
+	  <div class="thumbnail" data-toggle="tooltip" data-placement="left" title="I have absolutely no idea about legal things, but I want to make it abundantly clear that this is NOT my picture and full rights to St. Olaf and its imagery go to St. Olaf College. I absolutely did not take this photo.">
 	    <a href="images/stolaf.jpg">
 	      <img src="images/stolaf.jpg" alt="St. Olaf College" />
 	    </a>
@@ -82,7 +82,7 @@
 	  <p><span class="glyphicon glyphicon-cloud"></span> Parallel and Distributed Computing</p>
 	</div>
 	<div class="col-xs-4">
-	  <p><span class="glyphicon glyphicon-plus-sign"></span> Intro to Mathematical Reasoning</p><!--TODO: I BROKE THIS PART (later note: what broke??? I'm scared...)-->
+	  <p><span class="glyphicon glyphicon-plus-sign"></span> Intro to Mathematical Reasoning</p>
 	</div>
 	<div class="col-xs-4">
 	  <p data-toggle="tooltip" title="Currently in progress..."><span class="glyphicon glyphicon-sort-by-attributes"></span> Algorithms and Data Structures</p>
@@ -100,13 +100,12 @@
 	</div>
       </div>
     </div>
-    </div>
 
-    <hr />
-
-    <div id="skills" class="container">
+    <br />
+    
+    <div id="skills" class="container rounded">
       <h1>Skills</h1>
-      <p><i>Click any for additional information (click again to remove)</i></p>
+      <p><i>Click any for additional information (click again to remove popup)</i></p>
       <div class="row">
 	<div class="col-xs-4">
 	  <p data-toggle="popover" data-placement="right" title="Why'd You Click This?" data-content="Click on anything BELOW these elements."><b>Programming Languages</b></p>
@@ -118,9 +117,36 @@
 	  <p data-toggle="popover" data-placement="left" title="Don't Click Here" data-content="Wow you really enjoy engaging with this site, don't you?"><b>Other Technical Skills</b></p>
 	</div>
       </div>
+      <div class="row"><!--TODO: are the default Bootstrap button colors close enough to my color scheme? probably not-->
+	<div class="col-xs-4 skillCol">
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="C++" data-content="My favorite programming language. The Software Development course was taught entirely in it.">C++</button><br />
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	</div>
+	<div class="col-xs-4 skillCol">
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="English" data-content="I was born and raised in America, so English is my first language.">English</button><br />
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	</div>
+	<div class="col-xs-4 skillCol">
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Android Development" data-content="Messed around with it a little in highschool, now I'm helping to develop an app for the engineering team (see 'Extracurriculars' section below).">Android Development</button><br />
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	</div>
+      </div>
+      <br />
       <div class="row">
 	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="C++" data-content="My favorite programming language. The Software Development course was taught entirely in it.">C++</button><br>
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="Java" data-content="Java is my second favorite programming language. I've never really had a class on it specifically, but I've messed around with it enough to be quite familiar with it.">Java</button><br />
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
@@ -128,26 +154,7 @@
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
 	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="English" data-content="I was born and raised in America, so English is my first language.">English</button><br>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	</div>
-	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Android Development" data-content="Messed around with it a little in highschool, now I'm helping to develop an app for the engineering team (see 'Extracurriculars' section below).">Android Development</button><br>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	</div>
-      </div>
-      <br>
-      <div class="row">
-	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="Java" data-content="Java is my second favorite programming language. I've never really had a class on it specifically, but I've messed around with it enough to be quite familiar with it.">Java</button><br>
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="German" data-content="My mom was born in Germany and moved to America when she was 23. We go there for family gatherings about once every year or so, so I've picked up a decent amount naturally. I tested into the third semester of German at St. Olaf, and completed that as well as the fourth semester.">German</button><br />
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
@@ -155,69 +162,7 @@
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
 	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="German" data-content="My mom was born in Germany and moved to America when she was 23. We go there for family gatherings about once every year or so, so I've picked up a decent amount naturally. I tested into the third semester of German at St. Olaf, and completed that as well as the fourth semester.">German</button><br>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	</div>
-	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Familiarity with Linux" data-content="I was first seriously exposed to it on St. Olaf CS computers, and now my MacBook has Ubuntu dual-booted on it.">Familiarity with Linux</button><br>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	</div>
-      </div>
-      <br>
-      <div class="row">
-	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="Python" data-content="I've never had a class on it, but I've picked up enough to be decent at it.">Python</button><br>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	</div>
-	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Spanish" data-content="I took four years of Spanish in highschool, and I occasionally practice it so I don't lose my ability to speak it.">Spanish</button><br>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	</div>
-	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Familiarity with Mac OS" data-content="I've used Mac OS since middleschool, and I still use it almost every day today.">Familiarity with Mac</button><br>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	</div>
-      </div>
-      <br>
-      <div class="row">
-	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="C" data-content="Being such a low-level language, it was used a fair bit in the Hardware Design course, and its similarity to C++ makes it fairly easy for me to pick up.">C</button><br>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	</div>
-	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="French" data-content="I only know a very basic amount of French, not quite enough to have any sort of meaningful conversation.">French</button><br>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	</div>
-	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Unix Terminals" data-content="I use the terminal all the time for my cluster manager job, as the most convenient ways to access the clusters is through SSH. I use a terminal on my Macbook everyday, both on the Mac OS side as well as the Ubuntu side.">Unix Terminals</button><br>
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Familiarity with Linux" data-content="I was first seriously exposed to it on St. Olaf CS computers, and now my MacBook has Ubuntu dual-booted on it.">Familiarity with Linux</button><br />
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
@@ -225,10 +170,45 @@
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
       </div>
-      <br>
+      <br />
       <div class="row">
 	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="Assembly" data-content="All my knowledge of Assembly programming comes from Hardware Design, both from taking the course and helping students with it as a TA.">Assembly</button><br>
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="Python" data-content="I've never had a class on it, but I've picked up enough to be decent at it.">Python</button><br />
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	</div>
+	<div class="col-xs-4 skillCol">
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Spanish" data-content="I took four years of Spanish in highschool, and I occasionally practice it so I don't lose my ability to speak it.">Spanish</button><br />
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	</div>
+	<div class="col-xs-4 skillCol">
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Familiarity with Mac OS" data-content="I've used Mac OS since middleschool, and I still use it almost every day today.">Familiarity with Mac</button><br />
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	</div>
+      </div>
+      <br />
+      <div class="row">
+	<div class="col-xs-4 skillCol">
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="C" data-content="Being such a low-level language, it was used a fair bit in the Hardware Design course, and its similarity to C++ makes it fairly easy for me to pick up.">C</button><br />
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	</div>
+	<div class="col-xs-4 skillCol">
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="French" data-content="I only know a very basic amount of French, not quite enough to have any sort of meaningful conversation.">French</button><br />
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	  <span class="glyphicon glyphicon-star-empty"></span>
@@ -236,15 +216,7 @@
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
 	<div class="col-xs-4 skillCol">
-	  <!--<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Spanish" data-content="good">Spanish</button><br>
-	      <span class="glyphicon glyphicon-star"></span>
-	      <span class="glyphicon glyphicon-star"></span>
-	      <span class="glyphicon glyphicon-star-empty"></span>
-	      <span class="glyphicon glyphicon-star-empty"></span>
-	      <span class="glyphicon glyphicon-star-empty"></span>-->
-	</div>
-	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Emacs" data-content="My editor of choice. Unless I'm working on something very complicated, I prefer emacs in a terminal window over having to open up an IDE.">Emacs</button><br>
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Unix Terminals" data-content="I use the terminal all the time for my cluster manager job, as the most convenient ways to access the clusters is through SSH. I use a terminal on my Macbook everyday, both on the Mac OS side as well as the Ubuntu side.">Unix Terminals</button><br />
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
@@ -252,10 +224,10 @@
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
       </div>
-      <br>
+      <br />
       <div class="row">
 	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="Bash Scripting" data-content="I can write fairly simple scripts to automate otherwise arduous tasks.">Bash Scripting</button><br>
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="Assembly" data-content="All my knowledge of Assembly programming comes from Hardware Design, both from taking the course and helping students with it as a TA.">Assembly</button><br />
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	  <span class="glyphicon glyphicon-star-empty"></span>
@@ -263,144 +235,64 @@
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
 	<div class="col-xs-4 skillCol">
-	  <!--<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Spanish" data-content="good">Spanish</button><br>
-	      <span class="glyphicon glyphicon-star"></span>
-	      <span class="glyphicon glyphicon-star"></span>
-	      <span class="glyphicon glyphicon-star-empty"></span>
-	      <span class="glyphicon glyphicon-star-empty"></span>
-	      <span class="glyphicon glyphicon-star-empty"></span>-->
+	  <!--placeholder column-->
 	</div>
 	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Web Design" data-content="I took a class on HTML/CSS/JavaScript at Luther College during my sophomore year of highschool, and I knew a fair amount already when I went into it. However, it didn't cover jQuery or Bootstrap, which have been making the process of making this website quite efficient.">Web Design</button><br>
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Emacs" data-content="My editor of choice. Unless I'm working on something very complicated, I prefer emacs in a terminal window over having to open up an IDE.">Emacs</button><br />
 	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	</div>
+      </div>
+      <br />
+      <div class="row">
+	<div class="col-xs-4 skillCol">
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="Bash Scripting" data-content="I can write fairly simple scripts to automate otherwise arduous tasks.">Bash Scripting</button><br />
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	</div>
+	<div class="col-xs-4 skillCol">
+	  <!--placeholder column-->
+	</div>
+	<div class="col-xs-4 skillCol">
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Web Design" data-content="I took a class on HTML/CSS/JavaScript at Luther College during my sophomore year of highschool, and I knew a fair amount already when I went into it. However, it didn't cover jQuery or Bootstrap, which have been making the process of making this website quite efficient.">Web Design</button><br />
 	  <span data-toggle="tooltip" data-placement="bottom" title="You tell me, dude.">
+	    <span class="glyphicon glyphicon-star"></span>
 	    <span class="glyphicon glyphicon-star-empty"></span>
 	    <span class="glyphicon glyphicon-star-empty"></span>
 	    <span class="glyphicon glyphicon-star-empty"></span>
 	    <span class="glyphicon glyphicon-star-empty"></span>
 	  </span>
-	  <!--TODO; Have them be able to rate how good I am, then display a message saying "thank you for your input, it won't be recorded." Or would that be too sarcastic? Anyway, mom suggested bars instead of stars. Oh, also I should probably put Git on here, probably like 2ish stars-->
+	  <!--TODO; Have them be able to rate how good I am, then display a message saying "thank you for your input, it won't be recorded." Or would that be too sarcastic? Also, I could do bars filled to some percent instead of stars...might of an eyesore in this html file...-->
 	</div>
       </div>
+      <br />
+      <div class="row">
+	<div class="col-xs-4 skillCol">
+	  <!--placeholder column-->
+	</div>
+	<div class="col-xs-4 skillCol">
+	  <!--placeholder column-->
+	</div>
+	<div class="col-xs-4 skillCol">
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Git" data-content="I'd say I'm quite familiar with the basics of Git (basic branching, merging, committing changes). I mostly use it through the command line, but also use Github's site or StoGit (St. Olaf's GitLab)">Git</button><br />
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	</div>
+      </div>
+      <br />
     </div>
+    <br />
     
-    <hr />
-
-    <!--Photo.it is absolute trash and I can't manage to get anything to really work on it. That was gonna be the main "project" here, so I'm just not gonna have the other two...
-    <div id="projects" class="container">
-      <h1>Projects</h1>
-      <p>Okay the internet is out and idk how to make a carosel, but I think that would work well for this. Anyway, I thought I'd brainstorm what projects to put here at least</p>
-      <ul>
-	<li>
-	  <h2>Photo.it</h2>
-	  <p>use description from resume</p>
-	  <p>include picture of GUI and maybe some edited pics</p>
-	  <p>anything else?</p>
-	</li>
-	<li>
-	  <h2>Robot Rescuers</h2>
-	  <p>describe idea</p>
-	  <p>include screenshot (or video would be better, gif?) of robots doin their thing
-	  <p>describe parallelism, patterns</p>
-	  <p>mention race condition -> deadlock -> potential livelock? would have to admit that I never got around to fully fixing it (although fixing it one day would be kinda cool)</p>
-	  <p>anything else?</p>
-	</li>
-	<li>
-	  <p>idk what other 'project' kinda things I've really done</p>
-	  <p>nerdNotes? was never really finished but like I could work some more on it now...</p>
-	</li>
-      </ul>
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-	<ol class="carousel-indicators">
-	  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-	  <li data-target="#myCarousel" data-slide-to="1"></li>
-	  <li data-target="#myCarousel" data-slide-to="2"></li>
-	</ol>
-	<div class="carousel-inner">
-	  <!--TODO: MAKE SURE THESE ALL HAVE THE SAME HEIGHT!--
-	  <div class="project item active">
-	    <div class="container-fluid">
-	      <h2>Photo.it</h2>
-	      <div class="row">
-		<div class="col-lg-10 col-md-6 col-sm-6">
-		  <p>Photo.it was a group project written in C++ for my Software Design class in my freshman year (May 2018). It is similar to Microsoft Paint or Photoshop</p>
-		</div>
-		<div class="col-lg-2 col-md-4 col-sm-6">
-		  <a href="pic.format">
-		    <img src="images/pic.format" alt="Screenshot of the Photo.it user interface" />
-		    </a>
-		</div>
-	      </div>
-	      <div class="row">
-		<div class="col-sm-3">
-		  <a href="pic.format">
-		    <img src="images/pic.format" alt="Unedited photo that will be the background" />
-		  </a>
-		</div>
-		<div class="col-sm-3">
-		  <a href="pic.format">
-		    <img src="images/pic.format" alt="Unedited photo that will have sections cropped into the foreground" />
-		  </a>
-		</div>
-		<div class="col-sm-3">
-		  <a href="pic.format">
-		    <img src="images/pic.format" alt="Photo edited by Photo.it (first)" />
-		  </a>
-		</div>
-		<div class="col-sm-3">
-		  <a href="pic.format">
-		    <img src="images/pic.format" alt="Photo edited by Photo.it (second)" />
-		  </a>
-		</div>
-	      </div>
-	      <div class="row">
-		<div class="col-sm-6"><!--TODO: same col widths on different screen sizes as above? Probably...--
-		  <p>TODO: screen-record myself editing the pictures?</p>
-		</div>
-		<div class="col-sm-6">
-		  
-		  <p>My main contributions include:</p>
-		  <ul>
-		    <li>Implemented libpng C library to read and write .png files</li>
-		    <li>Wrote all image manipulation functions for graphic design</li>
-		    <li>Developed the capability to have multiple image layers</li>
-		    <li>Added color selector bars at the top right</li>
-		  </ul>
-		</div>
-	      </div>
-	    </div>
-	  </div>
-	  <div class="project item">
-	    <div class="container-fluid">
-	      <h2>Robot Rescuers</h2>
-	      <p>describe idea</p>
-	      <p>include screenshot (or video would be better, gif?) of robots doin their thing
-	      <p>describe parallelism, patterns</p>
-	      <p>mention race condition -> deadlock -> potential livelock? would have to admit that I never got around to fully fixing it (although fixing it one day would be kinda cool)</p>
-	      <p>anything else?</p>  
-	    </div>
-	  </div>
-	  <div class="project item">
-	    <div class="container-fluid">
-	      <h2>NerdNotes</h2>
-	      <p>not even done yet but ay I need things in here...</p>
-	    </div>
-	  </div>
-	</div>
-	<a class="left  carousel-control" href="#myCarousel" data-slide="prev">
-	  <span class="glyphicon glyphicon-chevron-left"></span>
-	  <span class="sr-only">Previous</span>
-	</a>
-	<a class="right carousel-control" href="#myCarousel" data-slide="next">
-	  <span class="glyphicon glyphicon-chevron-right"></span>
-	  <span class="sr-only">Next</span>
-	</a>
-      </div>
-    </div>
-
-    <hr />-->
-
-    <div id="workexperience" class="container">
+    <div id="workexperience" class="container rounded">
       <h1>Relevant Work Experience</h1>
       
       <h3>Cluster Manager</h3>
@@ -422,20 +314,22 @@
       </ul>
       
     </div>
-    <hr />
+
+    <br />
     
-    <div id="extracurriculars" class="container">
+    <div id="extracurriculars" class="container rounded"><!--TODO: talk a little about each...-->
       <h1>Extracurriculars</h1>
       <h3>Engineering Club</h3>
       <h3>Metal Club</h3>
       <h3>ACM</h3>
       <h3>German Department Activities</h3>
     </div>
-
-    <hr />
-
-    <div id="personal" class="container">
+    
+    <br />
+    
+    <div id="personal" class="container rounded">
       <h1>Personal</h1>
+      <!--pictures to add: highschool friends, childhood?-->
       <div class="row">
 	<div class="col-sm-4">
 	  <div class="thumbnail">
@@ -448,7 +342,7 @@
 	  </div>
 	  <div class="thumbnail">
 	    <a href="images/exercise.jpg">
-	      <img src="images/exercise.jpg" alt="Picture of my running shoes and some dumbbells" /><!--TODO: crop this probably-->
+	      <img src="images/exercise.jpg" alt="Picture of my running shoes and some dumbbells" />
 	    </a>
 	    <div class="caption">
 	      <p>I don't really have pictures from the gym or my runs, but I run and lift quite a lot.</p>
@@ -466,21 +360,21 @@
 	    </div>
 	  </div>
 	  <div class="thumbnail">
-	    <a href="images/highschool.format">
-	      <img src="images/highschool.format" alt="Picture of my highschool friedns and I __(when)__" />
+	    <a href="images/pool.jpeg">
+	      <img src="images/pool.jpeg" alt="Picture of me and my friend playing pool" />
 	    </a>
 	    <div class="caption">
-	      <p>My highschool friends and I (doing something?)</p>
+	      <p>Losing a game of pool to my friend, Rei.</p>
 	    </div>
 	  </div>
-	  <div class="thumbnail">
+	  <!--<div class="thumbnail">
 	    <a href="images/childhood.format">
 	      <img src="images/childhood.format" alt="Picture of me when I was young" />
 	    </a>
 	    <div class="caption">
 	      <p>small boy</p>
 	    </div>
-	  </div>
+	  </div>-->
 	</div>
 	
 	<div class="col-sm-4">
@@ -503,13 +397,12 @@
 	</div>
       </div>
     </div>
-
+    
     <br />
     
-    <div id="footer" class="container-fluid text-center">
-      <p>Not really sure what to put down here, just kinda felt like I should have a footer. Thanks for checking out my site, though! Have a nice life.</p>
-    </div>
-    
+    <!--<div id="footer" class="container-fluid text-center">
+      <p>TODO: link linkedin, github, facebook, instagram, twitter, etc here</p>
+    </div>-->			  
     <script src="script.js"></script>
   </body>
 </html>

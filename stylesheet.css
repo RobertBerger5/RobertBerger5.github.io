@@ -1,18 +1,28 @@
+:root{
+    --white:#FFFFFF;
+    --main:#26A1FF;
+    --darkish:#0391FE;
+    --dark:#02508C;
+    --lightish:#65BCFE;
+    --light:#BBE0FD;
+}
+
 .navbar{
     margin-bottom:0;
     border-radius:0;
+    border:0px;
     position:fixed;
     top:0;
     left:0;
     width:100%;
     z-index:90;/*should probably be the highest*/
+    background-color:var(--dark);
 }
-hr{
-    margin-left:0px;
-    text-align:left;
-    width:50%;
-    /*i feel a constant urge to use gradients...kinda wanna use one here...*/
+
+.navbar a{
+    color:var(--light) !important;
 }
+
 /*#profilePic{
     position:absolute;
     top:10%;
@@ -20,24 +30,43 @@ hr{
     width:auto;
 }*/
 
-/*#projects{
-    height:1500px;
+body{
+    background-color:var(--light);
 }
-#myCarousel{
-    height:50%;
+
+.skillCol{
+    text-align: center;
 }
-#myCarousel .carousel-inner{
-    height:100%;
+.skillCol b{
+    text-align: center;
 }
-.project{
-    height:100%;
-    overflow-y:scroll;
+
+.rounded{
+    background-color:var(--white);
+    box-shadow:0px 0px 15px var(--darkish);/*TODO: not sure if this works on every browser...*/
+    border-radius:5px;
 }
-.project .container{
-    padding:0px;
-}*/
 
 #footer{
-    background-color:#222222;
-    color:#9d9d9d;
+    background-color:var(--dark);
+    color:var(--light);
+}
+#title{
+    /*box-shadow: 0px 0px 10px 10px var(--darkish); maybe re-impliment if I ever put that animation that I wanna add in there...*/
+    background-color:var(--lightish);
+    color:var(--dark);
+}
+#title container{
+    z-index:9;
+}
+
+button{
+    white-space:normal !important;
+}
+
+#titleAnimation{
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:10;
 }
