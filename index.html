@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--TODO: could just set up an apache server on my mac or somethin and just host this from there, single-user login etc?-->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -9,7 +10,9 @@
     <link rel="stylesheet" href="stylesheet.css">
   </head>
   <body>
-    <!--TODO: the navbar covers the title of the thing I skip to...oops...-->
+    <!--TODO: this is a really long file, maybe just load peices in modularly so this is easier to look at?-->
+    
+    <!--TODO: the navbar covers the title of the thing I skip to, maybe just have the technical thing with that ID be a <br> element? seems kinda gross...maybe use CSS and have some ::before stuff before all headers? that sounds better-->
     <!--navbar currently basically ripped off from https://www.w3schools.com/booTsTrap/tryit.asp?filename=trybs_temp_portfolio&stacked=h -->
     <nav class="navbar navbar-inverse" position="absolute">
       <div class="container-fluid">
@@ -46,7 +49,7 @@
 	</div>
     </nav>
     
-    <div id="title" class="jumbotron">
+    <div id="title" class="jumbotron header">
       <br /><br />
       <!--<canvas id="titleAnimation"></canvas>-->
       <div class="container text-center">
@@ -54,11 +57,11 @@
 	<p>Aspiring Software Engineer</p>
       </div>
       <!--TODO: have a little rounded pic of me with fixed (or absolute?) positioning, placed like 10% of the way down the parent element and 80% the parent's height, automatic width based on that then-->
-      <!--<img class="img-circle" id="profilePic" src="images/professionalRob.jpg" />-->
+      <!--<img class="img-circle" id="profilePic" src="images/professional.jpg" />-->
     </div>
     <br />
     
-    <div id="education" class="container rounded">
+    <div id="education" class="container rounded header">
       <h1>Education</h1>
       <div class="row">
 	<div class="col-md-8 col-sm-6 col-lg-10">
@@ -103,7 +106,7 @@
 
     <br />
     
-    <div id="skills" class="container rounded">
+    <div id="skills" class="container rounded header">
       <h1>Skills</h1>
       <p><i>Click any for additional information (click again to remove popup)</i></p>
       <div class="row">
@@ -268,7 +271,7 @@
 	    <span class="glyphicon glyphicon-star-empty"></span>
 	    <span class="glyphicon glyphicon-star-empty"></span>
 	  </span>
-	  <!--TODO; Have them be able to rate how good I am, then display a message saying "thank you for your input, it won't be recorded." Or would that be too sarcastic? Also, I could do bars filled to some percent instead of stars...might of an eyesore in this html file...-->
+	  <!--TODO; Have them be able to rate how good I am, then display a message saying "thank you for your input, it won't be recorded." Or would that be too sarcastic? Also, I could do bars filled to some percent instead of stars...bit of an eyesore in this html file...-->
 	</div>
       </div>
       <br />
@@ -292,7 +295,7 @@
     </div>
     <br />
     
-    <div id="workexperience" class="container rounded">
+    <div id="workexperience" class="container rounded header">
       <h1>Relevant Work Experience</h1>
       
       <h3>Cluster Manager</h3>
@@ -317,7 +320,7 @@
 
     <br />
     
-    <div id="extracurriculars" class="container rounded"><!--TODO: talk a little about each...-->
+    <div id="extracurriculars" class="container rounded header"><!--TODO: talk a little about each...-->
       <h1>Extracurriculars</h1>
       <h3>Engineering Club</h3>
       <h3>Metal Club</h3>
@@ -327,9 +330,9 @@
     
     <br />
     
-    <div id="personal" class="container rounded">
+    <div id="personal" class="container rounded header">
       <h1>Personal</h1>
-      <!--pictures to add: highschool friends, childhood?-->
+      <!--pictures to add: highschool friends, childhood? metal club pic might be kind of a lot-->
       <div class="row">
 	<div class="col-sm-4">
 	  <div class="thumbnail">
@@ -401,7 +404,7 @@
     <br />
     
     <!--<div id="footer" class="container-fluid text-center">
-      <p>TODO: link linkedin, github, facebook, instagram, twitter, etc here</p>
+      <p>TODO: link linkedin, github, facebook, instagram?, twitter??, StackOverflow??, etc here</p>
     </div>-->			  
     <script src="script.js"></script>
   </body>

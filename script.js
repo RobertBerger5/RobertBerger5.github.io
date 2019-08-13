@@ -47,7 +47,7 @@ var Bubble={//x,y,vx,vy,o,vo,r
     //vo:(Math.random()+BUBBLE_O_SPEED_MIN)*(BUBBLE_O_SPEED_MAX-BUBBLE_O_SPEED_MIN),
     r:(Math.random()+BUBBLE_SIZE_MIN)*(BUBBLE_SIZE_MAX-BUBBLE_SIZE_MIN),
     shit:function(test){
-	console.log(test+" sharpies up my ass");
+	console.log(test+" bubbles");
     },
     move:function(){//javascript is wack
 	if(this.o>=1){

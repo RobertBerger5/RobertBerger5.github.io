@@ -23,12 +23,12 @@
     color:var(--light) !important;
 }
 
-/*#profilePic{
+#profilePic{
     position:absolute;
     top:10%;
     height:80%;
     width:auto;
-}*/
+}
 
 body{
     background-color:var(--light);
@@ -46,6 +46,10 @@ body{
     box-shadow:0px 0px 15px var(--darkish);/*TODO: not sure if this works on every browser...*/
     border-radius:5px;
 }
+
+/*.header:before{
+    content: " ";
+}*/
 
 #footer{
     background-color:var(--dark);
