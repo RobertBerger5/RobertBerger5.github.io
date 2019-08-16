@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<!--TODO: could just set up an apache server on my mac or somethin and just host this from there, single-user login etc?-->
 <html lang="en">
   <head>
+    <title>Rob Berger</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Rob Berger's personal website">
+    <meta name="keywords" content="not sure what to put here"><!--TODO-->
+    <meta name="author" contnet="Rob Berger">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" type="image/png" href="images/slayericon.ico" />
   </head>
   <body>
-    <!--TODO: this is a really long file, maybe just load peices in modularly so this is easier to look at?-->
+    <!--TODO: this is a really long file, maybe just load pieces in modularly so this is easier to look at?-->
     
-    <!--TODO: the navbar covers the title of the thing I skip to, maybe just have the technical thing with that ID be a <br> element? seems kinda gross...maybe use CSS and have some ::before stuff before all headers? that sounds better-->
-    <!--navbar currently basically ripped off from https://www.w3schools.com/booTsTrap/tryit.asp?filename=trybs_temp_portfolio&stacked=h -->
+    <!--navbar credit to https://www.w3schools.com/booTsTrap/tryit.asp?filename=trybs_temp_portfolio&stacked=h -->
     <nav class="navbar navbar-inverse" position="absolute">
       <div class="container-fluid">
 	<div class="navbar-header">
@@ -65,8 +68,8 @@
       <h1>Education</h1>
       <div class="row">
 	<div class="col-md-8 col-sm-6 col-lg-10">
-	  <p>I'm a sophomore at St. Olaf College in Northfield, Minnesota. I'm pursuing a Bachelor of Science degree in Computer Science and a concentration (basically a minor) in German Studies. Since St. Olaf is a liberal arts school, I'm getting a wide base of knowledge and dipping my toes into many other fields of study as well.</p>
-	  <p><i>Current GPA: 3.58, Anticipated Graduation: May 2021</i></p>
+	  <p>I'm a junior at St. Olaf College in Northfield, Minnesota. I'm pursuing a Bachelor of Science degree in Computer Science, a concentration (basically a minor) in German Studies, and considering another concentration in Statistics. Since St. Olaf is a liberal arts school, I'm getting a wide base of knowledge and dipping my toes into many other fields of study as well.</p>
+	  <p><i>Current GPA: 3.61, Anticipated Graduation: May 2021</i></p>
 	</div>
 	<div class="col-md-4 col-sm-6 col-lg-2">
 	  <div class="thumbnail" data-toggle="tooltip" data-placement="left" title="I have absolutely no idea about legal things, but I want to make it abundantly clear that this is NOT my picture and full rights to St. Olaf and its imagery go to St. Olaf College. I absolutely did not take this photo.">
@@ -126,7 +129,7 @@
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
 	<div class="col-xs-4 skillCol">
@@ -153,7 +156,7 @@
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
 	<div class="col-xs-4 skillCol">
@@ -165,7 +168,7 @@
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
 	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Familiarity with Linux" data-content="I was first seriously exposed to it on St. Olaf CS computers, and now my MacBook has Ubuntu dual-booted on it.">Familiarity with Linux</button><br />
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Familiarity with Linux" data-content="Hadn't used it before coming to college, but now I prefer it over Mac or Windows. Mainly familiar with Ubuntu/Debian, but I can find my way around other flavors too.">Familiarity with Linux</button><br />
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
@@ -179,7 +182,7 @@
 	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="Python" data-content="I've never had a class on it, but I've picked up enough to be decent at it.">Python</button><br />
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
@@ -192,21 +195,21 @@
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
 	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Familiarity with Mac OS" data-content="I've used Mac OS since middleschool, and I still use it almost every day today.">Familiarity with Mac</button><br />
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Git" data-content="I'd say I'm quite familiar with the basics of Git (basic branching, merging, committing changes). I mostly use it through the command line, but also use Github's site or StoGit (St. Olaf's GitLab)">Git</button><br />
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
       </div>
       <br />
       <div class="row">
 	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="C" data-content="Being such a low-level language, it was used a fair bit in the Hardware Design course, and its similarity to C++ makes it fairly easy for me to pick up.">C</button><br />
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="right" title="C" data-content="Being such a low-level language, it was used a fair bit in the Hardware Design course, and my experience with C++ makes it fairly easy to pick up.">C</button><br />
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
+	  <span class="glyphicon glyphicon-star-empty"></span>
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
@@ -219,7 +222,7 @@
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
 	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Unix Terminals" data-content="I use the terminal all the time for my cluster manager job, as the most convenient ways to access the clusters is through SSH. I use a terminal on my Macbook everyday, both on the Mac OS side as well as the Ubuntu side.">Unix Terminals</button><br />
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Unix Terminals" data-content="I use the terminal all the time for my cluster manager job, as the most convenient ways to access the clusters is through SSH. I've used the terminal app on Macs way before ever trying Linux">Unix Terminals</button><br />
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
@@ -264,31 +267,14 @@
 	</div>
 	<div class="col-xs-4 skillCol">
 	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Web Design" data-content="I took a class on HTML/CSS/JavaScript at Luther College during my sophomore year of highschool, and I knew a fair amount already when I went into it. However, it didn't cover jQuery or Bootstrap, which have been making the process of making this website quite efficient.">Web Design</button><br />
-	  <span data-toggle="tooltip" data-placement="bottom" title="You tell me, dude.">
+	  <span data-toggle="tooltip" data-placement="bottom" title="You tell me...">
 	    <span class="glyphicon glyphicon-star"></span>
 	    <span class="glyphicon glyphicon-star-empty"></span>
 	    <span class="glyphicon glyphicon-star-empty"></span>
 	    <span class="glyphicon glyphicon-star-empty"></span>
 	    <span class="glyphicon glyphicon-star-empty"></span>
 	  </span>
-	  <!--TODO; Have them be able to rate how good I am, then display a message saying "thank you for your input, it won't be recorded." Or would that be too sarcastic? Also, I could do bars filled to some percent instead of stars...bit of an eyesore in this html file...-->
-	</div>
-      </div>
-      <br />
-      <div class="row">
-	<div class="col-xs-4 skillCol">
-	  <!--placeholder column-->
-	</div>
-	<div class="col-xs-4 skillCol">
-	  <!--placeholder column-->
-	</div>
-	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Git" data-content="I'd say I'm quite familiar with the basics of Git (basic branching, merging, committing changes). I mostly use it through the command line, but also use Github's site or StoGit (St. Olaf's GitLab)">Git</button><br />
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
-	  <span class="glyphicon glyphicon-star-empty"></span>
+	  <!--TODO: would be really cool if I could set up a system to allow them to rate me. Would involve some backend work, which would be great because otherwise this is just a boring static webpage-->
 	</div>
       </div>
       <br />
@@ -302,9 +288,8 @@
       <p>St. Olaf College</p>
       <p>Trained March-April 2018, worked since September 2018</p>
       <ul>
-	<li>One of the students that work closely with St. Olaf's many computer clusters.</li>
-	<li>Regularly have to work with unfamiliar software and pick it up quickly</li>
-	<li>Collaborate with students to grant access to Docker containers</li>
+	<li>One of the students that work closely with the Computer Science Department's high-performance computing resources.</li>
+	<li>TODO: look at resume and see what it says...</li>
       </ul>
       
       <h3>TA for Hardware Design</h3>
@@ -323,9 +308,14 @@
     <div id="extracurriculars" class="container rounded header"><!--TODO: talk a little about each...-->
       <h1>Extracurriculars</h1>
       <h3>Engineering Club</h3>
+      <p>Along with Carleton College (also in Northfield), the engineering club works very hard to compete in technologically challenging competititions. For example, this year, we made competed in the International Arial Robotics Competition (IARC) by making drones that could be controlled hands-free to perform specific challenges (<a href="https://en.wikipedia.org/wiki/International_Aerial_Robotics_Competition#Eighth_mission">Wikipedia summary of the mission our drones competed in</a>). Our team was one of three that were able to qualify, and ended up completing more of the mission than any other team.</p>
       <h3>Metal Club</h3>
-      <h3>ACM</h3>
+      <p>Metalheads on campus gather every Sunday evening to unwind with some music before starting off their week. Very relaxed, and sometimes we organize field trips to concerts.</p>
+      <!--<h3>ACM</h3>-->
       <h3>German Department Activities</h3>
+      <p>While not really a club, I try to show up to activities hosted by the German department as often as I can, because an important element in learning/retaining a language is to casually use it during leisure time. Besides that, I enjoy speaking the language whenever I can.</p>
+      <h3>Boxing Club</h3>
+      <p>Mondays and Thursdays, there's student-lead boxing practices. Light sparring practice, beating up punching bags, and other exercises help to work on form and speed.</p>
     </div>
     
     <br />
@@ -340,7 +330,7 @@
 	      <img src="images/familyRestaurant.JPG" alt="Picture of my family" />
 	    </a>
 	    <div class="caption">
-	      <p>My family and I at a restaurant this summer.</p>
+	      <p>My mom is from Germany, so we go there every summer to see them. Here, we are at a restaurant in southern France.</p>
 	    </div>
 	  </div>
 	  <div class="thumbnail">
@@ -348,7 +338,7 @@
 	      <img src="images/exercise.jpg" alt="Picture of my running shoes and some dumbbells" />
 	    </a>
 	    <div class="caption">
-	      <p>I don't really have pictures from the gym or my runs, but I run and lift quite a lot.</p>
+	      <p>I don't really have pictures from the gym or my runs, but I lift and run almost every day. I enjoy it a lot, and it feels good to stay in shape.</p>
 	    </div>
 	  </div>
 	</div>
@@ -359,7 +349,7 @@
 	      <img src="images/guitar.PNG" alt="Picture of me playing guitar" />
 	    </a>
 	    <div class="caption">
-	      <p>I've been playing guitar since about eighth grade. </p>
+	      <p>I've been playing guitar since about eighth grade.</p>
 	    </div>
 	  </div>
 	  <div class="thumbnail">
@@ -370,14 +360,6 @@
 	      <p>Losing a game of pool to my friend, Rei.</p>
 	    </div>
 	  </div>
-	  <!--<div class="thumbnail">
-	    <a href="images/childhood.format">
-	      <img src="images/childhood.format" alt="Picture of me when I was young" />
-	    </a>
-	    <div class="caption">
-	      <p>small boy</p>
-	    </div>
-	  </div>-->
 	</div>
 	
 	<div class="col-sm-4">
@@ -386,7 +368,7 @@
 	      <img src="images/friends.JPG" alt="Picture of me and my friends" />
 	    </a>
 	    <div class="caption">
-	      <p>My friends at St. Olaf's President's Ball last year.</p>
+	      <p>With my friends at St. Olaf's President's Ball.</p>
 	    </div>
 	  </div>
 	  <div class="thumbnail">
@@ -394,7 +376,7 @@
 	      <img src="images/cats.jpeg" alt="Picture of my mom and I holding our cats" />
 	    </a>
 	    <div class="caption">
-	      <p>My mom and I trying to get our cats, Tommy and Cleo, to pose for a Christmas card picture (it didn't go well, this was taken immediately after Tommy took a swipe at Cleo)</p>
+	      <p>My mom and I trying to get our cats, Tommy and Cleo, to pose for a Christmas card picture. It didn't go very well, because this was taken immediately after Tommy (right) took a swipe at Cleo (left).</p>
 	    </div>
 	  </div>
 	</div>
