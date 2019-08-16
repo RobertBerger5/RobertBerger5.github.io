@@ -1,1 +1,0 @@
-My friends and I tried to make a band once. Didn't work out, but I got SoundCloud's API to work (except it got the songs from his soundcloud account, which has since undergone changes and currently has no songs on it).
