@@ -11,9 +11,38 @@
   <link rel="icon" type="image/png" href="images/slayericon.ico" />
 </head>
 <body>
+  <script>
+    //called by buttons, takes arguments that PHP sets
+    function changeRating(ipLong,newRating){
+      $.ajax({
+        url:'changeRating.php',
+        type:'POST',
+        data:{
+          ip:ipLong,
+          rating:newRating
+        },
+        success: function(msg){
+          console.log(msg);
+        }
+      });
+    }
+    function deleteRating(ipLong){
+      $.ajax({
+        url:'deleteRating.php',
+        type:'POST',
+        data:{
+          ip:ipLong
+        },
+        success: function(msg){
+          console.log(msg);
+        }
+      });
+    }
+  </script>
   <br />
   <div class="container rounded header text-center">
-  <br />
+    <br />
+    <p><b>Welcome to the page that shows I have PHP and use MySQL skills!</b></p>
 <?php
 $servername="localhost";
 //user made on the database that has full priviledges
@@ -37,12 +66,10 @@ $sql = "SELECT * FROM ratings WHERE ip=$connectIP_long;";
 $result=$conn->query($sql);
 
 if($result->num_rows > 0){
-  echo "<p>Looks like you've already submitted an answer from IP.</p>";
-  //TODO: resubmit with new rating button using AJAX
-  //also TODO: button to take themselves off the database if they want to
-  /*while($row = $result->fetch_assoc()){
-    print_r($row);
-  }*/
+  $row=$result->fetch_assoc();
+  echo "<p>Looks like you've already submitted an answer from IP: " . $row["rating"] . " stars</p>";
+  echo "<button type=\"button\" onclick=\"changeRating($connectIP_long,$rating)\">Change Rating to $rating</button><button type=\"button\" onclick=\"deleteRating($connectIP_long)\">Delete Rating</button>";
+  //TODO: reload the "Average Rating" thingie
 }else{
   $sql = "INSERT INTO ratings (ip,rating,date) VALUES ($connectIP_long,$rating,CURDATE());";
   $result=$conn->query($sql);
