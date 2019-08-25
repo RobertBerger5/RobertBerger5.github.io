@@ -42,7 +42,7 @@
   <br />
   <div class="container rounded header text-center">
     <br />
-    <p><b>Welcome to the page that shows I have PHP and use MySQL skills!</b></p>
+    <p><b>Welcome to the page that shows I can use PHP and MySQL!</b></p>
 <?php
 $servername="localhost";
 //user made on the database that has full priviledges
@@ -53,7 +53,9 @@ $dbname="website";
 
 $connectIP=$_SERVER['REMOTE_ADDR'];
 $connectIP_long=ip2long($connectIP);
-$rating=$_POST["rate"];
+if(!empty($_POST)){
+  $rating=$_POST["rate"];
+}
 //echo "Your IP is: ${connectIP}, or ${connectIP_long}<br />";
 //echo "You rated $rating<br />";
 
@@ -65,15 +67,17 @@ if($conn->connect_error){
 $sql = "SELECT * FROM ratings WHERE ip=$connectIP_long;";
 $result=$conn->query($sql);
 
-if($result->num_rows > 0){
+if($result->num_rows > 0 && isset($rating)){
   $row=$result->fetch_assoc();
   echo "<p>Looks like you've already submitted an answer from IP: " . $row["rating"] . " stars</p>";
   echo "<button type=\"button\" onclick=\"changeRating($connectIP_long,$rating)\">Change Rating to $rating</button><button type=\"button\" onclick=\"deleteRating($connectIP_long)\">Delete Rating</button>";
   //TODO: reload the "Average Rating" thingie
-}else{
+}else if(isset($rating)){
   $sql = "INSERT INTO ratings (ip,rating,date) VALUES ($connectIP_long,$rating,CURDATE());";
   $result=$conn->query($sql);
   echo "<p>Thanks for your rating of $rating, it has been added</p>";
+}else{
+  echo "<p>To submit an answer, go to the <a href=\"/\">main page</a> and click one of the buttons under \"Web Development\" and then click \"Rate\"!</p>";
 }
 
 $sql = "SELECT AVG(rating) FROM ratings;";

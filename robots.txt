@@ -1,2 +1,6 @@
+#hi robot, enjoy your stay at this website
 User-agent: *
 Disallow: /images/
+Disallow: changeRating.php
+Disallow: deleteRating.php
+Disallow: rate.php
