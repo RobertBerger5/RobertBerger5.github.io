@@ -17,7 +17,7 @@
     <script>
       console.log("Hey, nice to see you here. If you want to see the backend PHP files and such, they're over on GitHub: https://github.com/RobertBerger5/robertberger5.github.io");
     </script>
-    <!--TODO: this is a really long file, maybe just load pieces in modularly so this is easier to look at?-->
+    <!--TODO: this is a really long file, maybe just load pieces in modularly so this is easier to look at? TODO: have a "chunks" directory or something, load things in that way. Then in the nginx config, just don't let people look at the chunks seperately...-->
     
     <!--navbar credit to https://www.w3schools.com/booTsTrap/tryit.asp?filename=trybs_temp_portfolio&stacked=h -->
     <nav class="navbar navbar-inverse" position="absolute">
@@ -71,11 +71,11 @@
       <h1>Education</h1>
       <div class="row">
 	<div class="col-md-8 col-sm-6 col-lg-10">
-	  <p>I'm a junior at St. Olaf College in Northfield, Minnesota. I'm pursuing a Bachelor of Science degree in Computer Science, a concentration (basically a minor) in German Studies. Since St. Olaf is a liberal arts school, I'm getting a wide base of knowledge and dipping my toes into many other fields of study as well.</p>
+	  <p>I'm a junior at St. Olaf College in Northfield, Minnesota. I'm pursuing a Bachelor of Science degree in Computer Science, a concentration (basically a minor) in German Studies, and possibly a second concentration in Statistics and Data Science. Since St. Olaf is a liberal arts school, I'm getting a wide base of knowledge and dipping my toes into many other fields of study as well.</p>
 	  <p><i>Current GPA: 3.61, Anticipated Graduation: May 2021</i></p>
 	</div>
 	<div class="col-md-4 col-sm-6 col-lg-2">
-	  <div class="thumbnail" data-toggle="tooltip" data-placement="left" title="I have absolutely no idea about legal things, but I want to make it abundantly clear that this is NOT my picture and full rights to St. Olaf and its imagery go to St. Olaf College. I absolutely did not take this photo.">
+	  <div class="thumbnail" data-toggle="tooltip" data-placement="left" title="I am definitely not a lawyer, but I want to make it abundantly clear that this is NOT my picture and full rights to St. Olaf and its imagery go to St. Olaf College. I absolutely did not take this photo, please don't sue me.">
 	    <a href="images/stolaf.jpg">
 	      <img src="images/stolaf.jpg" alt="St. Olaf College" />
 	    </a>
@@ -210,7 +210,8 @@
 	  <span class="glyphicon glyphicon-star-empty"></span>
 	</div>
 	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Git" data-content="I'd say I'm quite familiar with the basics of Git (basic branching, merging, committing changes). I mostly use it through the command line, but also use Github's site or StoGit (St. Olaf's GitLab)">Git</button><br />
+	  <!--<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Git" data-content="I'd say I'm quite familiar with the basics of Git (basic branching, merging, committing changes). I mostly use it through the command line, but also use Github's site or StoGit (St. Olaf's GitLab)">Git</button><br />-->
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Docker/Kubernetes" data-content="I've learned enough about Docker while working as a cluster manager to get by with it. We also work a small amount with Kubernetes, so I'm familiar with it, but haven't personally worked much with it.">Docker/Kubernetes</button><br />
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star"></span>
 	  <span class="glyphicon glyphicon-star-empty"></span>
@@ -281,8 +282,8 @@
 	  <!--placeholder column-->
 	</div>
 	<div class="col-xs-4 skillCol">
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Web Design" data-content="I took a class on HTML/CSS/JavaScript at Luther College during my sophomore year of highschool, and I knew a fair amount already when I went into it. However, it didn't cover jQuery or Bootstrap, which have been making the process of making this website quite efficient.">Web Design</button><br />
-	  <form id="rate" method="post" action="rate.php"><!--TODO: make this prettier and have rate.php actually do something...-->
+	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="left" title="Web Development" data-content="This website started off as static HTML/CSS/JavaScript hosted on my GitHub, but is currently being hosted by an Nginx server running on a Raspberry Pi in my basement (I'm really banking on this site not getting too much traffic here), allowing for more freedom and personalization. I've abstained from giving myself a rating for web development, opting instead for a more crowdsourced approach. Let me know what you think!">Web Development</button><br />
+	  <form id="rate" method="post" action="rate.php"><!--TODO: make this prettier-->
 	    <span data-toggle="tooltip" data-placement="bottom" title="You tell me...">
 	      <input type="radio" name="rate" value="1">
 	      <input type="radio" name="rate" value="2">
@@ -302,17 +303,23 @@
       <h1>Relevant Work Experience</h1>
       
       <h3>Cluster Manager</h3>
-      <p>St. Olaf College</p>
-      <p>Trained March-April 2018, worked since September 2018</p>
+      <p>St. Olaf College. <i>Trained March-April 2018, worked since September 2018</i></p>
       <ul>
 	<li>One of the students that work closely with the Computer Science Department's high-performance computing resources.</li>
 	<li>Set up these resources and utilize them for a wide range of tasks to provide support for student research projects and classwork</li>
 	<li>Occasionally collaborate with other colleges to implement parallel and distributed computing into their curriculum</li>
       </ul>
+
+      <h3>HiPerCiC Developer</h3>
+      <p>St. Olaf College. <i>Training since October</i></p>
+      <ul>
+	<li>Training as a web developer for St. Olaf's "High Performance Computing in Context" team</li>
+	<li>Create specialized web apps, tailored to the needs of professors and research teams</li>
+	<li>Implement a test-driven development approach using Django</li>
+      </ul>
       
       <h3>TA for Hardware Design</h3>
-      <p>St. Olaf College</p>
-      <p>September-December 2018</p>
+      <p>St. Olaf College. <i>September-December 2018</i></p>
       <ul>
 	<li>Attended in-class labs and assisted students with any obstacles they encountered during them</li>
 	<li>Facilitated evening help sessions to correct deeper misunderstandings</li>
@@ -324,23 +331,25 @@
     <br />
     
     <div id="extracurriculars" class="container rounded header"><!--TODO: talk a little about each...-->
-      <h1>Extracurriculars</h1>
+      <h1>Extracurriculars / Clubs</h1>
       <h3>Engineering Club</h3>
       <p>Along with Carleton College (also in Northfield), the engineering club works very hard to compete in technologically challenging competititions. For example, this year, we made competed in the International Arial Robotics Competition (IARC) by making drones that could be controlled hands-free to perform specific challenges (<a href="https://en.wikipedia.org/wiki/International_Aerial_Robotics_Competition#Eighth_mission">Wikipedia summary of the mission our drones competed in</a>). Our team was one of three that were able to qualify, and ended up completing more of the mission than any other team.</p>
       <h3>Metal Club</h3>
-      <p>Metalheads on campus gather every Sunday evening to unwind with some music before starting off their week. Very relaxed, and sometimes we organize field trips to concerts.</p>
+      <p>A bunch of idiots who love metal music (such as myself) gather in an auditorium every Sunday evening to blast some great music before starting off their week. Each week is typically dedicated to a specific subgenre of metal, and sometimes we organize field trips to concerts in Minneapolis</p>
+      <!--<p>Metalheads on campus gather every Sunday evening to unwind with some music before starting off their week. Very relaxed, and sometimes we organize field trips to concerts.</p>-->
       <!--<h3>ACM</h3>-->
       <h3>German Department Activities</h3>
       <p>While not really a club, I try to show up to activities hosted by the German department as often as I can, because an important element in learning/retaining a language is to casually use it during leisure time. Besides that, I enjoy speaking the language whenever I can.</p>
-      <h3>Boxing Club</h3>
-      <p>Mondays and Thursdays, there's student-lead boxing practices. Light sparring practice, beating up punching bags, and other exercises help to work on form and speed.</p>
+      <h3>Club Soccer</h3>
+      <p>Student led 1.5 hour practices every Monday/Wednesday/Friday to practice for games against other Minnesota club soccer teams. I proudly boast the title of <i>"most improved"</i> because I came in hardly knowing how to play soccer, and am now capable of kicking the ball in the general direction I want it to go...most of the time.</p>
+      <!--Boxing Club-->
     </div>
     
     <br />
     
     <div id="personal" class="container rounded header">
       <h1>Personal</h1>
-      <!--pictures to add: highschool friends, childhood? metal club pic might be kind of a lot-->
+      <!--pictures to add: highschool friends, childhood, metal club bake sale?-->
       <div class="row">
 	<div class="col-sm-4">
 	  <div class="thumbnail">
@@ -356,7 +365,7 @@
 	      <img src="images/exercise.jpg" alt="Picture of my running shoes and some dumbbells" />
 	    </a>
 	    <div class="caption">
-	      <p>I don't really have pictures from the gym or my runs, but I lift and run almost every day. I enjoy it a lot, and it feels good to stay in shape.</p>
+	      <p>I don't really have pictures from the gym or my runs, but I lift or run almost every day. I enjoy it a lot, and it feels good to stay in shape.</p>
 	    </div>
 	  </div>
 	</div>
@@ -367,7 +376,7 @@
 	      <img src="images/guitar.PNG" alt="Picture of me playing guitar" />
 	    </a>
 	    <div class="caption">
-	      <p>I've been playing guitar since about eighth grade.</p>
+	      <p>I first picked up an electric guitar in eighth grade, and have loved it ever since. Something about jamming along to my favorite songs never fails to put me in a great mood.</p>
 	    </div>
 	  </div>
 	  <div class="thumbnail">
@@ -394,7 +403,7 @@
 	      <img src="images/cats.jpeg" alt="Picture of my mom and I holding our cats" />
 	    </a>
 	    <div class="caption">
-	      <p>My mom and I trying to get our cats, Tommy and Cleo, to pose for a Christmas card picture. It didn't go very well, because this was taken immediately after Tommy (right) took a swipe at Cleo (left).</p>
+	      <p>My mom and I trying to get our cats, Tommy and Cleo, to pose for a Christmas card picture. It didn't go very well, because this was taken immediately after Tommy (left) took a swipe at Cleo (right).</p>
 	    </div>
 	  </div>
 	</div>
