@@ -7,6 +7,11 @@
     --light:#BBE0FD;
 }
 
+p.tab{
+    text-indent:4em;
+    margin:1em;
+}
+
 .navbar{
     margin-bottom:0;
     border-radius:0;
@@ -64,6 +69,14 @@ body{
     z-index:9;
 }
 
+#projects{
+    padding-right:0px;
+}
+#projects-inner{
+    height:50vh;
+    overflow-y:scroll; /*TODO: make it look prettier*/
+}
+
 button{
     white-space:normal !important;
 }
@@ -71,7 +84,7 @@ button{
 /*
 #rate input[type="radio"]{
     opacity:100;
-    background: url(images/guitar.PNG) no-repeat;
+    background: url(media/guitar.PNG) no-repeat;
     width: 19px;
     height: 25px;
     padding: 0 5px 0 0;

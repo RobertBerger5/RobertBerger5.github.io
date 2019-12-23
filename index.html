@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="stylesheet.css">
-    <link rel="icon" type="image/png" href="images/icon.ico" />
+    <link rel="icon" type="image/png" href="media/icon.ico" />
   </head>
   <body>
     <script>
@@ -38,13 +38,12 @@
 	    <li>
 	      <a href="#skills">Skills</a>
 	    </li>
-	    <!--TODO: if I get the projects section back, make this visible...
-	    <li>
-	      <a href="#projects">Projects</a>
-	    </li>-->
 	    <li>
 	      <a href="#workexperience">Work Experience</a>
 	    </li>
+		<li>
+		  <a href="#projects">Projects</a>
+		</li>
 	    <li>
 	      <a href="#extracurriculars">Extracurriculars</a>
 	    </li>
@@ -63,7 +62,7 @@
 	<p>Aspiring Software Engineer</p>
       </div>
       <!--TODO: have a little rounded pic of me with fixed (or absolute?) positioning, placed like 10% of the way down the parent element and 80% the parent's height, automatic width based on that then-->
-      <!--<img class="img-circle" id="profilePic" src="images/professional.jpg" />-->
+      <!--<img class="img-circle" id="profilePic" src="media/professional.jpg" />-->
     </div>
     <br />
     
@@ -76,8 +75,8 @@
 	</div>
 	<div class="col-md-4 col-sm-6 col-lg-2">
 	  <div class="thumbnail" data-toggle="tooltip" data-placement="left" title="I am definitely not a lawyer, but I want to make it abundantly clear that this is NOT my picture and full rights to St. Olaf and its imagery go to St. Olaf College. I absolutely did not take this photo, please don't sue me.">
-	    <a href="images/stolaf.jpg">
-	      <img src="images/stolaf.jpg" alt="St. Olaf College" />
+	    <a href="media/stolaf.jpg">
+	      <img src="media/stolaf.jpg" alt="St. Olaf College" />
 	    </a>
 	    <div class="caption">
 	      <p>St. Olaf College</p>
@@ -329,20 +328,98 @@
     </div>
 
     <br />
+
+    <div id="projects" class="container rounded header">
+      <h1>Projects</h1>
+      <!--TODO: move those damn buttons around and recolor the indicators-->
+      <div class="carousel slide" data-ride="carousel">
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+	  <li data-target="#projects" data-slide-to="0" class="active"></li>
+	  <li data-target="#projects" data-slide-to="1"></li>
+	  <li data-target="#projects" data-slide-to="2"></li>
+	</ol>
+	
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner" id="projects-inner">
+	  <div class="item active">
+	    <h3>RoboDog</h3>
+	    <i>October-December 2019</i>
+	    <div style="overflow:auto;">
+	      <b>Overview</b>
+	      <a href="media/robot.mp4" style="float:right;height:45vh;margin:1em;">
+		<video autoplay loop class="embed-responsive-item" style="height:100%">
+		  <source src="media/robot.mp4" type="video/mp4">
+		</video>
+	      </a>
+	      <p class="tab">Created for robotics class with a partner, this project sought to imitate a classical conditioning system, specifically that of dogs learning how to perform tricks associated with various commands. Its main purpose would most likely be for children to learn the basics before being let loose on a real dog.</p>
+	      <p class="tab">The conditioning system was essentially a dictionary of lists of probabilities of tricks. When a command was given, the robot would select a trick based on the list for that specific command. Received commands that aren't yet in the dictionary receive a default probability list. After performing a trick, the user could give it feedback ("good boy" or "bad dog") depending on whether it was the intended trick or not. This feedback would have less weight with each command given in quick succession - up to five minutes. Finally, the conditioning system saved the dictionary to a text file along with the current time. When the program was loaded back up, the tricks would be remembered, but would slowly go back to the default if it had been a while since the last training session.</p>
+	      <p class="tab">All in all, the robot works pretty well. Commands are given vocally with the help of an app, the robot randomly performs a trick, and tweaks the likelihood of performing the same trick upon receiving that command based on feedbadk. Additionally, the text file can be tweaked manually, so that the robot performs certain tricks for certain commands every time, as seen in the vieo to the right.</p>
+	    </div>
+	    <br />
+	    <div style="overflow:auto;">
+	      <b>My Contributions</b>
+	      <a href="media/app.png" style="float:left;height:45vh;margin:1em;">
+		<img src="media/app.png" alt="RoboDog Android App" style="height:100%;"/>
+	      </a>
+	      <div class="caption">
+		<p>Screenshot of the app created for the RoboDog Project</p>
+	      </div>
+	      <p class="tab">While Paul did most of the research, formulas, and overview for the conditioning system, I took the ideas and turned them into code. Several modularized classes were created and combined: one that dealt with lower-level robot functions, one that worked with <a href="https://medium.com/@rymshasiddiqui/path-planning-using-potential-field-algorithm-a30ad12bdb08">potential fields</a> so it could avoid obstacles, and one that contained the entire conditioning system. These classes were combined to one main class that mainly just checked on what command it was given, then wandered using potential fields and an optical distance sensor until a new command was given, at which point it would repeat. I coded all four tricks the robot was capable of: <i>stay</i>, <i>rollover</i>, <i>come</i>, and <i>fetch</i> (and technically <i>wander</i> counts as a trick, but that just ignores the user, as an untrained dog likely would). Finally, I programmed a simple Android app in Kotlin where the user could enter the IP address, connect to the robot, then give voice commands to the robot. The robot receives these commands through another thread listening on a socket server. When a command is received on the socket, it interrupts the main thread to let it know that it has to stop wandering.</p>
+	    </div>
+	    <p>For more information, feel free to read the <a href="media/robotPaper.pdf">paper we wrote about our project</a></p>
+	  </div>
+	  
+	  <div class="item">
+	    <h3>Photo.it</h3>
+	    <i>May 2018</i>
+	    <!--TODO: image of the UI-->
+	    <p class="tab">Created for Software Design class in freshman year along with three classmates, written in C++, Photo.it was an image editor, similar to Microsoft Paint or Photoshop. Users could load in multiple .png files into up to 10 different layers. The base layer would be the main image, and other layers could be resized and moved about over the base. Each layer could have the image cropped, be painted over, and have the backgound filled in.<!--TODO: what other features?--> When the user was done, the image would be saved into a .png file.</p>
+	    <p class="tab">I personally implemented the libpng library to read and write to .png files, as well as most of the image manipulation functions. I made the feature that allowed for multiple image layers, as well as a color selector and several other user interface features.</p>
+	    <!--UI picture down here? Because the text is pretty short and the screenshot will most likely be pretty wide-->
+	  </div>
+	  
+	  <div class="item">
+	    <h3>This Website!</h3>
+	    <i>August 2019, occasional updates since</i>
+	    <p class="tab">If you're reading this, you've probably noticed that I have a website by now. This site is designed to look pretty similar to my resumé, except more in-depth and slightly more interactive. It's hosted by an Nginx server running on a Raspberry Pi in the basement of my house. Most features are pretty plain to see, but here are some that are less obvious:</p>
+	    <ul>
+	      <li><b>PHP/SQL:</b> Some PHP and MySQL can be seen at the bottom of the <a href="#skills">Skills</a> section. It allows users to rate the site (and my "Web Development" skills) on a scale of 1-5, and sends the user to a page displaying the average rating. Because users shouldn't be able to spam responses, it saves the rating along with the IP it was submitted with, and checks new ratings for their IP. If the IP has already voted, the site tells them their old rating, and gives them the option of either changing their rating or deleting it along with their IP.</li>
+	      <li><b>Visual Appeal:</b>The site uses Bootstrap to make the web page as responsive as possible, as well as looking great! If you're viewing this on a device with a resizeable window, I invite you to try resizing it now.</li>
+	      <li><b>Security:</b> Even though no sensitive information is being passed around yet, this page is HTTPS encrypted using Let's Encrypt and CertBot. Additionally, functionality for creating accounts and logging in are in the works, backed with research about the importance of hashing and salting passwords. Luckily, PHP7 provides convenient functions for dealing with these things: password_hash() and password_verify(). Finally, all user inputs are sanitized to prevent SQL injection. Before doing this, I was able to give the rate.php page undesired SQL queries, but now that shouldn't be possible.</li>
+	    </ul>
+	    <!--TODO: login and the ability to make (and delete) comments that appear here?-->
+	  </div>
+      </div>
+	  
+	  <!-- Left and right controls -->
+	  <a class="left carousel-control" href="#projects" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="right carousel-control" href="#projects" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	</div>
+      </div>
+    </div>
+
+    <br />
     
-    <div id="extracurriculars" class="container rounded header"><!--TODO: talk a little about each...-->
+    <div id="extracurriculars" class="container rounded header">
       <h1>Extracurriculars / Clubs</h1>
-      <h3>Engineering Club</h3>
+      <h3>StoC Engineering Team</h3>
       <p>Along with Carleton College (also in Northfield), the engineering club works very hard to compete in technologically challenging competititions. For example, this year, we made competed in the International Arial Robotics Competition (IARC) by making drones that could be controlled hands-free to perform specific challenges (<a href="https://en.wikipedia.org/wiki/International_Aerial_Robotics_Competition#Eighth_mission">Wikipedia summary of the mission our drones competed in</a>). Our team was one of three that were able to qualify, and ended up completing more of the mission than any other team.</p>
       <h3>Metal Club</h3>
       <p>A bunch of idiots who love metal music (such as myself) gather in an auditorium every Sunday evening to blast some great music before starting off their week. Each week is typically dedicated to a specific subgenre of metal, and sometimes we organize field trips to concerts in Minneapolis</p>
-      <!--<p>Metalheads on campus gather every Sunday evening to unwind with some music before starting off their week. Very relaxed, and sometimes we organize field trips to concerts.</p>-->
-      <!--<h3>ACM</h3>-->
+      <!--<h3>ACM? Kinda weak at St. Olaf</h3>-->
+      <h3>Boxing Club</h3>
+      <p>Bi-weekly meetings to practice boxing technique and occasional light sparring against each other, led by students. Always a great workout, and it feels good to be learning this skill (even though I'll probably never use it).</p>
       <h3>German Department Activities</h3>
       <p>While not really a club, I try to show up to activities hosted by the German department as often as I can, because an important element in learning/retaining a language is to casually use it during leisure time. Besides that, I enjoy speaking the language whenever I can.</p>
       <h3>Club Soccer</h3>
       <p>Student led 1.5 hour practices every Monday/Wednesday/Friday to practice for games against other Minnesota club soccer teams. I proudly boast the title of <i>"most improved"</i> because I came in hardly knowing how to play soccer, and am now capable of kicking the ball in the general direction I want it to go...most of the time.</p>
-      <!--Boxing Club-->
     </div>
     
     <br />
@@ -353,16 +430,16 @@
       <div class="row">
 	<div class="col-sm-4">
 	  <div class="thumbnail">
-	    <a href="images/familyRestaurant.JPG">
-	      <img src="images/familyRestaurant.JPG" alt="Picture of my family" />
+	    <a href="media/familyRestaurant.JPG">
+	      <img src="media/familyRestaurant.JPG" alt="Picture of my family" />
 	    </a>
 	    <div class="caption">
 	      <p>My mom is from Germany, so we go there every summer to see them. Here, we are at a restaurant in southern France.</p>
 	    </div>
 	  </div>
 	  <div class="thumbnail">
-	    <a href="images/exercise.jpg">
-	      <img src="images/exercise.jpg" alt="Picture of my running shoes and some dumbbells" />
+	    <a href="media/exercise.jpg">
+	      <img src="media/exercise.jpg" alt="Picture of my running shoes and some dumbbells" />
 	    </a>
 	    <div class="caption">
 	      <p>I don't really have pictures from the gym or my runs, but I lift or run almost every day. I enjoy it a lot, and it feels good to stay in shape.</p>
@@ -372,16 +449,16 @@
 	
 	<div class="col-sm-4">
 	  <div class="thumbnail">
-	    <a href="images/guitar.PNG">
-	      <img src="images/guitar.PNG" alt="Picture of me playing guitar" />
+	    <a href="media/guitar.PNG">
+	      <img src="media/guitar.PNG" alt="Picture of me playing guitar" />
 	    </a>
 	    <div class="caption">
 	      <p>I first picked up an electric guitar in eighth grade, and have loved it ever since. Something about jamming along to my favorite songs never fails to put me in a great mood.</p>
 	    </div>
 	  </div>
 	  <div class="thumbnail">
-	    <a href="images/pool.jpeg">
-	      <img src="images/pool.jpeg" alt="Picture of me and my friend playing pool" />
+	    <a href="media/pool.jpeg">
+	      <img src="media/pool.jpeg" alt="Picture of me and my friend playing pool" />
 	    </a>
 	    <div class="caption">
 	      <p>Losing a game of pool to my friend, Rei.</p>
@@ -391,16 +468,16 @@
 	
 	<div class="col-sm-4">
 	  <div class="thumbnail">
-	    <a href="images/friends.JPG">
-	      <img src="images/friends.JPG" alt="Picture of me and my friends" />
+	    <a href="media/friends.JPG">
+	      <img src="media/friends.JPG" alt="Picture of me and my friends" />
 	    </a>
 	    <div class="caption">
 	      <p>With my friends at St. Olaf's President's Ball.</p>
 	    </div>
 	  </div>
 	  <div class="thumbnail">
-	    <a href="images/cats.jpeg">
-	      <img src="images/cats.jpeg" alt="Picture of my mom and I holding our cats" />
+	    <a href="media/cats.jpeg">
+	      <img src="media/cats.jpeg" alt="Picture of my mom and I holding our cats" />
 	    </a>
 	    <div class="caption">
 	      <p>My mom and I trying to get our cats, Tommy and Cleo, to pose for a Christmas card picture. It didn't go very well, because this was taken immediately after Tommy (left) took a swipe at Cleo (right).</p>
@@ -413,7 +490,7 @@
     <br />
     
     <!--<div id="footer" class="container-fluid text-center">
-      <p>TODO: link linkedin, github, facebook, instagram?, twitter??, StackOverflow??, etc here</p>
+	<p>TODO: link linkedin, github, facebook, instagram?, twitter??, StackOverflow??, etc here</p>
     </div>-->			  
     <script src="script.js"></script>
   </body>
