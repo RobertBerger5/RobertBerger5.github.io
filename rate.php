@@ -1,3 +1,6 @@
+<?php
+   session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,62 +47,26 @@
     <br />
     <p><b>Welcome to the page that shows I can use PHP and MySQL!</b></p>
 <?php
-
-$servername="localhost";
-//user made on the database that has full priviledges
-//to my knowledge, you'd have to be able to SSH into this server to make any use of this knowledge, so I'm good with this info being on GitHub. If you find a way to make SQL queries to my database, please let me know. Don't hack me, thanks in advance :)
+require 'functions.php';
+   
+/*$servername="localhost";
 $username="adminguy";
 $password="p4sSw0rD";
 $dbname="website";
 
-$connectIP=$_SERVER['REMOTE_ADDR'];
-$connectIP_long=ip2long($connectIP);
+$conn = new mysqli($servername,$username,$password,$dbname);*/
+$conn=connect();
+/*if($conn->connect_error){
+  die("Connection failed: ". $conn->connect_error);
+}*/
+
 if(!empty($_POST)){
   $rating=$_POST["rate"];//TODO: check if setting filter.default in php.ini actually filters out dangerous things
 }
+$connectIP=$_SERVER['REMOTE_ADDR'];
+$connectIP_long=ip2long($connectIP);
 //echo "Your IP is: ${connectIP}, or ${connectIP_long}<br />";
 //echo "You rated $rating<br />";
-
-$conn = new mysqli($servername,$username,$password,$dbname);
-if($conn->connect_error){
-  die("Connection failed: ". $conn->connect_error);
-}
-
-function mySQL($conn,$string,$params){
-  if($stmt=$conn->prepare($string)){
-    /*foreach($params as $p){
-      echo "<p>binding param $p</p>";
-      $stmt->bind_param('s',$p);
-    }*/
-    //apparently the above solution doesn't work because of how the function's syntax is
-    //therefore, I present this beautiful workaround...will I ever need more than this many args for an SQL query?
-    switch(count($params)){
-      case 0:
-        break;
-      case 1:
-        $stmt->bind_param('s',$params[0]);
-        break;
-      case 2:
-        $stmt->bind_param('ss',$params[0],$params[1]);
-        break;
-      case 3:
-        $stmt->bind_param('sss',$params[0],$params[1],$params[2]);
-        break;
-      case 4:
-        $stmt->bind_param('ssss',$params[0],$params[1],$params[2],$params[3]);
-        break;
-      case 5:
-        $stmt->bind_param('sssss',$params[0],$params[1],$params[2],$params[3],$params[4]);
-        break;
-    }
-
-    $stmt->execute();
-    return $stmt->get_result();
-  }else{
-    echo("ERROR: issue preparing the statement");
-    return "ERR";
-  }
-}
 
 $result=mySQL($conn,'SELECT * FROM ratings WHERE ip = ?',array($connectIP_long));
 if($result=="ERR"){//TODO: this doesn't seem to work?
@@ -127,6 +94,14 @@ if($result->num_rows>0){
   $row=$result->fetch_assoc();
   echo "<h1>Average rating:" . $row["AVG(rating)"] . "</h1><br />";
 }
+
+if (isset($_SESSION["username"])){
+  echo "<p>logged in as ".$_SESSION["username"]."</p>";
+}else{
+  echo "<p>please <a href='login.php'>log in</a> or <a href='register.php'>register</a> to leave a comment</p>";
+}
+
+//TODO: display all comments here
 
 $conn->close();
 //TODO: page is really empty down here...would look super cool if I put like a graph or something of ratings and when they occurred, or really just anything to fill the space.
