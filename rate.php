@@ -94,7 +94,14 @@ if($result->num_rows>0){
   $row=$result->fetch_assoc();
   echo "<h1>Average rating:" . $row["AVG(rating)"] . "</h1><br />";
 }
+?>
+</div>
+<br />
 
+
+<div class="container rounded header">
+  <br />
+<?php
 if (isset($_SESSION["username"])){
   echo "<p>logged in as ".$_SESSION["username"]."</p>";
 }else{
@@ -106,6 +113,11 @@ if (isset($_SESSION["username"])){
 $conn->close();
 //TODO: page is really empty down here...would look super cool if I put like a graph or something of ratings and when they occurred, or really just anything to fill the space.
 ?>
+  <form action="comment.php" method="post" id="commentform">
+    <textarea form="commentform" name="comment" placeholder="Comment here..."></textarea>
+    <input type="submit">
+  </form>
+    <br />
     <p>That's really all there is to be seen on this page, you can head back to the <a href="/index.html">main page</a> now if you'd like</p>
   </div>
 </body>
