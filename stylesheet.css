@@ -39,11 +39,36 @@ body{
     background-color:var(--light);
 }
 
+#education .col-xs-4 p{
+    /*TODO: make em different from each other? or just bullet points???*/
+}
+
 .skillCol{
     text-align: center;
 }
 .skillCol b{
     text-align: center;
+}
+/*keeps the skills to one line on small screens, so that they still line up*/
+@media screen and (max-width:399px){
+    .skillCol button{
+        font-size: 6pt;
+    }
+}
+@media screen and (min-width:400px) and (max-width:599px){
+    .skillCol button{
+        font-size: 8pt;
+    }
+}
+@media screen and (min-width:600px) and (max-width:899px){
+    .skillCol button{
+        font-size: 10.5pt;
+    }
+}
+@media screen and (min-width:900px){
+    .skillCol button{
+        font-size: 12pt;
+    }
 }
 .skillBar{
     height: 10pt;
@@ -53,7 +78,7 @@ body{
     margin-left:auto;
     margin-right:auto;
     margin-top:5px;
-    margin-bottom:0px;
+    margin-bottom:10px;
 }
 .skillBar span{
     height:100%;
