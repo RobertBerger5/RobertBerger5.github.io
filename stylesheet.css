@@ -45,6 +45,21 @@ body{
 .skillCol b{
     text-align: center;
 }
+.skillBar{
+    height: 10pt;
+    width: 50pt;
+    background-color:var(--light);
+    outline:1px solid black;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5px;
+    margin-bottom:0px;
+}
+.skillBar span{
+    height:100%;
+    background-color:var(--darkish);
+    float:left;
+}
 
 .rounded{
     background-color:var(--white);
