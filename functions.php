@@ -44,7 +44,7 @@ function mySQL($conn,$string,$params){
 }
 
 function auth($conn,$user,$pass){
-  $result=mySQL($conn,'SELECT * FROM users WHERE username=? LIMIT 1;',array($user));
+  $result=mySQL($conn,'SELECT password FROM users WHERE username=? LIMIT 1;',array($user));
   if(!$result){
     return false;
   }

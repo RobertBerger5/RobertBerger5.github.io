@@ -68,7 +68,7 @@ $connectIP_long=ip2long($connectIP);
 //echo "Your IP is: ${connectIP}, or ${connectIP_long}<br />";
 //echo "You rated $rating<br />";
 
-$result=mySQL($conn,'SELECT * FROM ratings WHERE ip = ?',array($connectIP_long));
+$result=mySQL($conn,'SELECT rating FROM ratings WHERE ip = ?',array($connectIP_long));
 if($result=="ERR"){//TODO: this doesn't seem to work?
   die("couldn't prepare statement");
 }
@@ -103,7 +103,7 @@ if($result->num_rows>0){
   <br />
 <?php
 if (isset($_SESSION["username"])){
-  echo "<p>logged in as ".$_SESSION["username"]."</p>";
+  echo "<p><b>logged in as ".$_SESSION["username"]."</b></p>";
 }else{
   echo "<p>please <a href='login.php'>log in</a> or <a href='register.php'>register</a> to leave a comment</p>";
 }

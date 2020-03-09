@@ -73,16 +73,16 @@
 
       $conn=connect();
 
-      if(isset($_SESSION["username"]) && isset($_POST["comment"])){
+      if(isset($_SESSION["username"]) && isset($_POST["comment"])){ //if logged in and trying to comment
         $sql="SELECT user_id FROM users WHERE username=?";
         $result=mySQL($conn,$sql,array($_SESSION['username']));
         $user_id=$result->fetch_assoc()['user_id'];
-        if(auth($conn,$_SESSION["username"],$_SESSION["password"])){
+        if(auth($conn,$_SESSION["username"],$_SESSION["password"])){ //and authenticate correctly
           echo "<p>Posting comment.</p>";
-          if(isset($_POST["reply_id"])){
+          if(isset($_POST["reply_id"])){ //post a reply
             $sql="INSERT INTO comments (user_id,title,text,parent_id) VALUES (?,'test',?,?)";
             $result=mySQL($conn,$sql,array($user_id,$_POST["comment"],$_POST["reply_id"]));
-          }else{
+          }else{ //post a comment
             $sql="INSERT INTO comments (user_id,title,text) VALUES (?,'test',?)";
             $result=mySQL($conn,$sql,array($user_id,$_POST["comment"]));
           }
@@ -125,7 +125,7 @@
           echo "<div class='commentdiv' id='".$id."'><p><b>".$row['username']."</b></p>
             <div class='commenttext'><p>".$text."</p></div>
             <button onclick='replyBox(\"".$id."\")'>Reply</button>";
-          loadChildren($conn,$id);
+          loadChildren($conn,$id); //recursion!
           echo "</div>";
         }
       }
@@ -135,7 +135,7 @@
         comments.title AS title,
         comments.text AS text
       FROM comments INNER JOIN users ON comments.user_id=users.user_id
-      WHERE comments.parent_id IS NULL";
+      WHERE comments.parent_id IS NULL"; //special case for non-reply comments
       $result=mySQL($conn,$sql,array());
       while($row=$result->fetch_assoc()){
         $id=$row['id'];

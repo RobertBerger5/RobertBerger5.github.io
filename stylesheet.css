@@ -39,9 +39,9 @@ body{
     background-color:var(--light);
 }
 
-#education .col-xs-4 p{
-    /*TODO: make em different from each other? or just bullet points???*/
-}
+/*#education .col-xs-4 p{
+    /*TODO: make em different from each other? or just bullet points???*
+}*/
 
 .skillCol{
     text-align: center;

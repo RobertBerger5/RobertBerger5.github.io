@@ -24,25 +24,22 @@ if(!empty($_POST)){
 
 $conn=connect();
 
-$result=mySQL($conn,'SELECT EXISTS(SELECT * FROM users WHERE username=?)',array($username)); //if someone with that username is already in the database
-if($result){
+$result=mySQL($conn,'SELECT user_id FROM users WHERE username=?',array($username)); //if someone with that username is already in the database
+if($result->num_rows!=0){
   echo "Can't register a new account with that username, it already exists<br />";
-  //die("unable to create user because of non-unique name<br />");
+  die("<b>unable to create user because of non-unique name</b></body></html>");
   //temp for testing
-  $sql="DELETE FROM users WHERE username=\"$username\";";
-  $conn->query($sql);
+  //$sql="DELETE FROM users WHERE username=\"$username\";";
+  //$conn->query($sql);
 }
 
 $result=mySQL($conn,'INSERT INTO users (username,password) VALUES (?,?);',array($username,$password));
-if($result){
-  echo "yup<br />";
+//verify that they authenticate
+if(auth($conn,$username,$password_unhashed)){
+  echo "<b>Account Created!</b><br />";
 }else{
-  echo "nope<br />";
+  echo "ERROR<br />";
 }
-
-//double-check
-echo auth($conn,$username,$password_unhashed);
-
 ?>
 </body>
 </html>
