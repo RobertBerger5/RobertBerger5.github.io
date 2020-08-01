@@ -23,7 +23,6 @@
 	<script>
 		console.log("Hey, nice to see you here! If you want to see the backend PHP files and such, they're over on GitHub: https://github.com/RobertBerger5/robertberger5.github.io");
 	</script>
-	<!--TODO: this is a really long file, maybe just load pieces in modularly so this is easier to look at? TODO: have a "chunks" directory or something, load things in that way. Then in the nginx config, just don't let people look at the chunks seperately...-->
 
 	<!--navbar credit to https://www.w3schools.com/booTsTrap/tryit.asp?filename=trybs_temp_portfolio&stacked=h -->
 	<nav class="navbar navbar-inverse" position="absolute">
@@ -107,6 +106,9 @@
 		<h1>Skills</h1>
 		<p><i>Click any for additional information (click again to remove popup). Stars indicate skill level relative to
 				the other listed skills.</i></p>
+
+		<div id="react-skill-bubble"></div>
+		<br /><br />
 		<div class="row">
 			<div class="col-xs-4 skillCol">
 				<p data-toggle="popover" data-placement="top" title="Why'd You Click This?"

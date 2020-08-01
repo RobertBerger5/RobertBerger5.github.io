@@ -70,6 +70,19 @@ body{
         font-size: 12pt;
     }
 }
+
+.skill-bubble{
+    transition: width 1s, background-color 1s;
+    padding:5px;
+    display: inline-block;
+    text-align:center;
+}
+.skill-detail{
+    transition: max-height 1s;
+    overflow-y: hidden;
+    width:100%;
+}
+
 .skillBar{
     height: 10pt;
     width: 50pt;
@@ -79,6 +92,7 @@ body{
     margin-right:auto;
     margin-top:5px;
     margin-bottom:10px;
+    transition: width 1s, height 1s;
 }
 .skillBar span{
     height:100%;
