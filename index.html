@@ -1,435 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Rob Berger</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Rob Berger's personal website">
-    <meta name="keywords" content="not sure what to put here"><!--TODO-->
-    <meta name="author" contnet="Rob Berger">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="stylesheet.css">
-    <link rel="icon" type="image/png" href="media/icon.ico" />
-  </head>
-  <body>
-    <script>
-      console.log("Hey, nice to see you here. If you want to see the backend PHP files and such, they're over on GitHub: https://github.com/RobertBerger5/robertberger5.github.io");
-    </script>
-    <!--TODO: this is a really long file, maybe just load pieces in modularly so this is easier to look at? TODO: have a "chunks" directory or something, load things in that way. Then in the nginx config, just don't let people look at the chunks seperately...-->
-    
-    <!--navbar credit to https://www.w3schools.com/booTsTrap/tryit.asp?filename=trybs_temp_portfolio&stacked=h -->
-    <nav class="navbar navbar-inverse" position="absolute">
-      <div class="container-fluid">
-	<div class="navbar-header">
-	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"><!--little thing for small screens to have a dropdown menu-->
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
-	  </button>
-	  <a class="navbar-brand" href="#title">Rob Berger</a>
-	</div>
-	<div class="collapse navbar-collapse" id="myNavbar">
-	  <ul class="nav navbar-nav">
-	    <li>
-	      <a href="#education">Education</a>
-	    </li>
-	    <li>
-	      <a href="#skills">Skills</a>
-	    </li>
-	    <li>
-	      <a href="#workexperience">Work Experience</a>
-	    </li>
-	    <li>
-	      <a href="#projects">Projects</a>
-	    </li>
-	    <li>
-	      <a href="#extracurriculars">Extracurriculars</a>
-	    </li>
-	    <li>
-	      <a href="#personal">Personal</a>
-	    </li>
-	  </ul>
-	</div>
-    </nav>
-    
-    <div id="title" class="jumbotron header">
-      <br /><br />
-      <!--<canvas id="titleAnimation"></canvas>-->
-      <div class="container text-center">
-	<h1>Rob Berger</h1>
-	<p>Aspiring Software Engineer</p>
-      </div>
-      <!--TODO: have a little rounded pic of me with fixed (or absolute?) positioning, placed like 10% of the way down the parent element and 80% the parent's height, automatic width based on that then-->
-      <!--<img class="img-circle" id="profilePic" src="media/professional.jpg" />-->
-    </div>
-    <br />
-    
-    <div id="education" class="container rounded header">
-      <h1>Education</h1>
-      <div class="row">
-	<div class="col-md-8 col-sm-6 col-lg-10">
-	  <p>I'm a junior at St. Olaf College in Northfield, Minnesota. I'm pursuing a Bachelor of Science degree in Computer Science, a concentration (basically a minor) in German Studies, and a second concentration in Statistics and Data Science. Since St. Olaf is a liberal arts school, I'm getting a wide base of knowledge and dipping my toes into many other fields of study as well.</p>
-	  <p><i>Current GPA: 3.65, Anticipated Graduation: May 2021</i></p>
-	</div>
-	<div class="col-md-4 col-sm-6 col-lg-2">
-	  <div class="thumbnail" data-toggle="tooltip" data-placement="left" title="I am definitely not a lawyer, but I want to make it abundantly clear that this is NOT my picture and full rights to St. Olaf and its imagery go to St. Olaf College. I absolutely did not take this photo, please don't sue me.">
-	    <a href="media/stolaf.jpg">
-	      <img src="media/stolaf.jpg" alt="St. Olaf College" />
-	    </a>
-	    <div class="caption">
-	      <p>St. Olaf College</p>
-	    </div>
-	  </div>
-	</div>
-      </div>
-      <p><b>Courses relevant to computer science:</b></p>
-      <div class="row">
-	<div class="col-xs-4">
-	  <p><!--<span class="glyphicon glyphicon-cloud"></span> -->Parallel and Distributed Computing</p>
-	</div>
-	<div class="col-xs-4">
-	  <p><!--<span class="glyphicon glyphicon-plus-sign"></span> -->Intro to Mathematical Reasoning</p>
-	</div>
-	<div class="col-xs-4">
-	  <p><!--<span class="glyphicon glyphicon-sort-by-attributes"></span> -->Algorithms and Data Structures</p>
-	</div>
-      </div>
-      <div class="row">
-	<div class="col-xs-4">
-	  <p><!--<span class="glyphicon glyphicon-picture"  data-toggle="tooltip" title="Final project was similar to MS Paint, hence this icon"></span> -->Software Design</p>
-	</div>
-	<div class="col-xs-4">
-	  <p><!--<span class="glyphicon glyphicon-resize-horizontal"></span> -->Linear Algebra</p>
-	</div>
-	<div class="col-xs-4">
-	  <p><!--<span class="glyphicon glyphicon-hdd"></span> -->Hardware Design</p>
-	</div>
-      </div>
-      <div class="row">
-	<div class="col-xs-4">
-	  <p>Operating Systems</p>
-	</div>
-	<div class="col-xs-4">
-	  <p>Robotics</p>
-	</div>
-	<div class="col-xs-4">
-	  <p>Statistics</p>
-	</div>
-      </div>
-      <p><b>In Progress:</b></p>
-      <div class="row">
-	<div class="col-xs-4">
-	  <p>Programming Languages</p>
-	</div>
-	<div class="col-xs-4">
-	  <p>Mobile Computing Applications</p>
-	</div>
-	<div class="col-xs-4">
-	  <p>Intro to Data Science</p>
-	</div>
-      </div>
-    </div>
 
-    <br />
-    
-    <div id="skills" class="container rounded header">
-      <h1>Skills</h1>
-      <p><i>Click any for additional information (click again to remove popup). Stars indicate skill level relative to the other listed skills.</i></p>
-      <div class="row">
-	<div class="col-xs-4 skillCol">
-	  <p data-toggle="popover" data-placement="top" title="Why'd You Click This?" data-content="Click on anything BELOW these elements."><b>Programming<br />Languages</b></p>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="C++" data-content="My preferred programming language. Many computer science classes at St. Olaf are taught in it, including Algorithms and Data Structures, where I got most comfortable with the specifics of the language, including considering time and space complexity of implementing an algorithm in the language.">C++</button><br />
-	  <div class="skillBar">
-	    <span style="width:80%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Java" data-content="Java is my second favorite programming language. I've never really had a class on it specifically, but I've messed around with it enough to be quite familiar with it. Its similarity to C++ also helps significantly.">Java</button><br />
-	  <div class="skillBar">
-	    <span style="width:55%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Kotlin" data-content="The simple app I made for my final Robotics project consisted mostly of Kotlin. I hadn't worked with it much before, but my Java app development knowledge transferred over surprisingly well.">Kotlin</button><br />
-	  <div class="skillBar">
-	    <span style="width:30%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Python" data-content="I had a pretty good grasp on the language, which was increased during the Robotics class at St. Olaf, which used almost exclusively Python. See my GitHub project 'RoboDog' for a project I did using it.">Python</button><br />
-	  <div class="skillBar">
-	    <span style="width:65%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="C" data-content="Being such a low-level language, it was used a fair bit in the Hardware Design course, and my experience with C++ makes it fairly easy to pick up.">C</button><br />
-	  <div class="skillBar">
-	    <span style="width:40%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Assembly" data-content="All my knowledge of Assembly programming comes from Hardware Design, both from taking the course and helping students with it as a TA. Much like my French abilities, I could decrypt the vague idea what it says if given enough time, but writing it myself is likely a whole different story.">Assembly</button><br />
-	  <div class="skillBar">
-	    <span style="width:5%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Bash Scripting" data-content="I can write fairly simple scripts to automate otherwise arduous tasks.">Bash Scripting</button><br />
-	  <div class="skillBar">
-	    <span style="width:20%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="JavaScript" data-content="JavaScript was the first programming language I ever picked up. I was in highschool, and decided to learn some to make the WordPress site we were creating more interactive. After finding that I really enjoyed it, I poorly threw together a couple of projects, and then didn't touch the language very much until Junior year of college, where my Mobile Computing Applications class had a long period where we learned JavaScript in order to put together a Node.js server as a backend for our apps.">JavaScript</button><br />
-	  <div class="skillBar">
-	    <span style="width:50%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="PHP" data-content="Most of my PHP experience comes from that section under the 'Web Development' skill in this section of the website. You can give a rating, and even create an account and leave a public comment (or reply to another comment).">PHP</button><br />
-	  <div class="skillBar">
-	    <span style="width:20%"></span>
-	  </div>
-	</div>
-	<div class="col-xs-4 skillCol">
-	  <p data-toggle="popover" data-placement="top" title="Click Anything Other Than These" data-content="What did you hope to find out by clicking here?"><b>Language<br />Languages</b></p>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="English" data-content="I was born and raised in America, so English is my first language.">English</button><br />
-	  <div class="skillBar">
-	    <span style="width:100%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="German" data-content="My mom was born in Germany and moved to America when she was 23. We go there for family gatherings about once every year or so, so I've picked up a decent amount naturally. I tested into the third semester of German at St. Olaf, and completed that as well as the fourth semester. I'm now earning a German Studies concentration.">German</button><br />
-	  <div class="skillBar">
-	    <span style="width:75%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Spanish" data-content="I took four years of Spanish in highschool, and I occasionally practice it so I don't lose my ability to speak it.">Spanish</button><br />
-	  <div class="skillBar">
-	    <span style="width:20%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="French" data-content="Much like my Assembly abilities, I could decrypt the vague idea what it says if given enough time, but writing it myself is likely a whole different story. This is mostly just here so the other columns aren't comically longer than this one.">French</button><br />
-	  <div class="skillBar">
-	    <span style="width:5%"></span>
-	  </div>
-	</div>
-	<div class="col-xs-4 skillCol">
-	  <p data-toggle="popover" data-placement="top" title="Don't Click Here" data-content="Wow you really enjoy engaging with this site, don't you?"><b>Other<br />Skills</b></p>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Android Development" data-content="Messed around with it a little in highschool, and I've worked on simple apps for both the Engineering Team (see 'Extracurriculars' section below) as well as a project for my Robotics class.">Android Development</button><br />
-	  <div class="skillBar">
-	    <span style="width:25%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Familiarity with Linux" data-content="Hadn't used it before coming to college, but now I prefer it over Mac or Windows. Mainly familiar with Ubuntu/Debian, but I can find my way around other flavors too.">Familiarity with Linux</button><br />
-	  <div class="skillBar">
-	    <span style="width:60%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Docker/Kubernetes" data-content="I've learned enough about Docker while working as a cluster manager to get by with it. We also work a small amount with Kubernetes, so I'm familiar with it, but haven't personally worked much with it.">Docker/Kubernetes</button><br />
-	  <div class="skillBar">
-	    <span style="width:30%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Unix Terminals" data-content="I use the terminal all the time for my cluster manager job, as the most convenient ways to access the clusters is through SSH. I've used the terminal app on Macs way before ever trying Linux. I also frequently use it on my personal machine, as I find it faster to quickly edit files with Emacs than loading up a text editor or IDE, as well as working with directories on my machine.">Unix Terminals</button><br />
-	  <div class="skillBar">
-	    <span style="width:60%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Computer Networking" data-content="As a cluster manager, I often need to work with networking. Whether it be physically plugging fiber-optic cables in, dealing with network interfaces on a machine, or SSHing into a switch, it's a fairly regular part of the job.">Computer Networking</button><br />
-	  <div class="skillBar">
-	    <span style="width:40%"></span>
-	  </div>
-	  <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Web Development" data-content="This website started off as static HTML/CSS/JavaScript hosted on my GitHub, but is currently being hosted by an Nginx server running on a Raspberry Pi in my basement (I'm really banking on this site not getting too much traffic here), allowing for more freedom and personalization. I've abstained from giving myself a rating for web development, opting instead for a more crowdsourced approach. Let me know what you think by voting below!">Web Development</button><br />
-	  <form id="rate" method="post" action="rate.php"><!--TODO: make this prettier-->
-	    <span data-toggle="tooltip" data-placement="bottom" title="You tell me...">
-	      <input type="radio" name="rate" value="1">
-	      <input type="radio" name="rate" value="2">
-	      <input type="radio" name="rate" value="3">
-	      <input type="radio" name="rate" value="4">
-	      <input type="radio" name="rate" value="5">
-	      <input type="submit" value="rate">
-	    </span>
-	  </form>
-	</div>
-      </div>
-      <br />
-    </div>
-    <br />
-    
-    <div id="workexperience" class="container rounded header">
-      <h1>Relevant Work Experience</h1>
-      
-      <h3>Cluster Manager</h3>
-      <p>St. Olaf College. <i>Trained March-April 2018, worked since September 2018</i></p>
-      <ul>
-	<li>One of the students that work closely with the Computer Science Department's high-performance computing resources.</li>
-	<li>Set up these resources and utilize them for a wide range of tasks to provide support for student research projects and classwork</li>
-	<li>Occasionally collaborate with other colleges to implement parallel and distributed computing into their curriculum</li>
-      </ul>
+<head>
+	<title>Rob Berger</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Rob Berger's personal website">
+	<meta name="keywords" content="not sure what to put here">
+	<!--TODO-->
+	<meta name="author" contnet="Rob Berger">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="stylesheet.css">
+	<link rel="icon" type="image/png" href="media/icon.ico" />
+</head>
 
-      <h3>HiPerCiC Developer</h3>
-      <p>St. Olaf College. <i>Training since October</i></p>
-      <ul>
-	<li>Training as a web developer for St. Olaf's "High Performance Computing in Context" team</li>
-	<li>Create specialized web apps, tailored to the needs of professors and research teams</li>
-	<li>Implement Model-View-Controller design patterns with a test-driven development workflow using Django</li>
-      </ul>
-      
-      <h3>TA for Hardware Design</h3>
-      <p>St. Olaf College. <i>September-December 2018</i></p>
-      <ul>
-	<li>Attended in-class labs and assisted students with any obstacles they encountered during them</li>
-	<li>Facilitated optional evening help sessions to elevate students to their maximum potential and correct deeper misunderstandings</li>
-	<li>Provided feedback on lab assignments and fielded questions regarding their grade</li>
-      </ul>
-      
-    </div>
+<body>
+	<script>
+		console.log("Hey, nice to see you here. If you want to see the backend PHP files and such, they're over on GitHub: https://github.com/RobertBerger5/robertberger5.github.io");
+	</script>
+	<!--TODO: this is a really long file, maybe just load pieces in modularly so this is easier to look at? TODO: have a "chunks" directory or something, load things in that way. Then in the nginx config, just don't let people look at the chunks seperately...-->
 
-    <br />
+	<!--navbar credit to https://www.w3schools.com/booTsTrap/tryit.asp?filename=trybs_temp_portfolio&stacked=h -->
+	<nav class="navbar navbar-inverse" position="absolute">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<!--little thing for small screens to have a dropdown menu-->
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#title">Rob Berger</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#education">Education</a>
+					</li>
+					<li>
+						<a href="#skills">Skills</a>
+					</li>
+					<li>
+						<a href="#workexperience">Work Experience</a>
+					</li>
+					<li>
+						<a href="#projects">Projects</a>
+					</li>
+					<li>
+						<a href="#extracurriculars">Extracurriculars</a>
+					</li>
+					<li>
+						<a href="#personal">Personal</a>
+					</li>
+				</ul>
+			</div>
+	</nav>
 
-    <!--<div id="projects" class="container rounded header">
-      <h1>Projects</h1>
-      <!--TODO: move those damn buttons around and recolor the indicators->
-      <div class="carousel slide" data-ride="carousel">
-	<!-- Indicators ->
-	<ol class="carousel-indicators">
-	  <li data-target="#projects" data-slide-to="0" class="active"></li>
-	  <li data-target="#projects" data-slide-to="1"></li>
-	  <li data-target="#projects" data-slide-to="2"></li>
-	</ol>
-	
-	<!-- Wrapper for slides ->
-	<div class="carousel-inner" id="projects-inner">
-	  <div class="item active">
-	    <h3>RoboDog</h3>
-	    <i>October-December 2019</i>
-	    <div style="overflow:auto;">
-	      <b>Overview</b>
-	      <a href="media/robot.mp4" style="float:right;height:45vh;margin:1em;">
-		<video autoplay loop class="embed-responsive-item" style="height:100%">
-		  <source src="media/robot.mp4" type="video/mp4">
-		</video>
-	      </a>
-	      <p class="tab">Created for robotics class with a partner, this project sought to imitate a classical conditioning system, specifically that of dogs learning how to perform tricks associated with various commands. Its main purpose would most likely be for children to learn the basics before being let loose on a real dog.</p>
-	      <p class="tab">The conditioning system was essentially a dictionary of lists of probabilities of tricks. When a command was given, the robot would select a trick based on the list for that specific command. Received commands that aren't yet in the dictionary receive a default probability list. After performing a trick, the user could give it feedback ("good boy" or "bad dog") depending on whether it was the intended trick or not. This feedback would have less weight with each command given in quick succession - up to five minutes. Finally, the conditioning system saved the dictionary to a text file along with the current time. When the program was loaded back up, the tricks would be remembered, but would slowly go back to the default if it had been a while since the last training session.</p>
-	      <p class="tab">All in all, the robot works pretty well. Commands are given vocally with the help of an app, the robot randomly performs a trick, and tweaks the likelihood of performing the same trick upon receiving that command based on feedbadk. Additionally, the text file can be tweaked manually, so that the robot performs certain tricks for certain commands every time, as seen in the vieo to the right.</p>
-	    </div>
-	    <br />
-	    <div style="overflow:auto;">
-	      <b>My Contributions</b>
-	      <a href="media/app.png" style="float:left;height:45vh;margin:1em;">
-		<img src="media/app.png" alt="RoboDog Android App" style="height:100%;"/>
-	      </a>
-	      <div class="caption">
-		<p>Screenshot of the app created for the RoboDog Project</p>
-	      </div>
-	      <p class="tab">While Paul did most of the research, formulas, and overview for the conditioning system, I took the ideas and turned them into code. Several modularized classes were created and combined: one that dealt with lower-level robot functions, one that worked with <a href="https://medium.com/@rymshasiddiqui/path-planning-using-potential-field-algorithm-a30ad12bdb08">potential fields</a> so it could avoid obstacles, and one that contained the entire conditioning system. These classes were combined to one main class that mainly just checked on what command it was given, then wandered using potential fields and an optical distance sensor until a new command was given, at which point it would repeat. I coded all four tricks the robot was capable of: <i>stay</i>, <i>rollover</i>, <i>come</i>, and <i>fetch</i> (and technically <i>wander</i> counts as a trick, but that just ignores the user, as an untrained dog likely would). Finally, I programmed a simple Android app in Kotlin where the user could enter the IP address, connect to the robot, then give voice commands to the robot. The robot receives these commands through another thread listening on a socket server. When a command is received on the socket, it interrupts the main thread to let it know that it has to stop wandering.</p>
-	    </div>
-	    <p>For more information, feel free to read the <a href="media/robotPaper.pdf">paper we wrote about our project</a></p>
-	  </div>
-	  
-	  <div class="item">
-	    <h3>Photo.it</h3>
-	    <i>May 2018</i>
-	    <!--TODO: image of the UI->
-	    <p class="tab">Created for Software Design class in freshman year along with three classmates, written in C++, Photo.it was an image editor, similar to Microsoft Paint or Photoshop. Users could load in multiple .png files into up to 10 different layers. The base layer would be the main image, and other layers could be resized and moved about over the base. Each layer could have the image cropped, be painted over, and have the backgound filled in.<!--TODO: what other features?-> When the user was done, the image would be saved into a .png file.</p>
-	    <p class="tab">I personally implemented the libpng library to read and write to .png files, as well as most of the image manipulation functions. I made the feature that allowed for multiple image layers, as well as a color selector and several other user interface features.</p>
-	    <!--UI picture down here? Because the text is pretty short and the screenshot will most likely be pretty wide->
-	  </div>
-	  
-	  <div class="item">
-	    <h3>This Website!</h3>
-	    <i>August 2019, occasional updates since</i>
-	    <p class="tab">If you're reading this, you've probably noticed that I have a website by now. This site is designed to look pretty similar to my resumé, except more in-depth and slightly more interactive. It's hosted by an Nginx server running on a Raspberry Pi in the basement of my house. Most features are pretty plain to see, but here are some that are less obvious:</p>
-	    <ul>
-	      <li><b>PHP/SQL:</b> Some PHP and MySQL can be seen at the bottom of the <a href="#skills">Skills</a> section. It allows users to rate the site (and my "Web Development" skills) on a scale of 1-5, and sends the user to a page displaying the average rating. Because users shouldn't be able to spam responses, it saves the rating along with the IP it was submitted with, and checks new ratings for their IP. If the IP has already voted, the site tells them their old rating, and gives them the option of either changing their rating or deleting it along with their IP.</li>
-	      <li><b>Visual Appeal:</b>The site uses Bootstrap to make the web page as responsive as possible, as well as looking great! If you're viewing this on a device with a resizeable window, I invite you to try resizing it now.</li>
-	      <li><b>Security:</b> Even though no sensitive information is being passed around yet, this page is HTTPS encrypted using Let's Encrypt and CertBot. Additionally, functionality for creating accounts and logging in are in the works, backed with research about the importance of hashing and salting passwords. Luckily, PHP7 provides convenient functions for dealing with these things: password_hash() and password_verify(). Finally, all user inputs are sanitized to prevent SQL injection. Before doing this, I was able to give the rate.php page undesired SQL queries, but now that shouldn't be possible.</li>
-	    </ul>
-	    <!--TODO: login and the ability to make (and delete) comments that appear here?->
-	  </div>
-      </div>
-	  
-	  <!-- Left and right controls ->
-	  <a class="left carousel-control" href="#projects" data-slide="prev">
-	    <span class="glyphicon glyphicon-chevron-left"></span>
-	    <span class="sr-only">Previous</span>
-	  </a>
-	  <a class="right carousel-control" href="#projects" data-slide="next">
-	    <span class="glyphicon glyphicon-chevron-right"></span>
-	    <span class="sr-only">Next</span>
-	  </a>
+	<div id="title" class="jumbotron header">
+		<br /><br />
+		<!--<canvas id="titleAnimation"></canvas>-->
+		<div class="container text-center">
+			<h1>Rob Berger</h1>
+			<p>Aspiring Software Engineer</p>
+		</div>
+		<!--TODO: have a little rounded pic of me with fixed (or absolute?) positioning, placed like 10% of the way down the parent element and 80% the parent's height, automatic width based on that then-->
+		<!--<img class="img-circle" id="profilePic" src="media/professional.jpg" />-->
 	</div>
-      </div>
-    </div>
+	<br />
 
-    <br />-->
-    
-    <div id="extracurriculars" class="container rounded header">
-	  <h1>Extracurriculars / Clubs</h1>
-	  <h3>Algorithms Club - Vice President</h3>
-	  <p>Created in the Spring of 2020, the Algorithms Club at St. Olaf is aimed at helping students prepare for technical interview questions. Students who haven't taken the Algorithms and Data Structures class are introduced to crucial concepts, and get used to seeing/considering these problems and concepts. Students who have taken Algorithms and Data Structures also greatly benefit, both from reviewing the concepts as well as expanding their knowledge of the subject.</p>
-      <h3>StoC Engineering Team</h3>
-      <p>Along with Carleton College (also in Northfield), the engineering club works very hard to compete in technologically challenging competititions. For example, this year, we made competed in the International Arial Robotics Competition (IARC) by making drones that could be controlled hands-free to perform specific challenges (<a href="https://en.wikipedia.org/wiki/International_Aerial_Robotics_Competition#Eighth_mission">Wikipedia summary of the mission our drones competed in</a>). Our team was one of three that were able to qualify, and ended up completing more of the mission than any other team.</p>
-      <h3>Metal Club</h3>
-      <p>A bunch of idiots who love heavy metal music (such as myself) gather in an auditorium every Sunday evening to blast some great music before starting off their week. Each week is typically dedicated to a specific subgenre of metal, and sometimes we organize field trips to concerts in Minneapolis</p>
-      <h3>Boxing Club</h3>
-      <p>Bi-weekly meetings to practice boxing technique and occasional light sparring against each other, led by students. Always a great workout, and it feels good to be learning this skill (even though I'll probably never really use it).</p>
-      <h3>German Department Activities</h3>
-      <p>While not really a club, I try to show up to activities hosted by the German department as often as I can, because an important element in learning/retaining a language is to casually use it during leisure time. Besides that, I enjoy speaking the language whenever I can.</p>
-      <h3>Club Soccer</h3>
-      <p>Student led 1.5 hour practices every Monday/Wednesday/Friday to practice for games against other Minnesota club soccer teams. I proudly boast the title of <i>"most improved"</i> because I came in hardly knowing how to play soccer, and am now capable of kicking the ball in the general direction I want it to go...most of the time.</p>
-    </div>
-    
-    <br />
-    
-    <div id="personal" class="container rounded header">
-      <h1>Personal</h1>
-      <!--pictures to add: highschool friends, childhood, metal club bake sale?-->
-      <div class="row">
-	<div class="col-sm-4">
-	  <div class="thumbnail">
-	    <a href="media/familyRestaurant.JPG">
-	      <img src="media/familyRestaurant.JPG" alt="Picture of my family" />
-	    </a>
-	    <div class="caption">
-	      <p>My mom is from Germany, so we go there every summer to see them. Here, we are at a restaurant in southern France.</p>
-	    </div>
-	  </div>
-	  <div class="thumbnail">
-	    <a href="media/exercise.jpg">
-	      <img src="media/exercise.jpg" alt="Picture of my running shoes and some dumbbells" />
-	    </a>
-	    <div class="caption">
-	      <p>I don't really have pictures from the gym or my runs, but I lift or run almost every day. I enjoy it a lot, and it feels good to stay in shape.</p>
-	    </div>
-	  </div>
+	<div id="education" class="container rounded header">
+		<h1>Education</h1>
+		<div class="row">
+			<div class="col-md-8 col-sm-6 col-lg-10">
+				<p>I'm a senior at St. Olaf College in Northfield, Minnesota. I'm pursuing a Bachelor of Science degree
+					in Computer Science, a concentration (basically a minor) in German Studies, and a most likely a
+					second concentration in Statistics and Data Science. Since St. Olaf is a liberal arts school, I'm
+					getting a wide base of knowledge and dipping my toes into many other fields of study as well.</p>
+				<p><i>Current GPA: 3.69, Anticipated Graduation: May 2021</i></p>
+			</div>
+			<div class="col-md-4 col-sm-6 col-lg-2">
+				<div class="thumbnail" data-toggle="tooltip" data-placement="left"
+					title="I am definitely not a lawyer, but I want to make it abundantly clear that this is NOT my picture and full rights to St. Olaf and its imagery go to St. Olaf College. I absolutely did not take this photo, please don't sue me.">
+					<a href="media/stolaf.jpg">
+						<img src="media/stolaf.jpg" alt="St. Olaf College" />
+					</a>
+					<div class="caption">
+						<p>St. Olaf College</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p><b>Courses relevant to computer science:</b></p>
+		<div class="row">
+			<div class="col-xs-4">
+				<p>Parallel and Distributed Computing</p>
+			</div>
+			<div class="col-xs-4">
+				<p>Intro to Mathematical Reasoning</p>
+			</div>
+			<div class="col-xs-4">
+				<p>Algorithms and Data Structures
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<p>Software
+					Design</p>
+			</div>
+			<div class="col-xs-4">
+				<p>Linear Algebra</p>
+			</div>
+			<div class="col-xs-4">
+				<p>Hardware Design</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<p>Operating Systems</p>
+			</div>
+			<div class="col-xs-4">
+				<p>Robotics</p>
+			</div>
+			<div class="col-xs-4">
+				<p>Statistics</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<p>Programming Languages</p>
+			</div>
+			<div class="col-xs-4">
+				<p>Mobile Computing Applications</p>
+			</div>
+			<div class="col-xs-4">
+				<p>Intro to Data Science</p>
+			</div>
+		</div>
+		<p><b>In Progress:</b></p>
+		<div class="row">
+			<div class="col-xs-4">
+				<p>Senior Capstone</p>
+			</div>
+			<div class="col-xs-4">
+				<p>Statistical Computing</p>
+			</div>
+		</div>
 	</div>
-	
-	<div class="col-sm-4">
-	  <div class="thumbnail">
-	    <a href="media/guitar.PNG">
-	      <img src="media/guitar.PNG" alt="Picture of me playing guitar" />
-	    </a>
-	    <div class="caption">
-	      <p>I first picked up an electric guitar in eighth grade, and have loved it ever since. Something about jamming along to my favorite songs never fails to put me in a great mood.</p>
-	    </div>
-	  </div>
-	  <div class="thumbnail">
-	    <a href="media/pool.jpeg">
-	      <img src="media/pool.jpeg" alt="Picture of me and my friend playing pool" />
-	    </a>
-	    <div class="caption">
-	      <p>Losing a game of pool to my friend, Rei.</p>
-	    </div>
-	  </div>
+
+	<br />
+
+	<div id="skills" class="container rounded header">
+		<h1>Skills</h1>
+		<p><i>Click any for additional information (click again to remove popup). Stars indicate skill level relative to
+				the other listed skills.</i></p>
+		<div class="row">
+			<div class="col-xs-4 skillCol">
+				<p data-toggle="popover" data-placement="top" title="Why'd You Click This?"
+					data-content="Click on anything BELOW these elements."><b>Programming<br />Languages</b></p>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="C++"
+					data-content="My preferred programming language. Many computer science classes at St. Olaf are taught in it, including Algorithms and Data Structures, where I got most comfortable with the specifics of the language, including considering time and space complexity of implementing an algorithm in the language.">C++</button><br />
+				<div class="skillBar">
+					<span style="width:80%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Java"
+					data-content="Java is my second favorite programming language. I've never really had a class on it specifically, but I've messed around with it enough to be quite familiar with it. Its similarity to C++ also helps significantly.">Java</button><br />
+				<div class="skillBar">
+					<span style="width:55%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Kotlin"
+					data-content="The simple app I made for my final Robotics project consisted mostly of Kotlin. I hadn't worked with it much before, but my Java app development knowledge transferred over surprisingly well.">Kotlin</button><br />
+				<div class="skillBar">
+					<span style="width:30%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Python"
+					data-content="I had a pretty good grasp on the language, which was increased during the Robotics class at St. Olaf, which used almost exclusively Python. See my GitHub project 'RoboDog' for a project I did using it.">Python</button><br />
+				<div class="skillBar">
+					<span style="width:65%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="C"
+					data-content="Being such a low-level language, it was used a fair bit in the Hardware Design course, and my experience with C++ makes it fairly easy to pick up.">C</button><br />
+				<div class="skillBar">
+					<span style="width:40%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top"
+					title="Assembly"
+					data-content="All my knowledge of Assembly programming comes from Hardware Design, both from taking the course and helping students with it as a TA. Much like my French abilities, I could decrypt the vague idea what it says if given enough time, but writing it myself is likely a whole different story.">Assembly</button><br />
+				<div class="skillBar">
+					<span style="width:5%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top"
+					title="Bash Scripting"
+					data-content="I can write fairly simple scripts to automate otherwise arduous tasks.">Bash
+					Scripting</button><br />
+				<div class="skillBar">
+					<span style="width:20%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top"
+					title="JavaScript"
+					data-content="JavaScript was the first programming language I ever picked up. I was in highschool, and decided to learn some to make the WordPress site we were creating more interactive. After finding that I really enjoyed it, I poorly threw together a couple of projects, and then didn't touch the language very much until Junior year of college, where my Mobile Computing Applications class had a long period where we learned JavaScript in order to put together a Node.js server as a backend for our apps.">JavaScript</button><br />
+				<div class="skillBar">
+					<span style="width:50%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="PHP"
+					data-content="Most of my PHP experience comes from that section under the 'Web Development' skill in this section of the website. You can give a rating, and even create an account and leave a public comment (or reply to another comment).">PHP</button><br />
+				<div class="skillBar">
+					<span style="width:20%"></span>
+				</div>
+			</div>
+			<div class="col-xs-4 skillCol">
+				<p data-toggle="popover" data-placement="top" title="Click Anything Other Than These"
+					data-content="What did you hope to find out by clicking here?"><b>Language<br />Languages</b></p>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="English"
+					data-content="I was born and raised in America, so English is my first language.">English</button><br />
+				<div class="skillBar">
+					<span style="width:100%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="German"
+					data-content="My mom was born in Germany and moved to America when she was 23. We go there for family gatherings about once every year or so, so I've picked up a decent amount naturally. I tested into the third semester of German at St. Olaf, and completed that as well as the fourth semester. I'm now earning a German Studies concentration.">German</button><br />
+				<div class="skillBar">
+					<span style="width:75%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="Spanish"
+					data-content="I took four years of Spanish in highschool, and I occasionally practice it so I don't lose my ability to speak it.">Spanish</button><br />
+				<div class="skillBar">
+					<span style="width:20%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top" title="French"
+					data-content="Much like my Assembly abilities, I could decrypt the vague idea what it says if given enough time, but writing it myself is likely a whole different story. This is mostly just here so the other columns aren't comically longer than this one.">French</button><br />
+				<div class="skillBar">
+					<span style="width:5%"></span>
+				</div>
+			</div>
+			<div class="col-xs-4 skillCol">
+				<p data-toggle="popover" data-placement="top" title="Don't Click Here"
+					data-content="Wow you really enjoy engaging with this site, don't you?"><b>Other<br />Skills</b></p>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top"
+					title="Android Development"
+					data-content="Messed around with it a little in highschool, and I've worked on simple apps for both the Engineering Team (see 'Extracurriculars' section below) as well as a project for my Robotics class.">Android
+					Development</button><br />
+				<div class="skillBar">
+					<span style="width:25%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top"
+					title="Familiarity with Linux"
+					data-content="Hadn't used it before coming to college, but now I prefer it over Mac or Windows. Mainly familiar with Ubuntu/Debian, but I can find my way around other flavors too.">Familiarity
+					with Linux</button><br />
+				<div class="skillBar">
+					<span style="width:60%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top"
+					title="Docker/Kubernetes"
+					data-content="I've learned enough about Docker while working as a cluster manager to get by with it. We also work a small amount with Kubernetes, so I'm familiar with it, but haven't personally worked much with it.">Docker/Kubernetes</button><br />
+				<div class="skillBar">
+					<span style="width:30%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top"
+					title="Unix Terminals"
+					data-content="I use the terminal all the time for my cluster manager job, as the most convenient ways to access the clusters is through SSH. I've used the terminal app on Macs way before ever trying Linux. I also frequently use it on my personal machine, as I find it faster to quickly edit files with Emacs than loading up a text editor or IDE, as well as working with directories on my machine.">Unix
+					Terminals</button><br />
+				<div class="skillBar">
+					<span style="width:60%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top"
+					title="Computer Networking"
+					data-content="As a cluster manager, I often need to work with networking. Whether it be physically plugging fiber-optic cables in, dealing with network interfaces on a machine, or SSHing into a switch, it's a fairly regular part of the job.">Computer
+					Networking</button><br />
+				<div class="skillBar">
+					<span style="width:40%"></span>
+				</div>
+				<button type="button" class="btn btn-primary" data-toggle="popover" data-placement="top"
+					title="Web Development"
+					data-content="This website started off as static HTML/CSS/JavaScript hosted on my GitHub, but is currently being hosted by an Nginx server running on a Raspberry Pi in my basement (I'm really banking on this site not getting too much traffic here), allowing for more freedom and personalization. I've abstained from giving myself a rating for web development, opting instead for a more crowdsourced approach. Let me know what you think by voting below!">Web
+					Development</button><br />
+				<form id="rate" method="post" action="rate.php">
+					<!--TODO: make this prettier-->
+					<span data-toggle="tooltip" data-placement="bottom" title="You tell me...">
+						<input type="radio" name="rate" value="1">
+						<input type="radio" name="rate" value="2">
+						<input type="radio" name="rate" value="3">
+						<input type="radio" name="rate" value="4">
+						<input type="radio" name="rate" value="5">
+						<input type="submit" value="rate">
+					</span>
+				</form>
+			</div>
+		</div>
+		<br />
 	</div>
-	
-	<div class="col-sm-4">
-	  <div class="thumbnail">
-	    <a href="media/friends.JPG">
-	      <img src="media/friends.JPG" alt="Picture of me and my friends" />
-	    </a>
-	    <div class="caption">
-	      <p>With my friends at St. Olaf's President's Ball.</p>
-	    </div>
-	  </div>
-	  <div class="thumbnail">
-	    <a href="media/cats.jpeg">
-	      <img src="media/cats.jpeg" alt="Picture of my mom and I holding our cats" />
-	    </a>
-	    <div class="caption">
-	      <p>My mom and I trying to get our cats, Tommy and Cleo, to pose for a Christmas card picture. It didn't go very well, because this was taken immediately after Tommy (left) took a swipe at Cleo (right).</p>
-	    </div>
-	  </div>
+	<br />
+
+	<div id="workexperience" class="container rounded header">
+		<h1>Relevant Work Experience</h1>
+
+		<h3>Cluster Manager</h3>
+		<p>St. Olaf College. <i>Trained March-April 2018, worked since September 2018</i></p>
+		<ul>
+			<li>One of the students that work closely with the Computer Science Department's high-performance computing
+				resources.</li>
+			<li>Set up these resources and utilize them for a wide range of tasks to provide support for student
+				research projects and classwork</li>
+			<li>Occasionally collaborate with other colleges to implement parallel and distributed computing into their
+				curriculum</li>
+		</ul>
+
+		<h3>HiPerCiC Developer</h3>
+		<p>St. Olaf College. <i>Training since October</i></p>
+		<ul>
+			<li>Training as a web developer for St. Olaf's "High Performance Computing in Context" team</li>
+			<li>Create specialized web apps, tailored to the needs of professors and research teams</li>
+			<li>Implement Model-View-Controller design patterns with a test-driven development workflow using Django
+			</li>
+		</ul>
+
+		<h3>TA for Hardware Design</h3>
+		<p>St. Olaf College. <i>September-December 2018</i></p>
+		<ul>
+			<li>Attended in-class labs and assisted students with any obstacles they encountered during them</li>
+			<li>Facilitated optional evening help sessions to elevate students to their maximum potential and correct
+				deeper misunderstandings</li>
+			<li>Provided feedback on lab assignments and fielded questions regarding their grade</li>
+		</ul>
+
 	</div>
-      </div>
-    </div>
-    
-    <br />
-    
-    <!--<div id="footer" class="container-fluid text-center">
+
+	<br />
+
+	<div id="projects" class="container rounded header">
+		<h1>Projects</h1>
+		<!--TODO: move those buttons around and recolor the indicators-->
+		<div class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#projects" data-slide-to="0" class="active"></li>
+				<li data-target="#projects" data-slide-to="1"></li>
+				<li data-target="#projects" data-slide-to="2"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" id="projects-inner">
+				<div class="item active">
+					<h3>RoboDog</h3>
+					<i>October-December 2019</i>
+					<div style="overflow:auto;">
+						<b>Overview</b>
+						<a href="media/robot.mp4" style="float:right;height:45vh;margin:1em;">
+							<video autoplay loop class="embed-responsive-item" style="height:100%">
+								<source src="media/robot.mp4" type="video/mp4">
+							</video>
+						</a>
+						<p class="tab">Created for robotics class with a partner, this project sought to imitate a
+							classical conditioning system, specifically that of dogs learning how to perform tricks
+							associated with various commands. Its main purpose would most likely be for children to
+							learn the basics before being let loose on a real dog.</p>
+						<p class="tab">The conditioning system was essentially a dictionary of lists of probabilities of
+							tricks. When a command was given, the robot would select a trick based on the list for that
+							specific command. Received commands that aren't yet in the dictionary receive a default
+							probability list. After performing a trick, the user could give it feedback ("good boy" or
+							"bad dog") depending on whether it was the intended trick or not. This feedback would have
+							less weight with each command given in quick succession - up to five minutes. Finally, the
+							conditioning system saved the dictionary to a text file along with the current time. When
+							the program was loaded back up, the tricks would be remembered, but would slowly go back to
+							the default if it had been a while since the last training session.</p>
+						<p class="tab">All in all, the robot works pretty well. Commands are given vocally with the help
+							of an app, the robot randomly performs a trick, and tweaks the likelihood of performing the
+							same trick upon receiving that command based on feedbadk. Additionally, the text file can be
+							tweaked manually, so that the robot performs certain tricks for certain commands every time,
+							as seen in the vieo to the right.</p>
+					</div>
+					<br />
+					<div style="overflow:auto;">
+						<b>My Contributions</b>
+						<a href="media/app.png" style="float:left;height:45vh;margin:1em;">
+							<img src="media/app.png" alt="RoboDog Android App" style="height:100%;" />
+						</a>
+						<div class="caption">
+							<p>Screenshot of the app created for the RoboDog Project</p>
+						</div>
+						<p class="tab">While Paul did most of the research, formulas, and overview for the conditioning
+							system, I took the ideas and turned them into code. Several modularized classes were created
+							and combined: one that dealt with lower-level robot functions, one that worked with <a
+								href="https://medium.com/@rymshasiddiqui/path-planning-using-potential-field-algorithm-a30ad12bdb08">potential
+								fields</a> so it could avoid obstacles, and one that contained the entire conditioning
+							system. These classes were combined to one main class that mainly just checked on what
+							command it was given, then wandered using potential fields and an optical distance sensor
+							until a new command was given, at which point it would repeat. I coded all four tricks the
+							robot was capable of: <i>stay</i>, <i>rollover</i>, <i>come</i>, and <i>fetch</i> (and
+							technically <i>wander</i> counts as a trick, but that just ignores the user, as an untrained
+							dog likely would). Finally, I programmed a simple Android app in Kotlin where the user could
+							enter the IP address, connect to the robot, then give voice commands to the robot. The robot
+							receives these commands through another thread listening on a socket server. When a command
+							is received on the socket, it interrupts the main thread to let it know that it has to stop
+							wandering.</p>
+					</div>
+					<p>For more information, feel free to read the <a href="media/robotPaper.pdf">paper we wrote about
+							our project</a></p>
+				</div>
+
+				<div class="item">
+					<h3>Photo.it</h3>
+					<i>May 2018</i>
+					<!--TODO: image of the UI-->
+					<p class="tab">Created for Software Design class in freshman year along with three classmates,
+						written in C++, Photo.it was an image editor, similar to Microsoft Paint or Photoshop. Users
+						could load in multiple .png files into up to 10 different layers. The base layer would be the
+						main image, and other layers could be resized and moved about over the base. Each layer could
+						have the image cropped, be painted over, and have the backgound filled in.
+						<!--TODO: what other features?--> When the user was done, the image would be saved into a .png
+						file.</p>
+					<p class="tab">I personally implemented the libpng library to read and write to .png files, as well
+						as most of the image manipulation functions. I made the feature that allowed for multiple image
+						layers, as well as a color selector and several other user interface features.</p>
+					<!--UI picture down here? Because the text is pretty short and the screenshot will most likely be pretty wide-->
+				</div>
+
+				<div class="item">
+					<h3>This Website!</h3>
+					<i>August 2019, occasional updates since</i>
+					<p class="tab">If you're reading this, you've probably noticed that I have a website by now. This
+						site is designed to look pretty similar to my resumé, except more in-depth and slightly more
+						interactive. It's hosted by an Nginx server running on a Raspberry Pi in the basement of my
+						house. Most features are pretty plain to see, but here are some that are less obvious:</p>
+					<ul>
+						<li><b>PHP/SQL:</b> Some PHP and MySQL can be seen at the bottom of the <a
+								href="#skills">Skills</a> section. It allows users to rate the site (and my "Web
+							Development" skills) on a scale of 1-5, and sends the user to a page displaying the average
+							rating. Because users shouldn't be able to spam responses, it saves the rating along with
+							the IP it was submitted with, and checks new ratings for their IP. If the IP has already
+							voted, the site tells them their old rating, and gives them the option of either changing
+							their rating or deleting it along with their IP.</li>
+						<li><b>Visual Appeal:</b>The site uses Bootstrap to make the web page as responsive as possible,
+							as well as looking great! If you're viewing this on a device with a resizeable window, I
+							invite you to try resizing it now.</li>
+						<li><b>Security:</b> Even though no sensitive information is being passed around yet, this page
+							is HTTPS encrypted using Let's Encrypt and CertBot. Additionally, functionality for creating
+							accounts and logging in are in the works, backed with research about the importance of
+							hashing and salting passwords. Luckily, PHP7 provides convenient functions for dealing with
+							these things: password_hash() and password_verify(). Finally, all user inputs are sanitized
+							to prevent SQL injection. Before doing this, I was able to give the rate.php page undesired
+							SQL queries, but now that shouldn't be possible.</li>
+					</ul>
+					<!--TODO: login and the ability to make (and delete) comments that appear here?-->
+				</div>
+			</div>
+
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#projects" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#projects" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	</div>
+
+	<br />
+
+	<div id="extracurriculars" class="container rounded header">
+		<h1>Extracurriculars / Clubs</h1>
+		<h3>Algorithms Club - Vice President</h3>
+		<p>Created in the Spring of 2020, the Algorithms Club at St. Olaf is aimed at helping students prepare for
+			technical interview questions. Students who haven't taken the Algorithms and Data Structures class are
+			introduced to crucial concepts, and get used to seeing/considering these problems and concepts. Students who
+			have taken Algorithms and Data Structures also greatly benefit, both from reviewing the concepts as well as
+			expanding their knowledge of the subject.</p>
+		<h3>StoC Engineering Team</h3>
+		<p>Along with Carleton College (also in Northfield), the engineering club works very hard to compete in
+			technologically challenging competititions. For example, this year, we made competed in the International
+			Arial Robotics Competition (IARC) by making drones that could be controlled hands-free to perform specific
+			challenges (<a
+				href="https://en.wikipedia.org/wiki/International_Aerial_Robotics_Competition#Eighth_mission">Wikipedia
+				summary of the mission our drones competed in</a>). Our team was one of three that were able to qualify,
+			and ended up completing more of the mission than any other team.</p>
+		<h3>Metal Club</h3>
+		<p>A bunch of idiots who love heavy metal music (such as myself) gather in an auditorium every Sunday evening to
+			blast some great music before starting off their week. Each week is typically dedicated to a specific
+			subgenre of metal, and sometimes we organize field trips to concerts in Minneapolis</p>
+		<h3>Boxing Club</h3>
+		<p>Bi-weekly meetings to practice boxing technique and occasional light sparring against each other, led by
+			students. Always a great workout, and it feels good to be learning this skill (even though I'll probably
+			never really use it).</p>
+		<h3>German Department Activities</h3>
+		<p>While not really a club, I try to show up to activities hosted by the German department as often as I can,
+			because an important element in learning/retaining a language is to casually use it during leisure time.
+			Besides that, I enjoy speaking the language whenever I can.</p>
+		<h3>Club Soccer</h3>
+		<p>Student led 1.5 hour practices every Monday/Wednesday/Friday to practice for games against other Minnesota
+			club soccer teams. I proudly boast the title of <i>"most improved"</i> because I came in hardly knowing how
+			to play soccer, and am now capable of kicking the ball in the general direction I want it to go...most of
+			the time.</p>
+	</div>
+
+	<br />
+
+	<div id="personal" class="container rounded header">
+		<h1>Personal</h1>
+		<!--pictures to add: highschool friends, childhood, metal club bake sale?-->
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="thumbnail">
+					<a href="media/familyRestaurant.JPG">
+						<img src="media/familyRestaurant.JPG" alt="Picture of my family" />
+					</a>
+					<div class="caption">
+						<p>My mom is from Germany, so we go there every summer to see them. Here, we are at a restaurant
+							in southern France.</p>
+					</div>
+				</div>
+				<div class="thumbnail">
+					<a href="media/exercise.jpg">
+						<img src="media/exercise.jpg" alt="Picture of my running shoes and some dumbbells" />
+					</a>
+					<div class="caption">
+						<p>I don't really have pictures from the gym or my runs, but I lift or run almost every day. I
+							enjoy it a lot, and it feels good to stay in shape.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="thumbnail">
+					<a href="media/guitar.PNG">
+						<img src="media/guitar.PNG" alt="Picture of me playing guitar" />
+					</a>
+					<div class="caption">
+						<p>I first picked up an electric guitar in eighth grade, and have loved it ever since. Something
+							about jamming along to my favorite songs never fails to put me in a great mood.</p>
+					</div>
+				</div>
+				<div class="thumbnail">
+					<a href="media/pool.jpeg">
+						<img src="media/pool.jpeg" alt="Picture of me and my friend playing pool" />
+					</a>
+					<div class="caption">
+						<p>Losing a game of pool to my friend, Rei.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="thumbnail">
+					<a href="media/friends.JPG">
+						<img src="media/friends.JPG" alt="Picture of me and my friends" />
+					</a>
+					<div class="caption">
+						<p>With my friends at St. Olaf's President's Ball.</p>
+					</div>
+				</div>
+				<div class="thumbnail">
+					<a href="media/cats.jpeg">
+						<img src="media/cats.jpeg" alt="Picture of my mom and I holding our cats" />
+					</a>
+					<div class="caption">
+						<p>My mom and I trying to get our cats, Tommy and Cleo, to pose for a Christmas card picture. It
+							didn't go very well, because this was taken immediately after Tommy (left) took a swipe at
+							Cleo (right).</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br />
+
+	<!--<div id="footer" class="container-fluid text-center">
 	<p>TODO: link linkedin, github, facebook, instagram?, twitter??, StackOverflow??, etc here</p>
-    </div>-->			  
-    <script src="script.js"></script>
-  </body>
+    </div>-->
+	<script src="script.js"></script>
+</body>
+
 </html>
