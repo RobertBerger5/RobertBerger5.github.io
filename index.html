@@ -7,12 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Rob Berger's personal website">
 	<meta name="keywords" content="not sure what to put here">
-	<!--TODO-->
 	<meta name="author" contnet="Rob Berger">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="stylesheet.css">
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="stylesheet.css">
+	<script src="reactComponents.js"></script>
+	<script src="script.js"></script>
 	<link rel="icon" type="image/png" href="media/icon.ico" />
 </head>
 
@@ -92,66 +95,14 @@
 				</div>
 			</div>
 		</div>
-		<p><b>Courses relevant to computer science:</b></p>
-		<div class="row">
-			<div class="col-xs-4">
-				<p>Parallel and Distributed Computing</p>
-			</div>
-			<div class="col-xs-4">
-				<p>Intro to Mathematical Reasoning</p>
-			</div>
-			<div class="col-xs-4">
-				<p>Algorithms and Data Structures
-				</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-4">
-				<p>Software
-					Design</p>
-			</div>
-			<div class="col-xs-4">
-				<p>Linear Algebra</p>
-			</div>
-			<div class="col-xs-4">
-				<p>Hardware Design</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-4">
-				<p>Operating Systems</p>
-			</div>
-			<div class="col-xs-4">
-				<p>Robotics</p>
-			</div>
-			<div class="col-xs-4">
-				<p>Statistics</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-4">
-				<p>Programming Languages</p>
-			</div>
-			<div class="col-xs-4">
-				<p>Mobile Computing Applications</p>
-			</div>
-			<div class="col-xs-4">
-				<p>Intro to Data Science</p>
-			</div>
-		</div>
-		<p><b>In Progress:</b></p>
-		<div class="row">
-			<div class="col-xs-4">
-				<p>Senior Capstone</p>
-			</div>
-			<div class="col-xs-4">
-				<p>Statistical Computing</p>
-			</div>
-		</div>
+
+		<!--filled in by React.js-->
+		<div id="react-course-list"></div>
 	</div>
 
 	<br />
 
+	<!--TODO: redo this whole thing into tabbed sections-->
 	<div id="skills" class="container rounded header">
 		<h1>Skills</h1>
 		<p><i>Click any for additional information (click again to remove popup). Stars indicate skill level relative to
@@ -571,7 +522,6 @@
 	<!--<div id="footer" class="container-fluid text-center">
 	<p>TODO: link linkedin, github, facebook, instagram?, twitter??, StackOverflow??, etc here</p>
     </div>-->
-	<script src="script.js"></script>
 </body>
 
 </html>
