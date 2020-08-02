@@ -71,6 +71,13 @@ body{
     }
 }
 
+.skill-tab{
+    display:inline-block;
+    padding:5px;
+    border-radius: 10px 10px 0px 0px;
+    border:1px solid black;
+}
+
 .skill-bubble{
     transition: width 1s, background-color 1s;
     padding:5px;
